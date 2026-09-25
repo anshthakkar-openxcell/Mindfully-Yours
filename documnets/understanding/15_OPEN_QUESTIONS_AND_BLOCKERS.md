@@ -1,0 +1,87 @@
+# 15 — Open Questions, Blockers & Discrepancies (consolidated)
+
+> Every item below was found either explicitly stated in the source material, or discovered by directly parsing the real files during this documentation effort. Ranked roughly by how much it blocks implementation. **Nothing here should be silently resolved by engineering judgment — each needs either client input or an explicit internal decision before the affected feature ships.**
+>
+> **Update**: items #1, #13, and #15 have since been independently re-confirmed against an updated pass of `KNOWLEDGE_BASE_CONTENT.md` (v2), which corroborates this folder's original direct-CSV findings and adds detail this folder didn't originally have (the specific 3-row count on the hardcoded-name issue, and the exact scenarios inside Section D). Both this file and [08_SAFETY_INTERLOCK_AND_TRIAGE.md](08_SAFETY_INTERLOCK_AND_TRIAGE.md) have been updated accordingly — treat those two items as settled facts about the data now, not open discoveries.
+
+## Tier 1 — Hard blockers (safety-critical or structurally required)
+
+### 1. Four Red Flags have no bot script at all — RF-028, RF-029, RF-030, RF-031
+**Confirmed on a second, independent verification pass — this is the single most important open item in the whole knowledge base.** Covering *Suspected violence/unsafe environment*, *History of violence*, *Suspected rape*, *Sexual molestation* — some of the most severe categories in the whole KB. Per [01_PROJECT_OVERVIEW.md](01_PROJECT_OVERVIEW.md) principle #2, the LLM must never freelance a safety-critical response. **This cannot ship as-is.** Action: get verbatim bot scripts from the clinical team for these 4 flags before any red-flag pathway goes live. **Until then, application code must treat a matched flag with an empty `bot_script` as a hard alert routed directly to a human, never a silent LLM-generated fallback** — the one place in this whole system where "the AI will just phrase something reasonable" is not an acceptable substitute. See [08_SAFETY_INTERLOCK_AND_TRIAGE.md](08_SAFETY_INTERLOCK_AND_TRIAGE.md) §4.
+
+### 2. `EM` signal codes are confirmed undefined as a proper legend
+Every `EM:` reference throughout `Kb_Phase_I_9` (Sufficiency) and `Kb_Phase_I_C11` (Routing Rules) points at a code with no `A1`-style legend (ID + clinical concept + 5-10 example phrasings). The 133 `EM-` rows that *do* exist, in `A2`, are something different — free-text category labels (e.g. "Motivation issue," "Usually triggers by death"), not a matchable phrase legend. **Action needed from the client**: an `EM` legend structured the same way `A1` is (ID, concept, example phrasings), or confirmation that the existing `A2` EM rows are meant to serve this purpose as-is (in which case the embedding-based signal pre-filter in [04_CONVERSATION_PIPELINE.md](04_CONVERSATION_PIPELINE.md) Step A needs a different matching strategy for EM references than for SIG references, since there's no phrase to embed). Referenced throughout [05](05_KNOWLEDGE_BASE_DEEP_DIVE.md), [06](06_SIGNAL_ENRICHMENT_PIPELINE.md), [08](08_SAFETY_INTERLOCK_AND_TRIAGE.md).
+
+### 3. Phase III (Clinical Guidance/Psycho-education) and Phase IV (Self-help tools) content not yet received
+Without it, [04_CONVERSATION_PIPELINE.md](04_CONVERSATION_PIPELINE.md) Step F's Tier 1 self-care recommendation — the one place genuine semantic RAG search happens — has nothing to search. The pipeline can and should be built and structurally tested now with synthetic placeholder content; the recommendation quality just can't be validated until this arrives. Per `Knowledge_Base_Directory`, this content is confirmed as planned (Phase III/IV in the client's own 4-phase KB plan) but not yet delivered.
+
+### 4. Rule-matching between `A1` and `C11` is only 25/285 complete
+The numeric regex join only catches direct single-number mentions; most of the 66 routing rules reference ranges/combinations/exclusions in free text ("SIG 001-017 minus SIG002-003") that a simple matcher can't expand. **Needs a real range/combination parser, or the client's direct input**, before the enrichment output in [06_SIGNAL_ENRICHMENT_PIPELINE.md](06_SIGNAL_ENRICHMENT_PIPELINE.md) can be treated as complete.
+
+### 5. `Rule-025` is incomplete in the source data
+Trigger condition exists ("For Factitious Disorder, SIG 080, 271-277") but `Route To`, `Priority`, `Override Reason`, and `Trajectory Factor` are all blank. Exclude from the rules engine until the client fills this in. See [05_KNOWLEDGE_BASE_DEEP_DIVE.md](05_KNOWLEDGE_BASE_DEEP_DIVE.md) §4.
+
+### 6. Two Signal Sufficiency rows have a literal `check----------` placeholder instead of a real Tier
+"Recurrent Mood Episode Patterns" and "patterns of major depressive episodes." Exclude from pattern-matching until resolved. See [05_KNOWLEDGE_BASE_DEEP_DIVE.md](05_KNOWLEDGE_BASE_DEEP_DIVE.md) §6.
+
+## Tier 2 — Architectural decisions needed before building the affected feature
+
+### 7. 3-tier vs. 4-state crisis model — the architecture PDFs disagree with each other
+`Phase1_Final.pdf` and `Phase1.pdf` use a **3-tier model** where Tier 3 *is* SOS/crisis (one combined state). `Phase1_English_Architecture.pdf` describes a **4-state branch**: "Tier 1/2 → self-care continues · Tier 3 → practitioner match & booking (on consent) · Crisis → immediate screen + human alert + safe hold" — treating Tier 3 (practitioner referral) and Crisis (immediate human intervention) as two *separate* escalation paths. **This changes how many distinct routing outcomes the escalation state machine needs.** Must be confirmed with the client before finalizing the `sessions.assigned_tier` schema design in [11_DATA_MODEL_AND_STORAGE.md](11_DATA_MODEL_AND_STORAGE.md) §4. See [08_SAFETY_INTERLOCK_AND_TRIAGE.md](08_SAFETY_INTERLOCK_AND_TRIAGE.md) §3.
+
+### 8. Avatar vendor: three different answers across the source material
+`Phase1.pdf` (earlier draft) → **Spatius.ai**, no cost gate. `Phase1_Final.pdf` and `Phase1_English_Architecture.pdf` (later) → **HeyGen**, with an explicit opt-in + cost/plan gate. `APPROACH.md`'s own narrative preference → **2-D character (Rive/Live2D)**, specifically to avoid a realistic-avatar render fee. **Resolve explicitly at the technology review** — this materially affects both cost (per-render fees) and the adapter interface shape in [03_TECH_STACK.md](03_TECH_STACK.md) §3.
+
+### 9. STT vendor: dual (Deepgram/Sarvam) vs. single (Deepgram only)
+`Phase1_Final.pdf` and `Phase1.pdf` list "Deepgram/Sarvam" as a joint STT option; `Phase1_English_Architecture.pdf` (the more internally-consistent, later-looking variant) lists Deepgram only. Confirm before hardcoding a single-STT-vendor assumption into the provider abstraction layer.
+
+### 10. Hindi query-handling: still an open decision (Option A/B) in two PDFs, already settled in the third
+See [13_LANGUAGE_PHASING.md](13_LANGUAGE_PHASING.md) §3 for full detail. Recommendation is Option A (bilingual KB, offline translation) since it's the lower-cost/lower-latency path and what the "settled" document already commits to — but confirm which architecture document is canonical.
+
+### 11. Guardrail Questions — is it a distinct KB component, or already folded into Fallback & Safety Net?
+`Knowledge_Base_Directory` lists "Guardrail questions/Conversations" as a separate Phase I deliverable, but no standalone file with that exact name was received — its content may already be inside `Kb_Phase_I_17` (Fallback & Safety Net). **Worth a direct confirmation rather than assuming** — per `KNOWLEDGE_BASE_CONTENT.md` v2 §5.
+
+### 12. Whether `Convo_Samples.pdf` is a close script or a loose style guide
+Affects how tightly [04_CONVERSATION_PIPELINE.md](04_CONVERSATION_PIPELINE.md) Step E's tone examples should be followed, and how [17_PERSONA_AND_CONVERSATION_STYLE.md](17_PERSONA_AND_CONVERSATION_STYLE.md) should be used in prompt engineering. Still open per the client conversation record in `END_TO_END_RAG_APPROACH.md` §6.
+
+## Tier 3 — Data hygiene items (should be fixed before this content ships to production, low risk to structural design)
+
+### 13. `Kb_Phase_I_17.csv` has a real person's name (e.g. "Shreya") hardcoded into **three** escalation paths — confirmed on re-verification, not just one
+Phrasing includes *"Flag for [name] with full signal breakdown"* and *"priority Tier 2 referral."* Every other row in the sheet routes to a role (e.g. "Tier 2 clinician," "on-shift crisis team"), not a named individual. Both a data-hygiene problem and a minor privacy exposure if it reaches production documentation as-is — scrub and replace with role-based routing before this table becomes a permanent implementation reference. See [08_SAFETY_INTERLOCK_AND_TRIAGE.md](08_SAFETY_INTERLOCK_AND_TRIAGE.md) §5.
+
+### 14. Multiple uncorrected typos/grammar errors in client-authored bot scripts, meant to be used verbatim
+E.g. "who help you understand they confusing aspects of your life," "Ill be right here" (missing apostrophe), "Would to be comfortable" in `Convo_Samples.pdf`. Since these scripts are meant to ship close-to-verbatim (per [08_SAFETY_INTERLOCK_AND_TRIAGE.md](08_SAFETY_INTERLOCK_AND_TRIAGE.md)), flag them to the clinical team for correction rather than silently fixing them in code.
+
+### 15. `Kb_Phase_I_17.csv`'s actual structure has 4 sections + a separate 84-row disorder matrix, not the 3 sections the design markdown originally described — now confirmed on re-verification, ~70% more content than first documented
+The design markdown's first pass described Sections A/B/C only. The real file also has **Section D — Special population scenarios, adults 20-45** (new parent/perinatal presentation, bereavement, burnout/chronic workplace stress, identity or life-transition distress) and an entirely separate disorder-specific fallback matrix (15 groups, 84 rows, its own `Disorder / Scenario` header) appended below — a distinct table, not part of A-D's structure. Design docs have been updated to reflect this ([08_SAFETY_INTERLOCK_AND_TRIAGE.md](08_SAFETY_INTERLOCK_AND_TRIAGE.md) §5, [05_KNOWLEDGE_BASE_DEEP_DIVE.md](05_KNOWLEDGE_BASE_DEEP_DIVE.md) §7); implementation should account for both tables when ingesting this sheet.
+
+### 16. ID casing/format inconsistencies across the KB, requiring normalization at ingestion
+- `C11`'s Rule IDs: `RULE-001`..`RULE-014` uppercase, then silently `Rule-015` onward title-case.
+- `A1`'s last signal: `Sig-285` lowercase, inconsistent with `SIG-` elsewhere.
+- `A2`'s `PHSY-018`..`021` — a transposed-letter typo of `PHYS-`.
+- SIG/EM/PHYS reference formatting varies across at least 5 styles in free text (`SIG: 001`, `SIG 001-017`, `SIG002-003`, `SIG-168`, unpadded `SIG: 1`).
+- Red Flag values in `A1`: mixed `Yes/yes/No/no`/blank casing.
+All of this needs aggressive normalization in the ingestion parser — see [05_KNOWLEDGE_BASE_DEEP_DIVE.md](05_KNOWLEDGE_BASE_DEEP_DIVE.md) §0 for the full list.
+
+### 17. Encoding: raw KB CSVs are Windows-1252 (cp1252), not UTF-8
+Reading as UTF-8 corrupts special characters (em-dashes, apostrophes). Any ingestion script must decode explicitly with `encoding='cp1252'`.
+
+### 18. Discrepancy in Signal Sufficiency row count: 185 (raw CSV) vs. 195 (merged workbook)
+The raw client export has 185 populated data rows; the authoritative merged workbook (`Mindfully_Yours_Merged_Signal_Profile (2).xlsx`) independently reports 195 rows in its "Signal Sufficiency (full)" sheet. Treat 195 as more current, but confirm with the client which is authoritative before finalizing row counts in any documentation or test fixtures.
+
+### 19. "Replies in Hindi and English both" wording bug in two of the three architecture PDFs
+`Phase1_Final.pdf` and `Phase1.pdf`'s runtime step 10 literally says this despite being titled "English only." Almost certainly a copy-paste leftover — `Phase1_English_Architecture.pdf` corrects it to "Replies in English." Treat as a documentation bug, not a hidden requirement, but worth a one-line confirmation with the source's author.
+
+## Tier 4 — Scope/vendor items with no further detail given anywhere in the source material
+
+### 20. Razorpay (payments) and Onfido (identity/KYC) — named once, with zero elaboration
+Both appear only in the architecture PDFs' "Provider adapters" line. What exactly is being paid for (subscriptions? practitioner session fees?) and whose identity Onfido verifies (practitioners onboarding? user age/identity checks?) is not specified anywhere else in the source material. Needs a direct scoping conversation before building payment/KYC flows.
+
+### 21. No formal roles matrix, screens, wireframes, or timeline/milestone document exists in any source file
+The three architecture PDFs are single-page infographic diagrams of the AI processing architecture — none contain UI mockups, a staffing plan, or dated deliverables. Roles (end user, practitioner, clinical team, OpenXcell engineering, admin, client's on-shift crisis team) are only implied inside the diagram text. [14_FEATURE_BREAKDOWN_AND_IMPLEMENTATION_PLAN.md](14_FEATURE_BREAKDOWN_AND_IMPLEMENTATION_PLAN.md) reconstructs a feature/role breakdown from what's implied, but it is inference, not a client-approved spec — validate before treating it as final.
+
+### 22. `⚠ Needs KB structure guideline` — flagged directly on the architecture diagram itself
+The "Extract & normalize" step of the KB Ingestion Pipeline (section ② of the architecture PDFs) carries this exact warning icon/label in the source diagram — meaning the exact structural-parsing rules per document type are acknowledged as incomplete by the diagram's own author, not just by this analysis. Nail this down before automating ingestion step 1.
+
+---
+*This is a living document. As each item above is resolved (client answers, a decision is made, or new source material arrives), update the relevant primary document (05-13, 17) and remove or mark resolved here — don't let this list and the rest of the folder drift out of sync.*

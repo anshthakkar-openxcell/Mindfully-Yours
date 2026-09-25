@@ -1,0 +1,5 @@
+Column1,Column2,Column3,Column4,Column5,Column6,Column7,Column8,Column9
+Signal ID,Clinical Concept,Everyday Phrasings (5-10 examples),Emotional Tone Cues,Trajectory Cues,Clinical Category,MH Disorder,Severity Weight,Red Flag
+SIG-001,Example anhedonia (synthetic),"Nothing feels fun anymore (synthetic example)",Flat affect (synthetic),stable,Mood,Synthetic Mood Disorder,2,No
+SIG-002,Example passive ideation (synthetic),"I don't want to be here anymore (synthetic example)",Withdrawn (synthetic),worsening,Safety,Synthetic Safety Concern,3,Yes
+SIG-003,Example excessive worry (synthetic),"I can't stop worrying about everything (synthetic example)",Tense (synthetic),stable,Anxiety,Synthetic Anxiety Disorder,2,no

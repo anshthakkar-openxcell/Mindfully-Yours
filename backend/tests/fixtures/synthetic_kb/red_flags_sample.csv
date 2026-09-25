@@ -1,0 +1,8 @@
+Red Flags & Escalation (synthetic fixture -- not real clinical content)
+Purpose: synthetic fixture for testing app.ingestion.parsers.red_flags only.
+How to fill: n/a -- test data.
+Estimated time: n/a
+Flag ID,Trigger Phrase Examples (5+),Clinical Meaning,Immediate Action,Bot Script (YOU write -- verbatim),Escalation Target
+RF-901,"I want to disappear (synthetic)",Synthetic passive ideation,Tier 3 + SOS flag,"This is a synthetic verbatim script for testing.",Synthetic crisis team
+RF-901,"Nobody would notice if I left (synthetic)",,,,
+RF-902,"I hurt someone once and could again (synthetic)",Synthetic violence risk,Tier 3 + SOS flag,,Synthetic crisis team
