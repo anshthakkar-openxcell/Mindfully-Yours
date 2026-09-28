@@ -33,6 +33,7 @@
 | 16 | [GLOSSARY](16_GLOSSARY.md) | Every code prefix (SIG/PHYS/EM/RULE/RF), clinical term, and vendor name, in one lookup table |
 | 17 | [PERSONA_AND_CONVERSATION_STYLE](17_PERSONA_AND_CONVERSATION_STYLE.md) | The AI Companion's actual tone and conversational pattern, extracted from 18 real sample conversations |
 | 18 | [NEW_CONVO_DATA_CATALOG](18_NEW_CONVO_DATA_CATALOG.md) | **New (Sept 2026).** Catalog of the 46-file clinical-team drop that largely fills the Phase II/III/IV content gap — the "Layer I-IV" depth model, the master AI decision-pathway spec, real Phase IV self-help tools, and several new open items (unreconciled taxonomies, sensitive content needing governance) |
+| 19 | [DATA_USAGE_MAP](19_DATA_USAGE_MAP.md) ([PDF](19_DATA_USAGE_MAP.pdf)) | **Implementation quick-reference.** Every real file — old and new — mapped to exactly one of 3 usage buckets (teach tone / search-and-match-or-recommend / become code logic), with the exact file name, the reasoning, and the concrete mechanism for each |
 
 ## If you only have time to read three files
 
