@@ -32,6 +32,7 @@
 | 15 | [OPEN_QUESTIONS_AND_BLOCKERS](15_OPEN_QUESTIONS_AND_BLOCKERS.md) | **The consolidated punch list.** Every blocker, discrepancy, and data-quality issue found across the whole exercise, ranked by severity |
 | 16 | [GLOSSARY](16_GLOSSARY.md) | Every code prefix (SIG/PHYS/EM/RULE/RF), clinical term, and vendor name, in one lookup table |
 | 17 | [PERSONA_AND_CONVERSATION_STYLE](17_PERSONA_AND_CONVERSATION_STYLE.md) | The AI Companion's actual tone and conversational pattern, extracted from 18 real sample conversations |
+| 18 | [NEW_CONVO_DATA_CATALOG](18_NEW_CONVO_DATA_CATALOG.md) | **New (Sept 2026).** Catalog of the 46-file clinical-team drop that largely fills the Phase II/III/IV content gap — the "Layer I-IV" depth model, the master AI decision-pathway spec, real Phase IV self-help tools, and several new open items (unreconciled taxonomies, sensitive content needing governance) |
 
 ## If you only have time to read three files
 
@@ -47,8 +48,9 @@ Per [01_PROJECT_OVERVIEW.md](01_PROJECT_OVERVIEW.md) principle #2, restated ever
 
 1. **Four Red Flags (RF-028–031) have no verbatim bot script** — covers some of the most severe disclosure categories in the KB (violence, rape, molestation). **Confirmed on a second, independent re-verification pass — this is the single most important open item in the whole knowledge base.** Until scripts arrive, a matched flag with an empty script must route to a hard human alert, never a silent LLM-generated fallback.
 2. `EM` signal codes are confirmed undefined as a real, matchable legend (unlike `SIG` and `PHYS`, which are fully resolved) — re-confirmed as the one remaining hard blocker on the routing/sufficiency logic.
-3. Phase III (clinical guidance/psycho-education) and Phase IV (self-help tools) content — needed for the Tier 1 semantic-search recommendation step — has not been received yet.
+3. ~~Phase III/IV content not yet received~~ — **largely resolved as of a Sept 2026 client drop** (46 clinical-team working documents). See [18_NEW_CONVO_DATA_CATALOG.md](18_NEW_CONVO_DATA_CATALOG.md). This surfaced new work, though: three separate severity/depth/scenario/emotion taxonomies now need reconciling into one canonical model before the data model is finalized, a few files have real content gaps (notably Trauma, again — see below), and one section (paraphilic-disorder content) needs an explicit clinical/legal governance decision before going anywhere near a live index.
 4. `Kb_Phase_I_17.csv` (Fallback & Safety Net) has ~70% more content than first documented — a 4th section (special-population scenarios: perinatal, bereavement, burnout, identity/life-transition) plus a separate 84-row, 15-group disorder-specific matrix — and a real individual's name is hardcoded into **three** escalation-path rows (confirmed on re-verification, not just one). Both corrected throughout this folder; the name still needs scrubbing from the source data before production use.
+5. The new drop's own Trauma content is nearly empty (one scenario, cuts off mid-sentence) — the same domain (violence/abuse) where the 4 missing red-flag scripts in item #1 already live. This is now the project's single most under-served content area and worth prioritizing with the clinical team.
 
 None of these block starting engineering work on the AI service — see [14_FEATURE_BREAKDOWN_AND_IMPLEMENTATION_PLAN.md](14_FEATURE_BREAKDOWN_AND_IMPLEMENTATION_PLAN.md) §6 for exactly what can be built today with synthetic placeholders versus what's genuinely gated on this content arriving.
 
@@ -68,6 +70,8 @@ documnets/knowledgebase/
   Clinical_Markers_Reference_Table (1).pdf, Convo Samples.pdf
   Kb Phase I.xlsx, Kb Phase I(7/9/17/A1/A2/C11).csv
   Knowledge Base Directory(Sheet1).csv, Mindfully_Yours_Merged_Signal_Profile (2).xlsx
+  convo data/MYPL - Mindfully Yours Work/   -- 46-file Sept 2026 drop, see 18_NEW_CONVO_DATA_CATALOG.md
+    decrypted/                              -- deduplicated, readable copy (44 of 46 files; 3 still locked)
 ```
 
 **Two confirmed zero-value duplicate files have been removed from the repo** (not just hidden):
