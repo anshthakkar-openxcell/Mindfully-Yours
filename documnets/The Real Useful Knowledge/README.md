@@ -28,9 +28,23 @@ a styled PDF in that same folder). Read that file if you need the "why," not jus
 | **2. Search And Match Or Recommend (Real Content)** | Embedded and searched on every real turn — either to figure out what the user means, or to find a real exercise/answer to give them. | Two different jobs live here (matching vs. recommending) — see 19_DATA_USAGE_MAP.md §2a/2b for which files do which. |
 | **3. Become Code Logic (Rules, Thresholds, Decisions)** | Never embedded, never searched. Gets read once by a developer and turned into actual `if/else` code. | If someone tries to "RAG search" one of these files, that's a sign the design has gone wrong somewhere. |
 
-## What's deliberately NOT in any bucket, and why
+## Fixed, not just excluded: `Career Conversation Sets 1.docx`
 
-- **`Career Conversation Sets 1.docx`** — not included anywhere. It's not real content; it's one conversation template copy-pasted ~500 times with a career name swapped. See [18_NEW_CONVO_DATA_CATALOG.md](../understanding/18_NEW_CONVO_DATA_CATALOG.md).
+This file used to be listed here as unusable — 1 conversation template copy-pasted ~500 times with
+only a career name swapped. It's been **deduplicated into its real, reusable parts** instead of
+just left out:
+- **`1. Teach The AI How To Talk/Career Indecision - Canonical Template (deduplicated).md`** — the
+  one real template, kept once, with `[CAREER_NAME]`/`[STREAM]` placeholders.
+- **`2. Search And Match Or Recommend/Career Field & Stream Lookup.csv`** — the 500 real
+  (career name, field, academic stream) combinations that were hiding inside the duplication,
+  now genuine structured data. 25 fields × 20 careers each, 4 real stream values.
+
+Use the two together: fill the template's placeholders from the CSV's matching row. See
+[18_NEW_CONVO_DATA_CATALOG.md](../understanding/18_NEW_CONVO_DATA_CATALOG.md) §4c for how this was
+discovered and [19_DATA_USAGE_MAP.md](../understanding/19_DATA_USAGE_MAP.md) for why each of the two
+derived files landed in the bucket it did.
+
+## What's still deliberately NOT in any bucket, and why
 - **3 still-locked Anam files** (`Conversation Combinations- sleep.docx`, `Conversations Combinations- anxiety 3rd person.docx`, `Miscellaneous Conversations.docx`) — not included because they're still password-protected. See [15_OPEN_QUESTIONS_AND_BLOCKERS.md](../understanding/15_OPEN_QUESTIONS_AND_BLOCKERS.md) #27.
 - **Internal planning/meta documents** (`Knowledge_Base_Directory(Sheet1).csv`, `chunking .docx`, `CHUNKING_EMBEDDING_STRATEGY.md`, `CONVERSATION_REASONING_FLOW.md`, the master `Kb Phase I.xlsx` workbook, the merged-profile `.xlsx` files) — these are either internal build documentation that never reaches the AI, or the same content already present here via its individual CSV export. Not duplicated into these buckets on purpose.
 - **⚠ Sensitive content flagged for governance, not exclusion**: `List of Scenarios - Tanisha.docx` (Bucket 2) and `22-8_Offline Work Week 2.docx` (Bucket 1) both contain a "Fetishes"/paraphilic-disorder section (including Pedophilic and Sexual Sadism Disorder content, handled carefully as non-offending help-seeking material). These files are *included* because the rest of their content is usable, but **that specific section must not be wired into anything live until the clinical + legal team makes an explicit decision** — see [15_OPEN_QUESTIONS_AND_BLOCKERS.md](../understanding/15_OPEN_QUESTIONS_AND_BLOCKERS.md) #26.

@@ -12,6 +12,10 @@ folder — don't confuse them:
 
 Full reasoning for every file here, including exactly which is which: [`../../understanding/19_DATA_USAGE_MAP.md`](../../understanding/19_DATA_USAGE_MAP.md) §Bucket 2a/2b.
 
+Note: `Career Field & Stream Lookup.csv` isn't a client-original file — it's the real, deduplicated
+data extracted from `Career Conversation Sets 1.docx` (which claimed 500 conversations but was 1
+template repeated 500 times). Pair it with the canonical template in Bucket 1.
+
 ⚠ `List of Scenarios - Tanisha.docx` contains a "Fetishes" section pending a governance decision —
 see the top-level `README.md` in this folder and
 [`15_OPEN_QUESTIONS_AND_BLOCKERS.md`](../../understanding/15_OPEN_QUESTIONS_AND_BLOCKERS.md) #26 before using it.
