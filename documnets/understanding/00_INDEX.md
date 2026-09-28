@@ -34,6 +34,7 @@
 | 17 | [PERSONA_AND_CONVERSATION_STYLE](17_PERSONA_AND_CONVERSATION_STYLE.md) | The AI Companion's actual tone and conversational pattern, extracted from 18 real sample conversations |
 | 18 | [NEW_CONVO_DATA_CATALOG](18_NEW_CONVO_DATA_CATALOG.md) | **New (Sept 2026).** Catalog of the 46-file clinical-team drop that largely fills the Phase II/III/IV content gap — the "Layer I-IV" depth model, the master AI decision-pathway spec, real Phase IV self-help tools, and several new open items (unreconciled taxonomies, sensitive content needing governance) |
 | 19 | [DATA_USAGE_MAP](19_DATA_USAGE_MAP.md) ([PDF](19_DATA_USAGE_MAP.pdf)) | **Implementation quick-reference.** Every real file — old and new — mapped to exactly one of 3 usage buckets (teach tone / search-and-match-or-recommend / become code logic), with the exact file name, the reasoning, and the concrete mechanism for each |
+| 20 | [IMPLEMENTATION_STRATEGIES_AND_PIPELINE](20_IMPLEMENTATION_STRATEGIES_AND_PIPELINE.md) ([PDF](20_IMPLEMENTATION_STRATEGIES_AND_PIPELINE.pdf)) | **How each bucket's technique actually works** (static prompt injection / embedding-based retrieval / deterministic rule evaluation), with concrete parameters, worked examples, and a full visual pipeline diagram showing exactly which technique fires at each of the 14 runtime steps |
 
 ## If you only have time to read three files
 
