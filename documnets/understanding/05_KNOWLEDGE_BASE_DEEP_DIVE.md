@@ -10,7 +10,7 @@
 - **Trailing blank-row padding**: `Kb_Phase_I_9.csv`, `C11.csv`, `Kb_Phase_I_7.csv`, and `Kb_Phase_I_17.csv` are all padded with hundreds of fully empty rows at the end (e.g. file 9 has 765 trailing blank rows after row 280) — cosmetic Excel-export artifact, safe to trim, but will break a row-count assumption if not handled.
 - **"First row of a group carries the label, continuation rows leave it blank"**: files 9 and 7 both use this spreadsheet convention (a Tier or Flag ID is written once, then left blank on subsequent rows belonging to the same group) — **must forward-fill during parsing or data will silently disappear.**
 - **SIG/EM/PHYS code formatting is inconsistent across at least 5 distinct styles** in the raw text: `SIG: 001`, `SIG 001-017`, `SIG002-003`, `SIG-168`, unpadded `SIG: 1`. Any code that matches signal IDs must normalize aggressively (strip whitespace/hyphens/colons, zero-pad, handle both hyphen-ranges and word-ranges like "to").
-- **`Kb Phase I(A2.csv` and `Kb Phase I(A2 (1).csv` are byte-for-byte identical** (verified via `diff` and matching md5 checksums) — the "(1)" file is a redundant duplicate, not a newer version. Safe to treat as one file.
+- **`Kb Phase I(A2.csv` and `Kb Phase I(A2 (1).csv` were byte-for-byte identical** (verified via `diff` and matching md5 checksums) — the "(1)" file was a redundant duplicate, not a newer version, and has since been **removed from the repo**. `Kb Phase I(A2.csv` is the single copy going forward.
 
 ## 1. The master workbook (`Kb Phase I.xlsx`) — confirms what everything else is an export of
 
@@ -135,7 +135,7 @@ Two versions of the merged/enriched deliverable exist:
 - `/documnets/flow/RAG/Mindfully_Yours_Merged_Signal_Profile (1).xlsx` — 3 sheets: `README` (headed *"Merged Signal Profile — v2, corrected"*), `Merged Signal Profile` (285 signal rows), `Merged PhysEmotional Profile` (154 symptom rows).
 - `/documnets/knowledgebase/Mindfully_Yours_Merged_Signal_Profile (2).xlsx` — **6 sheets**: the same 3 above **plus** `Signal Sufficiency (full)` (195 rows), `Red Flags (full)` (31 rows), `Fallback  Safety Net (full)` (100 rows, note the double space in the actual sheet name). README headed *"Complete Merged KB Reference (v3, final check)."*
 
-**Verdict, confirmed by full cell-by-cell diff: file (2) is a strict superset of file (1).** Zero differences found across all shared rows in `Merged Signal Profile` and `Merged PhysEmotional Profile`. **Treat `Mindfully_Yours_Merged_Signal_Profile (2).xlsx` (in `/knowledgebase/`) as the single authoritative enrichment deliverable.**
+**Verdict, confirmed by full cell-by-cell diff: file (2) is a strict superset of file (1).** Zero differences found across all shared rows in `Merged Signal Profile` and `Merged PhysEmotional Profile`. **`Mindfully_Yours_Merged_Signal_Profile (2).xlsx` (in `/knowledgebase/`) is the single authoritative enrichment deliverable — file (1) added zero unique information and has since been removed from the repo.**
 
 **Columns added by the enrichment process**, confirmed from the real sheets:
 - `Merged Signal Profile`: adds `Linked Routing Rules (ID [Priority] → Tier)` to the raw A1 columns.

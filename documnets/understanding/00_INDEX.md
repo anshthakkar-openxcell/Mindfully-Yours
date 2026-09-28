@@ -57,16 +57,22 @@ None of these block starting engineering work on the AI service — see [14_FEAT
 ```
 documnets/approch/
   APPROACH.md, CLAUDE.md, DATA_PROTECTION_SECURITY.md, INGESTION.md, LATENCY.md, LIVEKIT.md
+  README.md (explains how the 3 PDFs below relate -- read this before opening any of them)
   Mindfully_Yours_Phase1.pdf, Mindfully_Yours_Phase1_Final.pdf,
   Mindfully_Yours_Phase1_English_Architecture.pdf, Mindfully_Yours_AI_Latency_Filler_Phrases.pdf
 documnets/flow/RAG/
   END_TO_END_RAG_APPROACH.md, KNOWLEDGE_BASE_CONTENT.md, SIGNAL_ENRICHMENT_APPROACH.md
-  rag simple flow.pdf, Mindfully_Yours_Merged_Signal_Profile (1).xlsx
+  rag simple flow.pdf
 documnets/knowledgebase/
   CHUNKING_EMBEDDING_STRATEGY.md, CONVERSATION_REASONING_FLOW.md, chunking .docx
   Clinical_Markers_Reference_Table (1).pdf, Convo Samples.pdf
-  Kb Phase I.xlsx, Kb Phase I(7/9/17/A1/A2/C11).csv, Kb Phase I(A2 (1)).csv
+  Kb Phase I.xlsx, Kb Phase I(7/9/17/A1/A2/C11).csv
   Knowledge Base Directory(Sheet1).csv, Mindfully_Yours_Merged_Signal_Profile (2).xlsx
 ```
+
+**Two confirmed zero-value duplicate files have been removed from the repo** (not just hidden):
+`Kb Phase I(A2 (1).csv` (byte-identical to `Kb Phase I(A2.csv`) and `Mindfully_Yours_Merged_Signal_Profile (1).xlsx` (a strict subset of `(2).xlsx`, zero unique rows). Neither removal lost any information — see [05_KNOWLEDGE_BASE_DEEP_DIVE.md](05_KNOWLEDGE_BASE_DEEP_DIVE.md) §0 and §8 for the verification.
+
+**The three architecture PDFs are intentionally all still kept** — they are NOT duplicates, they genuinely disagree with each other on real decisions (avatar vendor, STT vendor, the tier/crisis model — see [15_OPEN_QUESTIONS_AND_BLOCKERS.md](15_OPEN_QUESTIONS_AND_BLOCKERS.md) #7-9). Deleting any one of them would lose real, still-relevant information. `documnets/approch/README.md` gives a one-glance guide to what each PDF is for and exactly how they differ, so opening that folder is never ambiguous even though three overlapping files sit in it.
 
 **This folder is a synthesis layer, not a replacement.** Where any document here disagrees with a source file, the source file is authoritative unless this folder explicitly documents why its own number/finding supersedes it (usually because it comes from directly parsing the real data rather than an earlier estimate). Keep this index and [15_OPEN_QUESTIONS_AND_BLOCKERS.md](15_OPEN_QUESTIONS_AND_BLOCKERS.md) updated as blockers resolve and new source material arrives.
