@@ -17,6 +17,16 @@ from app.db.models.kb import (
     KBVersion,
     PromptConfig,
 )
+from app.db.models.kb_convo_content import (
+    KBAnxietySituation,
+    KBCareerLookup,
+    KBClarificationPhrase,
+    KBEmotionPhrase,
+    KBGuardrailRule,
+    KBLayerContent,
+    KBScenario,
+    KBTierQuestionBank,
+)
 
 __all__ = [
     "TurnAuditLog",
@@ -30,4 +40,12 @@ __all__ = [
     "KBSymptom",
     "KBVersion",
     "PromptConfig",
+    "KBAnxietySituation",
+    "KBCareerLookup",
+    "KBClarificationPhrase",
+    "KBEmotionPhrase",
+    "KBGuardrailRule",
+    "KBLayerContent",
+    "KBScenario",
+    "KBTierQuestionBank",
 ]

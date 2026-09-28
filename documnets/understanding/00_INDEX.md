@@ -35,6 +35,7 @@
 | 18 | [NEW_CONVO_DATA_CATALOG](18_NEW_CONVO_DATA_CATALOG.md) | **New (Sept 2026).** Catalog of the 46-file clinical-team drop that largely fills the Phase II/III/IV content gap — the "Layer I-IV" depth model, the master AI decision-pathway spec, real Phase IV self-help tools, and several new open items (unreconciled taxonomies, sensitive content needing governance) |
 | 19 | [DATA_USAGE_MAP](19_DATA_USAGE_MAP.md) ([PDF](19_DATA_USAGE_MAP.pdf)) | **Implementation quick-reference.** Every real file — old and new — mapped to exactly one of 3 usage buckets (teach tone / search-and-match-or-recommend / become code logic), with the exact file name, the reasoning, and the concrete mechanism for each |
 | 20 | [IMPLEMENTATION_STRATEGIES_AND_PIPELINE](20_IMPLEMENTATION_STRATEGIES_AND_PIPELINE.md) ([PDF](20_IMPLEMENTATION_STRATEGIES_AND_PIPELINE.pdf)) | **How each bucket's technique actually works** (static prompt injection / embedding-based retrieval / deterministic rule evaluation), with concrete parameters, worked examples, and a full visual pipeline diagram showing exactly which technique fires at each of the 14 runtime steps |
+| 21 | [NEW_CONTENT_INGESTION_PLAN](21_NEW_CONTENT_INGESTION_PLAN.md) | **The file-by-file "how this becomes database rows" plan for the Sept 2026 convo-data drop**, matching what 07_INGESTION_PIPELINE.md gave the original 6 sheets — backed by working, tested parser code (`backend/app/ingestion/parsers/`) and 8 new database tables, not just a plan |
 
 ## If you only have time to read three files
 

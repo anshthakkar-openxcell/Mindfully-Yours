@@ -37,6 +37,14 @@ from app.providers.factory import get_embedding_provider
 app = typer.Typer(help="Mindfully Yours AI service -- KB ingestion CLI")
 logger = get_logger(__name__)
 
+# ============================================================================
+# `ingest` (above) covers the 6 original Phase I sheets.
+# `ingest-convo-data` (below) covers the Sept 2026 convo-data drop -- see
+# documnets/understanding/21_NEW_CONTENT_INGESTION_PLAN.md for the full per-file plan this
+# implements. Kept as a separate command, not folded into `ingest`, since the two operate on
+# entirely different source directories and produce entirely different tables.
+# ============================================================================
+
 
 @app.command()
 def ingest(
@@ -115,6 +123,223 @@ async def _ingest_async(kb_dir: Path, label: str, embed: bool) -> None:
         f"Ingested KB version '{label}' (id={version.version_id}) with status='building'. "
         "Run the validation suite (app.ingestion.validation) before activating it -- "
         "see documnets/understanding/07_INGESTION_PIPELINE.md §2 step 6-8."
+    )
+
+
+@app.command(name="ingest-convo-data")
+def ingest_convo_data(
+    convo_dir: Path = typer.Option(
+        ..., help="Path to 'MYPL - Mindfully Yours Work/' inside convo data/decrypted/."
+    ),
+    career_csv: Path = typer.Option(
+        ..., help="Path to 'Career Field & Stream Lookup.csv' (in The Real Useful Knowledge/2. .../)."
+    ),
+    label: str = typer.Option(..., help="A label for this KB version, e.g. 'convo-v1-2026-09-28'."),
+    embed: bool = typer.Option(True, help="Whether to generate embeddings -- disable for a dry parse-only run."),
+) -> None:
+    """Parse the Sept 2026 convo-data drop and load it into its own tables (see
+    documnets/understanding/21_NEW_CONTENT_INGESTION_PLAN.md for exactly what each file becomes)."""
+    configure_logging()
+    asyncio.run(_ingest_convo_data_async(convo_dir, career_csv, label, embed))
+
+
+async def _ingest_convo_data_async(convo_dir: Path, career_csv: Path, label: str, embed: bool) -> None:
+    from app.db.models.kb import KBVersion
+    from app.db.models.kb_convo_content import (
+        KBAnxietySituation,
+        KBCareerLookup,
+        KBClarificationPhrase,
+        KBEmotionPhrase,
+        KBGuardrailRule,
+        KBLayerContent,
+        KBScenario,
+        KBTierQuestionBank,
+    )
+    from app.ingestion.parsers import (
+        parse_anxiety_situations,
+        parse_career_lookup,
+        parse_career_question_set,
+        parse_clarification_bank,
+        parse_dbt_skills_workbook,
+        parse_guardrail_table,
+        parse_heading_based_layer_file,
+        parse_layer_ii,
+        parse_list_of_emotions_tanisha,
+        parse_list_of_scenarios,
+        parse_phase_ii_emotion_expression,
+        parse_phase_ii_layer_i_and_iv,
+        parse_questions_by_scenario,
+    )
+
+    logger.info("convo_data_ingestion_started", convo_dir=str(convo_dir), label=label)
+
+    layer_content = [
+        *parse_heading_based_layer_file(convo_dir / "Layer I Questions and Statments.docx", layer="I"),
+        *parse_layer_ii(convo_dir / "Layer II Question Bank.docx"),
+        *parse_heading_based_layer_file(convo_dir / "Layer III.docx", layer="III"),
+        *parse_heading_based_layer_file(convo_dir / "Layer 2 to 3 Transitions.docx", layer="II-III"),
+        *parse_phase_ii_layer_i_and_iv(convo_dir / "PHASE II Layer I and IV Questions.docx"),
+    ]
+
+    emotion_phrases = [
+        *[
+            {**r, "canonical_emotion_group": None}
+            for r in parse_phase_ii_emotion_expression(convo_dir / "PHASE II_ Emotion Associated user expression.docx")
+        ],
+        *[
+            {**r, "canonical_emotion_group": None}
+            for r in parse_list_of_emotions_tanisha(convo_dir / "List of Emotions - Tanisha.docx")
+        ],
+    ]
+
+    scenarios = parse_list_of_scenarios(convo_dir / "List of Scenarios - Tanisha.docx")
+    anxiety_situations = parse_anxiety_situations(convo_dir / "Anxiety Situations.docx")
+    clarification_phrases = parse_clarification_bank(convo_dir / "Questions For When AI Is Not Sure - Tanisha.docx")
+    guardrail_rules = parse_guardrail_table(convo_dir / "Parenting_Child Related.docx")
+    career_lookup = parse_career_lookup(career_csv)
+    dbt_tools = parse_dbt_skills_workbook(
+        convo_dir / "MYPL KB 7th Sept" / "Anam" / "dbt-skills-workbook.docx"
+    )
+
+    questions = parse_questions_by_scenario(convo_dir / "Questions.docx")
+    tier_bank = [
+        *[
+            {
+                "bank_source": "questions_by_scenario",
+                "scenario_or_topic": q["scenario"],
+                "subsection": q["subsection"],
+                "question_type": "open",
+                "question_text": q["text"],
+                "answer_options_raw": None,
+                "tier_routing": None,
+                "source_file": q["source_file"],
+            }
+            for q in questions["open_questions"]
+        ],
+        *[
+            {
+                "bank_source": "questions_by_scenario",
+                "scenario_or_topic": q["scenario"],
+                "subsection": q["subsection"],
+                "question_type": "close_ended",
+                "question_text": q["question"],
+                "answer_options_raw": q["answer_options_raw"],
+                "tier_routing": None,
+                "source_file": q["source_file"],
+            }
+            for q in questions["close_ended_questions"]
+        ],
+        *[
+            {
+                "bank_source": "career_question_set",
+                "scenario_or_topic": c["topic"],
+                "subsection": None,
+                "question_type": "close_ended",
+                "question_text": c["question"],
+                "answer_options_raw": c["possible_responses_raw"],
+                "tier_routing": c["tier_routing"],
+                "source_file": c["source_file"],
+            }
+            for c in parse_career_question_set(convo_dir / "Question Set - Career.docx")
+        ],
+    ]
+
+    gov_hold_count = sum(1 for s in scenarios if s["pending_governance_review"])
+    logger.info(
+        "parsed_convo_data",
+        layer_content=len(layer_content),
+        emotion_phrases=len(emotion_phrases),
+        scenarios=len(scenarios),
+        scenarios_pending_governance=gov_hold_count,
+        anxiety_situations=len(anxiety_situations),
+        clarification_phrases=len(clarification_phrases),
+        guardrail_rules=len(guardrail_rules),
+        career_lookup=len(career_lookup),
+        dbt_tools=len(dbt_tools),
+        tier_bank=len(tier_bank),
+    )
+    if gov_hold_count:
+        logger.warning(
+            "scenarios_pending_governance_review",
+            count=gov_hold_count,
+            note="See documnets/understanding/15_OPEN_QUESTIONS_AND_BLOCKERS.md #26 -- these rows "
+            "are loaded but MUST be excluded from any live retrieval index until the clinical + "
+            "legal governance decision is made.",
+        )
+
+    if embed:
+        from app.ingestion.embedding import embed_field
+
+        embedding_provider = get_embedding_provider()
+        layer_content = await embed_field(
+            layer_content, source_field="text", target_field="text_embedding", embedding_provider=embedding_provider
+        )
+        emotion_phrases = await embed_field(
+            emotion_phrases, source_field="phrase", target_field="phrase_embedding", embedding_provider=embedding_provider
+        )
+        scenarios = await embed_field(
+            scenarios, source_field="phrase", target_field="phrase_embedding", embedding_provider=embedding_provider
+        )
+        clarification_phrases = await embed_field(
+            clarification_phrases, source_field="phrase", target_field="phrase_embedding", embedding_provider=embedding_provider
+        )
+        career_lookup = await embed_field(
+            career_lookup, source_field="career_name", target_field="career_name_embedding", embedding_provider=embedding_provider
+        )
+        tier_bank = await embed_field(
+            tier_bank, source_field="question_text", target_field="question_embedding", embedding_provider=embedding_provider
+        )
+        # dbt_tools load into the EXISTING KBContentChunk table, whose vector column is literally
+        # named `embedding` (not `text_embedding` like this module's own new tables) -- embed_field
+        # is called with that exact target name so the KBContentChunk(**...) call below lines up.
+        dbt_tools = await embed_field(
+            dbt_tools, source_field="text", target_field="embedding", embedding_provider=embedding_provider
+        )
+
+    async with AsyncSessionLocal() as db:
+        version = KBVersion(label=label, status="building")
+        db.add(version)
+        await db.flush()
+
+        db.add_all([KBLayerContent(**r) for r in layer_content])
+        db.add_all([KBEmotionPhrase(**r) for r in emotion_phrases])
+        db.add_all([KBScenario(**r) for r in scenarios])
+        db.add_all([KBAnxietySituation(**r) for r in anxiety_situations])
+        db.add_all([KBClarificationPhrase(**r) for r in clarification_phrases])
+        db.add_all([KBGuardrailRule(**r) for r in guardrail_rules])
+        db.add_all([KBCareerLookup(**r) for r in career_lookup])
+        db.add_all([KBTierQuestionBank(**r) for r in tier_bank])
+
+        from app.db.models.kb import KBContentChunk
+
+        db.add_all(
+            [
+                KBContentChunk(
+                    chunk_id=f"dbt_{tool['tool_name'].lower().replace(' ', '_')}",
+                    category="self_care",
+                    pattern_name=None,
+                    tier=1,
+                    content_type="self_care_tool",
+                    text=tool["text"],
+                    embedding=tool.get("embedding"),
+                    source_document=tool["source_file"],
+                    language="en",
+                    linked_pattern_id=None,
+                )
+                for tool in dbt_tools
+            ]
+        )
+
+        await db.commit()
+        logger.info("convo_data_loaded_as_building_version", version_id=version.version_id)
+
+    typer.echo(
+        f"Ingested convo-data KB version '{label}' (id={version.version_id}) with status='building'. "
+        f"{gov_hold_count} scenario rows are pending governance review -- see "
+        "documnets/understanding/15_OPEN_QUESTIONS_AND_BLOCKERS.md #26. "
+        "NOTE: Questions.docx and Parenting_Child Related.docx's other tables are only partially "
+        "covered -- see documnets/understanding/21_NEW_CONTENT_INGESTION_PLAN.md for exactly what's "
+        "still missing."
     )
 
 
