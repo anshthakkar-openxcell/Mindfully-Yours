@@ -13,7 +13,7 @@ from functools import lru_cache
 
 from app.core.config import get_settings
 from app.providers.base import AvatarProvider, EmbeddingProvider, LLMProvider, STTProvider, TTSProvider
-from app.providers.embeddings.sarvam_embeddings import SarvamEmbeddingProvider
+from app.providers.embeddings.openai_embeddings import OpenAIEmbeddingProvider
 from app.providers.llm.sarvam import SarvamLLMProvider
 from app.providers.stt.deepgram import DeepgramSTTProvider
 from app.providers.tts.sarvam_tts import SarvamTTSProvider
@@ -23,7 +23,11 @@ from app.providers.tts.sarvam_tts import SarvamTTSProvider
 def get_llm_provider() -> LLMProvider:
     settings = get_settings()
     if settings.llm_provider == "sarvam":
-        return SarvamLLMProvider(api_key=settings.sarvam_api_key, api_base=settings.sarvam_api_base)
+        return SarvamLLMProvider(
+            api_key=settings.sarvam_api_key,
+            api_base=settings.sarvam_api_base,
+            model=settings.sarvam_llm_model,
+        )
     raise ValueError(f"Unknown LLM_PROVIDER: {settings.llm_provider!r}")
 
 
@@ -46,9 +50,11 @@ def get_tts_provider() -> TTSProvider:
 @lru_cache
 def get_embedding_provider() -> EmbeddingProvider:
     settings = get_settings()
-    if settings.embedding_provider == "sarvam":
-        return SarvamEmbeddingProvider(
-            api_key=settings.sarvam_api_key, api_base=settings.sarvam_api_base
+    if settings.embedding_provider == "openai":
+        return OpenAIEmbeddingProvider(
+            api_key=settings.openai_api_key,
+            model=settings.openai_embedding_model,
+            dimensions=settings.embed_dim,
         )
     raise ValueError(f"Unknown EMBEDDING_PROVIDER: {settings.embedding_provider!r}")
 

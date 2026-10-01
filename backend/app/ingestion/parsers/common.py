@@ -92,6 +92,24 @@ def match_signal_in_trigger_condition(trigger_condition: str, signal_number: int
     return re.search(pattern, trigger_condition, re.IGNORECASE) is not None
 
 
+def match_symptom_in_trigger_condition(trigger_condition: str, symptom_number: int) -> bool:
+    """
+    Same tolerant matching as match_signal_in_trigger_condition, for "EM" references instead of
+    "SIG" ones -- e.g. 'EM45 to 54', 'EM 39-44', 'EM006, 007,008'. CONFIRMED 2026-09-29 (not
+    assumed): every real Tier 1 routing rule in kb_routing_rules is keyed on EM-codes, not SIG-
+    codes, and these codes genuinely resolve against kb_symptoms.symptom_id's 'EM-xxx' rows (e.g.
+    'EM45' in a rule matches kb_symptoms row 'EM-045' -- "Leaving Home"). An earlier design doc
+    (04_CONVERSATION_PIPELINE.md §5) called these codes "confirmed missing" -- that was checked
+    against the wrong table; they were sitting in kb_symptoms (from sheet A2) the whole time.
+
+    Same KNOWN LIMITATION as the SIG matcher: single-number mentions only, not ranges -- 'EM45 to
+    54' will match a search for EM45 or EM54 (the literal numbers written) but not EM49 (implied by
+    the range, never spelled out). A proper range parser is real follow-up work, not attempted here.
+    """
+    pattern = rf"EM[\s\-]?0*{symptom_number}\b"
+    return re.search(pattern, trigger_condition, re.IGNORECASE) is not None
+
+
 def clean_cell(value) -> str | None:
     """
     Normalize a raw pandas cell value to either a stripped string or None.
@@ -106,6 +124,21 @@ def clean_cell(value) -> str | None:
         return None
     text = str(value).strip()
     return text or None
+
+
+def is_real_id_row(raw_id, *, id_pattern: str) -> bool:
+    """
+    True only if `raw_id` looks like a genuine ID matching `id_pattern` (e.g. `RULE-\\d+`, `RF-\\d+`),
+    not the leaked "instructions row" that several sheets (7, C11) keep directly under their real
+    header -- e.g. C11's ID cell there literally reads "Auto-increment: RULE-001, RULE-002, etc."
+    A naive `dropna` doesn't catch this (the cell isn't blank), and a naive digit-extracting regex
+    on the raw value actively makes it worse -- it finds "001" inside that instructions text and
+    normalizes it to "RULE-001", colliding with the real RULE-001 row on insert. Confirmed by
+    actually running ingestion against the live files, not a hypothetical edge case.
+    """
+    if raw_id is None or (isinstance(raw_id, float) and pd.isna(raw_id)):
+        return False
+    return re.fullmatch(id_pattern, str(raw_id).strip(), re.IGNORECASE) is not None
 
 
 def forward_fill_group_label(series: pd.Series) -> pd.Series:

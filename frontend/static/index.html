@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Mindfully Yours — Pipeline Test Harness</title>
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --border: #334155; --text: #e2e8f0; --muted: #94a3b8;
+    --accent: #2563eb; --danger: #dc2626; --ok: #059669; --warn: #d97706;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  #app { display: flex; height: 100vh; }
+  #chat-col { flex: 1 1 60%; display: flex; flex-direction: column; border-right: 1px solid var(--border); min-width: 0; }
+  #trace-col { flex: 1 1 40%; overflow-y: auto; padding: 16px; max-width: 480px; }
+
+  header { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  header h1 { font-size: 15px; margin: 0; color: var(--muted); font-weight: 600; }
+  #session-id { font-size: 11px; color: var(--muted); font-family: monospace; }
+  #new-session { font-size: 12px; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+  #new-session:hover { border-color: var(--accent); }
+
+  #messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .msg { max-width: 75%; padding: 10px 14px; border-radius: 10px; line-height: 1.4; font-size: 14px; }
+  .msg.user { align-self: flex-end; background: var(--accent); color: white; }
+  .msg.assistant { align-self: flex-start; background: var(--panel); border: 1px solid var(--border); }
+  .msg.meta { align-self: flex-start; font-size: 11px; color: var(--muted); }
+
+  #input-row { display: flex; padding: 12px; gap: 8px; border-top: 1px solid var(--border); }
+  #text-input { flex: 1; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--panel); color: var(--text); font-size: 14px; }
+  #send-btn { padding: 10px 18px; border-radius: 8px; border: none; background: var(--accent); color: white; font-weight: 600; cursor: pointer; }
+  #send-btn:disabled { opacity: 0.5; cursor: default; }
+
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+  .card h3 { margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .row { display: flex; justify-content: space-between; font-size: 13px; padding: 3px 0; }
+  .row .k { color: var(--muted); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .badge.ok { background: rgba(5,150,105,0.2); color: #34d399; }
+  .badge.warn { background: rgba(217,119,6,0.2); color: #fbbf24; }
+  .badge.danger { background: rgba(220,38,38,0.2); color: #f87171; }
+  .badge.muted { background: rgba(148,163,184,0.15); color: var(--muted); }
+  .chunk { border-left: 3px solid var(--accent); padding: 6px 10px; margin: 6px 0; font-size: 12px; background: rgba(37,99,235,0.08); border-radius: 4px; }
+  .empty { color: var(--muted); font-size: 12px; font-style: italic; }
+  pre { white-space: pre-wrap; font-size: 11px; color: var(--muted); margin: 0; }
+  #trace-col h2 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 12px 0; }
+  #trace-placeholder { color: var(--muted); font-size: 13px; padding: 20px; text-align: center; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="chat-col">
+    <header>
+      <h1>Mindfully Yours — Test Chat</h1>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span id="session-id"></span>
+        <button id="new-session">New session</button>
+      </div>
+    </header>
+    <div id="messages"></div>
+    <div id="mode-row" style="padding: 0 12px 10px 12px; display:flex; align-items:center; gap:8px; font-size:12px; color: var(--muted);">
+      <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+        <input type="checkbox" id="use-llm-toggle" />
+        Use LLM to generate a reply (off = dataset-only: shows the real retrieved/interlock content, zero LLM calls)
+      </label>
+    </div>
+    <div id="input-row">
+      <input id="text-input" type="text" placeholder="Type a message to send through the real pipeline..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <div id="trace-col">
+    <h2>Pipeline Trace — what actually happened</h2>
+    <div id="trace-content"><div id="trace-placeholder">Send a message to see the step-by-step trace here.</div></div>
+  </div>
+</div>
+
+<script>
+const messagesEl = document.getElementById('messages');
+const traceEl = document.getElementById('trace-content');
+const input = document.getElementById('text-input');
+const sendBtn = document.getElementById('send-btn');
+const sessionIdEl = document.getElementById('session-id');
+
+function newSessionId() {
+  return crypto.randomUUID();
+}
+
+let sessionId = localStorage.getItem('mindfully_session_id') || newSessionId();
+localStorage.setItem('mindfully_session_id', sessionId);
+sessionIdEl.textContent = 'session: ' + sessionId.slice(0, 8) + '...';
+
+document.getElementById('new-session').onclick = () => {
+  sessionId = newSessionId();
+  localStorage.setItem('mindfully_session_id', sessionId);
+  sessionIdEl.textContent = 'session: ' + sessionId.slice(0, 8) + '...';
+  messagesEl.innerHTML = '';
+  traceEl.innerHTML = '<div id="trace-placeholder">Send a message to see the step-by-step trace here.</div>';
+};
+
+function addMessage(text, cls) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + cls;
+  div.textContent = text;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function badge(text, kind) {
+  return `<span class="badge ${kind}">${text}</span>`;
+}
+
+function latencyBudgetBadge(ms) {
+  if (ms == null) return '';
+  if (ms < 800) return badge(ms + ' ms', 'ok');
+  if (ms < 2000) return badge(ms + ' ms', 'warn');
+  return badge(ms + ' ms', 'danger');
+}
+
+function renderTrace(data) {
+  const t = data.trace || {};
+  let html = '';
+
+  html += `<div class="card"><h3>Round trip (this test tool → API → back)</h3>
+    <div class="row"><span class="k">Total time</span>${latencyBudgetBadge(data.round_trip_ms)}</div>
+    <div class="row"><span class="k">Budget target</span><span>1500-2500 ms end-to-end (per 09_LATENCY_AND_PERFORMANCE.md)</span></div>
+  </div>`;
+
+  if (t.note) {
+    html += `<div class="card"><p class="empty">${t.note}</p></div>`;
+    traceEl.innerHTML = html;
+    return;
+  }
+
+  if (t.mode === 'dataset_only') {
+    html += `<div class="card" style="border-color:#059669;"><h3 style="color:#34d399;">Dataset-only mode — no LLM was called</h3>
+      <div class="row"><span class="k">Response came from</span>${badge(t.response_source, t.response_source === 'no_match' ? 'muted' : 'ok')}</div>
+    </div>`;
+
+    html += `<div class="card"><h3>Safety interlock (runs every turn, no exceptions)</h3>`;
+    if (t.interlock_triggered) {
+      html += `<div class="row"><span class="k">Triggered</span>${badge('YES', 'danger')}</div>`;
+      html += `<div class="row"><span class="k">Flag</span><span>${t.interlock_flag_id}</span></div>`;
+      if (t.interlock_detail) {
+        html += `<div class="row"><span class="k">Clinical meaning</span><span>${t.interlock_detail.clinical_meaning || ''}</span></div>`;
+        html += `<div class="row"><span class="k">Escalation target</span><span>${t.interlock_detail.escalation_target || '—'}</span></div>`;
+        html += `<div class="row"><span class="k">Has real script</span>${badge(t.interlock_detail.has_script ? 'yes' : 'NO (RF-028..031 gap)', t.interlock_detail.has_script ? 'ok' : 'danger')}</div>`;
+      }
+    } else {
+      html += `<div class="row"><span class="k">Triggered</span>${badge('no', 'ok')}</div>`;
+    }
+    html += `</div>`;
+
+    const preview = t.retrieval_preview;
+    html += `<div class="card" style="border-color:#7c3aed;"><h3 style="color:#a78bfa;">Retrieved chunks (top ${preview ? preview.top_k : '?'})</h3>`;
+    if (preview && preview.matches && preview.matches.length) {
+      preview.matches.forEach((m, i) => {
+        html += `<div class="chunk"><b>#${i + 1} ${m.chunk_id}</b> (tier ${m.tier}, ${m.category})<br>${m.text.slice(0, 300)}${m.text.length > 300 ? '...' : ''}</div>`;
+      });
+    } else if (!t.interlock_triggered) {
+      html += `<p class="empty">No self-care tool matched (only 5 exist — the DBT workbook). See below for signals/symptoms, which cover much more ground.</p>`;
+    } else {
+      html += `<p class="empty">Not searched — the interlock already triggered, which always takes priority.</p>`;
+    }
+    html += `</div>`;
+
+    const sigSym = t.signal_symptom_preview;
+    if (sigSym && !t.interlock_triggered) {
+      html += `<div class="card" style="border-color:#0891b2;"><h3 style="color:#22d3ee;">Signals &amp; symptoms recognized (285 + 154 rows — real content, but nothing wires this in yet)</h3>
+        <p class="empty" style="margin-bottom:8px;">app.safety.triage is a stub today, so this table's real content never gets checked live. This runs the same kind of similarity search directly against kb_signals/kb_symptoms so you can see it's NOT empty — unlike kb_content_chunks (5 rows), this is 439 rows of real clinical phrasing.</p>`;
+      if (sigSym.signals && sigSym.signals.length) {
+        html += `<div class="row"><span class="k" style="font-weight:600;">kb_signals (nearest)</span></div>`;
+        sigSym.signals.forEach(s => {
+          html += `<div class="row"><span class="k">${s.id} — ${s.label}</span>${badge(s.similarity, s.similarity >= 0.4 ? 'warn' : 'muted')}</div>`;
+        });
+      }
+      if (sigSym.symptoms && sigSym.symptoms.length) {
+        html += `<div class="row" style="margin-top:8px;"><span class="k" style="font-weight:600;">kb_symptoms (nearest)</span></div>`;
+        sigSym.symptoms.forEach(s => {
+          html += `<div class="row"><span class="k">${s.id} — ${s.label}</span>${badge(s.similarity, s.similarity >= 0.4 ? 'warn' : 'muted')}</div>`;
+        });
+      }
+      html += `</div>`;
+    }
+
+    traceEl.innerHTML = html;
+    return;
+  }
+
+  if (t.summary) {
+    html += `<div class="card" style="border-color:#2563eb;"><h3 style="color:#60a5fa;">What happened, in order</h3>
+      <p style="font-size:13px; line-height:1.6; margin:0;">${t.summary}</p>
+    </div>`;
+  }
+
+  html += `<div class="card"><h3>1-2. Cache check</h3>
+    <div class="row"><span class="k">Served from</span>${badge(t.served_from || 'unknown', t.served_from && t.served_from.includes('cache') ? 'ok' : 'muted')}</div>
+    <p class="empty" style="margin-top:6px;">Note: "rag_retrieval" here is just the generic label for "not cache, not interlock" — it does NOT mean retrieval actually ran (see section 6 below).</p>
+  </div>`;
+
+  html += `<div class="card"><h3>3. Silent triage</h3>`;
+  if (t.matched_signal_ids && t.matched_signal_ids.length) {
+    html += t.matched_signal_ids.map(s => badge(s, 'warn')).join(' ');
+  } else {
+    html += `<p class="empty">No signals matched. Note: app.safety.triage is currently a stub (always returns empty) — this is expected, not a retrieval miss.</p>`;
+  }
+  html += `</div>`;
+
+  html += `<div class="card"><h3>4. Safety interlock (runs every turn, no exceptions)</h3>`;
+  if (t.interlock_triggered) {
+    html += `<div class="row"><span class="k">Triggered</span>${badge('YES', 'danger')}</div>`;
+    html += `<div class="row"><span class="k">Flag</span><span>${t.interlock_flag_id}</span></div>`;
+    if (t.interlock_detail) {
+      html += `<div class="row"><span class="k">Clinical meaning</span><span>${t.interlock_detail.clinical_meaning || ''}</span></div>`;
+      html += `<div class="row"><span class="k">Escalation target</span><span>${t.interlock_detail.escalation_target || '—'}</span></div>`;
+      html += `<div class="row"><span class="k">Has real script</span>${badge(t.interlock_detail.has_script ? 'yes' : 'NO (RF-028..031 gap)', t.interlock_detail.has_script ? 'ok' : 'danger')}</div>`;
+    }
+  } else {
+    html += `<div class="row"><span class="k">Triggered</span>${badge('no', 'ok')}</div>`;
+  }
+  html += `</div>`;
+
+  html += `<div class="card"><h3>5. Routing / tier</h3>`;
+  if (t.matched_rule_id) {
+    html += `<div class="row"><span class="k">Matched rule</span><span>${t.matched_rule_id}</span></div>`;
+    html += `<div class="row"><span class="k">Tier</span><span>${t.triage_tier ?? '—'}</span></div>`;
+  } else {
+    html += `<p class="empty">No rule matched. Note: app.safety.routing._rule_matches is currently a stub (always False) — this is expected today, not a bug in your test.</p>`;
+  }
+  html += `</div>`;
+
+  html += `<div class="card"><h3>6. Retrieved content chunks</h3>`;
+  if (t.retrieved_chunk_detail && t.retrieved_chunk_detail.length) {
+    t.retrieved_chunk_detail.forEach(c => {
+      html += `<div class="chunk"><b>${c.chunk_id}</b> (tier ${c.tier}, ${c.category})<br>${c.text.slice(0, 140)}...</div>`;
+    });
+  } else {
+    html += `<p class="empty">None. Note: self-care content search (app.pipeline.retrieval.search_self_care_content) is implemented and tested, but not yet wired into the live conversation orchestrator — this is a known gap, not a bad match.</p>`;
+  }
+  html += `</div>`;
+
+  if (t.latency_ms) {
+    const LABELS = {
+      cache_check_ms: 'Cache check',
+      triage_ms: 'Silent triage',
+      interlock_ms: 'Safety interlock',
+      llm_ms: 'LLM generation',
+    };
+    const entries = Object.entries(t.latency_ms).sort((a, b) => b[1] - a[1]);
+    const total = entries.reduce((sum, [, v]) => sum + v, 0);
+    html += `<div class="card"><h3>Server-side latency breakdown (slowest first)</h3>`;
+    entries.forEach(([key, ms]) => {
+      const pct = total ? Math.round((ms / total) * 100) : 0;
+      html += `<div class="row"><span class="k">${LABELS[key] || key}</span>${latencyBudgetBadge(Math.round(ms))}</div>
+        <div style="background:#0f172a; border-radius:4px; height:5px; margin:-2px 0 8px 0; overflow:hidden;">
+          <div style="background:#2563eb; height:100%; width:${pct}%;"></div>
+        </div>`;
+    });
+    html += `</div>`;
+  }
+
+  const preview = t.retrieval_preview;
+  if (preview) {
+    html += `<div class="card" style="border-color:#7c3aed;"><h3 style="color:#a78bfa;">Retriever preview (independent test lookup — top ${preview.top_k})</h3>
+      <p class="empty" style="margin-bottom:8px;">Not part of the reply above — this runs the real search_self_care_content() function directly against your message, purely so you can judge retrieval quality without waiting for it to be wired into the live conversation.</p>`;
+    if (preview.matches && preview.matches.length) {
+      preview.matches.forEach((m, i) => {
+        html += `<div class="chunk"><b>#${i + 1} ${m.chunk_id}</b> (tier ${m.tier}, ${m.category})<br>${m.text.slice(0, 160)}...</div>`;
+      });
+    } else {
+      html += `<p class="empty">No match confident enough to pass RETRIEVAL_CONFIDENCE_THRESHOLD.</p>`;
+    }
+    html += `</div>`;
+  }
+
+  traceEl.innerHTML = html;
+}
+
+async function sendMessage() {
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  sendBtn.disabled = true;
+  addMessage(text, 'user');
+  addMessage('...thinking...', 'meta');
+
+  try {
+    const useLlm = document.getElementById('use-llm-toggle').checked;
+    const res = await fetch('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session_id: sessionId, text, use_llm: useLlm }),
+    });
+    const data = await res.json();
+    messagesEl.lastChild.remove(); // remove "...thinking..."
+    addMessage(data.response_text || '(empty response — check server logs, likely a provider error)', 'assistant');
+    renderTrace(data);
+  } catch (err) {
+    messagesEl.lastChild.remove();
+    addMessage('Error calling test server: ' + err, 'assistant');
+  } finally {
+    sendBtn.disabled = false;
+    input.focus();
+  }
+}
+
+sendBtn.onclick = sendMessage;
+input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+</script>
+</body>
+</html>

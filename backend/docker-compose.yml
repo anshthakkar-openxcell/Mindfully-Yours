@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: mindfully_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mindfully
+      POSTGRES_PASSWORD: mindfully
+      POSTGRES_DB: mindfully_ai
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres-init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mindfully -d mindfully_ai"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: mindfully_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  api:
+    build: .
+    container_name: mindfully_api
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # Overrides .env's localhost URLs -- inside the compose network, services reach each other
+      # by service name, not localhost.
+      DATABASE_URL: postgresql+asyncpg://mindfully:mindfully@postgres:5432/mindfully_ai
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+volumes:
+  postgres_data:
+  redis_data:

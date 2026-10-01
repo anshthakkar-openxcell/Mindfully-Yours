@@ -9,7 +9,7 @@ documnets/understanding/09_LATENCY_AND_PERFORMANCE.md §8 and app/workers/audit_
 from datetime import datetime
 from uuid import UUID, uuid4
 
-from sqlalchemy import ARRAY, Boolean, DateTime, ForeignKey, Integer, SmallInteger, String, Text, func
+from sqlalchemy import ARRAY, Boolean, DateTime, Float, ForeignKey, Integer, SmallInteger, String, Text, func
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column
@@ -32,6 +32,16 @@ class TurnAuditLog(Base):
     matched_signal_ids: Mapped[list[str] | None] = mapped_column(ARRAY(Text), nullable=True)
     matched_rule_id: Mapped[str | None] = mapped_column(String, nullable=True)
     triage_tier: Mapped[int | None] = mapped_column(SmallInteger, nullable=True)
+    # The running 0-100 tier score and its bracket -- see app.pipeline.tier_scoring and
+    # documnets/understanding/28_TIER_SCORING_APPROACH.md. Deliberately separate from `triage_tier`
+    # above (which reflects THIS turn's routing-rule match only) -- `score_tier` reflects the whole
+    # conversation's accumulated score, which is what actually drives the "ask more vs. suggest
+    # booking" decision.
+    confidence_score: Mapped[float | None] = mapped_column(Float, nullable=True)
+    score_tier: Mapped[int | None] = mapped_column(SmallInteger, nullable=True)
+    # True only once the confidence gate clears (see tier_scoring.should_redirect_to_booking) --
+    # multiple distinct signals AND both duration/impact confirmed, not just score_tier >= 2.
+    redirect_ready: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     interlock_triggered: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     interlock_flag_id: Mapped[str | None] = mapped_column(String, nullable=True)
     fallback_scenario_id: Mapped[int | None] = mapped_column(

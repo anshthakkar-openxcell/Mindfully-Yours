@@ -53,7 +53,10 @@ class KBLayerContent(Base):
     __tablename__ = "kb_layer_content"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    layer: Mapped[str] = mapped_column(String, nullable=False)  # 'I' | 'II' | 'III' | 'IV'
+    layer: Mapped[str] = mapped_column(String, nullable=False)
+    # 'I' | 'II' | 'III' | 'IV' | 'II-III' -- the last is `Layer 2 to 3 Transitions.docx`, a real
+    # bridging file (confirmed by running ingestion against it -- app.ingestion.parsers.layer_content
+    # deliberately tags its rows this way; this is not a typo to normalize away).
     section: Mapped[str | None] = mapped_column(String, nullable=True)  # e.g. 'Values', 'Safety Check'
     section_type: Mapped[str] = mapped_column(String, nullable=False)
     # 'generic' | 'emotion_specific' | 'transition'
@@ -64,7 +67,7 @@ class KBLayerContent(Base):
     language: Mapped[str] = mapped_column(String, nullable=False, default="en")
 
     __table_args__ = (
-        CheckConstraint("layer IN ('I','II','III','IV')", name="layer_valid"),
+        CheckConstraint("layer IN ('I','II','III','IV','II-III')", name="layer_valid"),
         CheckConstraint("section_type IN ('generic','emotion_specific','transition')", name="section_type_valid"),
     )
 

@@ -13,20 +13,44 @@ Script cell in the source data. This parser preserves that as `bot_script: None`
 coerced into an empty string or a placeholder, since app.safety.interlock and
 app.core.exceptions.MissingBotScriptError specifically check for None to trigger the hard
 human-alert path. See documnets/understanding/15_OPEN_QUESTIONS_AND_BLOCKERS.md #1.
+
+FIXED BUG (found by actually running ingestion against live data, not caught by review): the real
+CSV header is `Bot Script (YOU write — verbatim)` using a genuine em-dash (U+2014), but this
+parser looked up `"Bot Script (YOU write -- verbatim)"` (two hyphens). `dict.get()` on a
+non-matching key silently returns None, so EVERY row's bot_script was None, not just the 4
+documented ones -- including RF-018/RF-019 (suicidal ideation), the most safety-critical flags in
+the table. Fixed by finding the column by prefix instead of hardcoding punctuation that's easy to
+get subtly wrong. Re-ingest after this fix to pick up the real scripts.
 """
 
 import re
 from pathlib import Path
 
-from app.ingestion.parsers.common import clean_cell, forward_fill_group_label, read_client_csv
+from app.ingestion.parsers.common import (
+    clean_cell,
+    forward_fill_group_label,
+    is_real_id_row,
+    read_client_csv,
+)
 
 HEADER_ROW = 4
+_FLAG_ID_PATTERN = r"RF-\d+"
 
 
 def parse_red_flags(path: str | Path) -> list[dict]:
     df = read_client_csv(path, header_row=HEADER_ROW)
     df["Flag ID"] = forward_fill_group_label(df["Flag ID"])
     df = df.dropna(subset=["Flag ID"])
+    # CONFIRMED: row 0 here is a leaked instructions row ("Auto-increment: RF-001, RF-002, etc.")
+    # -- without this filter it survives as a bogus 32nd "red flag" (this table has no regex-based
+    # ID normalization to collide on, unlike routing_rules.py, so it fails silently instead of
+    # crashing -- arguably worse, since nothing would have flagged it).
+    df = df[df["Flag ID"].apply(lambda v: is_real_id_row(v, id_pattern=_FLAG_ID_PATTERN))]
+
+    # Found by prefix, not a hardcoded literal -- the real header uses an em-dash inside the
+    # parenthetical ("YOU write — verbatim"), which is easy to silently mistype as "--" and get
+    # back None from every single row (see module docstring for exactly that bug, now fixed).
+    bot_script_col = next(c for c in df.columns if c.startswith("Bot Script"))
 
     records = []
     for flag_id, group in df.groupby("Flag ID", sort=False):
@@ -41,7 +65,7 @@ def parse_red_flags(path: str | Path) -> list[dict]:
                 "trigger_phrases": phrases,
                 "clinical_meaning": _clean(first_row.get("Clinical Meaning")),
                 "immediate_action": _clean(first_row.get("Immediate Action")),
-                "bot_script": _clean(first_row.get("Bot Script (YOU write -- verbatim)")),  # None for RF-028..031
+                "bot_script": _clean(first_row.get(bot_script_col)),  # None for RF-028..031
                 "escalation_target": _clean(first_row.get("Escalation Target")),  # None for RF-020
                 "language": "en",
             }

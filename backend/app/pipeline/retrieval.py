@@ -42,7 +42,8 @@ async def search_self_care_content(
     language: str,
     db: AsyncSession,
     embedding_provider: EmbeddingProvider,
-    top_k: int = 3,
+    top_k: int | None = None,  # None -> RETRIEVAL_TOP_K from .env; pass explicitly to override
+    query_embedding: list[float] | None = None,  # pass the turn's shared embedding -- see below
 ) -> list[KBContentChunk]:
     """
     Genuine semantic RAG search -- the ONE place it's actually used, per
@@ -60,10 +61,15 @@ async def search_self_care_content(
     matches should route to a safe, generic, pre-approved fallback -- never let a low-confidence
     match get treated as grounded fact." An empty return therefore means "nothing confident
     enough", which the caller must treat the same as "nothing exists yet".
+
+    `query_embedding`: pass the turn's already-computed embedding (see app.safety.interlock's
+    identical parameter) to avoid a redundant ~300-400ms re-embed of the same text.
     """
     settings = get_settings()
-    [query_embedding] = await embedding_provider.embed([query_text])
+    if query_embedding is None:
+        [query_embedding] = await embedding_provider.embed([query_text])
     max_distance = 1 - settings.retrieval_confidence_threshold
+    resolved_top_k = top_k if top_k is not None else settings.retrieval_top_k
 
     distance_expr = KBContentChunk.embedding.cosine_distance(query_embedding)
     stmt = (
@@ -74,7 +80,7 @@ async def search_self_care_content(
             KBContentChunk.content_type.in_(["psycho_education", "self_care_tool"]),
         )
         .order_by(distance_expr)
-        .limit(top_k)
+        .limit(resolved_top_k)
     )
     result = await db.execute(stmt)
     return [chunk for chunk, distance in result.all() if distance <= max_distance]
