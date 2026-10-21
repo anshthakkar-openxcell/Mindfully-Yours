@@ -20,6 +20,18 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from collections.abc import AsyncIterator
+from dataclasses import dataclass
+
+
+@dataclass
+class TranscriptChunk:
+    """One unit of STT output. `is_final` distinguishes a settled utterance (safe to hand to
+    app.pipeline.orchestrator.run_turn) from an in-progress partial (display-only, e.g. live
+    captions) -- callers must never trigger a turn off a partial. See
+    app.realtime.agent.handle_companion_room's pseudocode for the intended consumption pattern."""
+
+    text: str
+    is_final: bool
 
 
 class LLMProvider(ABC):
@@ -44,8 +56,9 @@ class STTProvider(ABC):
     @abstractmethod
     async def transcribe_stream(
         self, audio_chunks: AsyncIterator[bytes], *, language: str = "en"
-    ) -> AsyncIterator[str]:
-        """Yield partial/final transcript text as audio is consumed."""
+    ) -> AsyncIterator[TranscriptChunk]:
+        """Yield partial/final transcript chunks as audio is consumed. One call spans the whole
+        session's audio (potentially many utterances), not just one utterance."""
         raise NotImplementedError
         yield  # pragma: no cover
 

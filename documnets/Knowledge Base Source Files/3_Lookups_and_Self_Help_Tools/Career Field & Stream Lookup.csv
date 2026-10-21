@@ -1,0 +1,501 @@
+entry_no,career_name,field_category,likely_academic_stream,as_stated_by_user_in_source
+1,Investment banking,Finance,Commerce,investment banking
+2,Corporate finance,Finance,Commerce,corporate finance
+3,Financial planning,Finance,Commerce,financial planning
+4,Actuarial science,Finance,Commerce,actuarial science
+5,Wealth management,Finance,Commerce,wealth management
+6,Equity research,Finance,Commerce,equity research
+7,Risk management,Finance,Commerce,risk management
+8,Financial analytics,Finance,Commerce,financial analytics
+9,Treasury management,Finance,Commerce,treasury management
+10,Hedge fund management,Finance,Commerce,hedge fund management
+11,Private equity,Finance,Commerce,private equity
+12,Insurance,Finance,Commerce,insurance
+13,Taxation,Finance,Commerce,taxation
+14,Auditing,Finance,Commerce,auditing
+15,Credit analysis,Finance,Commerce,credit analysis
+16,Mergers and acquisitions,Finance,Commerce,mergers and acquisitions
+17,Portfolio management,Finance,Commerce,portfolio management
+18,Microfinance,Finance,Commerce,microfinance
+19,Forensic accounting,Finance,Commerce,forensic accounting
+20,Fintech,Finance,Commerce,fintech
+21,General medicine,Medicine,Science (PCB),general medicine
+22,Surgery,Medicine,Science (PCB),surgery
+23,Pediatrics,Medicine,Science (PCB),pediatrics
+24,Cardiology,Medicine,Science (PCB),cardiology
+25,Dermatology,Medicine,Science (PCB),dermatology
+26,Psychiatry,Medicine,Science (PCB),psychiatry
+27,Radiology,Medicine,Science (PCB),radiology
+28,Orthopedics,Medicine,Science (PCB),orthopedics
+29,Dentistry,Medicine,Science (PCB),dentistry
+30,Veterinary medicine,Medicine,Science (PCB),veterinary medicine
+31,Physiotherapy,Medicine,Science (PCB),physiotherapy
+32,Nursing,Medicine,Science (PCB),nursing
+33,Pharmacy,Medicine,Science (PCB),pharmacy
+34,Public health,Medicine,Science (PCB),public health
+35,Medical research,Medicine,Science (PCB),medical research
+36,Anaesthesiology,Medicine,Science (PCB),anaesthesiology
+37,Ophthalmology,Medicine,Science (PCB),ophthalmology
+38,Gynecology,Medicine,Science (PCB),gynecology
+39,Pathology,Medicine,Science (PCB),pathology
+40,Emergency medicine,Medicine,Science (PCB),emergency medicine
+41,Mechanical engineering,Engineering,Science (PCM),mechanical engineering
+42,Civil engineering,Engineering,Science (PCM),civil engineering
+43,Electrical engineering,Engineering,Science (PCM),electrical engineering
+44,Computer engineering,Engineering,Science (PCM),computer engineering
+45,Chemical engineering,Engineering,Science (PCM),chemical engineering
+46,Aerospace engineering,Engineering,Science (PCM),aerospace engineering
+47,Biomedical engineering,Engineering,Science (PCM),biomedical engineering
+48,Environmental engineering,Engineering,Science (PCM),environmental engineering
+49,Industrial engineering,Engineering,Science (PCM),industrial engineering
+50,Robotics engineering,Engineering,Science (PCM),robotics engineering
+51,Structural engineering,Engineering,Science (PCM),structural engineering
+52,Automotive engineering,Engineering,Science (PCM),automotive engineering
+53,Marine engineering,Engineering,Science (PCM),marine engineering
+54,Mining engineering,Engineering,Science (PCM),mining engineering
+55,Petroleum engineering,Engineering,Science (PCM),petroleum engineering
+56,Nuclear engineering,Engineering,Science (PCM),nuclear engineering
+57,Agricultural engineering,Engineering,Science (PCM),agricultural engineering
+58,Textile engineering,Engineering,Science (PCM),textile engineering
+59,Software engineering,Engineering,Science (PCM),software engineering
+60,Materials engineering,Engineering,Science (PCM),materials engineering
+61,Corporate law,Law,Science Or Commerce or Arts,corporate law
+62,Criminal law,Law,Science Or Commerce or Arts,criminal law
+63,Human rights law,Law,Science Or Commerce or Arts,human rights law
+64,Tax law,Law,Science Or Commerce or Arts,tax law
+65,Family law,Law,Science Or Commerce or Arts,family law
+66,Intellectual property law,Law,Science Or Commerce or Arts,intellectual property law
+67,Environmental law,Law,Science Or Commerce or Arts,environmental law
+68,International law,Law,Science Or Commerce or Arts,international law
+69,Constitutional law,Law,Science Or Commerce or Arts,constitutional law
+70,Cyber law,Law,Science Or Commerce or Arts,cyber law
+71,Labour law,Law,Science Or Commerce or Arts,labour law
+72,Maritime law,Law,Science Or Commerce or Arts,maritime law
+73,Litigation,Law,Science Or Commerce or Arts,litigation
+74,Judicial services,Law,Science Or Commerce or Arts,judicial services
+75,Legal consulting,Law,Science Or Commerce or Arts,legal consulting
+76,Arbitration,Law,Science Or Commerce or Arts,arbitration
+77,Immigration law,Law,Commerce,immigration law
+78,Media law,Law,Science Or Commerce or Arts,media law
+79,Sports law,Law,Science Or Commerce or Arts,sports law
+80,Real estate law,Law,Science Or Commerce or Arts,real estate law
+81,Graphic design,Arts & Design,Science Or Commerce or Arts,graphic design
+82,Fashion design,Arts & Design,Science Or Commerce or Arts,fashion design
+83,Interior design,Arts & Design,Science Or Commerce or Arts,interior design
+84,Animation,Arts & Design,Science Or Commerce or Arts,animation
+85,Fine arts,Arts & Design,Science Or Commerce or Arts,fine arts
+86,Photography,Arts & Design,Science Or Commerce or Arts,photography
+87,Film making,Arts & Design,Science Or Commerce or Arts,film making
+88,Industrial design,Arts & Design,Science Or Commerce or Arts,industrial design
+89,Jewellery design,Arts & Design,Science Or Commerce or Arts,jewellery design
+90,Textile design,Arts & Design,Science Or Commerce or Arts,textile design
+91,Ux design,Arts & Design,Science Or Commerce or Arts,UX design
+92,Game design,Arts & Design,Science Or Commerce or Arts,game design
+93,Illustration,Arts & Design,Science Or Commerce or Arts,illustration
+94,Ceramics,Arts & Design,Science Or Commerce or Arts,ceramics
+95,Sculpture,Arts & Design,Science Or Commerce or Arts,sculpture
+96,Product design,Arts & Design,Science Or Commerce or Arts,product design
+97,Set design,Arts & Design,Science Or Commerce or Arts,set design
+98,Costume design,Arts & Design,Science Or Commerce or Arts,costume design
+99,Calligraphy,Arts & Design,Science Or Commerce or Arts,calligraphy
+100,Art restoration,Arts & Design,Science Or Commerce or Arts,art restoration
+101,Software development,IT & Tech,Science (PCM),software development
+102,Data science,IT & Tech,Science (PCM),data science
+103,Artificial intelligence,IT & Tech,Science (PCM),artificial intelligence
+104,Cybersecurity,IT & Tech,Science (PCM),cybersecurity
+105,Cloud computing,IT & Tech,Science (PCM),cloud computing
+106,Web development,IT & Tech,Science (PCM),web development
+107,Mobile app development,IT & Tech,Science (PCM),mobile app development
+108,Network engineering,IT & Tech,Science (PCM),network engineering
+109,Database administration,IT & Tech,Science (PCM),database administration
+110,Machine learning,IT & Tech,Science (PCM),machine learning
+111,Blockchain technology,IT & Tech,Science (PCM),blockchain technology
+112,Game development,IT & Tech,Science (PCM),game development
+113,It consulting,IT & Tech,Science (PCM),IT consulting
+114,Systems analysis,IT & Tech,Science (PCM),systems analysis
+115,Devops,IT & Tech,Science (PCM),DevOps
+116,Ui/ux development,IT & Tech,Science (PCM),UI/UX development
+117,Embedded systems,IT & Tech,Science (PCM),embedded systems
+118,Quality assurance testing,IT & Tech,Science (PCM),quality assurance testing
+119,It project management,IT & Tech,Science (PCM),IT project management
+120,Technical writing,IT & Tech,Science (PCM),technical writing
+121,Marketing,Business,Commerce,marketing
+122,Human resources,Business,Commerce,human resources
+123,Sales,Business,Commerce,sales
+124,Business analytics,Business,Commerce,business analytics
+125,Entrepreneurship,Business,Commerce,entrepreneurship
+126,Supply chain management,Business,Commerce,supply chain management
+127,Operations management,Business,Commerce,operations management
+128,Business consulting,Business,Commerce,business consulting
+129,Brand management,Business,Commerce,brand management
+130,Retail management,Business,Commerce,retail management
+131,Project management,Business,Commerce,project management
+132,Event management,Business,Commerce,event management
+133,Business development,Business,Commerce,business development
+134,E-commerce,Business,Commerce,e-commerce
+135,Logistics management,Business,Commerce,logistics management
+136,Hospitality management,Business,Commerce,hospitality management
+137,Public relations,Business,Commerce,public relations
+138,Advertising,Business,Commerce,advertising
+139,Market research,Business,Commerce,market research
+140,Digital marketing,Business,Commerce,digital marketing
+141,Biology,Science,Science (PCM),biology
+142,Chemistry,Science,Science (PCM),chemistry
+143,Physics,Science,Science (PCM),physics
+144,Environmental science,Science,Science (PCM),environmental science
+145,Marine biology,Science,Science (PCM),marine biology
+146,Astronomy,Science,Science (PCM),astronomy
+147,Geology,Science,Science (PCM),geology
+148,Biotechnology,Science,Science (PCM),biotechnology
+149,Microbiology,Science,Science (PCM),microbiology
+150,Genetics,Science,Science (PCM),genetics
+151,Forensic science,Science,Science (PCM),forensic science
+152,Food science,Science,Science (PCM),food science
+153,Materials science,Science,Science (PCM),materials science
+154,Oceanography,Science,Science (PCM),oceanography
+155,Meteorology,Science,Science (PCM),meteorology
+156,Botany,Science,Science (PCM),botany
+157,Zoology,Science,Science (PCM),zoology
+158,Neuroscience,Science,Science (PCM),neuroscience
+159,Biochemistry,Science,Science (PCM),biochemistry
+160,Nanotechnology,Science,Science (PCM),nanotechnology
+161,Teaching,Education,Science Or Commerce or Arts,teaching
+162,School counselling,Education,Science Or Commerce or Arts,school counselling
+163,Special education,Education,Science Or Commerce or Arts,special education
+164,Curriculum design,Education,Science Or Commerce or Arts,curriculum design
+165,Educational administration,Education,Science Or Commerce or Arts,educational administration
+166,Early childhood education,Education,Science Or Commerce or Arts,early childhood education
+167,Higher education administration,Education,Science Or Commerce or Arts,higher education administration
+168,Corporate training,Education,Science Or Commerce or Arts,corporate training
+169,Academic research,Education,Science Or Commerce or Arts,academic research
+170,Language instruction,Education,Science Or Commerce or Arts,language instruction
+171,Sports coaching,Education,Science Or Commerce or Arts,sports coaching
+172,Librarianship,Education,Science Or Commerce or Arts,librarianship
+173,Adult education,Education,Science Or Commerce or Arts,adult education
+174,Online education,Education,Science Or Commerce or Arts,online education
+175,Vocational training,Education,Science Or Commerce or Arts,vocational training
+176,Education policy,Education,Science Or Commerce or Arts,education policy
+177,Tutoring,Education,Science Or Commerce or Arts,tutoring
+178,Instructional design,Education,Science Or Commerce or Arts,instructional design
+179,Stem education,Education,Science Or Commerce or Arts,STEM education
+180,Arts education,Education,Science Or Commerce or Arts,arts education
+181,Social work,Social & Government,Science Or Commerce or Arts,social work
+182,Public administration,Social & Government,Science Or Commerce or Arts,public administration
+183,Civil services,Social & Government,Science Or Commerce or Arts,civil services
+184,Diplomacy,Social & Government,Science Or Commerce or Arts,diplomacy
+185,Urban planning,Social & Government,Science Or Commerce or Arts,urban planning
+186,Policy research,Social & Government,Science Or Commerce or Arts,policy research
+187,Non-profit management,Social & Government,Science Or Commerce or Arts,non-profit management
+188,Community development,Social & Government,Science Or Commerce or Arts,community development
+189,Public policy,Social & Government,Science Or Commerce or Arts,public policy
+190,Political science,Social & Government,Science Or Commerce or Arts,political science
+191,Defense services,Social & Government,Science Or Commerce or Arts,defense services
+192,Police services,Social & Government,Science Or Commerce or Arts,police services
+193,Disaster management,Social & Government,Science Or Commerce or Arts,disaster management
+194,International relations,Social & Government,Science Or Commerce or Arts,international relations
+195,Welfare administration,Social & Government,Science Or Commerce or Arts,welfare administration
+196,Government auditing,Social & Government,Science Or Commerce or Arts,government auditing
+197,Election administration,Social & Government,Science Or Commerce or Arts,election administration
+198,Rural development,Social & Government,Science Or Commerce or Arts,rural development
+199,Labour welfare,Social & Government,Science Or Commerce or Arts,labour welfare
+200,Public finance,Social & Government,Science Or Commerce or Arts,public finance
+201,Journalism,Media & Communication,Science Or Commerce or Arts,journalism
+202,Broadcasting,Media & Communication,Science Or Commerce or Arts,broadcasting
+203,Content writing,Media & Communication,Science Or Commerce or Arts,content writing
+204,Film production,Media & Communication,Science Or Commerce or Arts,film production
+205,Digital media,Media & Communication,Science Or Commerce or Arts,digital media
+206,Public speaking,Media & Communication,Science Or Commerce or Arts,public speaking
+207,Video editing,Media & Communication,Science Or Commerce or Arts,video editing
+208,Sound engineering,Media & Communication,Science Or Commerce or Arts,sound engineering
+209,Photography journalism,Media & Communication,Science Or Commerce or Arts,photography journalism
+210,Sports journalism,Media & Communication,Science Or Commerce or Arts,sports journalism
+211,Radio jockeying,Media & Communication,Science Or Commerce or Arts,radio jockeying
+212,Corporate communication,Media & Communication,Science Or Commerce or Arts,corporate communication
+213,Media planning,Media & Communication,Science Or Commerce or Arts,media planning
+214,Screenwriting,Media & Communication,Science Or Commerce or Arts,screenwriting
+215,Documentary making,Media & Communication,Science Or Commerce or Arts,documentary making
+216,Podcast production,Media & Communication,Science Or Commerce or Arts,podcast production
+217,Social media management,Media & Communication,Science Or Commerce or Arts,social media management
+218,Translation,Media & Communication,Science Or Commerce or Arts,translation
+219,Editing and publishing,Media & Communication,Science Or Commerce or Arts,editing and publishing
+220,Television production,Media & Communication,Science Or Commerce or Arts,television production
+221,Cricket coaching,Sports,Science Or Commerce or Arts,cricket coaching
+222,Football coaching,Sports,Science Or Commerce or Arts,football coaching
+223,Sports management,Sports,Science Or Commerce or Arts,sports management
+224,Sports medicine,Sports,Science Or Commerce or Arts,sports medicine
+225,Athletic training,Sports,Science Or Commerce or Arts,athletic training
+226,Sports psychology,Sports,Science Or Commerce or Arts,sports psychology
+227,Fitness training,Sports,Science Or Commerce or Arts,fitness training
+228,Yoga instruction,Sports,Science Or Commerce or Arts,yoga instruction
+229,Sports journalism,Sports,Science Or Commerce or Arts,sports journalism
+230,Sports analytics,Sports,Science Or Commerce or Arts,sports analytics
+231,Physical education,Sports,Science Or Commerce or Arts,physical education
+232,Adventure sports,Sports,Science Or Commerce or Arts,adventure sports
+233,Swimming coaching,Sports,Science Or Commerce or Arts,swimming coaching
+234,Badminton coaching,Sports,Science Or Commerce or Arts,badminton coaching
+235,Esports,Sports,Science Or Commerce or Arts,esports
+236,Sports nutrition,Sports,Science Or Commerce or Arts,sports nutrition
+237,Sports administration,Sports,Science Or Commerce or Arts,sports administration
+238,Refereeing and umpiring,Sports,Science Or Commerce or Arts,refereeing and umpiring
+239,Sports marketing,Sports,Science Or Commerce or Arts,sports marketing
+240,Para-sports coaching,Sports,Science Or Commerce or Arts,para-sports coaching
+241,Hotel management,Hospitality,Commerce,hotel management
+242,Culinary arts,Hospitality,Commerce,culinary arts
+243,Travel and tourism,Hospitality,Commerce,travel and tourism
+244,Event planning,Hospitality,Commerce,event planning
+245,Airline cabin crew,Hospitality,Commerce,airline cabin crew
+246,Restaurant management,Hospitality,Commerce,restaurant management
+247,Resort management,Hospitality,Commerce,resort management
+248,Bakery and pastry arts,Hospitality,Commerce,bakery and pastry arts
+249,Cruise management,Hospitality,Commerce,cruise management
+250,Catering management,Hospitality,Commerce,catering management
+251,Wine and beverage studies,Hospitality,Commerce,wine and beverage studies
+252,Front office management,Hospitality,Commerce,front office management
+253,Housekeeping management,Hospitality,Commerce,housekeeping management
+254,Tour guiding,Hospitality,Commerce,tour guiding
+255,Wedding planning,Hospitality,Commerce,wedding planning
+256,Food and beverage service,Hospitality,Commerce,food and beverage service
+257,Spa management,Hospitality,Commerce,spa management
+258,Adventure tourism,Hospitality,Commerce,adventure tourism
+259,Hospitality marketing,Hospitality,Commerce,hospitality marketing
+260,Guest relations,Hospitality,Commerce,guest relations
+261,Agronomy,Agriculture,Science (PCB),agronomy
+262,Horticulture,Agriculture,Science (PCB),horticulture
+263,Animal husbandry,Agriculture,Science (PCB),animal husbandry
+264,Agricultural economics,Agriculture,Science (PCB),agricultural economics
+265,Food technology,Agriculture,Science (PCB),food technology
+266,Forestry,Agriculture,Science (PCB),forestry
+267,Fisheries science,Agriculture,Science (PCB),fisheries science
+268,Sericulture,Agriculture,Science (PCB),sericulture
+269,Organic farming,Agriculture,Science (PCB),organic farming
+270,Agribusiness,Agriculture,Science (PCB),agribusiness
+271,Soil science,Agriculture,Science (PCB),soil science
+272,Plant pathology,Agriculture,Science (PCB),plant pathology
+273,Dairy technology,Agriculture,Science (PCB),dairy technology
+274,Agricultural extension,Agriculture,Science (PCB),agricultural extension
+275,Farm management,Agriculture,Science (PCB),farm management
+276,Viticulture,Agriculture,Science (PCB),viticulture
+277,Aquaculture,Agriculture,Science (PCB),aquaculture
+278,Agricultural engineering,Agriculture,Science (PCB),agricultural engineering
+279,Seed technology,Agriculture,Science (PCB),seed technology
+280,Poultry science,Agriculture,Science (PCB),poultry science
+281,Architecture,Architecture,Science (PCM),architecture
+282,Urban design,Architecture,Science (PCM),urban design
+283,Landscape architecture,Architecture,Science (PCM),landscape architecture
+284,Interior architecture,Architecture,Science (PCM),interior architecture
+285,Construction management,Architecture,Science (PCM),construction management
+286,Sustainable architecture,Architecture,Science (PCM),sustainable architecture
+287,Heritage conservation,Architecture,Science (PCM),heritage conservation
+288,Architectural engineering,Architecture,Science (PCM),architectural engineering
+289,Building information modeling,Architecture,Science (PCM),building information modeling
+290,Real estate development,Architecture,Science (PCM),real estate development
+291,Structural design,Architecture,Science (PCM),structural design
+292,Housing design,Architecture,Science (PCM),housing design
+293,Town planning,Architecture,Science (PCM),town planning
+294,Acoustic design,Architecture,Science (PCM),acoustic design
+295,Lighting design,Architecture,Science (PCM),lighting design
+296,Climate-responsive design,Architecture,Science (PCM),climate-responsive design
+297,3d architectural visualization,Architecture,Science (PCM),3D architectural visualization
+298,Historic preservation,Architecture,Science (PCM),historic preservation
+299,Green building certification,Architecture,Science (PCM),green building certification
+300,Architectural project management,Architecture,Science (PCM),architectural project management
+301,Commercial piloting,Aviation & Maritime,Science (PCM),commercial piloting
+302,Air traffic control,Aviation & Maritime,Science (PCM),air traffic control
+303,Aircraft maintenance engineering,Aviation & Maritime,Science (PCM),aircraft maintenance engineering
+304,Aviation management,Aviation & Maritime,Science (PCM),aviation management
+305,Merchant navy,Aviation & Maritime,Science (PCM),merchant navy
+306,Ship building,Aviation & Maritime,Science (PCM),ship building
+307,Port management,Aviation & Maritime,Science (PCM),port management
+308,Naval architecture,Aviation & Maritime,Science (PCM),naval architecture
+309,Maritime law,Aviation & Maritime,Science (PCM),maritime law
+310,Marine biology,Aviation & Maritime,Science (PCM),marine biology
+311,Cabin crew training,Aviation & Maritime,Science (PCM),cabin crew training
+312,Aviation safety management,Aviation & Maritime,Science (PCM),aviation safety management
+313,Logistics and freight forwarding,Aviation & Maritime,Science (PCM),logistics and freight forwarding
+314,Marine engineering,Aviation & Maritime,Science (PCM),marine engineering
+315,Offshore operations,Aviation & Maritime,Science (PCM),offshore operations
+316,Ship surveying,Aviation & Maritime,Science (PCM),ship surveying
+317,Aviation dispatch,Aviation & Maritime,Science (PCM),aviation dispatch
+318,Hydrography,Aviation & Maritime,Science (PCM),hydrography
+319,Coast guard services,Aviation & Maritime,Science (PCM),coast guard services
+320,Aviation meteorology,Aviation & Maritime,Science (PCM),aviation meteorology
+321,Music production,Music,Science Or Commerce or Arts,music production
+322,Singing,Music,Science Or Commerce or Arts,singing
+323,Instrumental music,Music,Science Or Commerce or Arts,instrumental music
+324,Music composition,Music,Science Or Commerce or Arts,music composition
+325,Sound engineering,Music,Science Or Commerce or Arts,sound engineering
+326,Music therapy,Music,Science Or Commerce or Arts,music therapy
+327,Music teaching,Music,Science Or Commerce or Arts,music teaching
+328,Djing,Music,Science Or Commerce or Arts,DJing
+329,Orchestra conducting,Music,Science Or Commerce or Arts,orchestra conducting
+330,Music business management,Music,Science Or Commerce or Arts,music business management
+331,Songwriting,Music,Science Or Commerce or Arts,songwriting
+332,Audio mastering,Music,Science Or Commerce or Arts,audio mastering
+333,Live sound engineering,Music,Science Or Commerce or Arts,live sound engineering
+334,Music licensing,Music,Science Or Commerce or Arts,music licensing
+335,Choir direction,Music,Science Or Commerce or Arts,choir direction
+336,World music performance,Music,Science Or Commerce or Arts,world music performance
+337,Music technology,Music,Science Or Commerce or Arts,music technology
+338,Band management,Music,Science Or Commerce or Arts,band management
+339,Music criticism,Music,Science Or Commerce or Arts,music criticism
+340,Film scoring,Music,Science Or Commerce or Arts,film scoring
+341,Clinical psychology,Psychology,Science Or Commerce or Arts,clinical psychology
+342,Counselling psychology,Psychology,Science Or Commerce or Arts,counselling psychology
+343,Organizational psychology,Psychology,Science Or Commerce or Arts,organizational psychology
+344,Forensic psychology,Psychology,Science Or Commerce or Arts,forensic psychology
+345,Child psychology,Psychology,Science Or Commerce or Arts,child psychology
+346,Sports psychology,Psychology,Science Or Commerce or Arts,sports psychology
+347,Health psychology,Psychology,Science Or Commerce or Arts,health psychology
+348,Educational psychology,Psychology,Science Or Commerce or Arts,educational psychology
+349,Neuropsychology,Psychology,Science Or Commerce or Arts,neuropsychology
+350,Research psychology,Psychology,Science Or Commerce or Arts,research psychology
+351,Developmental psychology,Psychology,Science Or Commerce or Arts,developmental psychology
+352,Industrial psychology,Psychology,Science Or Commerce or Arts,industrial psychology
+353,Rehabilitation psychology,Psychology,Science Or Commerce or Arts,rehabilitation psychology
+354,Behavioral therapy,Psychology,Science Or Commerce or Arts,behavioral therapy
+355,Art therapy,Psychology,Science Or Commerce or Arts,art therapy
+356,Grief counselling,Psychology,Science Or Commerce or Arts,grief counselling
+357,Addiction counselling,Psychology,Science Or Commerce or Arts,addiction counselling
+358,Relationship counselling,Psychology,Science Or Commerce or Arts,relationship counselling
+359,Trauma counselling,Psychology,Science Or Commerce or Arts,trauma counselling
+360,Geriatric psychology,Psychology,Science Or Commerce or Arts,geriatric psychology
+361,Environmental consulting,Environmental,Science (PCB),environmental consulting
+362,Renewable energy,Environmental,Science (PCB),renewable energy
+363,Sustainability management,Environmental,Science (PCB),sustainability management
+364,Climate science,Environmental,Science (PCB),climate science
+365,Wildlife conservation,Environmental,Science (PCB),wildlife conservation
+366,Waste management,Environmental,Science (PCB),waste management
+367,Environmental policy,Environmental,Science (PCB),environmental policy
+368,Green building design,Environmental,Science (PCB),green building design
+369,Water resource management,Environmental,Science (PCB),water resource management
+370,Environmental education,Environmental,Science (PCB),environmental education
+371,Carbon management,Environmental,Science (PCB),carbon management
+372,Conservation biology,Environmental,Science (PCB),conservation biology
+373,Environmental impact assessment,Environmental,Science (PCB),environmental impact assessment
+374,Eco-tourism,Environmental,Science (PCB),eco-tourism
+375,Air quality management,Environmental,Science (PCB),air quality management
+376,Land reclamation,Environmental,Science (PCB),land reclamation
+377,Environmental journalism,Environmental,Science (PCB),environmental journalism
+378,Circular economy consulting,Environmental,Science (PCB),circular economy consulting
+379,Biodiversity research,Environmental,Science (PCB),biodiversity research
+380,Environmental law compliance,Environmental,Science (PCB),environmental law compliance
+381,Genetic engineering,Biotech,Science (PCB),genetic engineering
+382,Pharmaceutical research,Biotech,Science (PCB),pharmaceutical research
+383,Clinical research,Biotech,Science (PCB),clinical research
+384,Bioinformatics,Biotech,Science (PCB),bioinformatics
+385,Biomanufacturing,Biotech,Science (PCB),biomanufacturing
+386,Agricultural biotechnology,Biotech,Science (PCB),agricultural biotechnology
+387,Industrial biotechnology,Biotech,Science (PCB),industrial biotechnology
+388,Medical biotechnology,Biotech,Science (PCB),medical biotechnology
+389,Biostatistics,Biotech,Science (PCB),biostatistics
+390,Drug development,Biotech,Science (PCB),drug development
+391,Vaccine research,Biotech,Science (PCB),vaccine research
+392,Genomics,Biotech,Science (PCB),genomics
+393,Cell biology research,Biotech,Science (PCB),cell biology research
+394,Tissue engineering,Biotech,Science (PCB),tissue engineering
+395,Regulatory affairs in biotech,Biotech,Science (PCB),regulatory affairs in biotech
+396,Biotech entrepreneurship,Biotech,Science (PCB),biotech entrepreneurship
+397,Protein engineering,Biotech,Science (PCB),protein engineering
+398,Synthetic biology research,Biotech,Science (PCB),synthetic biology research
+399,Biotech patent law,Biotech,Science (PCB),biotech patent law
+400,Clinical trial management,Biotech,Science (PCB),clinical trial management
+401,Baking,Culinary,Commerce,baking
+402,Chef training,Culinary,Commerce,chef training
+403,Food styling,Culinary,Commerce,food styling
+404,Nutrition consulting,Culinary,Commerce,nutrition consulting
+405,Culinary entrepreneurship,Culinary,Commerce,culinary entrepreneurship
+406,Mixology,Culinary,Commerce,mixology
+407,Food blogging,Culinary,Commerce,food blogging
+408,Restaurant entrepreneurship,Culinary,Commerce,restaurant entrepreneurship
+409,Molecular gastronomy,Culinary,Commerce,molecular gastronomy
+410,Catering business,Culinary,Commerce,catering business
+411,Food photography,Culinary,Commerce,food photography
+412,Culinary tourism,Culinary,Commerce,culinary tourism
+413,Vegan cuisine,Culinary,Commerce,vegan cuisine
+414,International cuisine,Culinary,Commerce,international cuisine
+415,Food safety management,Culinary,Commerce,food safety management
+416,Menu development,Culinary,Commerce,menu development
+417,Culinary research,Culinary,Commerce,culinary research
+418,Food critic writing,Culinary,Commerce,food critic writing
+419,Personal cheffing,Culinary,Commerce,personal cheffing
+420,Culinary education,Culinary,Commerce,culinary education
+421,Fashion merchandising,Fashion,Science Or Commerce or Arts,fashion merchandising
+422,Textile technology,Fashion,Science Or Commerce or Arts,textile technology
+423,Fashion styling,Fashion,Science Or Commerce or Arts,fashion styling
+424,Fashion journalism,Fashion,Science Or Commerce or Arts,fashion journalism
+425,Fashion photography,Fashion,Science Or Commerce or Arts,fashion photography
+426,Fashion entrepreneurship,Fashion,Science Or Commerce or Arts,fashion entrepreneurship
+427,Costume history,Fashion,Science Or Commerce or Arts,costume history
+428,Fashion buying,Fashion,Science Or Commerce or Arts,fashion buying
+429,Sustainable fashion,Fashion,Science Or Commerce or Arts,sustainable fashion
+430,Fashion illustration,Fashion,Science Or Commerce or Arts,fashion illustration
+431,Apparel production,Fashion,Science Or Commerce or Arts,apparel production
+432,Fashion marketing,Fashion,Science Or Commerce or Arts,fashion marketing
+433,Personal styling,Fashion,Science Or Commerce or Arts,personal styling
+434,Footwear design,Fashion,Science Or Commerce or Arts,footwear design
+435,Accessory design,Fashion,Science Or Commerce or Arts,accessory design
+436,Fashion blogging,Fashion,Science Or Commerce or Arts,fashion blogging
+437,Fashion event management,Fashion,Science Or Commerce or Arts,fashion event management
+438,Luxury brand management,Fashion,Science Or Commerce or Arts,luxury brand management
+439,Fashion technology,Fashion,Science Or Commerce or Arts,fashion technology
+440,Retail fashion management,Fashion,Science Or Commerce or Arts,retail fashion management
+441,Real estate investment,Real Estate,Commerce,real estate investment
+442,Property management,Real Estate,Commerce,property management
+443,Real estate brokerage,Real Estate,Commerce,real estate brokerage
+444,Real estate law,Real Estate,Commerce,real estate law
+445,Real estate development,Real Estate,Commerce,real estate development
+446,Real estate marketing,Real Estate,Commerce,real estate marketing
+447,Facilities management,Real Estate,Commerce,facilities management
+448,Real estate finance,Real Estate,Commerce,real estate finance
+449,Property valuation,Real Estate,Commerce,property valuation
+450,Real estate consulting,Real Estate,Commerce,real estate consulting
+451,Urban real estate planning,Real Estate,Commerce,urban real estate planning
+452,Commercial real estate,Real Estate,Commerce,commercial real estate
+453,Residential real estate,Real Estate,Commerce,residential real estate
+454,Real estate technology,Real Estate,Commerce,real estate technology
+455,Land surveying,Real Estate,Commerce,land surveying
+456,Real estate appraisal,Real Estate,Commerce,real estate appraisal
+457,Mortgage banking,Real Estate,Commerce,mortgage banking
+458,Real estate portfolio management,Real Estate,Commerce,real estate portfolio management
+459,Construction estimating,Real Estate,Commerce,construction estimating
+460,Real estate analytics,Real Estate,Commerce,real estate analytics
+461,Life coaching,Coaching & Speaking,Science Or Commerce or Arts,life coaching
+462,Career coaching,Coaching & Speaking,Science Or Commerce or Arts,career coaching
+463,Motivational speaking,Coaching & Speaking,Science Or Commerce or Arts,motivational speaking
+464,Executive coaching,Coaching & Speaking,Science Or Commerce or Arts,executive coaching
+465,Communication training,Coaching & Speaking,Science Or Commerce or Arts,communication training
+466,Leadership development,Coaching & Speaking,Science Or Commerce or Arts,leadership development
+467,Personal branding,Coaching & Speaking,Science Or Commerce or Arts,personal branding
+468,Public speaking training,Coaching & Speaking,Science Or Commerce or Arts,public speaking training
+469,Corporate wellness coaching,Coaching & Speaking,Science Or Commerce or Arts,corporate wellness coaching
+470,Mindfulness coaching,Coaching & Speaking,Science Or Commerce or Arts,mindfulness coaching
+471,Relationship coaching,Coaching & Speaking,Science Or Commerce or Arts,relationship coaching
+472,Financial coaching,Coaching & Speaking,Science Or Commerce or Arts,financial coaching
+473,Health and wellness coaching,Coaching & Speaking,Science Or Commerce or Arts,health and wellness coaching
+474,Negotiation training,Coaching & Speaking,Science Or Commerce or Arts,negotiation training
+475,Team building facilitation,Coaching & Speaking,Science Or Commerce or Arts,team building facilitation
+476,Image consulting,Coaching & Speaking,Science Or Commerce or Arts,image consulting
+477,Etiquette training,Coaching & Speaking,Science Or Commerce or Arts,etiquette training
+478,Confidence coaching,Coaching & Speaking,Science Or Commerce or Arts,confidence coaching
+479,Interview coaching,Coaching & Speaking,Science Or Commerce or Arts,interview coaching
+480,Soft skills training,Coaching & Speaking,Science Or Commerce or Arts,soft skills training
+481,Quantum computing,Emerging Tech,Science (PCM),quantum computing
+482,Virtual reality development,Emerging Tech,Science (PCM),virtual reality development
+483,Augmented reality design,Emerging Tech,Science (PCM),augmented reality design
+484,Drone technology,Emerging Tech,Science (PCM),drone technology
+485,3d printing,Emerging Tech,Science (PCM),3D printing
+486,Autonomous vehicle technology,Emerging Tech,Science (PCM),autonomous vehicle technology
+487,Space technology,Emerging Tech,Science (PCM),space technology
+488,Biometrics,Emerging Tech,Science (PCM),biometrics
+489,Wearable technology,Emerging Tech,Science (PCM),wearable technology
+490,Smart city planning,Emerging Tech,Science (PCM),smart city planning
+491,Iot development,Emerging Tech,Science (PCM),IoT development
+492,Robotics process automation,Emerging Tech,Science (PCM),robotics process automation
+493,Digital twin technology,Emerging Tech,Science (PCM),digital twin technology
+494,Edge computing,Emerging Tech,Science (PCM),edge computing
+495,Synthetic biology,Emerging Tech,Science (PCM),synthetic biology
+496,Green technology,Emerging Tech,Science (PCM),green technology
+497,Agritech,Emerging Tech,Science (PCM),agritech
+498,Edtech,Emerging Tech,Science (PCM),edtech
+499,Healthtech,Emerging Tech,Science (PCM),healthtech
+500,Insurtech,Emerging Tech,Science (PCM),insurtech

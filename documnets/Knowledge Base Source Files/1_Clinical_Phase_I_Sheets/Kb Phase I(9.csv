@@ -1,0 +1,3464 @@
+CATEGORY C — How the AI Decides | PHASE 1 — Foundation,,,,,,,
+PURPOSE: How much evidence the AI needs before routing. The 'brain' of the open-ended conversation — tells the AI when to stop talking and start routing.,,,,,,,
+"HOW TO FILL: For each tier: define minimum signals, must-have signals, confidence threshold (in plain English), tie-breaker logic, when to keep probing, and what triggers the graceful exit. Think: 'At what point in a first session would I feel confident recommending the next step?'",,,,,,,
+MOOD DISORDERS - Depression and Bipolar Disorder,,,,,,,
+ESTIMATED TIME: 1 hour,,,,,,,
+Tier,,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),"situational low mood
+
+
+","SIG: 1, 4, 5 , 6/7,
+ 8/9
+10, 12, 13
+16, 18, 19, 20, 21
+",not mandatory,"would be assessed on the 
+basis of the signals being 
+situational 
+
+if the user is asking very 
+direct questions to help 
+reduce the signal intensity
+
+
+","ask about the intensity of the 
+signals, 
+enquire about the 
+duration and the present 
+coping 
+","enquire if they have seeked 
+therapy before, ask about 
+what they did in the past to 
+overcome the signals, ask 
+self harm if not mentioned by
+the user
+ 
+identify any situational causes
+like greif
+
+
+","duration + situational signal 
+coping strategies are fairly good. "
+,Loneliness,"SIG: 157
+
+EM: 024, 034, 089, 098, 087, 113","EM: 024, 087, 113","subjective sense of emotional and social detachment 
+
+user is experiencing lack of meaningful connections","temporary with intact functionality------------tier 1
+
+persistent and impacting functionality -----------tier 2","ask about any major life event/ transition
+
+duration and impact
+
+ways in which user copes",the user is experiencing temporary situational loneliness and self help tools would help with social skills building
+,temporary low motivation,"SIG : 019, 115, 
+
+EM: 004, 017","SIG: 019, 115
+
+EM: 017","user finds it hard to initiate tasks 
+
+functioning is intact
+
+there is less motivation that usual but no significant disruption ","temporary loss of motivation-----------tier 1
+
+persistent and declining functionality-----------tier 2","assess if there is some life changing event 
+that has led to this 
+
+assess duration and impact",the user is experiencing temporary motivation struggles which are common and self help tools would help in gradual re engagement 
+,low self esteem,"SIG: 081, 020
+
+EM: 011, 010, 006, 007, 032","SIG: 081, 020
+
+EM: 011, 010, 032","occasional self doubt 
+
+user tends to compare self 
+
+periods of self criticism and low confidence 
+
+functionality is intact","occasional/ temporary and and manageable----------------tier 1
+
+consistent and impacting user in different areas ( work, academic, relationships)--------------tier 2","assess the frequency, impact
+
+ways of coping
+
+",user might be experiencing a common pattern of occasional / situational self doubt and might benefit from tools to help gain self awareness and management of emotions 
+,lack of concentration,"SIG: 115, 282, 154
+
+EM: 089, 015","SIG: 115, 282, 154
+
+EM: 089, 015","temporary difficulty is sustaining attention in tasks
+
+the client is able to cope with minimum negative consequences
+","occasional/ temporary and and manageable----------------tier 1
+
+consistent and impacting user in different areas ( work, academic, relationships)--------------tier 2","assess environmental stress/ fatigue / major life event
+
+duration and impact
+
+coping ways
+
+any lifestyle issues/ changes
+",difficulties in concentration can result from presence of stress/ lifestyle and self help tools can help assess and reset them.
+,"situational sleep
+disturbances","SIG: 246, 115, 116, 019, 244, 245, 246, 154, 153
+
+EM: 017, 038, 053, 054, 055, 056, 91, 86","SIG: 246, 115, 116,  244, 245, 246, 
+
+EM:  091, 086","user has difficulties to initiate/ fall asleep/ non restorative 
+
+disturbances are noticeable to the user
+
+causing mild fatigue/ tiredness but not any significant dysfunction or daily impairment 
+
+","occasional/ temporary and and manageable----------------tier 1
+
+consistent and impacting user in different areas ( work, academic, relationships)--------------tier 2","assess environmental stress/ fatigue / major life event
+
+duration and impact
+
+coping ways
+
+any lifestyle issues/ changes
+","user might be facing sleep disturbances due to environmental/ personal factors and can be helped to identify presence of triggers, and building sleep hygiene "
+,,,,,,,
+Tier 2 (Therapist),"Persistent Pattern of Low mood
+
+
+","SIG: 1,2/3, 4, 5,
+6/7, 8/9, 10, 12,
+13, 15,16, 18, 19,
+20, 21, 22, 23, 36
+152, 154, 156
+214-232","1, 2/3, 4,5, 10, 12, 
+18 ,21, 22, 23, 218
+
+For Bipolar 1 & 2
+(add mania signals)
+5, 6, 7,10, 36,181, 
+214- 232 
+varies in intensity
+and prevalence)
+
+","Pattern must be sustained over
+a certain period of time, 
+not situational. 
+
+Assess if the 
+patterns are repetitive in 
+different  situations. 
+
+pattern persists beyond normal mood fluctuations and are causing gradual impairment","temporary sadness/ low mood------------tier 1
+
+persistent despite efforts to cope
+
+assess red flag if not mentioned
+ assess if mania signals are 
+present and the severity 
+ ( if very severe, move to tier 3)","Duration unclear or signals span multiple clusters
+ask about the frequency of the signals
+
+how are they coping with the signals
+
+assess if self harm is present if not mentioned.","Duration confirmed + 3/ more primary cluster signals
+
+state is beyond normal mood phases/ experiences
+
+significant dysfunction present."
+,Mood shifts between Increased energy and low mood,"For Depressive Patterns
+SIG: 001, 002, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+For Hypomania patterns:
+SIG: 036, 181, 183, 201, 204, 217, 220, 227, 228, 229
+
+EM: 011, 004
+","For Depressive Patterns
+SIG: 001, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+For Hypomania patterns:
+SIG: 036, 181, 183, 201, 204, 217, 220, 227, 228, 229
+
+EM: 011, 004
+","user is experiencing periods of emotional highs ( increased energy) and lows ( low mood, lack of motivation)
+
+is causing difficulties in areas of life ( relationships, work, academics)
+
+
+
+","situational/ occasional mood swings-------------tier 1
+
+recurring and causing gradual daily impairment-------------tier 2
+
+severe episodes causing dysfunction and meeting clinical a clinical criteria
+with/ without self harm","assess if there is self harm
+- if passive -----------tier 2
+
+- if active-------------tier 3 
+
+duration and impact
+
+triggers/ situations/ stressors
+
+if self harm present--------do not probe",user is experiencing mood swings that are beyond the normal threshold and would require therapy for further assessment
+,Patterns of High functioning Depressive Symptoms,"For Depressive Patterns
+SIG: 001, 002, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+","For Depressive Patterns
+SIG: 001, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+","user experiences patterns of low mood, emotional distress and loss of enjoyment while meeting everyday responsibilities 
+
+distress is persistent and affecting quality of life however user continues to overtly function ","situational temporary mood recovery---------------tier 1
+
+persistant distress however, overtly functioning-------------tier 2
+
+severe and leaning towards active suicidal ideations along with impairment----------- tier 3","duration and impact
+
+work/ occupation as forms of coping
+
+other coping ways
+
+ongoing striggers/ stressors/ life events
+
+",user continues to fulfill daily responsibilities despite significant distress and therapeutic help would cater management of symptoms and assess alternate treatment options if needed.
+,Patterns of low mood before menstrual cycle,"SIG: 023, 021, 019, 155, 001, 004, 005, 006/007,152, 154, 156, 193
+
+EM: 004, 089, 094, 096, 098","SIG: 023, 021, 019, 155, 001, 004, 005, 006/007,152, 154, 193
+
+EM: 004, 089, 094,  098","user faces difficulties with emotional stability , mild functionality and , behaviour and energy before / after the menstrual cycle
+
+there is noticeable distress in different life areas","mild and occasional discomfort-------------tier 1
+
+recurring emotional/ behavioural difficulties linked to periods------------tier 2
+
+severe mood symptoms and active/ passive suicidality linked to symptoms of Premenstrual Dysphoric Disorder------------tier 3","timing of the cycle
+
+if there are other times and areas  that the user faces this apart from the cycle
+
+impact and duration
+
+if self harm is mentioned
+- Passive: tier 2
+- Active: Tier 3",the user is facing persistent and excessive emotional and behavioural difficulties that need further professional assessment and underlying meaning
+,Persistent Loneliness,"SIG: 022, 010, 019
+
+EM: 024, 087, 089, 098, 113, 097, 110",,"there is prolonged/ long term feelings of loneliness with/without any situational triggers
+
+presence of distress in different areas and impacting emotional health and wellbeing
+
+the user has tried self help coping ","occasional / situational loneliness-------------tier 1
+
+prolonged and impacting daily functioning----------tier 2","assess if loneliness is an outcome of social withdrawal  or situational/ environmental triggers
+
+duration 
+
+other ways of coping",persistent loneliness would require therapeutic interventions that would help inquire and manage underlying meaning
+,,,,,,,
+Tier 3 (Psychiatrist) ,Depression with suicidal  ideations,"SIG: 001, 002/003, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+
+
+","SIG: 001, 002/003, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+
+
+","symptoms of depression accompanied by active suicidal ideations
+
+functional and occupational impairment ",NA--------------if red flag present,N/A,Red flag detected and need for psychiatric assistance is crucial
+,psychotic Mood Patterns,,,,,,
+check----------,Recurrent Mood Episode Patterns,"For Depressive Patterns
+SIG: 001, 002/003, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003/ 011
+
+EM: 008, 002, 025
+
+For Mania patterns:
+SIG: 201. 219, 220, 221, 222,224, 231, 216, 204, 196
+
+EM: 011, 004
+","For Depressive Patterns
+SIG: 001, 002/003, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003/ 011
+
+EM: 008, 002, 025
+
+For Mania patterns:
+SIG: 201. 219, 220, 221, 222,224, 231, 216, 204, 196
+
+EM: 011, 004
+","user has severe mood shifts from low mood/ elevated mood which significantly differ from the usual emotional state 
+
+the states cannot be solely explained in terms of life vents/ triggers/ stressors 
+
+the mood shift are causing impairment dysfunction 
+
+if self harm is present -------------do not probe","temporary reactions to life events/ trigger----------------tier 1
+
+recurrent, dysfunctional and impaired---------------------tier 3","identify duration, impact , intensity
+
+family history
+
+specific triggers/ situations when change is noticeable
+
+if therapy was tried",there are patterns that are indicating help beyond therapeutic intervention and there is a need for psychiatric assessment and alternative interventions 
+,patterns of major depressive episodes,"SIG: 001, 002/003, 004, 005, 006/007, 008,009, 010, 012, 011, 013, 015, 016, 037, 022
+
+EM: 099, 100, 004, 008
+
+PHYS: 003/011","SIG: 001, 002/003, 004, 005, 006/007, 008,009, 010, 012,  022
+
+EM: 099, 100, 004, 008
+
+PHYS: 003/011","user is expericning symptoms that are persistant, widespread and causing significant impairment and dysfunction
+
+is casuing difficulties in areas of life ( relationships, work, academics)
+
+look for presence of suicidal ideation
+","prevalence of symptoms but functionality is maintained ---------------------tier 2
+
+severe impairment, inability to meet responsibilities -----------------------tier 3",Do not probe if suicidal ideations are present,there are patterns that are indicating help beyond therapeutic intervention and there is a need for psychiatric assessment and alternative interventions 
+,"presence of 
+harm to self /others
+ and manic 
+episode ","SIG: 002/003
+
+For Mania patterns:
+SIG: 201. 219, 220, 221, 222,224, 231, 216, 204, 196
+
+EM: 011, 004","SIG: 002/003
+
+For Mania patterns:
+SIG: 201. 219, 220, 221, 222,224, 231, 216, 204, 196
+
+EM: 011, 004",Immediate — do not wait for full picture,N/A — any red flag = immediate,N/A — do not keep probing after Tier 3 trigger,Red flag detected
+,,,,,,,
+Anxiety and Related Disorders,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),"physical 
+manifestation of
+anxiety
+","149-153, 155, 156
+158, 159, 169-172","not mandatory but
+presence of signals
+
+14-153 ","assess any specific triggers/
+situations that are causing it
+
+when the user is clearly 
+stating what he needs and 
+patterns
+
+
+assess the duration and impact
+on functioning 
+
+","assess how the user is coping
+with or without the presence of
+signals
+
+assess the severity if there is 
+impairment
+
+presence of any behaviours that
+require professional intervention
+eg: avoidance behaviours that
+might be causing dysfunction
+
+assess shared patterns in more 
+than 2 situations 
+","assess how the client is 
+perceiving his situations 
+(in terms of the intensity)
+
+assess the client's 
+cognitive / emotional process
+apart from the situation.
+","dysfunction is not generic
+the user has adequate resources to 
+cope
+if the intensity is low"
+,relationship uncertainty,"SIG- 158, 163, 
+EM 093",not mandatory ,signal is only associated to ambiguity towards a certain relationship,"relationship/ situation specific------------tier 1
+
+pattern present across various domains-----------tier 2","how is the user's coping
+
+assess if this is a pattern in different relationships/ areas",the user is experiencing situational uncertainty and would benefit from self help tools through regulation and communication tools
+,perfectionism based anxiety,"182
+EMO: 038",182,standards cause stress but do not impact functionality,if there is procrastination and perfectionism causing dysfunction --------------tier 2,how it impacts other areas of life,"there is significant coping 
+anxiety is within the threshold"
+,performance anxiety,"SIG: 171
+EM: 093, 095","SIG: 171
+EM 903, 095","user's anxiety is linked to the general worry of being judged/ scrutinised in an actual performanced based situations
+
+user exposes themselves to performance based situations in spite of the signals","specific to a certain area of work/ environment --------------tier 1
+
+assess the user's perceived intensity
+if extreme -------------------tier 2
+","assess coping , and active avoidance spread across multiple life areas",intact functionality and exposure to performance based situations . other user would benefit from grounding and regulation techniques 
+,general health related anxiousness,"SIG: 076, 077
+EM: 038,  083, 091,093","
+EM: 038,  083, 091,093",concern remains within the threshold of health,"assess if there is a strong 
+preoccupation to health concerns
+or a general worry.--------------- tier 2",assess the intensity of the worry/ anxiousness,the coping is intact with health related concerns that stay within the bandwidth of the situation
+,over thinking patterns,"EM: 030, 038, 094 
+SIG:  159, 163","EM: 030, 038, 094 
+SIG:  159, 163","the user is able to bring himself back to the present after overthinking
+
+there is minimal negative consequences and intact functioning","situational, presence of functionality , coping is present-------------tier 1
+
+patterns are impacting daily life, causing distress and is prolonged---------------tier 2
+
+","assess the nature of overthinking
+(rumination versus future worry)
+
+Assess the content/ context of the overthinking
+
+ways of coping, triggers/ stressors","the user has a conditioned / learned pattern of overthinking and self help tools associated with grounding, and healthy coping would be helpful"
+,transition anxiety,"SIG: 159, 163
+EM: 038, 088
+095","SIG: 159, 163
+EMO: 038, 088
+095","the anxiousness is clearly associated to major life changes
+
+signals are in proportion to the situation","if there the anxiousness is present long after the transition period------------tier 2
+
+check for grief- for tier 2","supporting resources
+
+coping skills
+
+assess the duration since the transition",signals are not a pattern and coping is intact
+,nervousness in social interactions and situations,"SIG: 163, 168, 171, 207
+EM: 093, 095","SIG: 163, 168, 171, 207
+EM: 093, 095","user has discomfort in confronting social situations but is able to manage themselves when encountering the same
+
+nervousness in evaluative and unfamiliar situations",if avoidance is deliberate  recurrent and persist in all social situations -------------- tier 2,"assess the coping of the client
+
+intensity and the kinds of situations that nervousness prevail",coping is intact and situations / people might be triggering the nervousness
+,,,,,,,
+Tier 2 (Therapist),Patterns of excessive worry/ free floating anxiety,"152, 153, 154, 155, 156, 157, 158, 159, 161, 
+163, 179","3 or more signal from
+152-159, 179","the user has anxiousness which could be seen as excessive to the situation and is spread across multiple domains
+
+anxiety is present in different situations  eg : health, self, work ","proportional and situational-----------tier 1
+
+persistent, distressful, and is present across many areas--------------tier 2","understand the coping 
+usually it is avoidance/ panic/
+saying ""I don't know""
+
+assess if the user has excessive worry even in perceived situations
+
+elevated physical symptoms","there is significant dysfunction in daily
+functioning 
+
+relatively higher impairment 
+
+it is not situational but persistent"
+,Anxiety driven Avoidance Based Coping Patterns,"SIG: 185, 030, 172, 161, 163, 159, 158, 151, 149, 129, 022
+
+PSYS: 019, 013, 015, 012
+
+EM: 034, 035, 088, 094, 099, 100, 116","SIG: 185, 030, 172, 161, 163,  151, 149, 129, 022
+
+PSYS: 019, 013, 015, 012
+
+EM: 088, 094, 099, 100, 116","user resorts to avoiding perceived threatening situations as a way of coping 
+
+the pattern is present in several life domains  ( work,relationships)
+
+
+
+","proportionate to the situation ( there is actual threat)--------------------tier 1
+
+disproportionate, distressful and causing impairment -----------------tier 2","triggers
+
+what about the triggers seem threatening
+
+other ways of coping
+
+where is this pattern seen the most as per the user",user's avoidance patterns are causing missed opportunities. professional help would cater to understanding the triggers better while provide alternate ways of coping 
+,Physical Symptoms of anxiety,"SIG: 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161
+
+PSYS: 019, 013, 015, 012
+
+EM: 093, 094, 107","SIG: 149, 150, 151, 152, 155,  157, 158, 159, 
+
+PSYS: 019, 013, 015, 012
+
+EM: 093, 094, 107","user experiences physical manifestations of anxiety during moment of excessive worry/ anxiety
+
+the symptoms are causing reduction in functioning","temporary, stress related and can successful cope with--------------------tier 1
+
+persistent, and affecting wellbeing--------------tier 2","triggers
+
+way of coping
+ 
+any medical history
+",management of physical symptoms can be the starting point for emotional regulation with the help of professional assistance
+,intolerance to uncertainty,"SIG: 156, 153, 157, 158, 159, 163, 245
+PSYS: 013","SIG: 153, 156, 158, 159, 163
+PSYS 013","user becomes uncomfortable with uncertainty 
+
+is unable to cope with the uncertainty 
+
+the pattern is persistent across domains"," if situation based and managable-------------tier 1
+
+if the uncertinity is causing significant dysregulation-----------tier 2 ","which areas does the user have these patterns
+how they cope","there is struggle with regulation 
+need for healthier coping skills"
+,social anxiety patterns,"SIG: 157, 163, 168,171
+174, 206- 208 
+EM 101 , 011","SIG: 175, 168, 206-208
+EM 010, 011","triggers are situations which require the user to be in social setups
+
+most of the worries go back to how they would be evaluated socially","assess if socal areas like school/ work/ gatherings are causing distress in daily function
+
+assess if the avoidance is a lack of interest or has underlying anxiousness","assess how they are coping
+active avoidance ",persistent fear of judgment causing avoidance of meaningful relationships
+,fear of a specific animal / object,"SIG : 162, 163, 167, 184, 177, 185, 174 
+
+EM: 107, 033, 088, 001, 004","SIG : 162, 163, 167, 184, 177, 185, 
+
+EM : EM: 107, 033, 088, ","anxiousness should towards
+encountering a specific object/place/animal etc",assessing the users coping/functionality in other areas of their life,"assess avoidance intensity, dysfunction ",persistent avoidance of trigger based object/ thing/situation
+,A parent facing anxiousness due to an event in the child's life,"SIG: 176,177, 178 179 180 184,  242","SIG: 149,176-178, 180, 242","anxiety revolves around losing
+the object/person ","assess how the presence of the object/person impacts the user
+assess the intensity level / functionality of the user in the absence of the person 
+
+if impact, duration and distress is high-------------------tier 2","assess how the presence of the object/person impacts the user
+assess the intensity level / functionality of the user in the presence of the person ","there is low/ falling functionality in the absence of the person.
+lack of concrete coping skills
+"
+,avoidance of going out in public spaces,"149, 151,157, 162, 172,174","149, 173, 172, 174,","clear fear of entrapment
+
+
+is present in 2 or more situations ","if it is situational and proportionate to the environment----------tier 1
+
+if it is persistent, distressful ------------tier 2","if the anxiety of open spaces is associated with any other fear of object/place/animal etc
+
+ways of coping, duration and impact",
+,panic like symptoms,"094 , 101 162, 167, 185
+PSYS: 012- 015","094 101 162, 167, 185 
+PSYS : 012-015",recurrent and fear associated with the occurrence of the panic attack,,"coping, duration, and impact
+
+triggers 
+
+","panic attacks have become a central 
+manifestation of the anxiety"
+,"reassurance seeking Loop
+(OCD like pattern)","SIG: 159, 161, 163, 174, 178, 210, 244
+EM: 029, 035. 036","SIG:  161, 163, 174, 178, 210, 244
+EM: 029, 035. 036","reassurance is seen as a way of coping
+
+inability to do so causes distress 
+
+","if it is situational/ demanded --------tier 1
+
+persistent/ distressful and out of proportion------------tier 2","ability to tolerate uncertainty
+
+source of the reassurance 
+
+thoughts that are expected to be reassured
+
+check if situations are demanding it
+
+assess if it a habit or a way of coping
+","lack of reassurances are causing impairment 
+
+need for healthier coping skills"
+,,,,,,,
+Tier 3 (Psychiatrist) ,Severe Panic Attacks,"SIG: 149, 162, 166, 167, 175, 185, 174
+
+PHYS: 019, 013, 015, 012
+
+EM: 099, 100, 107, 088","SIG: 149, 162, 166, 167, 175, 185, 174
+
+PHYS: 019, 013, 015, 012
+
+EM: 099, 100, 107, 088","user is experiencing episodes of severe panic attacks
+
+the patterns are contributing to functional, occupational and social impairment ","physical manifestations of anxiety, less severe----------------tier 2
+
+persistent and distressful episodes--------------tier 3","frequency duration and impact
+
+triggers
+
+medical history
+
+any substance use ",the duration and severity of the panic episodes need to further evaluated and managed with psychiatric help
+,functionally impairing anxiety pattern,"SIG: 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163
+
+EM: 033, 035, 036, 099, 100, 107, 088, 
+
+PHYS: 019, 013, 015, 012","SIG: 149, 150, 152, 153, 155, 156, 157, 158, 159,  162, 163
+
+EM: 099, 100, 107, 088, ","symptoms of anxiety remain chronic despite self help and psychological help
+
+is causing severe impairment in daily functioning ","distressing, but user is able to slowly cope------------tier 2
+
+impairing, distressful and unimproved-------------tier 3","prior treatment history
+
+level of impact and duration",the severity of the symptoms account for psychiatric help as therapy can no longer be the primary mode of treatment
+,severe anxiety associated pathological doubt,"SIG: 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163, 164/165
+
+EM: 033, 035, 036, 099, 100, 107, 088, 
+
+PHYS: 019, 013, 015, 012","SIG: 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163, 164/165
+
+EM: 033, 035, 036, 099, 100, 107, 088, 
+
+PHYS: 019, 013, 015, 012","the user experiences periods of doubt/ hyperarousal/ overthinking which are disproportionate to the situation 
+
+the severity is excess ( to the situation) causes distress 
+
+the user has difficulty trusting people due to this pattern
+
+self regulation and professional help has been unsuccessful","if occasional/ situation specific -------------tier 1
+
+distressful, impairing, pattern is present in multiple areas--------------tier 2
+
+is causing severe dysregulation/ functional and occupational impairment------------tier 3","asses if user has seeked counselling/ therapy
+
+ways of coping
+
+assess the meaning assigned to the doubt",user's severity of the pattern need further psychiatric evaluation as therapy cannot be the only primary mode of treatment
+,,,,,,,
+,,,,,,,
+PERSONALITY DISORDER AND TRAIT BASED SITUATIONAL ISSUES,,,,,,,
+Tier,,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),perfectionistic traits,"SIG  156 , 159 , 155
+
+EM : 004 ,010 , 038,
+
+PSY: S013, 014 , 089","SIG  156 , 159 , 155
+
+EM : 004 ,010 , 038,
+
+PSY: S013, 014 , 089","pattern is situationally present
+user has significant insight","assess if there is impairment
+which is disrupting daily functioning even when situation is absent ","assess coping strategies
+functional aspect ( how much time is the user spending to perfect something)","appropriate functionality
+coping is healthy
+open/ working on changing the trait"
+,people pleasing ,"SIG 011, 155
+
+ EM 086, 088,
+087, 091
+","EM 086,087, 088","difficulties in boundary setting
+
+prioritising others over self
+
+ user recognises the pattern","consider tier 2 if there is a high intensity fear of abandonment
+
+ 
+","is this trait present across all relationships
+","coping is intact
+the user is actively working on change
+assess if boundary setting skills are sufficient"
+,sensitivity towards criticism,"SIG- 169, 170 
+
+EM 087
+Defensiveness","SIG- 169, 170 
+
+EM 087
+","user's responses are context bound 
+
+do not repeat across different areas of life","the trait is causing significant distress like relationship breakdowns, severe avoidance behaviours like quitting work which are out of proportion to the situation
+
+assess how the user is coping and then refer to tier 2","assess the severity of the situation 
+
+assess the level of dysfunction of other user ", emotional regulation skills are acitvely used
+,mild validation seeking,"SIG: 243, 081
+
+EM : 109, 011,  032, 
+","SIG: 243, 081
+
+EM : 109, 011,  032, 
+","the user is able to maintain
+independent functioning in spite of the need/ trait
+
+ there is no significant impairment if the need/ trait is not met
+
+","situational and proportionate------------tier 1
+
+persistent/ 
+if the trait is the primary source of emotional regulation-------------tier 2","assess if the user is in fact in a situation that demands this
+
+what situations does the user ask for validation
+
+how the user is coping in the absence of validation",the user's need to be assured is proportionate to the situation/ environment but self help tools can provide alternate coping ways
+,mild emotional reactivity,"SIG : 156
+EM: 096, 097","SIG : 156
+EM: 096, 097","the user is able to cope with minimum internal consequences
+is aware of the pattern/ trait/","assess the consequences of the reactivity across other areas of life
+if intense consider tier 2
+
+assess coping ( if self harm consider tier 3)","assess congruency of the trait with the situation
+how the user copes , 
+assess frequency , and severity ","has alternate emotional regulation skills
+
+absence of any self harm behaviours
+
+"
+Tier 2 (Therapist),Abandonment sensitivity pattern ,"SIG 243, 040,187, 188, 189, 190, 191 193, 205","SIG: 040, 187 188, 189, 190, 191, 193","relationships are significantly impaired across board
+
+emotional reactivity causes impairment 
+
+impulsivity is largely present","if self harm is the present
+escalate it to tier 3
+
+asses the context ","assess coping , impact and if the intensity of emotions  is congruent to the situation
+
+","lack of regulation strategies
+ significant dysfunction in relationships"
+,Avoidant personality like trait,"SIG: 193, 040, 206, 207, 208, 212
+
+EM 088, 002","SIG: 040, 193, 208, 212 207
+
+EM 088","based on how the user approaches situations in her life 
+(avoidant based)",assess severity of the impairment if any,"assess if the avoidance is based on coping - anxiety pathway
+OR
+if avoidance is trait- personality pathway",user's patterns need to be understood in depth and with safety with the help of therapeutic interventions while providing alternate ways of dealing with perceived threat.
+,Dependent Personality like trait,"SIG: 180, 013, 188, 241, 242, 243","SIG: 013, 241, 243","there is significant struggle in autonomy ( seen in decision making, relationships)","if it is demanded/ proportionate and occasional-----------------tier 1
+
+if it is persistent, causing difficulties in decision making and impairment------------tier 2","if the situation demands collaboration, or is it something that the user is demanding",dependence that is causing impairment in areas that can be lived in autonomy
+,OCPD like traits,"SIG: 209, 210, 211, 212, 213,
+ 
+EM- 036","SIG 209, 210, 
+
+EM- 036","traits are interfering in different areas ( work, interpersonal relationships)
+where the user states expectations that are causing the impairment
+eg: I want my family to follow the exact same schedule as i set for them)","assess if there are situational triggers that are demanding this, or if this is an internal expectation
+
+assess the function of the expectation ","assess ability to tolerate mistakes,
+level of flexibility of the user.","there is low tolerance to imperfections, high standards towards self and others which is causing impairment in daily life"
+,,,,,,,
+Tier 3 (Psychiatrist),"Abandonment pattern
+(BPD type)","SIG: 040, 188, 189, 187, 190, 191, 193, 243, 040, 205
+
+EM 003",SIG: 040 188 189 187 190 191 193,there is risk of self harm (active),N/A,assess if the self harm is active or passive,"severe instability
+high risk of self harm"
+,Dependant pattern,"SIG: 180, 013, 188, 241, 242, 243, 244","SIG: 013, 241, 244",there is excessive reliance and dysfunction without the dependent person,assess if there is only distress but intact functionality or no functionality at all,"assess on how the user functions when alone, how severe is the impairment",lack of independent functioning
+,"extreme emotional dysregulation
+(BPD type)","SIG: 040, 188, 189, 187, 190, 191, 193, 243, 040, 205
+002/003
+
+EM: 003","SIG: 205, 191, 002/ 003
+
+EM:003","episodes of emotional reactivity that compromise safety and functionality 
+
+active risk of self harm ","assess risk of self and other
+if there is active risk immediately route","if there is self harm present do not probe further.
+
+",safety concerns are present
+,OCPD like patterns,"SIG: 209, 210, 211, 222, 213
+non clinical + emotional signals",,rigidity signal that disrupts many areas of life,assess if there is perfectionism with or without functionality ,"assess if user completes tasks on time, how the imperfections impact them, which areas get affected",there is clear impairment in everyday life
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Attention Deficit Hyperactivity Disorder and Related Disorders,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),General Distractibility,"SIG: 172, 185
+EM- 086, 091, 094, 117","SIG: 172, 185
+EM- 086, 091, 094, 117","occasional distractibility but the 
+user is functional
+","assess if the user is facing situational struggles, presence of any stressors and if they are causing impairment. 
+if distractibility is occurring in many areas route to tier 2 ","frequency , impact, areas where the pattern is present , coping",mild attention struggles that can be tackled with self help strategies 
+,Procrastination Pattern,"EM: 015, 016, 019
+SIG: 185","EM: 015, 016, 019
+
+SIG 185
+",the user has low frequency and intensity of procrastination behaviour and is eventually able to complete tasks,"assess if the delay is due to avoidance/coping- anxiety route ( tier 2)
+if the user is genuinely unwilling- motivation issue (tier 1)
+if the user is unable to allocate tasks- attention issue ( tier 2)","assess the context of the task/ situation being procrastinated.
+frequency, emotional responses, environmental stressors/ changes",manageable signals that do not cause significant impairment
+,Forgetfulness Patten,"SIG: 282
+
+EM: 108, 089",SIG: 282,associated with general forgetfulness which does not cause any significant dysfunction/ impairment,"forgetfulness due to stress/ overload- manifestation of anxiety
+(tier 2)
+
+situational forgetfulness ( tier 1)","assess the impact, duration 
+assess the contents that are forgotten 
+",patterns are manageable with development of organisation skills.
+,time management difficulties,"SIG: 282, 283, 284
+
+EM: 108, 091, 086","SIG:  283
+
+EM: 108, 091, 086",the user is able to maintain functioning in spite of the struggle,assess if the difficulties are due to stress/ anxiousness/mild deficits ( tier 2),"look for environmental stressors, situational difficulties, types of tasks, ",patterns are manageable with development of organisation skills.
+,Struggles with Task Initiation,"SIG: 030
+
+EM: 091, 095, 015, 086","SIG: 030
+
+EM:  015, 086","struggles are situational ( boredom, demotivation)
+but the user is not impaired","assess if it avoidance driven
+( then tier 2)","assess environmental changes/ stressors/ physical health
+frequency, context patterns ( which particular tasks are a major struggle)",improvement based on behavioural interventions 
+,Impulsivity Patterns ,SIG 192,SIG 192,consequences remain mild and manageable,if the impulsivity is causing impairment - tier 2,"areas where impulsivity is seen 
+impact, emotional responses",impulsivity is mild and that can be managed by learning emotional coping skills 
+Tier 2 (Therapist),Chronic Executive Dysfunction Pattern,,,"there is consistent difficulties executing planning  into action
+.
+there is impairment in many domains
+
+user faces daily dysfunction ","if signals are due to situational triggers---- tier 1
+
+ if the patterns are persistent and getting difficult to manage--------tier 2","coping skills, impact, areas that are impacted most,",requirement of professional assistance due to the severity 
+,Difficulties in Task Completion,,,"user faces significant consequences due to incomplete tasks
+presence of repeated complains of missed opportunities, increased stress and reduced functioning","assess if the inability is situational in nature
+( happens only during certain occasions/ around certain people/ environments)","assess if the pattern is an outcome of avoidance / coping
+assess duration, ways of coping
+",
+,Rejection Sensitivity Pattern,"SIG: 193
+
+EM: 097, 034, 033, 010, 001","SIG: 193
+
+EM: 097, 034, 033, 010, ",strong emotional reactions to perceived rejection and criticism,"if the pattern is proportional to the situations ( tier 1)
+if the pattern is spread across multiple areas ( tier 2)
+","check for severity, duration, coping patterns, reassurance seeking",
+,Emotional Dysregulation pattern,,,"emotional responses that are clearly disproportionate to the triggering event
+under faces impairment and dysfunction in areas like relationships, work ","if the pattern is situational- tier one
+if persistent across board ( tier 2)
+is self harm is present ( tier 3)","assess triggers, ways of coping, impact ",management of emotions is impacting daily life
+,Time Blindness,"SIG: 284
+
+EM: 015, 091, 099 107, 088, 108
+
+planning, executing and organizing ","SIG: 284
+
+EM:  091, 099, 107, 108
+
+planning, executing and organizing ","pattern is causing significant dysfunction in daily life
+
+there is a recurring pattern of accuracy in time judgement
+
+the pattern is not being adopted despite self help efforts","if occasional/ situation based ( tier 1)
+if present across areas ( tier 2)","assess the duration
+see if self help strategies have helped
+","deficits are spread across multiple areas and self help is insufficient, need for further professional assessment is necessary"
+,Attention regulation pattern,"SIG: 117, 282, 283
+
+EM: 099","SIG: 117, 282, 283
+
+EM: 099","patterns interfere with work/tasks
+
+difficulties in regulating attention as the task demands
+
+","if situational/ environmental difficulties explore alternative pathways
+
+if the user has these patterns but is having trouble navigating it due to environmental changes see if self help strategies can help ( tier 1) 
+
+","if persistent across emotional states 
+
+assess environmental factors ",significant impairment due to the pattern
+Tier 3 (Psychiatrist),Severe ADHD presentation,"SIG: 282, 283, 284, 004, 153, 192
+
+EM: 099, 100, 107, 001, 002, 008,, 024, ","SIG: 282, 283, 284, 004, 153, 192
+
+EM: 099, 100, 107, 001, 002, 008, 024, ","chronic executive functions causing daily impairment
+assessment and need for pharmacotherapy as primary modes of treatment","assess the intensity of impairment 
+
+if moderate and can be managed y therapeutic interventions (tier 2)
+
+if therapy alone is not supporting ( tier 3)","assess impact on daily functioning
+
+check if the user has tried  therapy ","persistent impairment
+
+self help and therapeutic interventions have been attempted but not useful"
+,ADHD associated anxiety ,"ADHD 
+SIG: 282, 283, 284, 153, 022
+EM: 099, 100, 001, 002, 
+
+Anxiety
+SIG: 149, 150, 151, 152, 155, 156, 157, 158, 159, 161, 163, 167, 171, 172, 174, 189, 207, 
+EM: 107, 088
+","ADHD 
+SIG: 282, 283, 284, 153, 022
+EM: 099, 100, 001, 002, 
+
+Anxiety
+SIG: 149, 150, 151, 152, 155, 157, 158, 163,  171, 172,  189, 207, 
+EM: 107, 088
+","mood signals along with presence of ADHD signals
+
+mood is not secondary ( caused by ADHD signals) but serve as primary source of distress and impairment","assess the basis of mood disturbances
+if situational ( tier 1)
+persistent ( tier 2)","functioning, coping styles",comorbid mood symptoms causing impairment and dysfunction
+,ADHD Depression,"For Depressive Patterns
+SIG: 001, 002/003, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003/ 011
+
+EM: 008, 002, 025, 099, 100
+
+
+ADHD 
+
+SIG: 282, 283, 284, 153, 022
+EM: 099, 100, 001, 002, ","For Depressive Patterns
+SIG: 001, 002/003, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003/ 011
+
+EM: 008, 002, 025, 099, 100
+
+
+ADHD 
+
+SIG: 282, 283, 284, 153, 022
+EM: 099, 100, 001, 002, ","mood signals along with presence of ADHD signals
+
+mood is not secondary ( caused by ADHD signals) but serve as primary source of distress and impairment
+
+Check for self harm","assess the basis of mood disturbances
+if situational ( tier 1)
+
+persistent ( tier 2)
+
+presence of self harm (tier 3)","functioning, coping styles
+
+if self harm is present do not probe",comorbid mood symptoms causing impairment and dysfunction
+,severe academic/ occupational impairment,"SIG: 282, 283, 284, 022, 004, 153, 192, 254
+
+EM: 099, 100, 107, 001, 002, 008,, 024, ","SIG: 282, 283, 284, 022, 004, 153, 192, 254
+
+EM: 099, 100, 107, 001, 002, 008,, 024, ","significant impairment at work caused due to patterns
+are not a result of boredom / demotivational
+persistent complains in spite of consistent efforts","if the patterns are manageable/ user has not tried therapy  ( tier 2)
+
+if there is financial risk involved ( tier 3 )",assess if user has considered therapeutic interventions for behavioral modification,there is risk to financial and academic stability
+,,,,,,,
+,,,,,,,
+,,,,,,,
+"Gender and sexual Dysphoria, and Other related patterns",,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),Gender Identity uncertainty,"
+
+EM: 086 093,094,095, 101
+110",EM 110,questions are asked with an intention of exploration/ curiosity and not significant distress/ impairment,"if curiosity driven and no distress- tier 1 
+
+if there is underlying self rejection/criticism/ impairment/judgement - tier 2","if identity is causing adjustment issues, if there is increasing worry/lack of acceptance, coping with the information provided
+
+assess the age ( teens are in the exploratory stages of their gender)","exploratory in nature, no distress/ dysfunction present, reflective in nature"
+,Sexual Identity Exploration,"
+
+EM: 086 093,094,095, 101
+110",EM 110,questions are asked with an intention of exploration/ curiosity and not significant distress/ impairment,"if curiosity driven and no distress- tier 1 
+
+if there is underlying self rejection/criticism/ anxiety/judgement - tier 2",if the uncertainty is becoming distressing/ causes problems in relationships,"exploratory in nature, no distress/ dysfunction present, reflective in nature"
+,"Exploration on 
+Gender Expression ","
+
+EM: 086 093,094,095, 101
+SIG: 257",Not Mandatory,"user is exploring ways of expression without any distress/ impairment/ dysfunction
+there might be uncertainty but no relative impairment",if inability to use the modes of expression are leading to distress/ self rejection-- tier 2,assess how user is coping with the information provided ( distressed/ accepting),exploration is curiosity focused and is self driven/ accepting 
+,Fear of social judgment around gender ,"
+SIG: 168, 169, 207
+EM: 088, 090,091,093,094,095","
+Not Mandatory
+SIG: 168, 169, 207
+EM: 088, 090,091,093,094,095",general/ situational concerns that are manageable ,if the user is engaging in avoidance behaviours/ concealment/ self judgement---tier 2,"check if avoidance is used as coping, decline in social functioning, self criticism",user has mild distress and can cope with self help tools
+,stress around identity adjustment,"EM: 088, 093,094,095
+102, 103","EM: 088, 093,094,095
+102, 103","stress is linked to life changes, and  impairments which are consistent with the situation",if the stress becomes intensive/ persistent and is seen across multiple areas---tier 2,"assess if self help coping is helping the user, impact ",the user is able to manage situationally aligned distress with intact functioning
+,struggles with sexual contact with romantic partner,"EM: 086, 088, 090, 091,093,094, 095","EM: 086, 088, 090, 091,093, 095","the user is struggling to initiate / reciprocate intimacy with partner
+
+the hesitance is linked to situational/ environmental/ cultural factors ( user's first time, is not in a wedlock, is just not confident to initiate intimacy)
+
+there are no significant medical challenges that is hindering the process","uncertain due to situational contexts----------tier 1
+
+persistent and distressing causing impairment------------tier 2","assess the user's comfort
+
+assess the reason for the hesitation
+
+assess their readiness",the user would benefit from psychoeducation as there is willingness towards intimacy 
+Tier 2 (Therapist),Persistent Distress due to Gender Identity,"EM: 105, 001, 107, 089, 108,087,
+
+SIG: 159, 257","EM: 105, 001, 107, 089, 108,087,
+
+SIG: 159, 257","identity concerns are causing emotional distress, lack of self acceptance , increased mental preoccupation  
+distress is more prominent than curiosity","user is more curious---- tier 1
+user is showing more distress anc concern -----tier 2","assess the thought process of the user, look out for themes of self rejection/ criticism/ judgement and its impact
+
+assess ways of coping  ","there is recurring distress, emotional dysregulation and need for professional support "
+,Internalised Stigma and Self Rejection ,"EM: 105, 107, 100, 092, 001, 002, 006, 010
+SIG: 030","EM: 105,001, 002, , 006, 092, 100, 010
+SIG: 030",user has negative beliefs about the identity / sexual preference of self which are adding to the emotional distress,"mild self consciousness---tier 1
+shame/ rejection/ criticism--tier 2
+presence of self harm as coping ----tier 2/ 3","assess avoidance behaviours, coping 
+(look out for any self harm behaviours as coping)",internalised judgements are contributing to emotional distress
+,Gender Identity Related Anxiety,"SIG:  157, 159, 163, 168, 169,207, 257
+
+EM: 088, 093, 094, 095","SIG:157, 159, 163,168, 207, 257
+
+EM: 088,093, 094, 095","gender identity is causing distress and affecting decision making, emotional regulation and social behaviours","if there is mild nervousness-- tier 1
+if impairment is persistent across different areas--tier 2","avoidance behaviours, coping , severity of the anxiousness","anxiety is interfering with with emotional, social  wellbeing"
+,Social Rejection due to Gender Identity,"SIG: 028, 149, 163, 168, 169, 207, 250, 022
+
+EM: 100","SIG:163, 149, 168, 169, 207, 022
+
+EM : 100","the person is going through actual situations of social rejection
+there is persistent distress and self help is unhelpful 
+","mild emergence of emotions due to perceived rejection----- tier 1
+higher intensity of perceived/ congruent rejection------- tier 2",assess if the distress is rising from actual experiences of social rejection or it is anticipatory,fear of rejection is causing persistent impairment in social emotional well being
+,Fear of sexual Contact,"EM: 002, 003, 107, 163
+SIG:  256, 030, ","EM: 002, 003, 107, 163 
+SIG: 256, 030, ","there is persistent avoidance to initiate and maintain sexual contact 
+interest in sexual contact is intact and not missing but there is an inability to do so
+","if there is nervousness due to situational factors------tier 1
+(eg: engaging in it for the first time)
+
+if there is persistent distress to engage in it------tier 2","assess the client's readiness to engage in sexual contact on the basis of 
+- the person involved with them
+- if the person has consented ( there is a will from the user's end)
+- how do they cope/ respond to their own sexual needs
+- if the fear is induced to the specific person or having sexual contact in general",the user is willing/ wanting sexual engagement but is unable to regulate her fear which is causing dysfunction in their sexual wellbeing and relationship 
+,Stress Induced  Maturbation,"SIG: 024, 155, 149, 022,
+
+EM; 061, 065, 059, 001 002, 094, 088, 105, 107","SIG: 024, 155, 149, 022,
+
+EM; 061, 065, 059, 001 002, 094, 088, 105, 107","user is using sexual self indulgence/ masturbation as a way of coping with stress/ overwhelm
+
+there is distress following the act which is impacting functioning ","occasional, done for pleasure ------------tier 1
+
+distressing, persistent and user is overdoing it------------------tier 2","assess if masturbation is the primary coping 
+
+assess other ways of coping for the user
+
+triggers
+
+","while user is struggling with sexual overindulgence, professional help would address the underlying cause of the same while providing healthier means of coping. "
+Tier 3 (Psychiatrist),"Severe Gender Dysphoria/
+","SIG: 002/ 003, 004, 010, 012,019,020,022,257
+
+EM: 106, 099, 100, 094, 087, 001, 002, 003","SIG: 002/ 003, 004, 010, 012,019,020,022,257
+
+EM: 106, 099, 100, 094, 087, 001, 002, 003","there is significant incongruence of identity and physical characteristics
+
+there is chronic distress across multiple areas and causing significant impairment in daily functioning
+
+possible self harm
+
+","distress with functionality---tier 2
+distress with impairment--- tier 3","if self harm is present and active do not probe
+
+IF NO SELF HARM
+probe on coping , duration , impact","dysphoric distress with significant impairment in social  occupation, relational wellbeing"
+,identity related distress with major depressive features,"SIG: 257, 002/003,001, 005, 006/007, 008, 010, 012, 011, 018, 021, 028, 030
+
+EM: 010, 011, 001, 002, 099, 100, 107","SIG: 257, 002/003,001, 005, 006/007, 010, 012, 011, 021, 028, 030
+
+EM: 010, 011, 001, 002, 099, 100, 107","identity associated distress with major depression as a comorbidity
+ the distress is beyond identity exploration and extends to depressive symptoms causing dysfunction and daily life impairment
+possible self harm","distress with functionality---tier 2
+distress with impairment--- tier 3","if self harm is present and active do not probe
+
+IF NO SELF HARM
+probe on coping , duration , impact",presence of distress that cannot be managed through psychologists and would need further psychiatric assessment
+,identity related distress with severe anxiety,"SIG: 257, 081, 149, 150, 153, 155, 156, 157, 158, 159, 163, 169, 207
+
+EM: 099, 100, 107, 001, 002 094","SIG: 257, 081, 149, 150, 156,  158, 159, 163, 169, 207
+
+EM: 099, 100, 107, 001, 002 ",identity based anxiety is impairing daily functioning and has spread across multiple areas,"moderate anxiety---- tier 2
+anxiety with impairment ---- tier 3","assess the impact, ways of coping",presence of distress that cannot be managed through psychologists and would need further psychiatric assessment
+,medical transition assessment seeking,"EM 257, 086, 087, 088, 091, 093, 095, 006, 008, 009,032, 038, 110, 102 103 104","EM: 257, 086, , 088, 091, 093, 095, 006, 008, 009,032, 038, 110,102, 103, 104",the user is exclusively seeking information on medical transitioning and would benefit from a professional,"general information- tier 1
+assessment and support- tier 2/3","explore support system, goals and expectations",user expresses clear professional assessment 
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Substance use and Related Patterns,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),Curiosity about substances,"EM: 101, 111, 112, 110, 
+SIG: 128","EM: 101, 111, 112, 110","the user has curiosity about substances/ uses / effects
+ 
+the inquiry is not distress driven rather it is exploratory",assess if user is inquiring about it / has consumed it for coping----tier 2,"assess if the user is already using it, frequency, other coping means, any environmental stressors that has led him to ask this","inquiry is exploratory, developmentally congruent, and can be managed with psycho-education"
+,Using substances as recreation,"EM : 042, 038, 111, 109
+
+SIG: 128",EM: 042,"user has insight to reflect on habits without the presence of compulsive behaviours
+","if the pattern is repeated in multiple contexts, used more as coping than recreation------------tier 2","frequency, maintenance of boundaries, other means of coping, if there is any impact","user has awareness of their boundaries, and does not face significant impairment due to the recreation"
+,Trying a substance for the first time,"EM: 101, 088, 110, 111, 112, 042, 083, 086","Not Mandatory
+
+EM: 042","the user has curiosity about substances/ uses / effects
+ 
+user is not  distress driven rather it exploratory
+
+linked with environmental/ developmental exploration rather than reliance/ dependence",if the frequency is increasing/ is a primary source of coping/ is impacting other areas of life ( work/ academics/ relationships)-------- tier 2,impact/ frequency/ coping/ social pressures,user has insight about his behaviour/ substances are used occasionally and functioning is preserved
+,substances use due to peer pressure,"EM: 083, 113, 114, 024, 093, 088, 042","EM: 113, 114, 042",use of substances is limited to the social context and is not pointing to dependence/ reliance,if user has increased reliance / primary source of coping------tier 2,"assess frequency, impact,ability to decline, motivation","behaviour is a result of social situations,and is consumed within limits"
+,Habit Reflection,"EM: 008, 110, 042, 072, 038, 018, 005, 002","Not Mandatory
+","user has insight about his patterns and is motivated to change, without the presence of distress/ dependence on the substance",assess if the user presents loss of control/ repeated attempts to quit-----------tier 2,"previous attempts to change
+
+frequency and impact
+
+reasons to change",presence of reflection and motivation to change without any impairment
+,workplace stress leading to drinking/ smoking,"EM: 115, 113, 091","EM: 115, 113, 091","user has insight about the environmental context of his substance use
+
+there is minimal reliance which is not causing significant dysfunction/ impairment
+","assess the intensity of reliance/ dependence
+if high/ primary source of emotional coping-------tier 2","previous attempts to change
+
+frequency and impact
+
+other means of coping","presence of unhelpful patterns which are leading to minimal negative consequences.
+
+functionality is preserved
+
+no previous active/ constant attempts to change behaviour"
+,social / workplace drinking,"EM: 091, 111, 113,114,115","EM: 091, 111, 113,114,115","use is occasional
+not a primary source of emotional regulation",if frequency and impact is high----------tier 2,"assess coping means and environmental impact (presence of stress, social pressure)",overall user maintains functionality and healthy coping means
+,,,,,,,
+Tier 2 (Therapist),stress based reliance on alcohol,"SIG: 128, 139,156, 115 024, 030, 011
+
+EM: 004 , 002, 001 089, 091, 085, 115, 116
+","SIG: 128, 139, 156, 115 024, 030
+
+EM: 089, 091, 085, 115, 116","reliance on alcohol for emotional regulation
+
+primary sources of coping
+
+user reports difficulty to relax/ calm down when not used","occasional drinking------ tier 1
+
+alcohol becoming a preferred coping----------tier 2","impact on functioning , alternate means of coping, context of the stress/ triggers","alcohol is being used to regulate stress, therapeutic interventions to help understand the cause to work on stress and form healthier coping means"
+,cannabis reliance due to stress,"SIG: 024, 025, 089, 091 , 099, 107, 116, 129, 130
+
+EM: 135, 139, 159, 156","SIG: 024, 025, 099, 107, 116
+
+EM: 135, 139, 159, 156","reliance on cannabis for emotional regulation
+
+primary sources of coping
+
+user reports difficulty to cut down
+
+user reports emotional dysregulation when not use","occasional and recreational------ tier 1
+
+cannabis becoming a preferred coping----------tier 2","frequency, impact on functioning , alternate means of coping, context of the stress/ triggers ","cannabis is being used to regulate stress, therapeutic interventions to help understand the cause to work on stress and form healthier coping means"
+,Binge Drinking patterns,"SIG : 128, 129, 130, 131, 132, 133, 134, 135, 136, 139
+
+EM: 001, 002, 004, 005, 010","SIG : 128, 129, 130, 131, 132, 135, 
+
+EM: 001, 002, 004, 005, 010","user possesses patterns of consuming large quantity of alcohol  within a short time span which are frequent despite causing impairment 
+
+user faces difficulty to cut down on the pattern","occasional/ situational overconsumption---------tier 1
+binge drinking pattern ------------tier 2
+binge drinking pattern causing overall dysfunction-----tier 3","impacting occupational and relationships,
+
+presence of guilt/  regret
+
+blackouts
+
+possible cause of the pattern ( environmental/ social context)","presence of binge drinking patterns, causing impairment and need for therapeutic interventions to identify the causes"
+,Nicotine Use patterns,"SIG: 128, 129, 130, 132, 156, 159.
+
+EM: 005, 004, 116, 115, 091","SIG: 128, 129, 130, 132, 156, 159.
+
+EM: 005, 004, 116, 115, 091",nicotine use is increasingly automatic and  difficult to control in spite of awareness and drawbacks,"occasional/ recreational/ social consumption----------tier 1
+frequent/ daily/ regular dependence-----------tier 2","cravings, withdrawal, previous attempts to quit, triggers/ stress",presence of dependent patterns and need for professional intervention to explore underlying patterns
+,academic performance impacted due to substance use,"SIG: 113, 135, 139, 030
+
+EM: 001, 002, 005, 116, 099, 089","SIG: 113, 135, 139, 030
+
+EM: 001, 002, 005, 116, 099, 089",substance use is beginning to interfere with academic performance due to overconsumption,"experimentation without impact-----tier 1
+
+academic/ work impairment---------tier 2","assess how it is impacting, what is the trigger that leads to consumption, presence of any environmental triggers, alternate coping , presence of withdrawal when not consumed",there is a clear presence of academic impairment and dependent patterns that need professional intervention
+,partner is using substances leading to relational conflicts,,,"user is experiencing the consequences of partner's dependence on substances
+
+there are clear relational conflicts that are arising/ relationship is being impacted due to the partner's substance overconsumption","isolated/ attachment / situational related conflicts-----------tier 1
+
+conflicts arising exclusively due to substance overconsumption------------tier 2
+","assess the exclusivity of the relationship impact 
+( is it mostly being impacted due to the withdrawal and overconsumption of substances)
+
+ways that the partner is coping with this.",relationship is being governed/ impacted by substance overuse/ overuse is causing harm to the partner/ relationship through conflict and need for intervention for the partner/ couple is crucial
+,failed attempts to reduce substance use,"SIG: 156, 128, 129, 130, 131, 132, 135
+
+EM: 089, 090, 092, 099, 001, 002, 003, 004, 007","SIG: 156, 128, 129, 130, 131, 132, 135
+
+EM: 089, 099, 001, 002, 003, 004","user has insight about the patterns, is motivated to change, but has difficulty in reducing use","casual intention to reduce/  occasional / situational based consumption---------tier 1
+
+dependent patterns/ previously failed attempts------------tier 2","struggles causing failed attempts, other coping sources, assess level of stress/triggers",there is presence of motivational change but struggle in tangible actions which would require further professional assessment
+Tier 3 (Psychiatrist),moderate to severe alcohol dependence,"SIG : 128, 128, 129, 130, 131, 132, 133, 134, 135, 136
+
+EM: 001, 002, 003, 004, 099, 100","SIG : 128, 128, 129, 130, 131, 132, 133, 134, 135, 136
+
+EM: 001, 002, 003, 004, 099, 100","user has most of the markers of dependency
+
+multiple failed attempts to quit
+
+is causing significant impairment in daily functioning
+
+is impacting social, occupational and relational areas
+therapeutic interventions have not helped","used a primary coping with minimal  consequences---------tier 2
+
+dependence with significant dysfunction and impairment---------tier 3","medical risks, withdrawal, morning drinking",user presents overall dependence on alcohol for functioning and requirement for psychiatric assessment and medical/ rehabilitation interventions
+,Dealing with patterns of alcohol withdrawal,"SIG : 044, 128, 128, 129, 130, 131, 132, 133, 134, 135, 136
+
+EM: 001, 002, 003, 004, 099, 100
+
+PHYS: 013, 014, 015, 016, 017","SIG : 044, 128, 128, 129, 130, 131, 132, 133, 134, 135, 136
+
+EM: 001, 002, 003, 004, 099, 100
+
+PHYS: 013, 014, 015, 016, 017","user has most of the markers of dependency
+
+user shows signs of physiological dependence and difficulty in functioning when alcohol is not used
+(withdrawal)
+
+multiple failed attempts to quit 
+
+is causing significant impairment in daily functioning
+
+is impacting social, occupational and relational areas
+therapeutic interventions have not helped","cravings----------tier 2
+
+withdraw -------------tier 3","assess the kind of withdrawal symptoms they are facing.
+
+if there are psychotic symptoms",the user shows physiological and psychological changes when they restrict using the substance of dependency which require further clinical assessments and rehabilitation interventions. 
+,severe cannabis dependence pattern,"SIG: 128, 129, 130, 132, 139, 137
+
+EM: 099, 100, 107, 106","SIG: 128, 129, 130, 132, 139, 
+
+EM: 099, 100, 107, 106","user has most of the markers of dependency
+
+multiple failed attempts to quit
+
+is causing significant impairment in daily functioning
+
+is impacting social, occupational and relational areas
+
+therapeutic interventions have not helped","used a primary coping with minimal  consequences---------tier 2
+
+dependence with significant dysfunction and impairment---------tier 3","assess the user's level of impairment, motivation, impact, previous attempts to quit",user presents overall dependence on cannabis for functioning and requirement for psychiatric assessment and medical/ rehabilitation interventions
+,severe nicotine dependence pattern,"SIG: 128, 129, 130, 132, 139, 137, 280, 281, 278, 279
+
+EM: 099, 100, 107, 106","SIG: 128, 129, 130, 132, 139, 137,280,281
+
+EM: 099, 100, 107, 106","user has most of the markers of dependency
+
+multiple failed attempts to quit
+
+therapeutic interventions have not helped","early reliance with minimal impact----------tier 2
+
+severe dependence with failed attempts to quit ------------tier 3","withdrawal, severity, previous attempts to quit",user presents overall dependence on nicotine  for functioning and requirement for psychiatric assessment and medical/ rehabilitation interventions
+,prescription medicine misuse ,,,"medicines are used for non medical purposes and exceed medical guidelines
+
+user has most of the markers of dependency 
+
+multiple failed attempts to quit
+
+therapeutic interventions have not helped","recreational/ curiosity driven----------tier 2
+
+repeated misuse leading to dependency-------- tier 3","source, frequency, tolerance, impact",there is a clear presentation of misuse of medicines that need rehabilitation/ psychiatric interventions
+,substance induced mental health symptoms,,,substances are contributing to clinically significant psychological changes,"emotional distress due to use-----------tier 2
+
+psychological symptoms linked to use ------------tier 3","assess if the user has any other mental health condition that has been diagnosed before
+
+assess the severity and duration
+
+",user is exclusively experiencing psychological symptoms due to substance consumption and has not been previously diagnosed with an independent mental health disorder.
+,,,,,,,
+,,,,,,,
+Feeding and Eating Disorders and Related Patterns,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),Stress eating pattern,"SIG: 262
+
+EM: 06, 91, 94, 116","EM: 06, 91, 94, 116","eating patterns are linked as a response to occupational stress/ anxiousness/ overwhelm
+
+not a result of body image concerns/ feeling out of control
+
+is not a primary way of emotional coping","situational stress response and is occasional--------tier 1
+
+frequently repeated pattern and primary source of coping-------------tier 2
+","assess if there is a perceived loss of control
+triggers
+alternate ways of coping ","there are other ways of coping with triggers.
+
+the pattern is occasional "
+,boredom eating pattern,"SIG: 153
+EM: 025, 117","SIG: 153
+EM: 025, 117","eating is seen as a way of stimulation seeking rather than hunger
+
+is not a pattern of coping ","occasional----------tier 1
+
+repeated reliance ------------tier 2","distress post eating/ impact
+
+frequency, triggers
+
+alternate coping ways","there are other ways of coping with triggers.
+
+the pattern is occasional 
+"
+,irregular meal pattern,"EM: 089, 091, 110","EM: 089, 091, 110","eating disruptions are a cause of irregularities in lifestyle and not due to deliberate restriction of food
+
+the user has insight on the patterns and is looking for consistent change in lifestyle","lifestyle related inconsistency--------tier 1
+
+deliberate elimination of food-----------tier 2
+
+if food intake is influenced by environmental stress/ anxiety-------------tier 2","assess if there are triggers/ stressors leading to lifestyle dysruptions
+
+assess presence of intentional restriction and body image concerns","the pattern is formed due to lifestyle however, repeated patterns which indicate voluntary restrictions of food may need further help"
+,lack of food intake due to stress,"EM: 086, 091, 095, 093, 094, ","EM: 086, 091, 095, 093, 094, ","The user faces unwillingness to consume food as a result of stress/ overwhelm
+
+there lack of consumption is not coming from food / weight/ body related fear","occasional/ situational--------------tier 1
+
+distressful and might be increasing health risk-------------tier 2","triggers
+
+severity
+
+thought process behind inability to eat and the stress",the lack of food consumption is a response to stress and her user will benefit from professional help to navigate and manage stress.
+,occasional emotional eating pattern,"EM: 013, 024, 087,096, 097, 098,","EM: 013, 024, 087,096, 097, 098,","occasional pattern for coping with emotions
+not a primary source of coping 
+is not causing medical / health concerns","occasional comfort eating----------tier 1
+
+consistent pattern of for regulating emotions------------tier 2","assess the frequency  severity and impact
+
+identity if there are any triggers
+
+",eating patterns are occasional and alternate ways of coping exist
+,diet rebound eating pattern,"EM: 089, 086, 087, 033, 094","EM: 089, 086, 087, 033, 094","pattern of strict food restriction followed by overindulgence
+","mild rebound patterns ----------tier 1
+
+repeated binge eating ----------tier 2","frequency, severity of the restriction
+
+assess how the client is restricting food",the user's struggle to maintain a healthy pattern of eating might need therapeutic intervention for the management and  modification of eating habits
+Tier 2 (Therapist),food guilt and shame patterns,"EM: 001, 002, 004, 011, 006, 010
+
+SIG: 103, 105, 108, 110, 111, 112, ","EM: 001, 002, 004
+
+SIG: 103, 105, 108, 110, 111, 112, ","emotional distress related to eating is disproportionate to the eating itself 
+
+there is presence of self criticism and preoccupation of body related negative thoughts","occasional / situational guilt related to overeating which is proportionate to the eating behaviour-----------tier 1
+
+persistent, disproportionate guilt and shame about eating behaviours------------tier 2","beliefs around food, body image concerns, environmental triggers ",ther users behaviour and thoughts are strongly connected to the meaning  attached to them and therapeutic interventions would help assess the underlying cause
+,body image driven eating patterns,"EM: 001, 002, 004, 011, 006, 010
+
+SIG: 103, 104 105, 107, 110, 111, 112, 124,  ","EM: 001, 002, 004, 011, 006, 010
+
+SIG: 103, 104 105, 107, 110, 111, 112, 124,  ","concerns about weight, body and appearance that are actively influencing eating behaviour / patterns","general concerns in appearance without impairment ------------tier 1
+
+development of eating patterns that are leading to medical/ health concerns --------------tier 2","assess client's duration of patterns, frequency of the pattern occurring, any event that led to this","food consumption patterns are influenced by perceived appearance  rather than preference, health , or hunger and is negatively impacting the user."
+,food rules and rigidity patterns,"EM: 001, 002, 004, 011, 006, 010
+
+SIG: 103, 104 105, 106 ,107, 108, 110, 111, 112, 124,  ","EM: 001, 002, 004, 011, 006, 010
+
+SIG:  107, 108, 110, 111, 112, 124,  ",the user experiences intense emotional overwhelm when food consumption is not within the  rules set by the user,"general health / medical preferences--------------tier 1
+
+self imposed, rigid and causing distress-----------tier 2","rule severity
+
+scope for flexibility 
+
+emotional factors ( anxiety/ stress)",professional help would help navigate the meaning behind these patterns while providing healthier means of support
+,self worth linked to eating and weight,"SIG: 010, 011, 012, 020,112
+
+EM: 001, 002, 008, 010, 033, 036, 037, 105, 116, 
+Non Injury self harm","SIG: 010, 011, 012,112
+
+EM: 001, 002, 008, 010, 033, 036, 037, 116, 
+Non injury self harm","the user deliberately restricts food intake due to the perceived self worth attached to eating  
+eg: if i don't score well in exam i will not eat because i don't deserve it)
+
+","inability to eat due to general/ situational stress/ disappointment------------tier 1
+
+voluntary restriction of food due------------tier 2","other ways of coping with emotions
+
+link between food and perceived success in other areas",there is a link between self worth and food which influence eating behaviours and therapeutic interventions would help restructure better meaning and provide alternate coping 
+,loss of control eating patterns,"EM: 001, 002, 089
+
+SIG: 104, 102, 114, ","SIG: 102 , 114
+
+EM: 001, 002, 089",the users struggles to regulate and maintain healthy eating behaviours despite attempts,"occasional/ situational overeating-------------tier 1
+
+recurrent pattern having an underlying loss of control in eating ----------tier 2","frequency and shame 
+
+assess what overeating and loss of control means
+for the user
+
+triggers/ stressors",user faces challenges in regulating their eating and is not influenced by hunger  and therapy can help with self regulation skills
+Tier 3 (Psychiatrist),severe food restrictions with physical consequences,"SIG: 102, 103, 105, 110.111.112,115,116
+
+EM: 099, 100, 107, 008, 101, 007, 001,002
+
+Declining physical health","SIG: 102, 103, 105, 110.111.112
+
+EM: 099, 100, 107, 101,001,002
+
+Declining physical health","user reports patterns of food restrictions with noticeable physical changes 
+
+causing dysfunction and impairment","mild impact due to food restriction--------tier 2
+
+physical consequences/ need for medical assistance---------tier 3","assess in what ways is the physical impact
+
+what is the user doing to address it",physical consequences are resulting due to voluntary food restriction and need for assessment beyond cognitive and behavioural interventions is needed
+,purging or compensatory behaviours,"SIG: 102-107, 115, 116","SIG: 115, 116, 108, 107",user reports pattern where behaviours intended to compensate for eating ,"emotional dysregulation without compensatory behaviours----------tier 2
+
+compensatory behaviours causing medical concerns----------tier 3","assess if there are other types of compensatory behaviours
+
+impact on health and need for  medical assistance",there is a need for medical intervention as some compensatory behaviours can put the user at risk
+,severe preoccupation with weight ,"EM: 001, 002, 006, 007, 008, 010, 099, 100, 106
+
+SIG: 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 115, 115","EM: 001, 002, 006, 007, 008, 010, 099, 100, 106
+
+SIG: 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 115, 115","user is preoccupied with thoughts surrounding one's weight, appearance which is impacting daily functioning and causing impairment
+","body dissatisfaction--------tier 2
+
+persistent preoccupation------------tier 3
+
+","changes in eating habits
+
+areas of dysfunction 
+
+medical / health risks",the intensity of the thoughts seem to be affecting daily functioning and could be beyond therapeutic intervention and would need psychiatric assessment
+,severe food patterns leading to nutritional risk,"For anorexia : SIG: 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113
+EM: 106, 099, 100, 107
+
+for Binge eating: SIG: 012, 103, 104, 106, 112, 114, 115, 116, 117, 118
+EM: 106, 099, 100, 107
+
+","For anorexia : SIG: 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113
+EM: 106, 099, 100, 107
+
+for Binge eating: SIG: 012, 103, 104, 106, 112, 114, 115, 116, 117, 118
+EM: 106, 099, 100, 107
+","user is reporting significant medical/ physical/ nutritional deficits due to eating patterns
+
+there is impairment in daily functioning","only presence of emotional distress-----tier 2
+
+inability to cater to daily tasks----------tier 3","assess performance at school/ work
+
+assess a bit of user's eating patterns",eating patterns are interfering with daily functioning and  need for medical evaluation for treatment purposes are crucial
+,,,,,,,
+,,,,,,,
+,,,,,,,
+"Stress, Trauma And Associated Patterns",,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),General Stress,"SIG : 024, 028, 040, 152, 154, 155, 156, 152
+
+EM: 026, 027, 055, 056, 091, 098, 015, 016","SIG : 024, 028, 040, 152, 155, 152
+
+EM: 026, 027, 055, 056, 091, 098","Stress is present in at least 1 / 2 identifiable areas of demands
+
+has not very actively worked to reduce the stress","stress linked to proportionate daily demands---------tier 1
+
+if there is a decline in functioning -------------tier 2
+
+if there have been previous attempts to work on the stress but have failed------------tier 2","assess if the stress is in proportion to the situation 
+
+ways of coping 
+
+daily functioning 
+
+",the user is facing stress due to the buildup of situations that might be affecting wellbeing. might benefit from self help strategies for stress management and self care
+,Adjustment due to Transition/ major life event,"SIG: 015
+
+EM: 095, 087, 086, 089, 004, 019","SIG: 015
+
+EM: 095, 087, 086, 089, 004, 019","stress is present as a result of a major life event
+
+there is struggle to cope with the transition ","temporary difficulties in adjusting to changing event------------tier 1
+
+persistent stress beyond the adjustment period------------tier 2
+","coping methods
+
+assess the duration of transition
+
+assess areas where the user has seen successful adaptation
+
+assess what parts specifically they are struggling with. ",each user would adapt at different pace and initial help could be offered in terms of general support and adaptation strategies which are situation specific
+,Burnout due to stress,"SIG: 015, 153, 154, 155, 156, 030
+
+EM: 026, 027, 055, 056, 091","SIG: 015, 153, 154, 155, 156, 030
+
+EM: 026, 027, 055, 056, 091","user presents emotional/ physical / cognitive exhaustion due to the situational stress/ demands
+
+there is reduced functioning but the user is able to manage daily demands","proportionate exhaustion with functioning-----------tier 1
+
+collapse in daily functioning--------tier 2","ways of coping
+
+impact of the demand
+
+recovery methods",support can be provided in terms of offering self help recovery tips and self care to maintain functionality 
+,Stress Induced Overthinking Pattern,"EM: 091, 089, 038, 030, 086, 094
+
+SIG: 015, 028","EM: 091, 089, 030, 086, 094
+
+","repetitive over thinking and rumination about the stressors
+
+no significant impairment","patterns revolve around the stressor--------tier 1
+
+if the overthinking pattern is generic and present in many areas of life causing distress -----------tier 2","coping ways ( check for avoidance behaviours)
+
+if impacting functioning
+
+assess user's capacity to deal with uncertainty/ other life stressors
+
+assess the context, duration and impact of the situational stress ","user's patterns are pointing towards proportionate and situational appropriate behaviours, and stress management and self help grounding would help"
+,Performance based stress,"SIG: 091, 156, 081
+
+EM: 019, 038, 093, 088, 089, 015","SIG: 091
+
+EM: 019, 038, 093, 088, 089,","performance based demands are resulting in noticeable stress
+
+is not causing significant impairment/ dysfunction","situational stress that is proportionate------------tier 1
+
+anxiety and panic like symptoms ---------------tier 2","coping methods
+
+duration and impact
+
+",there is a congruence between the situation and the stress response and the user will benefit from some stress management and self care strategies
+,Response to Breakup / loss of job/rejection/ failure,"EM: 002, 023, 024, 030, 098, 097, 093","EM: 002, 023, 024, 030, 098, 097, 093","there is emotional response to an adverse situation
+
+distress is proportionate to the situation and functioning is intact","distress is proportionate to the situation 
+response as a part of normal recovery process-----------tier 1
+
+presenting trauma like symptoms------------tier 2","assess if the nature of the situation was in any way abusive
+
+duration and impact
+
+coping resources",emotional responses to adverse situations are congruent and not extreme. self self and self compassion interventions would help
+,,,,,,,
+Tier 2 (Therapist),unresolved distress following an event,"SIG: 030, 022, 024, 027
+
+EM: 107, 088, 004, 007, 108, 098, 097","SIG: 030, 022, 024,
+
+EM: 107, 088, 004, 007, ","distress is present beyond adjustment period
+
+distress is mainly due to past events and impact present day functioning
+
+self help has not helped 
+","situational stress with intact functionality and scope for recovery----------tier 1
+
+persistent distress in spite of self help attempts and declining coping--------tier 2","duration and impact
+
+triggers
+
+coping methods
+
+assess if the response if situationally proportionate
+
+",the user's stress is persistent despite the duration of the event and is unable to independently cope with the same. therapeutic interventions would help the underlying beliefs
+,Trauma like patterns due to associations/ reminders,"SIG: 024, 205, 027, 028, 030, 033
+
+EM: 088, 107
+
+PHYS: 013, 019, 012, 013, 081, 152, 153, 156, 157","SIG: 024, 205,  028, 030, 
+
+EM: 088, 107
+
+PHYS: 013, 019, 012,  081, 152, 153, 156, 157","Emotional/ behavioural/ cognitive distress emerging due to reminders of difficult life experiences
+
+distress is associated with past  life events
+
+has tried to cope with self help but failed","occasional discomfort and active coping-----------tier 1
+
+persistent distress and frequent emotional reactivity---------- tier 2","assess the triggers
+
+assess for avoidance patterns and coping
+
+assess functionality",user presents patterns of strong emotional  reactivity due for which professional interventions are crucial 
+,Patterns of severe Hypervigilance,"SIG: 033, 032, 028, 027, 028 024, 022, 149, 152, 151, 153, 157
+
+EM: 088, 107","SIG: 033, 032, 028, 028, 024, 022, 149, 152, 151, 153, 157
+
+EM: 088, 107","presence of persistent hyper alertness is present across multiple situations 
+
+there is distress and inability to relax
+","situational hyper awareness and intact coping --------------tier 1
+
+persistent perceived threat affecting functionality-------------tier 2","assess the concerns/ what feels threatening to the user
+
+assess if the emotion is proportionate to the concern
+
+coping ways",presence of perceived/ disproportionate hypervigilance and professional interventions would help explore the reasons for maintenance of the belief while provide alternate coping strategies
+,Impact due to Relationship stress,"SIG: 156, 153, 040, 022, 024
+
+EM: 089, 087, 091, 107, 004, 016","SIG: 156, 153, 040, 022, 024
+
+EM: 089, 087, 091, 107, 004, 016","presence of consistent stress associated with relationship struggles
+
+there is minimal consequences in other areas of life, however, impact is present ( eg: inability to concentrate in other tasks, low motivation etc)
+
+","occasional/situational relationship struggles------------tier 1
+
+persistent and long term stress------------tier 2","assess the concerns within the relationship resulting in the pattern
+
+methods of resolution/ communication
+
+assess the duration and the impact 
+
+how the user is coping 
+
+assess if there is any harm ( physical, verbal, financial etc) caused to the user",maintenance of unhealthy relationship/ patterns can be assessed and helped with interventions by identifying patterns and need more than self help strategies.
+,Trauma related shame and self blame Patterns,"SIG: 153, 156, 154, 152, 151, 149, 022, 024, 025, 027, 028
+
+EM: 002, 001, 007, 008, 010, 087","SIG: 153, 156,  152, 151, 149, 022, 024, 025, 027
+
+EM: 002, 001, 007, 008, 087","presence of shame and guilt associated with a difficult life event
+
+user persists to view themselves negatively while associating them with the event","occasional self doubt/ questioning--------------tier 1
+
+persistent negative evaluation when accounting the past event--------------------tier 2","belief about self in other areas of life
+
+ways of coping
+
+","strong emotional associations to difficult life experiences are common however, would require therapeutic interventions in order to examine the beliefs of the user while help reduce the intensity of the emotions."
+,,,,,,,
+,,,,,,,
+Tier 3 (Psychiatrist),Severe Trauma Reactivity Patterns,"SIG: 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 152, 153, 013
+
+EM: 088, 087, 099, 100, 107
+
+PSYCH: 012, 013, 015","SIG: 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 152, 153, 013
+
+EM: 088, 087, 099, 100, 107
+
+PSYH: 012, 013, 015","repeated invountary trauma re-experiencing patterns causing severe distress and impairment
+
+recurring and difficult to manage 
+
+dysfunction in many life areas - work, relationships, etc","trigger related emotional reactivity with intact functioning------------tier 1
+
+repeated intrusive symptoms causing impairment ----------------tier 2","distress intensity
+
+coping methods
+
+if there is impairment and how",user is facing significant distress which would require further psychiatric assessment 
+,Functional Decline due to Trauma,"SIG: 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 012, 014, 015, 022, 152, 153, 154, 
+
+EM:  099, 100, 106
+
+","SIG: 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 012, 014, 015, 022, 152, 153, 154, 
+
+EM:  099, 100, 106
+
+","there is a progressive decline in functional capacity due to trauma 
+
+the impact is noticeable in several life areas such as occupation, relationship, lifestyle etc
+
+the user has tried therapy and not worked","distress with preserved functioning------------tier 1
+
+persistent distress with gradual functional decline-----------tier 2","duration of the incident ( do not probe too much on the content as it can be difficult for the user)
+
+ways of coping
+
+if therapeutic help has been seeked",user is experiencing difficulty in coping with self help and therapeutic interventions along due to the gradual decline in functioning and would need further assessments to identify alternative treatment patterns
+,severe Hyperarousal and Sleep Disruption,"SIG: 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 244,246, 155, 156 
+
+EM:  088, 099, 100, 107
+
+","SIG: 024,  028, 029, 030, 031, 032, 033, 244,246, 155, 156 
+
+EM:  088, 099, 100, 107
+
+","persistent activation that is interfering with sleep/ rest/ recovery
+
+hypervigilance, hyperarousal causing sleep disruption and affecting wellbeing","mild and occasional and due to recent negative life experiences ( proportionate to duration)-------------tier 1
+
+persistent and gradual causing sleep impairment----------------tier 2","coping methods
+
+duration of the event
+
+triggers present 
+
+if therapeutic help has been taken",sleep and nervous system regulation has been disrupted and need for further evaluation is crucial
+,Trauma related Hopelessness and emotional collapse patterns,"SIG: 031, 032, 029, 040, 012, 013, 022, 024, 025, 027, 028, 
+
+EM: 099, 100, 107, 088","SIG: 031, 032, 029, 040, 012, 013, 022, 024, 025, 027, 028, 
+
+EM: 099, 100, 107, 088","emotional distress is intense despite attempts to cope with self help and therapy.
+
+there is persistent hopelessness, inability to cope and disruptions in daily functioning","ongoing distress with ability to cope---------------tier 2
+
+distress causing difficulty in recover---------------tier 3","persistence of symptoms/ triggers
+
+ways of coping
+
+social support 
+
+",the intensity of distress is exceeded beyond self help and therapeutic interventions and need for further evaluations are crucial to assess alternate treatment options.
+,Dissociation like trauma patterns,"SIG: 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 094, 264, 
+
+EM:  099, 100, 108
+
+","SIG: 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 094, 264, 
+
+EM:  099, 100, 108
+
+",experiences of detachment from self and surrounding which are recurrent and impacting daily functioning,"dissociation as an avoidance pattern which is infrequent and is present during extreme distress------------tier 2
+
+frequent/ recurrent and involuntary impacting functioning and causing impairment-----------------tier 3","assess presence of perceived threat
+
+assess triggers/ frequency and impact",need for psychiatric evaluation due to impaired functioning 
+,,,,,,,
+,,,,,,,
+Somatic and Related Patterns,,,,,,,
+,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),Stress Related Physical Symptoms,"SIG: 155, 153, 149, 156, 157, 032, 152
+
+EM: 091
+
+PHYS: 015","SIG: 155, 153, 149, 156, 157, 152
+
+EM: 091
+
+PHYS: 015","physical symptoms are caused due to identifiable stressors
+
+there is an observed connection between physical symptoms and stressor","temporary sensations lined with stress---------tier 1
+
+persistent preoccupation with the physical symptoms----------tier 2
+","assess the impact and functioning
+ assess coping
+stressors and what kind of symptoms are present",there is a clear connection between stressor that manifests in other user through bodily sensations. stress management techniques can help with regulation 
+,Mild health concerns,"SIG: 077, 079, 081
+EM: 038, 091, 088
+","SIG: 077, 079, 081
+
+EM: 038, 091, 088
+","worry about health related struggles
+
+the concerns do not interfere with daily functioning of the suer","occasional worry with intact functioning---------------tier 1
+
+persistent preoccupations causing dysfunction---------- tier 2","assess the impact and functioning
+
+ assess coping
+
+assess presence of any medical condition",the user has a general worry when notice unusual bodily sensations and regulation strategies would help them
+,Body awareness patterns,"SIG: 032, 028, 153
+
+EM: 093, 101, 108, 110, 094, 086, 088","SIG: 032, 
+
+EM: 093, 101, 108,086, 088","there is increase towards awareness of normal bodily sensations
+
+the person is getting vigilant about normal bodily sensations more frequently but functionality is intact","increased awareness--------tier 1
+
+persistent preoccupations--------tier 2","time spent focusing on sensations
+
+frequency
+
+is there any anxiety / situation associated with heightened awareness",the user has bodily awareness which could be due to actual stress/ anxiety and could be helped with self help grounding and psycho-education
+,stress related fatigue pattern,"SIG: 155, 153, 156, 157, 152
+
+EM: 089, 091, 017, 015, 004, 003","SIG: 155, 153,
+
+EM: 089, 091, 015, 004, 003","stress is present in areas of life causing fatigue
+
+the fatigue is not due to perceived preoccupations 
+","lifestyle related stress----------tier 1
+
+unexplained fatigue with unidentifiable reasons ----------------tier 2","coping ways
+
+assess the stressors 
+
+",user is experiencing manifestations of accumulated stress which happens with insufficient recovery. lifestyle changes and and self help tools could help
+,mild health optimisation preoccupation,"EM: 005, 072, 110, 112","EM: 005, 072, 110, 112","increased focused on maintaining good health
+
+interest is present but does not disrupt daily functioning/ distress
+","flexible health focus---------tier 1
+
+rigid and constant preoccupation------------- tier 2","level of flexibility
+
+impact on self when routines are disrupted
+
+ways of coping",the user maintains interest in maintaining his health and there are no significant preoccupations with ill health due to environmental/ personal disruptions. self help tools that focus on flexibility and acceptance of self might help
+,,,,,,,
+,,,,,,,
+Tier 2 (Therapist),Somatic pains and activity avoidance,"SIG: 153, 52, 149, 155, 156, 185, 030, 024, 077, 079, 084
+
+EM: 089, 088","SIG: 153, 52,  155, 156, 185, 030, 024, 
+
+EM: 089, 088","frequent complains of somatic aches and pains
+
+daily functioning/ decisions are centered around  avoidance of the pain 
+
+there is an increased reduction in different areas of functioning due to the worsening of the paint symptoms","temporary adjustment to acute pain-----------tier 1
+
+persistent avoidance and reduced functioning----------tier 2","ways of coping
+
+presence of stressors
+
+frequency of avoidance and impact ",pain is influencing life decisions and reducing participation . therapy can help assess underlying causes and identify better ways of coping 
+,chronic fatigue + excessive overwork patterns,"SIG: 155, 179, 154, 006, 152
+
+EM: 003, 004, 084, 015","SIG: 155, 179, 154, 006
+EM: 003, 004, 084, 015","user has a pattern of phases with excessive overwork followed by periods of fatigue and underwork
+
+ther users struggles with functionality during phases of being tired and fatigued","occasional/ situational tiredness------------tier 1
+
+recurrent pattern of overworking and followed by fatigue----------------tier 2","particular causes of the overwork
+
+other ways of coping
+
+impact on functioning
+
+daily routine/ habits",recurrent fatigue is causing disruptions in daily functioning and therapy would help build healthier working and rest patterns
+,physical symptom and preoccupation pattern,"SIG: 152, 153, 157, 155, 110, 032, 081, 266, 269, 
+
+EM: 088, 086, 094, 108,
+
+PHYS: 012, 013, 014, 015, 019","SIG: 152, 157, 110, 032, 081, 266, 269, 
+
+EM: 088, 086, 094, 108,
+
+PHYS: 012, 013, 014, 015, 019","user's physical symptoms contribute to occupy attention and cause distress
+
+there is preoccupation in noticing the presence of the symptoms and avoiding increasing it","occasional attention/ worry---------------tier 1
+
+persistent preoccupation and constant attention----------------tier 2","assess the impact
+
+assess if there have been situations/ events that have led to this 
+
+",user's physical symptoms are occupying a large amount of time in their lives and therapy would help assess and identify beliefs and restructure behaviours
+,body hypervigilance pattern,"SIG: 153, 151, 152, 155, 149, 266, 269, 270
+
+EM: 088 107","SIG: 153, 151, 152, 155, 149, 266, 269, 270
+
+EM: 088 107","consistent monitoring of bodily sensations and adding to the distress
+
+being hyper aware of any change/ presence of bodily sensations
+
+checks into bodily sensations more than necessary ","occasional awareness/ check in ---------------tier 1
+
+constant monitoring and reduced functioning due to it--------------tier 2","triggers leading to frequent checking
+
+assess any previous event/ situation that is leading to the frequency
+
+assess how the functioning is reducing ",user's over monitoring is occupying a large amount of time in their lives and therapy would help assess and identify beliefs and restructure behaviours
+,symptom driven identity pattern,"SIG: 266, 269
+
+EM: 006, 008, 010, 011, 099, 100
+
+PSYCH: 004","SIG: 266, 269
+
+EM: 006, 008, 010, 011, 099, 100
+
+PSYH: 004","user's physical symptoms have become a primary lens through which they view themselves and their capacity to function
+
+user's self concept has started to be built around their symptoms","acknowledgement of health challenges--------------tier 1
+
+building one's identity around the symptoms----------tier 2","awareness of goals in spite of their symptoms
+
+presence of grief
+
+",present symptoms are impacting the client's sense of self and therapy might help redefine them with alternate coping ways.
+,,,,,,,
+,,,,,,,
+Tier 3 (Psychiatrist),persistent somatic distress with severe functional impairment,"SIG: 266, 267, 269, 270, 271, 153, 157, 167, 185, 186
+
+EM: 099, 100, 107","SIG: 266, 267, 269, 270, 271, 153, 157, 167, 185, 186
+
+EM: 099, 100, 107","the user is experiencing somatic distress which is causing interfering with independent functioning and interfering with overall functionality
+
+the user is unable to maintain life responsibilities despite consistent efforts to manage symptoms","symptoms affecting some areas of life------------tier 2
+
+overall dysfunction and impairment in daily life------------tier 3","assess the impact
+
+if user has seeked therapy 
+
+assess any past event/ medical situation and if the distress is proportionate with the same",the level of impairment is high and significantly interfering with functionality and further assessment is needed to help the user
+,somatic distress with severe anxiety,"SIG: 266, 267, 269, 270, 271, 153, 157, 167, 185, 186, 159, 162, 158, 163
+
+EM: 099, 100, 107","SIG: 266, 267, 269, 270, 271, 153, 157, 167, 185, 186, 159, 162, 158, 163
+
+EM: 099, 100, 107","persistent somatic complaints 
+
+emotional distress has contributed to the presentation 
+
+is interfering with daily life functioning
+
+possibility of self harm","frustration about the symptoms-------------tier 2
+
+depressive symptoms accompanied with distress-----------tier 3","duration and impact
+
+prior experience with therapy
+
+if self harm present -----do not probe",presence of somatic and clinically aligned emotional symptoms 
+,somatic distress with severe depression,"SIG: 266, 267, 269, 270, 271, 153, 157, 167, 185, 186, 001, 002/ 003, 005, 006/007, 010, 014, 021, 022
+
+EM: 099, 100, 107,","SIG: 266, 267, 269, 270, 271, 153, 157, 167, 185, 186, 001, 002/ 003, 005,  010, 014,  022
+
+EM: 099, 100, 107,","persistent somatic complaints 
+
+ anxiety symptoms have contributed to the presentation 
+
+is interfering with daily life functioning
+
+assess for self harm","stress linked to the physical symptom------------tier 1
+
+anxiety symptoms accompanied with somatic distress-----------tier 2","presence of panic, 
+
+avoidance behaviours
+
+presence of social support
+
+do not probe if self harm is present ",presence of somatic and clinically aligned emotional symptoms 
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Dissociative and Related Patterns ,,,,,,,
+,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),Working on autopilot mode,"SIG: 031, 264, 154
+
+EM: 085, 091, 106, 089,  ","SIG: 031, 264, 154, 155
+
+EM: 085, 091, 106, 089, ","user is catering to familiar  activities without fully processing it which is causing difficulties to recall details afterwords
+
+happens occasionally and does not cause significant difficulties/ problems","occasionally/ due to mental overload--------------tier 1
+
+distressful, primary way of coping, causing dysfunction----------------tier 2
+
+causing memory gaps, loss of awareness--------------tier 3","assess presence of stress/ overwhelm
+
+ways of coping
+
+situations where user leans to these patterns
+
+","while routine tasks can become automatic, self help strategies can help to process them in a healthier way."
+,feeling disconnected from the present moment ,"SIG: 031, 024, 264
+
+EM: 038, 085","SIG: 031, 024, 264
+
+EM: 038,","experiences of feeling emotionally/ mentally distant/ not fully present
+during moments of fatigue/ overwhelm/ stress
+
+the user has awareness of this and does causes minimal distress
+
+","occasional and situational----------------tier 1
+
+persistent and distressful --------------tier 2
+
+loss of awareness/ distress / memory problems---------------tier 3","assess presence of stress/ overwhelm/ anxiousness
+
+ways of coping
+
+situations where user leans to these patterns
+
+",while these experiences are infrequent and normal self help tools can help have better ways of coping during situations.
+,emotional numbing during stress,"SIG: 031
+
+EM: 038, 091, 116","SIG: 031
+
+EM: 038, 091, 116","temporary reduction in emotional responsiveness during stress/ anxiety/ emotional overwhelm
+
+it can be seen as a way of coping, and the client is able to reconnect and process emotions afterwards","situational and does not causing any significant impairment-------------tier 1
+
+recurring and causing distress and dysfunction in areas of life------------tier 2
+
+severe detachment--------------------tier 3","assess presence of stress/ overwhelm/ anxiousness
+
+ways of coping
+
+situations where user leans to these patterns
+
+frequency and impact",emotional shutdown is one of the ways in which people cope with difficult situations and self help tools can provide alternate and healthier ways of processing emotions
+,daydreaming and mental escape,"EM: 024, 128, 025, 091, 116, 126","EM: 024, 128, 025, 091, 116, 126","user tends to mentally escape using fantasies/ imagination to cope with intense emotions/ life situations
+
+the user has awareness and it does not cause significant impairment in functioning","normal daydreaming -------------tier 1
+
+recurring and causing interference in daily life-----------tier 2
+
+excessive and causing impairment -------------tier 3","duration/ impact
+
+how do they reconnect or process emotions otherwise
+
+presence of any stress/ anxiousness/ overwhelm",daydreaming  is one of the ways in which people cope emotions and self help tools can provide alternate and healthier ways of processing emotions
+,"feeling ""unreal"" during stressful situations","SIG: 264
+
+EM: 031, 108,088","SIG: 264
+
+EM: 031, 108,088","temporary experiences of detachment in moments of anxiety/ stress
+
+they are recognisable to the user, brief and do not interfere with daily functioning","situational detachment as a response to overwhelming situations------------------tier 1
+
+recurring and a primary coping pattern causing interference ----------------tier 2
+
+persistent and derealisation/ depersonalisation symptoms-----------------tier 3","duration , frequency and impact
+
+alternate ways of coping
+",detachment  is one of the ways in which people cope emotions and self help tools can provide healthier ways to regulate and ground the user 
+,,,,,,,
+,,,,,,,
+Tier 2 (Therapist),"Recurring Depersonalisation 
+Pattern","SIG: 094, 164, 101, 095
+
+EM: 108, 107, 088, 091","SIG: 094, 164, 101, 095
+
+EM:  107","recurrent experiences of detachment from thoughts/ body/ emotions/ sense of self while being aware that this is unusual
+
+the user experiences distress, confusion and interference in daily activities","stress based detachment-----------tier 1
+
+recurring and causing distress---------tier 2
+
+persistent experiences of depersonalization causing impairment-------------tier 3","frequency, triggers, duration
+
+any negative event history
+
+coping ways
+
+what else has the user tried to help themselves with
+
+any substance use history
+
+",recurring detachment patterns which would need therapeutic intervention due to it interfering in daily functioning.
+,Recurring Derealisation Pattern,"SIG: 101, 165, 094, 095
+
+EM: 108, 107, 088, 091","SIG: 101, 165, 094, 095
+
+EM: 107, 088, 091","user experiences detachment from environment/ surrounding feel unfamiliar/ unreal
+
+episodes are frequent and recurrent associated with distress and difficulty in functioning","brief experiences during stress-------------tier 1
+
+recurrent and distressful--------------tier 2
+
+persistent derealisation episodes which cause impairment in functioning---------------tier 3","frequency, triggers, duration
+
+any negative event history
+
+coping ways
+
+what else has the user tried to help themselves with
+
+any substance use history",recurring detachment patterns which would need therapeutic intervention due to it interfering in daily functioning and help user to identify trigger and healthier ways of regulation
+,Dissociation during emotional overwhelm,"SIG: 149, 157, 013, 163, 024
+
+EM: 107, 108","SIG: 149, 157, 163, 024
+
+EM: 107, 108","experiences of numbness, feeling absent, distant or disconnected from the situation/ environment due to stress/ overwhelm
+
+pattern is interfering in different areas of life 
+
+causing difficulties in emotional processing, communicating ","occasional and during severe emotional overload-----------------tier 1
+
+recurrent , distressful and primary way of dealing with stressful situations-------------tier 2
+
+persistent, and causing impairment and dysfunction---------------tier 3","frequency, triggers, duration
+
+any negative event history
+
+coping ways
+
+what else has the user tried to help themselves with
+
+any substance use history",the patterns have become the primary ways to cope which would need therapeutic intervention due to it interfering in daily functioning and help user to identify trigger and healthier ways of regulation
+,emotional disconnection,"SIG: 013, 212, 030, 031 129
+
+EM: 107, 018","SIG: 013, 212, 030, 031 
+
+EM: 107, 018","persistent difficulties in accessing, expressing and processing emotions during situations
+
+impacting interpersonal relationships due to being emotionally distant","temporary emotional shutdown---------------tier 1
+
+recurring and impacting areas in life--------------tier 2
+
+severe in intensity showing dissociative symptoms and impairment---------------tier 3","triggers, frequency, impact
+
+other ways of coping
+
+any significant history------if user is not comfortable do not probe","there is a struggle to be emotionally connected and therapy would be able to identify underlying cause, while helping with alternative coping ways"
+,stress induced memory gap,"SIG: 099, 149, 282
+
+EM: 107, 108, 001, 002","SIG: 149, 282
+
+EM: 107, 108, 001, 002","recurrent difficulties in recalling, organising and remembering information/ details after a stressful/ overwhelming experience
+
+memory difficulties are beyond normal forgetting and are interfering with normal functioning.","normal / occasional forgetfulness----------------tier 1
+
+recurring, induced due to emotional overwhelm causing distress-------------tier 2
+
+persistent and causing impairment in functioning-------------tier 3","what contents have memory gaps
+
+frequency, triggers, duration
+
+any negative event history
+
+coping ways
+
+what else has the user tried to help themselves with
+
+any substance use history",the user is facing struggles with memory during emotional overwhelm and would benefit from therapeutic interventions to process the underlying cause while manage the outcomes better.
+,,,,,,,
+,,,,,,,
+Tier 3 (Psychiatrist),Patterns suggesting derealisation,"SIG: 094, 095, 096/ 097, 098, 099,  164, 101,
+
+EM: 108, 107, 088, 091, 099, 100","SIG: 094, 095, 096/097, 098, 099,  164, 101,
+
+EM: 108, 107, 088, 091, 099, 100","user experiences persistent detachment from environment/ surrounding feel unfamiliar/ unreal
+
+episodes are recurring and ongoing in spite of user being aware that it is unusual
+
+there is significant social, occupational and interpersonal impairment
+
+the severity is beyond only therapeutic interventions ","brief experiences during stress-------------tier 1
+
+recurrent and distressful--------------tier 2
+
+persistent derealisation episodes which cause impairment in functioning in spite of efforts to manage them---------------tier 3","
+
+substance use History
+
+frequency, triggers, duration
+
+any negative event history
+
+areas of impairment and severity ","due to the severity and level of impairment, and efforts to work on the triggers through therapy have not significantly helped, psychiatric interventions for assessment are crucial "
+,Patterns suggesting Depersonalisation,"SIG: 094, 095, 096/ 097, 098, 099, 100 164, 101,
+
+EM: 108, 107, 088, 091, 099, 100","SIG: 094, 095, 096/ 097, 098, 099, 100 164, 101,
+
+EM: 108, 107, 088, 091, 099, 100","recurrent experiences of detachment from thoughts/ body/ emotions/ sense of self while being aware that this is unusual
+
+the user experiences this persistently causing impairment and dysfunction
+
+severity is beyond therapy being the primary method of treatment","stress based detachment-----------tier 1
+
+recurring and causing distress---------tier 2
+
+persistent experiences of depersonalization causing impairment-------------tier 3","frequency, triggers, duration
+
+any negative event history
+
+coping ways
+
+areas of impairment and severity
+
+any substance use history","due to the severity and level of impairment, and efforts to work on the triggers through therapy have not significantly helped, psychiatric interventions for assessment are crucial "
+,severe trauma related dissociation,"SIG: 022, 024, 025, 026, 027, 028, 030, 033, 031, 040, 013, 094, 101, 156, 164/ 165,  099, 095
+
+EM: 099, 100, 107, 088, 001, 002","SIG: 022, 024, 025, 027, 164/ 165, 028, 030, 033, 031, 040, 013, 094, 101, 095
+
+EM: 099, 100, 107, 088, 001, 002","recurrent dissociative experiences that are linked to trauma  through emotional triggers, reminders
+
+are causing severe impairment and dysfunction in life areas
+
+therapeutic interventions cannot be the only primary mode of treatment
+
+might have self harm risk","occasional / stress induced with minimum consequences--------------tier 2
+
+severe, having an underlying trauma cause---------------tier 3","assess self harm if not mentioned--------------do not probe further 
+
+
+substance use
+
+
+any trauma history---------------do not probe more than once
+
+triggers",need for psychiatric evaluation due to the severity and level of impairment seen in the user
+,Dissociative Amnesia patterns,"SIG: 087, 165, 282, 025, 022, 024, 029, 013, 040, 002/003
+
+EM: 099, 100, 107, 108","SIG: 087, 165, 282, 025, 022, 024, 029, 013, 002/003
+
+EM: 099, 100, 107, 108","persistent difficulties in recalling, organising and remembering information/ details after a stressful/ overwhelming experience
+
+memory difficulties are beyond normal forgetting is causing occupations/ interpersonal impairment 
+
+therapeutic interventions cannot be the only primary source of treatment
+
+self harm might be present","normal / occasional forgetfulness----------------tier 1
+
+recurring, induced due to emotional overwhelm causing distress-------------tier 2
+
+persistent and causing impairment in functioning-------------tier 3","neurological history
+
+substance use History
+
+what contents have memory gaps
+
+frequency, triggers, duration
+
+any negative event history
+
+IF SELF HARM PRESENT DO NOT PROBE",need for medical/ psychiatric assessment to identify alternate treatments options
+,,,,,,,
+,,,,,,,
+Sleep Related Patterns,,,,,,,
+,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),sleep issues due to transitions,"SIG: 154, 155, 156
+
+EM: 084, 095, 086, 093, 101, 111","SIG: 154, 155, 156
+
+EM: 084, 095, 086, 093, 101, 111","the user is struggling with sleep due to geographical transitions / city/ country relocation
+ 
+the user is adapting to the time/ place/location due to which sleep is disrupted
+
+","temporary and situational---------------tier 1
+
+recurring and beyond the duration of the transitioning phase and causing significant distress--------------tier 2","duration of the transition
+
+if there are change in time 
+
+any additional stressor
+
+ways in which the user is coping with lack of sleep",there is a clear transitional/ situational reason for the sleep disruption which is within the time duration of the event and self help tools can help with formation of a sleep routine as per the need of the user.
+,stress induced sleep troubles,"SIG: 154, 155, 156
+
+EM: 084, 091, 093","SIG: 154, 155, 156
+
+EM: 084, 091, 093","the user is struggling with sleep due to ongoing stressors/ emotional challenges
+ 
+the user has insight of the contributing reasons for the sleep disruption 
+
+the user does not necessarily face sleep difficulties in the absence of stress / non distressing ","situational/ stress induced---------tier 1
+
+recurring and occurs in the absence of stress/overwhelm------------tier 2","triggers/ context of the stress
+
+lifestyle/ daily routine
+
+ways of coping 
+
+assess if they are seeking any kind of professional help",the user might benefit from simple ways of stress management and sleep routines to help cope
+,sleep disruptions due to lifestyle ,"SIG: 154, 155, 156
+
+EM: 084, 005","SIG: 154, 155, 156
+
+EM: 084, 005","the user is struggling with sleep due to their lifestyle and daily habits
+
+the user is mindful of these unhelpful patterns and wants to take conscious steps to change them","temporary and can be tackled with changes in lifestyle---------------tier 1
+
+recurring and stressful in spite of taking efforts to reform lifestyle-------------tier 2","assess how the lifestyle looks like 
+
+assess overexposure to digital media, food habits, use of any substances
+
+occupational commitments",the user is struggling with sleep due to lifestyle patterns which might be observable in different life areas and self help tools can help assess areas that can be modified and sleep hygiene can be incorporated. 
+,,,,,,,
+,,,,,,,
+Tier 2 (Therapist),Anxiety Induced sleep Disturbances,"SIG: 151, 154, 155, 156, 158, 159, 163, 179, 243, 247, 248
+
+EM: 086, 084","SIG: 151, 154, 155, 156, 159, 163, 179,  247, 
+
+EM: 086, 084","user is struggling with sleep due to anxiety driven rumination/ overthinking/ hyperarousal 
+
+is causing distress to the user 
+
+anxiety is the primary significant reason for the maintenance of sleep disturbances","mild stress/ situational struggles--------------tier 1
+
+persistent anxiety contributing to sleep struggles-------------tier 2
+
+severe anxiety causing sleep impairment and daily dysfunction-------------tier 3","assess the cause of anxiety ( contextually)
+
+other ways of coping 
+
+nature of the anxiety/ triggers",sleep troubles are a cause of high anxiety which would need professional support to identify the underlying cause and provide tools for better management 
+,nightmare distress ,"SIG: 246, 247, 155, 156, 163, 179, 081
+
+EM: 086, 088, 106, 107, 089","SIG: 247, 155,  163, 
+
+EM: 086, 088, 106, ","user is struggling with recurrent and distressful nightmares that are causing disruptions in sleep quality , mood and functioning","occasional nightmares--------tier 1
+
+recurrent and impacting well being-------------tier 2
+
+trauma related/ severe and causing overall dysfunction----------tier 3","duration and impact
+
+content of the nightmare
+
+if nightmares precede a stressful event 
+
+coping ways",the experiences of the user might need more professional support to identify the underlying cause of the manifestations and provide alternate ways to process and manage them
+,nighttime rumination,"SIG: 246, 115, 154, 159
+
+EM: 087, 094, 030, 002, 010","SIG: 246, 115, 159
+
+EM: 030, 002, 010","excessive rumination or emotional processing that becomes prominent during bedtime
+
+is distressful and contributing to sleep disruptions","situational/ temporary---------------tier 1
+
+prolonged / emotionally driven and disturbing sleep--------------tier 2
+
+severe anxiety symptoms causing impairment and sleep issues----------tier 3","duration and impact
+
+presence of stressors/ triggers
+
+themes of rumination","night time/ restful periods have become and space for unresolved thoughts and emotions, and therapy would help cater identifying healthier ways of processing them "
+,,,,,,,
+,,,,,,,
+Tier 3 (Psychiatrist),patterns of severe insomnia  and functional impairment ,"SIG: 244, 245, 246, 247, 250, 155,153,154,156
+
+EM: 099, 100, 107","SIG: 244, 245, 246, 247, 250, 155,153,154,156
+
+EM: 099, 100, 107","persistent difficulties in sleep which is heavily impacting users functionality in work/academics/ relationships and emotional health
+
+therapeutic and self help interventions have  been tried and are not sufficient as modes of treatment","situational sleep disturbances------------tier 2
+
+severe dysfunction/impairment due to sleep difficulties----------------tier 3","assess if user has seeked therapy before 
+
+if there are any environmental trigger ( stress/ anxiety)
+
+duration of the pattern and severity of the impact
+
+any medical history
+
+substance use history",disrupted sleep patterns that are persistent due to the severity and need for further evaluations due to previously unsuccessful modes of treatment
+,Insomnia due to Major depression,"For Insomnia 
+
+SIG: 244, 245, 246, 247, 250, 155,153,154,156
+
+EM: 099, 100, 107
+
+For Depressive Patterns
+SIG: 001, 002, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+","For Insomnia 
+
+SIG: 244, 245, 246, 247, 250, 155,153,154,156
+
+EM: 099, 100, 107
+
+For Depressive Patterns
+SIG: 001, 002, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+","the user is experiencing symptoms of Major depressive disorder and insomnia 
+
+there is functional impairment in many areas of life
+
+insomnia is due to presence of depressive patterns
+
+self harm might be present","situational / non clinical factors affecting sleep--------------tier 2
+
+insomnia occuring due to major depression and loss of functionality ----------------tier 3","if self harm is present do not probe
+
+",Need for psychiatric interventions for presence due to depressive patterns and self harm leading to dysfunction
+,Hypersomnia due to Major Depression,"For Hypersomnia
+SIG: 006, 246, 156, 154, 155
+
+EM: 099, 100, 107
+
+
+For Depressive Patterns
+SIG: 001, 002, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+","For Hypersomnia
+SIG: 006, 246, 156, 154, 155
+
+EM: 099, 100, 107
+
+For Depressive Patterns
+SIG: 001, 002, 004, 005, 006/007, 010, 008, 012, 014, 018, 016, 019, 022, 021
+
+PHYS: 003
+
+EM: 008, 002, 025
+
+","the user is experiencing symptoms of Major depressive disorder and hypersomnia 
+
+there is functional impairment in many areas of life
+
+hypersomnia is due to presence of depressive patterns
+
+self harm might be present","situational / non clinical factors affecting sleep--------------tier 2
+
+hypersomnia occuring due to major depression and loss of functionality ----------------tier 3",if self harm is present do not probe,Need for psychiatric interventions for presence due to depressive patterns and self harm leading to dysfunction
+,sleep disturbances due to mania,"For Sleep Difficulties:
+SIG: 245, 246, 249, 250, 156, 154, 155
+
+EM: 099, 100, 107
+
+For Mania patterns:
+SIG: 201. 219, 220, 221, 222,224, 231, 216, 204, 196
+
+EM: 011, 004
+","For Sleep Difficulties:
+SIG: 245, 246, 249, 250, 156, 154, 155
+
+EM: 099, 100, 107
+
+For Mania patterns:
+SIG: 201. 219, 220, 221, 222,224, 231, 216, 204, 196
+
+EM: 011, 004
+","manic episodes are contributing to the user's loss of sleep
+
+reduced sleep is seen as a consequence of mood elevation due to  hypomania","occasional loss of sleep ---------------tier 1
+
+recurring sleep reduction due to anxiety/ stress------------tier 2
+
+sleep issues that are causing impairment and are a result of manic symptoms-------------tier 3","if any risk taking behaviour mentioned 
+
+duration and intensity
+
+medical history 
+
+ substance use",need for psychiatric assessments due to the presence of manic symptoms to help user cope in a safer way
+,sleep disturbances due to  hypomania,"For Sleep Difficulties:
+SIG: 245, 246, 249, 250, 156, 154, 155
+
+EM: 099, 100, 107
+
+
+For Hypomania patterns:
+SIG: 036, 181, 183, 201, 204, 217, 220, 227, 228, 229
+
+EM: 011, 004
+","For Sleep Difficulties:
+SIG: 245, 246, 249, 250, 156, 154, 155
+
+EM: 099, 100, 107
+
+
+For Hypomania patterns:
+SIG: 036, 181, 183, 201, 204, 217, 220, 227, 228, 229
+
+EM: 011, 004
+","manic episodes are contributing to the user's loss of sleep
+
+reduced sleep is seen as a consequence of mood elevation due to  hypomania","occasional loss of sleep ---------------tier 1
+
+recurring sleep reduction due to anxiety/ stress------------tier 2
+
+sleep issues that are causing impairment and are a result of hypomanic symptoms-------------tier 3","if any risk taking behaviour mentioned 
+
+duration and intensity
+
+medical history 
+
+ substance use",need for psychiatric assessments due to the presence of hypomanic symptoms to help user cope in a safer way
+,trauma induced nightmare and sleep disturbance patterns,"SIG: 157, 026, 030, 032, 029, 027, 028, 033, 022, 244, 247, 246, 250, 163
+
+EM, 099, 100, 107, 001","SIG: 157, 026, 030, 032, 029,  028,   244, 247,  250, 163
+
+EM, 099, 100, 107, 001","sleep disturbances are a consequence of trauma experiences
+
+the user is facing functional impairment across many life areas","nightmare distress---------tier 2
+
+trauma related nightmares causing dysfunction--------------tier 3","do not probe much on the details / context of the traumatic incident
+
+assess triggers
+
+coping ways
+
+if therapy was tried",need for assessment and specialised trauma informed approach is needed for the under
+,,,,,,,
+,,,,,,,
+Obsessive Compulsive and Related Patterns,,,,,,,
+,,,,,,,
+Tier,Type,Minimum Signals,Must-Have Signals,Confidence Threshold,Tie-Breaker Logic,When to Keep Probing,Graceful Exit Trigger
+Tier level.,,What combination of signals is the bare minimum?,Which specific signals MUST be present for this tier?,"In plain English: when would YOU feel confident? Describe the minimum, not the ideal.",What happens when signals point to two tiers equally?,"When should the AI keep talking instead of routing?
+",What specific evidence combination triggers the exit?
+Tier 1 (Self-Help),preference for order or organisation,"Happiness, comfort, relaxation,
+lifestyle preference
+
+EM: 004, 072, 073","Happiness, comfort, relaxation,
+lifestyle preference
+
+EM: 004, 072, 073","the need for order is coming from a space of enjoyment/ preference 
+
+it is not anxiety driven
+
+there are no preoccupations attached around the disorganization and user is able to cope otherwise","preference driven and non stressful-------------tier 1
+
+anxiety / personality driven causing dysfunction and impairment if need not met--------------tier 2","assess if it is preference based or anxiety based
+
+assess flexibility 
+
+impact on functionality",user has a habit / pattern which is purely based on liking and functionality remains intact and flexible
+,occasional rechecking patterns,"EM: 038, 086, 008, 091, 005","EM: 038, 088, 005","occasional/ situational checking usually out of being over concerned 
+
+no preoccupations/ excessive anxiety observed
+
+the checking is proportionate","infrequent checking out of need or worry-------------tier 1
+
+persistent and repetitive behaviours surrounding distress around it--------------tier 2","any specific context/ environments where the behaviour is prominent
+
+awareness and ability to detach from the behaviour",the behaviour is a normal way to respond to occasional worry and is a way to seek assurance and safety without any distress attached to it
+,desire for certainty in important situations,"SIG: 156
+
+EM: 038, 086, 095, 099, 091","
+
+EM: 038, 086, 095, 099, 091","user has an increased desire for certainty when faced with difficult challenges
+
+reassurance seeking is proportionate and not impairing 
+
+is not a pattern usually seen other areas of life","situational certainty----------------tier 1
+
+persistent discomfort in uncertain situations causing distress------------tier 2","ways of coping
+
+what is the situation where the user feels uncertain
+
+tolerance of uncertainty",the pattern is seen as a valid and proportionate response for the area / context 
+,habitual routines and ritual patterns,"EM: 005, 072, 073",EM: 005,"routines/ preferences that provide comfort/ familiarity/ clarity
+
+does not cause distress when interrupted
+
+user is flexible to modify them whenever necessary","flexible/ adjustable routine-----------tier 1
+
+change of routine causes distress and dysregulation-------------tier 2
+
+significant impairment due to loss in routine----------------tier 3","impact of the modification
+
+check the level of flexibility
+
+purpose of the routine",the user does not need any significant support and would benefit from psychoeducation 
+,occasional intrusive thought patterns,"EM: 038, 086, 090, 092","EM: 038, 086, 090","brief unwanted/ disturbing thoughts that are occasional and pass without significant distress
+
+infrequent and do not dominate attention 
+
+are not followed by any neutralizing/ repetitive behaviours
+
+coping is intact","occasional/ situational/ no distress----------------tier 1
+
+recurrent, distressful and cause compulsions------------tier 2
+
+","ways of coping 
+
+distress levels
+
+time/ context of the thoughts
+
+ways of coping",have unusual yet occasional disturbing thoughts are a part of human nature and do not need any specific treatment/ or a mental health difficulty
+,,,,,,,
+,,,,,,,
+Tier 2 (Therapist),repetitive checking and doubt pattern,"SIG: 181, 182, 186, 158, 153, 159, 161
+
+EM: 094, 088, 107, 116","SIG: 181, 182, 186, 158,  161
+
+EM: 094, 088, 107, 116","repetitive checking behaviours ( objects/ decisions) despite assurance
+
+the behaviours are anxiety driven
+
+not catering to these cause significant distress","infrequent checking out of need or worry-------------tier 1
+
+persistent and repetitive behaviours surrounding distress around it--------------tier 2
+
+severe impairment in functioning due to the compulsive behaviours","triggers
+
+context around the compulsions
+
+impact and frequency",the behaviours of the user might be caused due to anxiety and professional help would cater to understanding the underlying belief to help process them better
+,mental compulsions,"SIG: 158, 151, 181, 182, 186, 159, 161, 149
+
+EM: 106, 094, 088, 116","SIG: 158, 151, 182, 186,  161, 149
+
+EM: 106, 094, 088, 116","user leans to neutralize stressful thoughts/ process emotions using mental (routines/ counting/ fantasizing) 
+
+there is distress present due to the awareness of other user's compulsions","occasional and infrequent------------tier 1
+
+recurring and causing impairment in different areas-----------tier 2","triggers
+
+presence of anxiety/ nature of the intrusive thoughts
+ 
+context around the compulsions
+
+impact and frequency",the behaviours of the user might be caused due to anxiety and professional help would cater  the underlying belief to help process them better
+,reassurance seeking behaviours as mental compulsions,"SIG: 159, 081, 181, 182, 186, 174, 212
+
+EM: 106, 088, 001, 002, 010, 094, 107, 116, 109","SIG: 159, 081, 181, 182, 186
+
+EM: 088, 001, 002,  094, 107, 109","reassurances are seen to be used as neutralising behaviours for anxiety driven intrusive thoughts
+
+the compulsions are out of proportion
+
+the behaviour provide temporary relief but return and remain distressful","infrequent checking out of need or worry-------------tier 1
+
+persistent and repetitive behaviours surrounding distress around it--------------tier 2","sources of reassurances
+
+function of the reassurances
+ ( check if there are obsessive thoughts)
+
+triggers
+
+frequency and impact",the user has  underlying anxiety that causes these behaviours and there is a need for interventions that would help deal with the anxiety while provide alternate ways to manage them 
+,,,,,,,
+,,,,,,,
+Tier 3 (Psychiatrist),obsessive thinking with significant impairment,"SIG: 181, 182, 186, 158, 161, 210, 151 ,155, 149, 153
+
+EM: 106,107, 099, 100, 088, 033, 029, 001, 992","SIG: 181, 182, 186, 158, 210, 151 ,155, 149, 153
+
+EM: 107, 099, 100, 088, 033, 029, 001, 992","recurring intrusive thoughts followed by physical/ mental/ behavioural compulsions
+
+the symptoms are distress , interfere with daily activities are time consuming and are causing significant impairment","distressing intrusive thoughts not significantly interfering with life-------------tier 2
+
+severe and causing impairment ---------------------tier 3","nature of the thoughts and behaviours
+
+previous medical History
+
+trigger
+
+","due to the severity of the symptoms, only therapeutic interventions are insufficient and would require further psychiatric evaluation for alternative treatment"
+,Contamination and cleaning preoccupation,"SIG: 181, 182, 186, 158, 161, 210, 151 ,155, 149, 153
+
+EM: 106,107, 099, 100, 088, 033, 036, 029, 001, 992","SIG: 181, 182, 186, 158, 161, 151 , 149,  153
+
+EM: 106,107, 099, 100, 088, 033, 036, 029, 001, 992","excessive fear of contamination that leads to cleaning/ washing/ avoidance 
+
+is causing distress and significant impairment in life areas","occasional fear / general concern------------tier 1
+
+recurring with intact functionality-----------tier 2
+
+persistent / distressful and disproportionate--------------tier 3","triggers
+
+impact 
+
+any medical risk
+
+",the fear of the user exceeds therapeutic help and needs to be managed by psychiatric evaluation due to its severity
+,Ocd patterns with poor insight,"SIG: 181, 182, 183, 186, 158, 209, 155, 151, 149, 210, 153
+
+EM: 106,107, 099, 100, 088, 033, 036, 029, 001, 002","SIG: 181, 182, 183, 186, 158, 209, 155, 151, 149, 210, 153
+
+EM: 107, 099, 100, 088, 033, 036, 029, ","presence of OCD symptoms but lack of insight / difficulty in recognising the irrationality of the intrusive thoughts
+
+insight is low making behavioural and cognitive processing difficult
+
+therapeutic help has not benefited ","awareness of the patterns and cause of the same-----------tier 2
+
+lack of insight, and high rigidity-------------tier 3","medical history
+
+assess any bodily harm
+
+level of impairment",due to lack of insight there is a need for psychiatric help as symptoms will be otherwise difficult to manage. 
+,Hoarding Behaviours,"SIG: 058, 059, 060, 062, 063, 065, 181, 182, 186,  210, 151 , 149,  211
+
+EM: 106,107, 099, 100, 088, 033, 029, 001, 992","SIG: 058, 059, 060, 062, 063, 065, 181, 182, 186,  210, 151 , 149,  211
+
+EM: 106,107, 099, 100, 088, 033, 029, 001, 992","the user resorts to withholding objects / items/ that are relatively unhelpful for them due to anxiety/ need for safety/ heavy belonging
+
+the hoarding behaviour is causing distress ( lack of space/ overcrowded homes/ hygiene issues)
+
+","saving objects out of need/ memory-------------tier 1
+
+experiencing mild distress/ anxiety while giving up objects----------tier 2
+
+excessive hoarding tendencies that are causing health and functional issues------------tier 3","assess if there is any medical risk due to the hoarding 
+
+what meaning has been assigned to the items
+
+assess anxiety/ overwhelm attached to the object
+
+if they have seen a therapist before",the user is experiencing a higher intensity of emotional overwhelm and impairment and difficulty detaching from objects which seem out of proportion to the situation and would require psychiatric assessment 
+,Harm related OCD patterns,"SIG: 181, 182, 186, 158, 210, 155, 151, 149
+
+EM: 106,107, 099, 100, 088, 033, 036, 029, 001, 002","SIG: 181, 182, 186, 158, 155, 149
+
+EM: 107, 099, 100, 088, 033, 036, 029, 001, 002","user experiences distressing , unwanted intrusive thoughts associated with harm to self / others
+
+these are inconsistent with their value systems
+
+there is impairment and dysfunction in many areas of life","occasional/ situational/ no distress----------------tier 1
+
+recurrent, distressful and cause compulsions------------tier 2
+
+severe in intensity causing significant impairment--------tier 3","meaning attached to thoughts
+
+source of neutralising the thoughts
+
+what is the nature of the compulsions
+
+is self harm is present DO NOT probe
+
+seeked therapeutic help",highly distressing intrusive thoughts associated with physical harm is necessary for scrutiny to help understand user's underlying intent and emotion along with a helpful trajectory of treatment for the safety of the user
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mindfully Yours — Voice Test Harness</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; line-height: 1.5; }
+  h1 { font-size: 1.3rem; }
+  button { font-size: 1rem; padding: 10px 20px; border-radius: 8px; border: 1px solid #8884; cursor: pointer; }
+  button:disabled { opacity: 0.5; cursor: default; }
+  #status { margin: 16px 0; padding: 12px; border-radius: 8px; background: #8882; font-family: monospace; white-space: pre-wrap; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; background: #999; }
+  .dot.live { background: #2ecc71; }
+  .dot.err { background: #e74c3c; }
+  #log { font-size: 0.85rem; opacity: 0.8; max-height: 200px; overflow-y: auto; }
+</style>
+</head>
+<body>
+  <h1>Mindfully Yours — Voice Test Harness</h1>
+  <p>Dev-only tool: joins a real LiveKit room and talks to the live voice Agent. Not part of the product frontend.</p>
+  <button id="connectBtn">🎙️ Connect &amp; Talk</button>
+  <button id="disconnectBtn" disabled>Disconnect</button>
+  <div id="status"><span class="dot" id="dot"></span><span id="statusText">Not connected</span></div>
+  <div id="log"></div>
+  <audio id="remoteAudio" autoplay></audio>
+
+<script type="module">
+  import { Room, RoomEvent, Track } from "https://cdn.jsdelivr.net/npm/livekit-client@latest/dist/livekit-client.esm.mjs";
+
+  const connectBtn = document.getElementById("connectBtn");
+  const disconnectBtn = document.getElementById("disconnectBtn");
+  const statusText = document.getElementById("statusText");
+  const dot = document.getElementById("dot");
+  const logEl = document.getElementById("log");
+  const remoteAudio = document.getElementById("remoteAudio");
+
+  let room = null;
+
+  function log(msg) {
+    const line = document.createElement("div");
+    line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+    logEl.prepend(line);
+  }
+
+  function setStatus(text, state) {
+    statusText.textContent = text;
+    dot.className = "dot" + (state ? " " + state : "");
+  }
+
+  connectBtn.addEventListener("click", async () => {
+    connectBtn.disabled = true;
+    setStatus("Requesting a room + token...", "");
+    try {
+      const res = await fetch("/api/voice-token", { method: "POST" });
+      if (!res.ok) throw new Error(`token request failed: ${res.status}`);
+      const { token, url, room_name } = await res.json();
+      log(`Got token for room ${room_name}`);
+
+      room = new Room();
+
+      room.on(RoomEvent.TrackSubscribed, (track, publication, participant) => {
+        log(`Subscribed to ${track.kind} track from ${participant.identity}`);
+        if (track.kind === Track.Kind.Audio) {
+          remoteAudio.srcObject = new MediaStream([track.mediaStreamTrack]);
+          setStatus("Agent is talking back — listen!", "live");
+        }
+      });
+
+      room.on(RoomEvent.ParticipantConnected, (p) => log(`Agent joined: ${p.identity}`));
+      room.on(RoomEvent.Disconnected, () => {
+        setStatus("Disconnected", "");
+        connectBtn.disabled = false;
+        disconnectBtn.disabled = true;
+      });
+
+      await room.connect(url, token);
+      log(`Connected to room ${room_name}`);
+      await room.localParticipant.setMicrophoneEnabled(true);
+      log("Microphone enabled — start speaking");
+      setStatus("Connected — speak now, waiting for the agent to join...", "live");
+      disconnectBtn.disabled = false;
+    } catch (err) {
+      console.error(err);
+      setStatus(`Error: ${err.message}`, "err");
+      connectBtn.disabled = false;
+    }
+  });
+
+  disconnectBtn.addEventListener("click", async () => {
+    if (room) await room.disconnect();
+  });
+</script>
+</body>
+</html>

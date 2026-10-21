@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Mindfully Yours - Client Call Master Guide</title>
+<style>
+@page { size: A4; margin: 18mm 15mm 18mm 15mm;
+  @bottom-left { content: "Mindfully Yours AI - Client call master guide"; font-size: 8pt; color: #888; }
+  @bottom-right { content: "Page " counter(page); font-size: 8pt; color: #888; } }
+@page :first { margin: 0; @bottom-left { content: none; } @bottom-right { content: none; } }
+* { box-sizing: border-box; }
+body { font-family: "DejaVu Sans", Helvetica, Arial, sans-serif; font-size: 9.6pt; line-height: 1.45; color: #1d2733; }
+h1 { font-size: 20pt; color: #17375e; border-bottom: 3px solid #2e75b6; padding-bottom: 4px; margin: 0 0 10px 0; page-break-before: always; }
+h1.nobreak { page-break-before: avoid; }
+h2 { font-size: 13pt; color: #17375e; margin: 18px 0 6px 0; border-left: 5px solid #2e75b6; padding-left: 8px; page-break-after: avoid; }
+h3 { font-size: 10.8pt; color: #2e75b6; margin: 12px 0 4px 0; page-break-after: avoid; }
+p { margin: 4px 0 7px 0; }
+ul, ol { margin: 3px 0 8px 0; padding-left: 20px; } li { margin: 2px 0; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.4pt; background: #eef2f7; padding: 0 3px; border-radius: 2px; }
+pre { font-family: "DejaVu Sans Mono", monospace; font-size: 7.6pt; background: #f4f6f9; border: 1px solid #d7dde6; padding: 7px 9px; line-height: 1.32; white-space: pre-wrap; page-break-inside: avoid; }
+table { border-collapse: collapse; width: 100%; table-layout: fixed; margin: 6px 0 10px 0; font-size: 8.6pt; }
+th { background: #17375e; color: #fff; text-align: left; padding: 4px 6px; }
+td { border: 1px solid #cdd5e0; padding: 4px 6px; vertical-align: top; overflow-wrap: anywhere; word-wrap: break-word; }
+th { overflow-wrap: anywhere; }
+th code { background: transparent; color: #fff; }
+code { overflow-wrap: anywhere; }
+tr:nth-child(even) td { background: #f6f8fb; }
+tr { page-break-inside: avoid; }
+.say { background: #e8f4ea; border-left: 5px solid #2e8b57; padding: 6px 9px; margin: 6px 0 9px 0; page-break-inside: avoid; }
+.say b.t { color: #1f6b41; }
+.warn { background: #fdf1e3; border-left: 5px solid #e08a1e; padding: 6px 9px; margin: 6px 0 9px 0; page-break-inside: avoid; }
+.warn b.t { color: #a85d00; }
+.red { background: #fbe9e9; border-left: 5px solid #c0392b; padding: 6px 9px; margin: 6px 0 9px 0; page-break-inside: avoid; }
+.red b.t { color: #a02418; }
+.note { background: #eaf1fb; border-left: 5px solid #2e75b6; padding: 6px 9px; margin: 6px 0 9px 0; page-break-inside: avoid; }
+.qa { border: 1px solid #cdd5e0; border-radius: 4px; margin: 7px 0; page-break-inside: avoid; }
+.qa .q { background: #17375e; color: #fff; font-weight: bold; padding: 4px 8px; font-size: 9.2pt; }
+.qa .a { padding: 5px 8px; }
+.qa .a p { margin: 3px 0; }
+.qa .push { background: #fdf1e3; padding: 4px 8px; border-top: 1px dashed #e08a1e; font-size: 8.8pt; }
+.tag { display: inline-block; font-size: 7.2pt; font-weight: bold; padding: 0 5px; border-radius: 3px; color: #fff; vertical-align: middle; }
+.t-built { background: #2e8b57; } .t-part { background: #e08a1e; } .t-not { background: #c0392b; } .t-info { background: #2e75b6; }
+.cover { height: 297mm; background: #17375e; color: #fff; padding: 60mm 24mm 20mm 24mm; }
+.cover h1 { color: #fff; border: none; font-size: 30pt; page-break-before: avoid; line-height: 1.15; margin-bottom: 6mm; }
+.cover .sub { font-size: 13pt; color: #cfe0f5; margin-bottom: 14mm; }
+.cover .box { background: rgba(255,255,255,0.10); border-left: 5px solid #5fa8e8; padding: 8px 12px; margin: 6px 0; font-size: 10pt; }
+.flow { margin: 6px 0 10px 0; }
+.flow div.step { border: 1.5px solid #2e75b6; background: #f1f6fc; border-radius: 4px; padding: 4px 8px; margin: 0; font-size: 8.8pt; page-break-inside: avoid; }
+.flow div.arr { text-align: center; color: #2e75b6; font-size: 9pt; line-height: 1; margin: 1px 0; }
+.flow div.stop { border-color: #c0392b; background: #fbe9e9; }
+.flow div.ok { border-color: #2e8b57; background: #e8f4ea; }
+.flow div.amber { border-color: #e08a1e; background: #fdf1e3; }
+.cols { width: 100%; border-collapse: separate; border-spacing: 6px 0; margin: 4px -6px; }
+.cols td { border: none; padding: 0; background: none !important; vertical-align: top; width: 50%; }
+.big { font-size: 15pt; font-weight: bold; color: #17375e; }
+.toc td { border: none; padding: 1px 4px; background: none !important; font-size: 9.4pt; }
+.small { font-size: 8.2pt; color: #556; }
+a.pg::after{content: target-counter(attr(href), page);} a.pg{color:#17375e;text-decoration:none}</style></head><body>
+
+<div class="cover">
+<h1>Mindfully Yours AI<br>Client Call Master Guide</h1>
+<div class="sub">Knowledge base &middot; ingestion &middot; signals &middot; retrieval &middot; response &middot; tier shifting<br>Everything you need to answer the client's clinical and technical team</div>
+<div class="box"><b>Prepared:</b> 14 Oct 2026 &nbsp;|&nbsp; <b>Verified against:</b> the code in <code style="background:#2a4a75;color:#fff">backend/app</code> and the live dev database on the day it was written</div>
+<div class="box"><b>How to read it:</b> Part A is your 5-minute warm-up. Parts B-G explain every file, every step and every number. Part H is a question bank with ready answers. Part I is the cheat sheet and glossary.</div>
+<div class="box"><b>One honesty rule used throughout:</b> every statement is tagged as what is <i>built and working</i>, what is <i>partly built</i>, or what is <i>not built yet</i>. Do not claim more than the tag says, because the client's technical team will probe exactly that boundary.</div>
+<div class="box"><b>Source of truth:</b> where this guide and the older notes in <code style="background:#2a4a75;color:#fff">documnets/understanding/</code> disagree, this guide follows the running code (several older notes pre-date the therapist-first work).</div>
+</div>
+<h1 class="nobreak" style="page-break-before:always">Contents</h1><table class="toc"><tr><td><a href="#partA" style="color:#17375e;text-decoration:none"><b>Part A - The 5-minute warm-up</b></a></td><td style="text-align:right;width:12%"><a href="#partA" class="pg"></a></td></tr><tr><td><a href="#partB" style="color:#17375e;text-decoration:none"><b>Part B - The client's files: the four folders and how each file is used</b></a></td><td style="text-align:right;width:12%"><a href="#partB" class="pg"></a></td></tr><tr><td><a href="#partC" style="color:#17375e;text-decoration:none"><b>Part C - The ingestion pipeline (client files &rarr; searchable knowledge base)</b></a></td><td style="text-align:right;width:12%"><a href="#partC" class="pg"></a></td></tr><tr><td><a href="#partD" style="color:#17375e;text-decoration:none"><b>Part D - The knowledge base in the database, and how signals work</b></a></td><td style="text-align:right;width:12%"><a href="#partD" class="pg"></a></td></tr><tr><td><a href="#partE" style="color:#17375e;text-decoration:none"><b>Part E - Retrieval and response: what happens to every message</b></a></td><td style="text-align:right;width:12%"><a href="#partE" class="pg"></a></td></tr><tr><td><a href="#partF" style="color:#17375e;text-decoration:none"><b>Part F - Safety and tier shifting (Tier 1 &rarr; 2 &rarr; 3)</b></a></td><td style="text-align:right;width:12%"><a href="#partF" class="pg"></a></td></tr><tr><td><a href="#partG" style="color:#17375e;text-decoration:none"><b>Part G - Why this approach, honest gaps, roadmap, decisions we need</b></a></td><td style="text-align:right;width:12%"><a href="#partG" class="pg"></a></td></tr><tr><td><a href="#partH" style="color:#17375e;text-decoration:none"><b>Part H - Question bank: what they may ask, and what to say</b></a></td><td style="text-align:right;width:12%"><a href="#partH" class="pg"></a></td></tr><tr><td><a href="#partI" style="color:#17375e;text-decoration:none"><b>Part I - Cheat sheet and glossary</b></a></td><td style="text-align:right;width:12%"><a href="#partI" class="pg"></a></td></tr></table><p class="small">Folder of the client files (copies, sorted by purpose) sits next to this PDF: <code>documnets/Client Call Prep/</code>.</p><h1 class="nobreak" style="page-break-before:always" id="partA">Part A - The 5-minute warm-up</h1>
+
+<h2>A1. The 60-second explanation (say this first)</h2>
+<div class="say"><b class="t">Say:</b> "The product's value is the therapists' expertise, so a reply should come from <b>their conversations</b>, not from an LLM's general knowledge. When a user writes something, we turn it into a meaning-vector once. First, an independent safety check compares it to the doctors' red-flag list and, if it matches, sends the doctors' approved script <i>word for word</i> - the LLM is never involved. If it is safe, we search the therapists' own conversations by meaning. A very close match is sent exactly as written. A partial match is lightly reworded by the LLM, but only using the therapists' own words, and we check it did not add anything. If nothing matches, we ask a therapist-written clarifying question first, and only then let the LLM answer - grounded in the therapists' self-care material. In the background we keep a running severity score across the whole conversation so we can move someone from self-care (Tier 1) to 'consider a professional' (Tier 2) carefully, while genuine crisis (Tier 3) is handled only by the instant red-flag check. Everything is logged with where the reply came from."</div>
+
+<h2>A2. The six ideas everything else hangs on</h2>
+<table>
+<tr><th style="width:4%">#</th><th style="width:26%">Idea</th><th>One-line meaning</th></tr>
+<tr><td>1</td><td><b>Grounded, not invented</b></td><td>The AI may not invent mental-health advice. Content comes from the client's approved material; the LLM mostly <i>phrases</i>.</td></tr>
+<tr><td>2</td><td><b>Safety lives outside the AI</b></td><td>A rule/similarity check against the red-flag list runs on every turn, before any reply is written. It returns the doctors' exact script. The LLM never decides safety.</td></tr>
+<tr><td>3</td><td><b>Therapist-first</b></td><td>Client requirement: if a similar therapist conversation exists, the reply is curated from it. LLM is demoted to phraser and last resort.</td></tr>
+<tr><td>4</td><td><b>Stay human on the outside</b></td><td>No quizzes or forms. All severity assessment happens silently from ordinary conversation.</td></tr>
+<tr><td>5</td><td><b>Match by meaning, not keywords</b></td><td>Text is converted to embeddings (vectors). "I wish I could just disappear" lands near "I don't want to be here" although no words are shared.</td></tr>
+<tr><td>6</td><td><b>Everything is explainable</b></td><td>Every turn writes an audit row: where the reply came from (<code>served_from</code>), which therapist row, similarity, timings, tier score.</td></tr>
+</table>
+
+<h2>A3. The three kinds of knowledge (the "bucket" test)</h2>
+<p>Every client file is classified by one question: <b>is it something a person might say, a real thing to hand back, or a rule/number the code checks?</b></p>
+<table>
+<tr><th>Kind</th><th>What it is</th><th>How the system uses it</th><th>Example files</th></tr>
+<tr><td><b>Match / recommend</b><br><span class="small">(embedded, searched)</span></td><td>Real human phrasing, therapist replies, finished tools</td><td>Turned into vectors; the user's message is compared against them. Either to understand what is going on, or to find something to hand back.</td><td>Signal legend A1, symptom map A2, therapist conversations, DBT workbook, situational strategies</td></tr>
+<tr><td><b>Code logic</b><br><span class="small">(never embedded)</span></td><td>Counts, thresholds, decision sequences, verbatim scripts</td><td>Read once into database tables and evaluated as <code>if/else</code> in code. Fast and 100% predictable.</td><td>Routing rules C11, sufficiency sheet 9, fallback sheet 17, red-flag scripts</td></tr>
+<tr><td><b>Style / always-present</b></td><td>Small, always relevant</td><td>Sits in the prompt every turn; not searched.</td><td>Clinical Markers table (10 items), persona line</td></tr>
+</table>
+<div class="warn"><b class="t">Important update to say out loud:</b> the older design treated the therapist conversation files as "style only - teach the AI how to talk". <b>That changed.</b> After the client's requirement that replies come from their conversations, those files are now parsed into reply pairs, embedded and <b>searched live</b>. Both statements exist in older documents; the second is the current truth.</div>
+
+<h2>A4. Numbers worth memorising (live dev DB, checked 14 Oct 2026)</h2>
+<table>
+<tr><th>Thing</th><th>Number</th><th>Thing</th><th>Number</th></tr>
+<tr><td>Clinical signals (A1)</td><td><b>285</b></td><td>Therapist reply pairs stored</td><td><b>6,440</b></td></tr>
+<tr><td>Symptoms (A2)</td><td><b>154</b> (21 PHYS + 133 EM)</td><td>...approved &amp; searchable</td><td><b>5,230</b></td></tr>
+<tr><td>Red flags</td><td><b>31</b> (27 have scripts, 4 do not)</td><td>...held back (never searchable)</td><td><b>1,210</b></td></tr>
+<tr><td>Routing rules (C11)</td><td><b>66</b> (+1 incomplete)</td><td>...flagged "best conversations"</td><td><b>236</b></td></tr>
+<tr><td>Sufficiency patterns (sheet 9)</td><td><b>195</b> in DB (185 in raw CSV)</td><td>Self-care chunks</td><td><b>130</b> (125 situational + 5 DBT)</td></tr>
+<tr><td>Fallback &amp; safety net rows</td><td><b>99</b></td><td>Situational routing rows</td><td><b>137</b></td></tr>
+<tr><td>Layer I-IV bank / emotions / scenarios</td><td>1,512 / 1,276 / 2,809</td><td>Welcome messages</td><td><b>24</b> (23 approved)</td></tr>
+<tr><td>Embedding model</td><td>OpenAI <code>text-embedding-3-small</code>, 1024 dims</td><td>Pre-translated replies</td><td><b>8,167</b></td></tr>
+<tr><td>Strong / partial match cut-offs</td><td><b>0.85 / 0.62</b> (provisional)</td><td>Red-flag cut-offs</td><td><b>0.44</b> general, <b>0.36</b> suicide flags, <b>0.55</b> soft-zone ceiling</td></tr>
+<tr><td>Tier 2 score line</td><td><b>40 / 100</b></td><td>Redirect gate</td><td>score&ge;40 + duration + impact + &ge;3 distinct signals</td></tr>
+</table>
+<p class="small">The 1,210 held rows are: too-short messages, crisis/Tier-3 conversations (owned by the interlock), paraphilic-content governance hold, unfinished placeholders, and stray-heading risks. See Part C.</p>
+
+<h2>A5. If you only remember five sentences</h2>
+<ol>
+<li>Safety first, always, on every message, and it returns the doctors' exact words.</li>
+<li>Then we look for the therapists' own reply by meaning; strong match is sent unchanged, partial is reworded under a check, none leads to a therapist clarifying question.</li>
+<li>The LLM is a phraser and a last resort, never the author of clinical content on a matched case.</li>
+<li>Tier 3 means crisis and only the red-flag check can produce it; the running score can only ever reach Tier 2, and even then booking is only suggested after a stricter confidence gate.</li>
+<li>All thresholds are provisional starting points; calibrating them with therapist-labelled data is the single most valuable next piece of work, and we say so openly.</li>
+</ol>
+<h1 id="partB">Part B - The client's files: the four folders and how each file is used</h1>
+<p>The folder <code>documnets/Client Call Prep/</code> holds a copy of every client-provided file that feeds the system, sorted by <b>purpose</b>. Originals are untouched. For each file: what it is, what it became in the database, how it is used at runtime, and the gotcha you should know before someone asks.</p>
+
+<table>
+<tr><th style="width:30%">Folder</th><th style="width:12%">Files</th><th>One-line purpose</th></tr>
+<tr><td><b>1_Safety_Severity_And_Decision_Rules</b></td><td>8</td><td>The doctors' rules: what is dangerous, what each tier means, what to say verbatim, what to do when a conversation stalls. Read by code, mostly <i>not</i> AI.</td></tr>
+<tr><td><b>2_Understanding_What_The_User_Means</b></td><td>14</td><td>The vocabulary of distress: signals, symptoms, emotions, scenarios, depth-of-conversation question banks. Used to <i>recognise</i> what is going on - nothing here is shown to the user directly.</td></tr>
+<tr><td><b>3_Therapist_Conversations_What_The_AI_Says</b></td><td>30</td><td>The therapists' "User / AI" dialogues, welcome messages, sample conversations. The <i>replies</i> the user actually receives come from here.</td></tr>
+<tr><td><b>4_Self_Help_Tools_Lookups_And_Client_Blueprints</b></td><td>11</td><td>Finished exercises (DBT, brain-dump), situational self-care strategies, the career lookup, plus the client's own architecture PDFs for context.</td></tr>
+</table>
+
+<h2>Folder 1 - Safety, severity and decision rules</h2>
+<table>
+<tr><th style="width:19%">File</th><th style="width:22%">What it is</th><th style="width:20%">Became</th><th>How it is used / gotchas</th></tr>
+<tr><td><b>Kb Phase I(7.csv</b><br><span class="small">Sheet 7 - Red Flags &amp; Escalation</span></td><td>31 danger patterns (RF-001..031). Each: trigger phrases (direct <i>and</i> disguised), clinical meaning, immediate action, <b>verbatim bot script</b>, escalation target.</td><td><code>kb_red_flags</code> - 31 rows. Phrases joined and embedded as <b>one vector per flag</b>.</td><td>Safety interlock, every turn. A match returns the <b>script word for word, no LLM</b>. <b>RF-028 to RF-031 (violence, history of violence, suspected rape, molestation) have no script</b> - code treats them as a hard "alert a human" path. RF-020 has no escalation target. A few scripts contain typos that would ship verbatim.</td></tr>
+<tr><td><b>Kb Phase I(C11.csv</b><br><span class="small">Routing Rules</span></td><td>66 if/then rules: "these signals &rarr; Tier 1/2/3", with priority.</td><td><code>kb_routing_rules</code> - 66 rows (Tier 3: 23, Tier 2: 35, Tier 1: 7, 1 incomplete).</td><td>Code lookup, <b>evaluated in <code>priority</code> order (1&rarr;2&rarr;3), never by rule ID</b> (the two genuinely diverge, e.g. RULE-004 is priority 1). Gotchas: many rules use shorthand like "SIG 001-017 minus 002-003" that the matcher cannot expand, so ~41 of 66 effectively never fire; Rule-025 has no route/priority; ID casing switches from RULE- to Rule- at 015.</td></tr>
+<tr><td><b>Kb Phase I(9.csv</b><br><span class="small">Sheet 9 - Signal Sufficiency</span></td><td>"How much evidence is enough" per clinical pattern: minimum signals, must-have signals, confidence rule, when to keep probing, graceful-exit trigger. 12 clinical categories, each with Tier 1/2/3 blocks.</td><td><code>kb_sufficiency_patterns</code> - 195 rows (T1: 68, T2: 64, T3: 50, 13 untiered). Only <code>pattern_name</code> is embedded.</td><td>Coarse "which pattern is this closest to" match (threshold 0.30) &rarr; stored as the conversation's <code>candidate_pattern_id</code> &rarr; its <b>"when to keep probing" text is fetched by ID</b> as doctor-written guidance for the next question. Gotchas: 3 rows say literally <code>check----------</code> instead of a tier (excluded); raw export counted 185 rows vs 195 stored - client should confirm which is authoritative.</td></tr>
+<tr><td><b>Kb Phase I(17.csv</b><br><span class="small">Sheet 17 - Fallback &amp; Safety Net</span></td><td>What to do when a conversation is vague, contradictory, or the user disengages; plus special populations and an 84-row disorder-specific matrix.</td><td><code>kb_fallback_scenarios</code> - 99 rows. Not embedded.</td><td>Its triggers describe the <i>shape</i> of the conversation (turn count, short answers, confidence). Code exists and is unit-tested (<code>safety/fallback.py</code>) but <b><span class="tag t-not">NOT WIRED</span> into the live turn yet</b>. A real person's name sits in 3 escalation rows - should be a role.</td></tr>
+<tr><td><b>Clinical_Markers_Reference_Table (1).pdf</b></td><td>10 markers the AI should quietly notice: Speech, Safety, Functional Impact, Reality Testing, Emotional State, Thought Organisation, Thought Content, Sensory Experiences, Behavioural Changes, Engagement. Each with lower- and higher-concern examples.</td><td>Python constant <code>safety/clinical_markers.py</code> - <b>not in a database, not embedded</b>.</td><td>Rendered into the LLM prompt on every full LLM call as a "what to notice" checklist. The LLM never decides safety from it. <i>If asked "how does the AI read tone/severity?" - this, plus the signal matching.</i></td></tr>
+<tr><td><b>Parenting_Child Related.docx</b></td><td>A spec: symptom lists, intake questions and a <b>guardrail table</b> mapping a child-related concern to referral urgency.</td><td><code>kb_guardrail_rules</code> - 18 rows.</td><td>Stored as an urgency framework for child-safety concerns. Not yet driving live replies. Not conversation samples.</td></tr>
+<tr><td><b>Pathway For AI In Different Situations - Tanisha.docx</b></td><td>The doctors' 15-step decision pathway (identify concern &rarr; categorise &rarr; safety check &rarr; emotion &rarr; severity &rarr; supports &rarr; coping &rarr; goal &rarr; intervention &rarr; psycho-education &rarr; professional help &rarr; small next step &rarr; summarise &rarr; close) and 7 design rules (never diagnose, validate first, 1-2 questions at a time, reassess risk continuously...).</td><td>Not ingested. Guides the design of the turn flow.</td><td>Introduces a <b>Mild/Moderate/Severe/Crisis</b> scale and a 22-item category list that conflict with Tier 1/2/3 - flagged as an open reconciliation question for the client.</td></tr>
+<tr><td><b>Mindfully_Yours_AI_Latency_Filler_Phrases.pdf</b></td><td>Short "bridge" phrases to speak while the system is thinking.</td><td>Lookup in <code>pipeline/filler.py</code>.</td><td>Chosen by rule (situation + expected gap), never searched. Mainly relevant to voice.</td></tr>
+</table>
+
+<h2>Folder 2 - Understanding what the user means</h2>
+<table>
+<tr><th style="width:21%">File</th><th style="width:24%">What it is</th><th style="width:19%">Became</th><th>How it is used / gotchas</th></tr>
+<tr><td><b>Kb Phase I(A1.csv</b><br><span class="small">Signal Library</span></td><td>285 clinical signals (SIG-001..285): concept, 5-10 everyday phrasings, tone cues, trajectory cues, category, linked disorders, severity 1-3, red-flag yes/no.</td><td><code>kb_signals</code> - 285. The <b>phrasings</b> column is embedded.</td><td>Triage: the user's message is compared to every signal's phrasings; matches above 0.45 similarity (top 5) are "observed signals". Severity (1-3) feeds the tier score. <b>Matching is noisy per message by design</b> (hence accumulation). Raw file is a 16 MB Excel export with 16,384 columns for 285 real rows.</td></tr>
+<tr><td><b>Kb Phase I(A2.csv</b><br><span class="small">Physical/Emotional Symptom Map</span></td><td>154 rows: 17 PHYS + 4 mistyped PHSY (=21 real physical) and 133 EM rows. Maps symptoms to signal IDs.</td><td><code>kb_symptoms</code> - 154. "How users describe it" embedded (21 rows have it).</td><td>Matched alongside signals. <b>EM codes are what the Tier 1 routing rules reference</b> (e.g. "EM45 to 54" = life transitions). The EM rows hold category labels, not phrasings, so most of A2 is not searchable by itself.</td></tr>
+<tr><td><b>Layer I / Layer II / Layer III / Layer 2 to 3 Transitions / PHASE II Layer I and IV</b><br><span class="small">5 docx</span></td><td>Question and statement banks organised by <b>conversation depth</b>: I opening/rapport &rarr; II exploring &rarr; III insight/self-regulation &rarr; IV action planning; plus transition lines.</td><td><code>kb_layer_content</code> - 1,512 rows, embedded.</td><td><b><span class="tag t-part">STORED, NOT USED LIVE</span></b> - ingested and searchable, but the turn flow does not yet pick layer-aware questions. Layer III still has unfilled <code>[technique]</code> placeholders.</td></tr>
+<tr><td><b>PHASE II_ Emotion Associated user expression / List of Emotions - Tanisha</b></td><td>Two independent emotion phrase corpora (19 and 9 emotions; plus an 11-item picklist inside the Pathway doc).</td><td><code>kb_emotion_phrases</code> - 1,276 rows, embedded.</td><td><b><span class="tag t-part">STORED, NOT USED LIVE</span></b>. Lists disagree (Tensed vs Anxiety...). Needs one canonical list from the client first.</td></tr>
+<tr><td><b>List of Scenarios - Tanisha / Anxiety Situations</b></td><td>The big situation taxonomies (~23,000 words; 9 main categories + "Scenarios that were left"; 35 anxiety situation categories).</td><td><code>kb_scenarios</code> 2,809 and <code>kb_anxiety_situations</code> 35.</td><td>Stored for topic routing. <b>The "Fetishes"/paraphilic section is on governance hold</b> (clinical + legal decision needed) - must not go live.</td></tr>
+<tr><td><b>Questions.docx / Question Set - Career.docx</b></td><td>Life-situation question templates with a Tier 1/2/3 column (9 scenarios; and the career analogue, ~370 questions).</td><td><code>kb_tier_question_bank</code> - 1,413 rows.</td><td>Stored. The career file's "Tier Routing" column is 100% empty (unfinished). Highest-value file for tier calibration with the doctors.</td></tr>
+<tr><td><b>Questions For When AI Is Not Sure - Tanisha.docx</b></td><td>16 categories of "tell me more / I'm not sure I understood" questions.</td><td><code>kb_clarification_phrases</code> - 115 rows, embedded.</td><td><b><span class="tag t-built">LIVE</span></b> in two places: (1) the generic categories supply the clarifying question when nothing matches; (2) a gentle follow-up in the red-flag soft zone. Situation-specific categories are deliberately excluded (they read as non-sequiturs when picked by nearest-neighbour).</td></tr>
+</table>
+
+<h2>Folder 3 - Therapist conversations (what the AI says)</h2>
+<table>
+<tr><th style="width:24%">File(s)</th><th style="width:25%">What it is</th><th>How it is used / gotchas</th></tr>
+<tr><td><b>26 therapist conversation .docx files</b><br><span class="small">Offline Work Weeks 1-4 and 6, Addictions, Caregiver, Anxiety, Depression, Bipolar &amp; Psychosis, Chronic illness, Eating disorder (third person), Education, OCD &amp; related, Nicotine, Parenting, Shopping, Trauma, Parasocial, Life transitions, Romantic+family, Miscellaneous, Career &amp; academic, the Anam and Tanisha combination files...</span></td><td>Dialogues written by the clinical team (Anam, Ankita, Shreya, Tanisha) in "User: ... / AI: ..." form, grouped by scenario. Many carry explicit Tier 1/2/3 tags and "initiate crisis protocol" markers.</td><td><b>The heart of the system.</b> Parsed into (user said &rarr; therapist replied) pairs in <code>kb_therapist_turns</code>, embedded on the <i>user</i> text, searched every turn. Gotchas: authors tag tiers inconsistently (Ankita uses "Chronic risk"); several files are unfinished (Trauma is one scenario cut mid-sentence; Depression is mostly a bare symptom list; Life Transitions is missing #13 and #17; Bipolar/Psychosis has gaps); Week 2 contains the paraphilic content on governance hold; Parasocial duplicates part of Week 4.</td></tr>
+<tr><td><b>Best Conversations- Final.docx</b></td><td>The team's chosen best dialogues (236 pairs).</td><td>Same table, flagged <code>is_preferred</code> = +0.02 tie-breaker bonus at match time. Cannot rescue a poor match.</td></tr>
+<tr><td><b>Conversations With AI Companion.docx</b></td><td>196 casual "companion" chats (everyday and emotional topics).</td><td>Same table. <b>Risk to mention before they do:</b> casual replies could match a distressed user if thresholds are loose; mitigated by the interlock running first and the high strong cut-off; needs calibration with these in the test set.</td></tr>
+<tr><td><b>AI WELCOME RESPONSES.docx</b></td><td>Opening messages ("Hi user, what's on your mind today?").</td><td><code>kb_welcome_responses</code> 24 (23 approved). Picked at random, name filled ("Hi Asha") or "Hi there" - never the literal word "user". No LLM, instant. Endpoint <code>POST /api/v1/conversation/welcome</code>; voice agent speaks it too (voice not live-tested).</td></tr>
+<tr><td><b>Convo Samples.pdf</b></td><td>18 sample conversations over 9 everyday scenarios; shows tone, funnel-style questioning, scope boundary ("I can't pick your career - see a counsellor").</td><td>Documents the persona. <b>Honest status: the tone examples are not yet injected into the prompt</b> (the few-shot slot exists but is empty; the persona is a one-line default). No crisis examples in it. Open question to the client: script or style guide? A few typos and an "XYZ" placeholder.</td></tr>
+<tr><td><b>Career Indecision - Canonical Template (deduplicated).md</b></td><td>The one real template hiding inside "Career Conversation Sets 1.docx" (which was one script repeated 500 times with only the career name swapped).</td><td>Style template with <code>[CAREER_NAME]</code>/<code>[STREAM]</code> placeholders, filled from the career lookup in folder 4.</td></tr>
+</table>
+
+<h2>Folder 4 - Self-help tools, lookups and client blueprints</h2>
+<table>
+<tr><th style="width:26%">File</th><th style="width:25%">What it is</th><th>How it is used / gotchas</th></tr>
+<tr><td><b>dbt-skills-workbook.docx</b> / <b>-simple.pdf</b></td><td>Finished DBT workbook: Wise Mind, STOP, TIPP, Opposite Action, PLEASE.</td><td><code>kb_content_chunks</code> (5). One skill = one chunk. Semantically searched at Tier 1 and handed to the LLM as grounding.</td></tr>
+<tr><td><b>brain-dump-worksheets.pdf</b></td><td>"A Soft Place to Land" emotional-release worksheet.</td><td>Ready content; same mechanism. No dedicated parser yet.</td></tr>
+<tr><td><b>SELF-HELP CONVERSATIONS.docx</b></td><td>11 transcripts plus a 7-section toolkit (behavioural activation, time management, grounding, journaling, tracking, SOS tools).</td><td>The canonical self-help source. Transcripts go through the therapist-turn parser; toolkit sections are candidates for chunks.</td></tr>
+<tr><td><b>Copy of Situational Routing.xlsx</b></td><td>137 everyday situations in ~13 groups; for each, what Tier 1 / 2 / 3 looks like and a therapist-written self-care strategy.</td><td><code>kb_situational_routing</code> (137) and <b>125 strategies as Tier-1 chunks</b> (12 had no strategy - left empty, not invented). Strategies are <b>live</b> for Tier 1 grounding. The Tier 1/2/3 <i>wording</i> is stored, <b>not used for routing</b> until reconciled with the routing rules.</td></tr>
+<tr><td><b>Career Field &amp; Stream Lookup.csv</b></td><td>500 genuine (career, field, stream) rows recovered from the duplicated career file: 25 fields &times; 20 careers, 4 streams.</td><td><code>kb_career_lookup</code> 500. Exact lookup to fill the career template.</td></tr>
+<tr><td><b>Phase1_Final / Phase1_English_Architecture / Phase1.pdf, rag simple flow.pdf, Knowledge Base Directory.csv</b></td><td>The client's own architecture diagrams, RAG explanation and file inventory.</td><td>Context only, never ingested. The three Phase 1 PDFs disagree on avatar vendor, STT vendor, 3-tier vs 4-state crisis model, and Hindi handling - all tracked as open decisions.</td></tr>
+</table>
+
+<div class="warn"><b class="t">Not in the folders on purpose:</b> 3 password-locked Anam files (sleep, anxiety third-person, Miscellaneous Conversations) - still locked, need a second password; the original 500-copy career file; internal planning notes.</div>
+<h1 id="partC">Part C - The ingestion pipeline (client files &rarr; searchable knowledge base)</h1>
+<p>Ingestion is <b>offline</b>: it runs when files arrive or change, never while a user is waiting, so it may take time and be careful. Governing principle: <b>retrieval can never be better than what ingestion gave it.</b></p>
+
+<h2>C1. The pipeline, step by step</h2>
+<div class="flow">
+<div class="step"><b>1. Intake.</b> Client sends CSV / Excel exports / Word files (some password-protected; one Word file built entirely from drawing text-boxes).</div><div class="arr">&#9660;</div>
+<div class="step"><b>2. Structure-aware parsing.</b> One dedicated parser per file type (<code>app/ingestion/parsers/</code>, ~20 parsers). No AI decides where to split - the client's own rows / headings / "User:/AI:" lines are the boundaries.</div><div class="arr">&#9660;</div>
+<div class="step"><b>3. Cleaning &amp; quality gates.</b> Remove template-instruction rows, forward-fill group labels, fix encoding (cp1252), normalise IDs; <b>hold back</b> anything unfinished or sensitive (stored, but marked not searchable).</div><div class="arr">&#9660;</div>
+<div class="step"><b>4. Embedding.</b> Only specific fields (never whole records) are converted to 1024-number vectors with OpenAI <code>text-embedding-3-small</code>, in batches of 64.</div><div class="arr">&#9660;</div>
+<div class="step"><b>5. Store.</b> One PostgreSQL database with the pgvector extension: normal columns + the vector on the same row; HNSW indexes for fast nearest-neighbour search.</div><div class="arr">&#9660;</div>
+<div class="step"><b>6. Approve.</b> Therapist rows default to <code>approved = false</code>; they are served only after approval (<code>--approve-eligible</code> or a per-row update). Bad row? <code>approved=false</code> - instant, no deploy.</div><div class="arr">&#9660;</div>
+<div class="step"><b>7. Pre-translate.</b> <code>translate-kb</code> translates fixed replies into Hindi and Hinglish offline so non-English replies are instant.</div><div class="arr">&#9660;</div>
+<div class="step ok"><b>8. Spot-check.</b> <code>scripts/try_turn.py "message"</code> runs the real pipeline and prints the source, ids, similarity and timings.</div>
+</div>
+
+<h2>C2. The commands (all idempotent - safe to re-run)</h2>
+<pre>python -m app.ingestion.cli ingest                 # the 6 Phase-I clinical sheets (A1, A2, C11, 7, 9, 17)
+python -m app.ingestion.cli ingest-convo-data      # Layer banks, emotions, scenarios, clarifications, DBT, career lookup...
+python -m app.ingestion.cli ingest-therapist-turns # the therapist dialogues -> kb_therapist_turns  (--dry-run, --approve-eligible, --no-embed)
+python -m app.ingestion.cli ingest-client-drop-2   # welcome messages, situational routing, best conversations, companion chats
+python -m app.ingestion.cli translate-kb           # pre-translate fixed replies to hi / hinglish</pre>
+
+<h2>C3. What is embedded - and what deliberately is not</h2>
+<table>
+<tr><th style="width:27%">Table / field</th><th style="width:30%">Embedded text</th><th>Why</th></tr>
+<tr><td><code>kb_signals</code></td><td><code>phrasings_text</code> (all 5-10 phrasings as one string)</td><td>Real varied wording - exactly what similarity search needs.</td></tr>
+<tr><td><code>kb_symptoms</code></td><td><code>how_described</code> (only the 21 PHYS rows have it)</td><td>EM rows are labels, not phrasings.</td></tr>
+<tr><td><code>kb_red_flags</code></td><td>all trigger phrases joined with " | " - <b>one vector per flag</b></td><td>Catches direct and disguised wording. <i>Known trade-off - see Q&amp;A: one blended vector per flag dilutes individual phrases, which is why explicit suicide statements score only ~0.39 and need a lower threshold.</i></td></tr>
+<tr><td><code>kb_sufficiency_patterns</code></td><td><code>pattern_name</code> only</td><td>Coarse "which pattern" guess; the rest (minimum/must-have signals) is rule data.</td></tr>
+<tr><td><code>kb_therapist_turns</code></td><td><code>user_text</code> only (<code>prior_context</code> is stored, not embedded)</td><td>The user's next message describes a <i>situation</i>; that is what must match. Context-aware matching is a known gap.</td></tr>
+<tr><td><code>kb_content_chunks</code></td><td>DBT skills: the skill; situational strategies: <code>"&lt;situation&gt;. &lt;strategy&gt;"</code></td><td>The user describes the situation, so the situation must be in the embedded text.</td></tr>
+<tr><td>Layer bank, emotions, scenarios, clarifications, tier-question bank, career names</td><td>the phrase / question text</td><td>Stored and searchable; only clarifications are used live today.</td></tr>
+<tr><td colspan="3"><b>Never embedded:</b> routing rules, fallback trigger conditions, sufficiency minimum/must-have signals, the Clinical Markers table, bot scripts (they are <i>fetched</i>, not searched), welcome messages (random pick), translations (hash lookup).</td></tr>
+</table>
+
+<h2>C4. Chunking - "one row = one chunk"</h2>
+<p>For every file received so far the client's own structure is already the right chunk: one spreadsheet row, one paragraph under a heading, one (user turn &rarr; therapist turn) pair. <b>No AI is used to chunk.</b> Fixed-size or similarity-based chunking would cut a clinical idea in half; a clinician-structured file does not need it.</p>
+<div class="note"><b>Design vs built.</b> The original design (doc 07) also describes an LLM "chunk-boundary refiner" for future flowing prose, with ~10-15% overlap. <b>That step is not built</b> because nothing received so far needed it. Say: "reserved for unstructured Phase III/IV prose, if it arrives." Similarly the original design said Sarvam embeddings; see Q&amp;A (Sarvam has no embeddings API).</div>
+
+<h2>C5. The therapist-conversation parser in detail (most likely to be probed)</h2>
+<ul>
+<li><b>Speaker detection:</b> a line starting <code>User: / Client: / Parent: / Female:</code> is the user side; <code>AI: / AI Companion: / Al: / A:</code> is the AI side (all real variants found in the source, including the typo "Al:"). Consecutive lines by one speaker merge into one turn.</li>
+<li><b>Conversation boundaries:</b> any non-dialogue line (heading/scenario title). A bullet/list line directly after an AI turn continues that turn (tip lists) - <i>except</i> numbered lines that look like the next scenario's heading (e.g. "38. User is upset..."), which would otherwise be spoken to a real user.</li>
+<li><b>"Initiate crisis protocol" lines</b> are outcomes of the conversation <i>before</i> them. (Bug found on real data: attaching them to the next conversation wrongly held unrelated topics. Fixed.)</li>
+<li><b>Each pair</b> (user turn &rarr; AI reply) becomes a row; <code>prior_context</code> keeps up to 2 earlier exchanges for display/review; <code>is_opening</code> marks first-turn replies (635+ of them, 777 incl. drop 2).</li>
+<li><b>Idempotency:</b> <code>content_hash = sha256(normalised user text + reply text)</code>. Re-ingestion is an upsert; if a parser fix changes a reply, the loader prunes stale rows from the files just re-parsed.</li>
+</ul>
+
+<h3>Quality gates - why 1,210 of 6,440 rows are held (never embedded, so a search physically cannot return them)</h3>
+<table>
+<tr><th style="width:34%"><code>hold_reason</code></th><th style="width:12%">Rows (drop 1)</th><th>Why</th></tr>
+<tr><td><code>user_message_too_short_to_match</code></td><td>450</td><td>"Yes", "Okay how so?" would match anything.</td></tr>
+<tr><td><code>governance_hold_paraphilic_content_#26</code></td><td>374</td><td>Week 2 file; needs clinical + legal decision first.</td></tr>
+<tr><td><code>crisis_or_tier3_handled_by_interlock</code></td><td>285</td><td>Crisis conversations belong to the red-flag path, verbatim.</td></tr>
+<tr><td><code>reply_may_contain_stray_heading</code></td><td>19</td><td>Reply might have a scenario heading glued on.</td></tr>
+<tr><td><code>reply_has_placeholder</code></td><td>6</td><td>Text like <code>[technique]</code> left unfinished.</td></tr>
+<tr><td><code>reply_has_drafting_note</code></td><td>2</td><td>e.g. "*Detailed grounding methods*" where the therapist has not written the text yet.</td></tr>
+</table>
+<p class="small">Counts are from the first (drop 1) ingestion; drop 2 added more rows. Today: 6,440 total, 5,230 approved and eligible. A row is served only if <code>approved AND match_eligible</code> and it has a vector.</p>
+
+<h3>Real bugs the real data exposed (good "we tested on your actual files" evidence)</h3>
+<ol>
+<li>Crisis-protocol markers attached to the wrong conversation &rarr; fixed.</li>
+<li>~100 replies had a scenario heading glued onto the end (would have been spoken to users) &rarr; heading detection plus a catch-all hold.</li>
+<li>Embedding timeout: the live 3 s timeout is too short for offline 64-text batches; ingestion uses 120 s, runtime unchanged.</li>
+<li>Stale rows after a parser fix &rarr; scoped pruning.</li>
+<li>Red-flag Bot Script column lookup silently returned empty for <b>every</b> row because the source header used an em-dash, not two hyphens - meaning even the suicide scripts would have been missing. Fixed by prefix lookup; all 27 real scripts now resolve.</li>
+<li>Partial HNSW index not being used because <code>.is_(True)</code> renders <code>approved IS true</code> - found with <code>EXPLAIN</code> on 13 Oct, fixed.</li>
+<li>Routing rules: matching on a bare number made <code>PHYS-004</code> match RULE-004 (a different disorder). Fixed by prefix-aware matching (SIG/EM only).</li>
+</ol>
+
+<h2>C6. Data-hygiene facts about the client files (so nothing surprises you)</h2>
+<ul>
+<li>Raw CSVs are Windows-1252, not UTF-8; each is a "form template" export (title row, purpose row, instruction rows, then the real header) padded with hundreds of blank rows.</li>
+<li>Group labels are written once and left blank below - must be forward-filled or data silently disappears.</li>
+<li>Signal/EM/PHYS codes appear in at least 5 formats (<code>SIG: 001</code>, <code>SIG002-003</code>, <code>SIG-168</code>, unpadded...) - everything is normalised.</li>
+<li><code>PHSY-</code> typo for 4 PHYS rows; <code>Sig-285</code> casing; RULE-/Rule- casing switch.</li>
+<li>Three emotion lists (19 / 9 / 11) and three severity vocabularies (Tier 1-3, Layer I-IV, Mild-Crisis) do not reconcile - the client must decide (Part G).</li>
+</ul>
+
+<h2>C7. Versioning, validation, and honesty about what is not built</h2>
+<table>
+<tr><th>Item</th><th>Status</th></tr>
+<tr><td>Every run creates a labelled <code>KBVersion</code> (<code>building</code> &rarr; <code>live</code>)</td><td><span class="tag t-built">BUILT</span> for the Phase I sheets</td></tr>
+<tr><td>Therapist-row approval flag; instant rollback of a row</td><td><span class="tag t-built">BUILT</span></td></tr>
+<tr><td>Parser unit tests (50 unit tests pass overall)</td><td><span class="tag t-built">BUILT</span></td></tr>
+<tr><td>Pre-launch validation gate (retrieval hit-rate and grounding accuracy measured <i>separately</i>, red-flag false-negative rate must be 0)</td><td><span class="tag t-part">SKELETON ONLY</span> - needs the therapist-labelled test set that does not exist yet</td></tr>
+<tr><td>LLM chunk-boundary refinement for prose</td><td><span class="tag t-not">NOT BUILT</span> (not needed so far)</td></tr>
+<tr><td>Gap list ("nothing matched" queue for therapists)</td><td><span class="tag t-not">NOT BUILT</span> on purpose: it would store raw user messages from a mental-health app - a DPDP/privacy decision needing an owner</td></tr>
+</table>
+<h1 id="partD">Part D - The knowledge base in the database, and how signals work</h1>
+
+<h2>D1. One database does both jobs (the "RDS vs vector DB" question)</h2>
+<div class="say"><b class="t">Say:</b> "There is a single PostgreSQL. Ordinary columns hold the text, rules and scripts; a <code>vector(1024)</code> column on the <i>same row</i> holds the meaning vector, and an HNSW index makes nearest-neighbour search fast. One SQL query returns the nearest rows and their text, so there is no second system to keep in sync, secure or pay for. At about 14,000 searchable rows, pgvector is more than enough. We would revisit Qdrant at millions of vectors."</div>
+<p>Redis (not Postgres) holds short-lived state: the session (6-hour inactivity TTL) and the exact-reply cache (24 h).</p>
+
+<h2>D2. The tables, grouped by job</h2>
+<table>
+<tr><th style="width:24%">Table</th><th style="width:9%">Rows</th><th style="width:12%">Searched by vector?</th><th>Role in a reply</th></tr>
+<tr><td colspan="4" style="background:#dbe7f5"><b>Safety (every turn)</b></td></tr>
+<tr><td><code>kb_red_flags</code></td><td>31</td><td>yes</td><td>Interlock. Returns verbatim script + escalation target.</td></tr>
+<tr><td colspan="4" style="background:#dbe7f5"><b>Understanding / triage (every turn)</b></td></tr>
+<tr><td><code>kb_signals</code></td><td>285</td><td>yes</td><td>Which clinical signals are present; severity feeds the running score.</td></tr>
+<tr><td><code>kb_symptoms</code></td><td>154</td><td>yes (21 rows)</td><td>Physical/emotional symptoms; EM codes feed routing rules.</td></tr>
+<tr><td><code>kb_sufficiency_patterns</code></td><td>195</td><td>name only</td><td>Closest pattern &rarr; doctor-written "keep probing" guidance, fetched by ID.</td></tr>
+<tr><td><code>kb_routing_rules</code></td><td>66</td><td>no</td><td>Deterministic signals &rarr; tier lookup, priority order.</td></tr>
+<tr><td colspan="4" style="background:#dbe7f5"><b>Reply content</b></td></tr>
+<tr><td><code>kb_therapist_turns</code></td><td>6,440 (5,230 live)</td><td>yes</td><td><b>The reply source.</b> Strong/partial match.</td></tr>
+<tr><td><code>kb_clarification_phrases</code></td><td>115</td><td>yes</td><td>"Tell me more" when nothing matches; soft-zone follow-up.</td></tr>
+<tr><td><code>kb_content_chunks</code></td><td>130</td><td>yes</td><td>Tier-1 self-care grounding for the LLM.</td></tr>
+<tr><td><code>kb_welcome_responses</code></td><td>24</td><td>no</td><td>Opening message, random pick.</td></tr>
+<tr><td><code>kb_translations</code></td><td>8,167</td><td>no (hash)</td><td>Pre-translated fixed replies.</td></tr>
+<tr><td colspan="4" style="background:#dbe7f5"><b>Stored, not used in live replies yet</b></td></tr>
+<tr><td><code>kb_layer_content</code> / <code>kb_emotion_phrases</code> / <code>kb_scenarios</code> / <code>kb_tier_question_bank</code> / <code>kb_situational_routing</code> / <code>kb_fallback_scenarios</code> / <code>kb_guardrail_rules</code> / <code>kb_anxiety_situations</code> / <code>kb_career_lookup</code></td><td>1,512 / 1,276 / 2,809 / 1,413 / 137 / 99 / 18 / 35 / 500</td><td>mostly yes</td><td>Ingested, versioned and searchable, awaiting the client's taxonomy decisions or the next build step.</td></tr>
+<tr><td colspan="4" style="background:#dbe7f5"><b>Audit</b></td></tr>
+<tr><td><code>turn_audit_log</code></td><td>one per turn</td><td>no</td><td><code>served_from</code>, ids retrieved, similarity, timings, score, tier, interlock flag. Never stores the user's text.</td></tr>
+</table>
+
+<h3>The central table: <code>kb_therapist_turns</code></h3>
+<table>
+<tr><th>Column</th><th>Meaning</th></tr>
+<tr><td><code>user_text</code></td><td>What the user said in the therapist's example - <b>this is what is embedded</b>.</td></tr>
+<tr><td><code>reply_text</code></td><td>The therapist's reply - served as written on a strong match.</td></tr>
+<tr><td><code>prior_context</code></td><td>Up to 2 earlier exchanges (display/review; not embedded).</td></tr>
+<tr><td><code>is_opening</code></td><td>First-turn reply (safe to reuse out of context). Mid-conversation replies need +0.05 extra similarity.</td></tr>
+<tr><td><code>is_preferred</code></td><td>From "Best Conversations"; +0.02 tie-break only.</td></tr>
+<tr><td><code>match_eligible</code> / <code>hold_reason</code></td><td>Quality gate result and why a row is held.</td></tr>
+<tr><td><code>approved</code></td><td>Human switch. <b>Means "included", not "clinically reviewed".</b> Say that clearly if asked.</td></tr>
+<tr><td><code>tier</code>, <code>emotion</code>, <code>layer</code></td><td><code>tier</code> only where the source stated it (~900 rows: T1 336, T2 360, T3 236). <code>emotion</code>/<code>layer</code> are empty until the taxonomies are reconciled.</td></tr>
+<tr><td><code>author</code>, <code>source_file</code>, <code>conversation_id</code></td><td>Provenance back to the therapist's document. ~1,000 rows have no author (top-level files do not say who wrote them).</td></tr>
+<tr><td><code>content_hash</code>, <code>context_embedding</code></td><td>Idempotent upsert key; the 1024-d vector with a <i>partial</i> HNSW index (<code>WHERE approved AND match_eligible AND context_embedding IS NOT NULL</code>).</td></tr>
+</table>
+
+<h2>D3. Embeddings and similarity in plain terms</h2>
+<ul>
+<li>An <b>embedding</b> turns a sentence into 1024 numbers that capture its <i>meaning</i>. Similar meanings give nearby vectors.</li>
+<li><b>Similarity</b> everywhere = <code>1 - cosine distance</code>. Typical: same sentence 1.00; good paraphrase 0.65-0.85; related topic ~0.55-0.65; unrelated &le; 0.5. These are <i>narrower</i> bands than people expect, which is why thresholds must be calibrated, not guessed.</li>
+<li><b>One embedding per turn</b>, reused by safety, triage, tier scoring, therapist match and self-care search. It is the slowest step (0.3-1.3 s typical, occasional 2-3 s spikes), so adding a second sequential call would break the 1.5-2.5 s budget.</li>
+<li>Model: OpenAI <code>text-embedding-3-small</code> with <code>dimensions=1024</code>. This replaced the planned Sarvam embeddings because <b>Sarvam has no embeddings API</b> (checked against their live model list). It needs the client's written sign-off before real user data is embedded with it (DPDP clause 2.8 in the project notes).</li>
+</ul>
+
+<h2>D4. "How are we fetching the signals?" (the triage step, exactly)</h2>
+<div class="flow">
+<div class="step">User message &rarr; (translated to English if Hindi/Hinglish) &rarr; <b>one embedding</b></div><div class="arr">&#9660;</div>
+<div class="step"><b>Signals:</b> nearest 5 of the 285 <code>kb_signals.phrasing_embedding</code>; keep those with similarity &ge; <b>0.45</b> (<code>TRIAGE_SIGNAL_THRESHOLD</code>)</div><div class="arr">&#9660;</div>
+<div class="step"><b>Symptoms:</b> nearest 5 <code>kb_symptoms.how_described_embedding</code> at the same threshold; contributes its own id (e.g. <code>EM-045</code>) <i>and</i> its linked SIG ids</div><div class="arr">&#9660;</div>
+<div class="step"><b>Candidate pattern:</b> nearest <code>kb_sufficiency_patterns.pattern_name_embedding</code> at &ge; <b>0.30</b> (<code>PATTERN_MATCH_THRESHOLD</code>, different threshold because short-label-to-sentence similarity has a different distribution); excludes the placeholder rows</div><div class="arr">&#9660;</div>
+<div class="step ok"><b>Output:</b> <code>matched_signal_ids</code> (accumulated into the conversation's <code>observed_signal_ids</code> in Redis), <code>candidate_pattern_id</code> (kept across turns)</div>
+</div>
+<div class="warn"><b class="t">Be upfront about noise (this is a strength when stated honestly):</b> single-signal matching is deliberately treated as <i>weak evidence</i>. Live tests showed a benign message scoring 0.488 against "Hypomania" while a genuinely symptom-bearing message scored 0.479 against its own correct signal. That is why signals <b>accumulate</b> across the conversation, why only <i>new</i> signals add points, why a per-turn cap exists, and why no single triage match can decide anything.</div>
+
+<h2>D5. "How does the AI understand the signals?"</h2>
+<p>Short version: <b>the AI does not "understand" signals - the code does, and the AI is told what to ask.</b></p>
+<ol>
+<li><b>Recognition is vector matching</b> (above) against the doctors' own phrasings - no LLM.</li>
+<li><b>Meaning is added by the doctors' data</b>: each signal carries a severity (1-3), a category, linked disorders and a red-flag yes/no; each symptom links to signals; each pattern carries "when to keep probing" text.</li>
+<li><b>The LLM never sees raw signal codes or diagnoses.</b> It receives <i>gated guidance</i>: e.g. "naturally ask about how long this has been going on" or the pattern's doctor-written probing instruction - an <i>instruction for what to ask next</i>, never "the user may have disorder X".</li>
+<li><b>The Clinical Markers checklist</b> (10 items) is in the full LLM prompt so the model quietly notices speech, reality testing, thought content etc.; but it cannot change tier or safety.</li>
+<li><b>Two yes/no facts are read by a small LLM call</b>, not by keywords: "has the user said how long?" and "has the user said it affects daily life?" - with an exact supporting quote required. Fails closed (treated as "not yet confirmed").</li>
+</ol>
+
+<h2>D6. The A1 + A2 + C11 enrichment (offline join)</h2>
+<p>Each signal-level record was enriched once, offline, with cross-references from other sheets so no live join is needed: A1 signals get their linked routing rules (<code>matched_rules</code>); A2 symptoms get linked signal concepts, <code>any_linked_red_flag</code>, <code>max_linked_severity</code>. Parsing the messy "Maps to Signal IDs" column handles comma lists, hyphen ranges (<code>SIG-041-043</code>), word ranges (<code>SIG-085 to 093</code>) and free text (no match - a valid result).</p>
+<div class="warn"><b class="t">Limit to state yourself:</b> only 25 of 285 signals have an auto-matched routing rule, because most C11 rules use range/combination logic ("SIG 001-017 minus 002-003") that single-number matching cannot expand. Offer the client a choice: they rewrite those ~41 rules with explicit signal lists, or we build a smarter range parser.</div>
+<h1 id="partE">Part E - Retrieval and response: what happens to every message</h1>
+<p>Entry point: <code>app/pipeline/orchestrator.py::run_turn</code>. Both the text API (<code>POST /api/v1/conversation/turn</code>) and the LiveKit voice agent call this one function - there is no second copy of the logic.</p>
+
+<h2>E1. The full turn, in order</h2>
+<div class="flow">
+<div class="step"><b>1. Load session state</b> (Redis): recent turns, running score, observed signals, candidate pattern, clarifications asked.</div><div class="arr">&#9660;</div>
+<div class="step"><b>2. Language check</b> (instant heuristic: en / hi / hinglish). If not English: Sarvam translates to English (~0.7 s, only these turns).</div><div class="arr">&#9660;</div>
+<div class="step"><b>3. Embed once</b> (OpenAI). <b>If this fails &rarr; fail-safe message ("let me connect you with someone"), audit, STOP.</b></div><div class="arr">&#9660;</div>
+<div class="step"><b>4. Start the therapist lookup in the background</b> (own DB session) - it overlaps steps 5-8 and adds ~0 ms.</div><div class="arr">&#9660;</div>
+<div class="step"><b>5. Exact-reply cache</b> (Redis). Semantic cache is a stub (returns nothing). A cache hit does <u>not</u> skip anything below that matters.</div><div class="arr">&#9660;</div>
+<div class="step"><b>6. Triage</b> - signals / symptoms / candidate pattern (Part D4). Always runs.</div><div class="arr">&#9660;</div>
+<div class="step"><b>7. Update running tier score</b> (Part F). Always runs. May make one small LLM call (duration/impact) on early turns.</div><div class="arr">&#9660;</div>
+<div class="step stop"><b>8. SAFETY INTERLOCK</b> - vector search of the 31 red flags. Failure &rarr; fail-safe message, STOP.<br>&nbsp;&nbsp;&bull; Triggered &rarr; cancel therapist lookup &rarr; <b>verbatim doctor script (localised)</b> &rarr; save state + audit &rarr; STOP.</div><div class="arr">&#9660; (not triggered)</div>
+<div class="step"><b>9. Routing rules</b> - deterministic tier lookup on accumulated signals (<code>kb_routing_rules</code>).</div><div class="arr">&#9660;</div>
+<div class="step"><b>10. Await therapist lookup</b> (already finished; ~0 ms). Skipped on a soft-zone concern (except RF-007).</div>
+<div class="step ok" style="margin-top:3px"><b>STRONG</b> (&ge; 0.85; &ge; 0.90 if mid-conversation row) &rarr; therapist reply as written, <b>no LLM</b> &rarr; STOP &nbsp; <code>served_from = therapist_verbatim</code></div>
+<div class="step amber" style="margin-top:3px"><b>PARTIAL</b> (&ge; 0.62) &rarr; step 12 (or, if <code>CURATED_PARTIAL_MODE=verbatim</code>, send as written)</div><div class="arr">&#9660;</div>
+<div class="step"><b>11. Exact-cache hit?</b> &rarr; send cached reply &rarr; STOP.</div><div class="arr">&#9660;</div>
+<div class="step amber"><b>12. PARTIAL + rephrase:</b> small prompt with up to 3 therapist examples &rarr; LLM rewords &rarr; <b>buffered</b> &rarr; faithfulness check. Pass &rarr; send (<code>therapist_adapted</code>). Fail or LLM error &rarr; send the therapist's original (<code>therapist_verbatim_fallback</code>).</div><div class="arr">&#9660; (no match)</div>
+<div class="step"><b>13. Choose "guidance" for the LLM</b> - soft-zone follow-up &gt; tier-redirect nudge &gt; Tier-1 self-care search &gt; doctor "keep probing" text; plus an evidence-gathering nudge when score &ge; Tier 2.</div><div class="arr">&#9660;</div>
+<div class="step"><b>14. Nothing grounded, &lt; limit clarifications, &ge; 4 words?</b> &rarr; nearest generic therapist clarifying question &rarr; STOP &nbsp; <code>therapist_clarify</code></div><div class="arr">&#9660;</div>
+<div class="step"><b>15. LLM answers</b> (streamed): persona + language line + Clinical Markers + last &le; 6 turns + grounding + user message. Output check is currently log-only. &nbsp; <code>rag_retrieval / tier_*</code></div><div class="arr">&#9660;</div>
+<div class="step ok"><b>16. Record:</b> Redis state, exact cache (LLM replies only, never an interrupted one), audit row.</div>
+</div>
+
+<h3>Why this order (the invariants - say these if challenged on safety)</h3>
+<ul>
+<li><b>Safety before anything that writes a reply.</b> Triage and the interlock run on <i>every</i> turn, including cache hits and error paths. The interlock can cancel the therapist lookup.</li>
+<li><b>One embedding per turn</b>, shared by everything - the latency budget depends on it.</li>
+<li><b>Therapist lookup runs in the background</b> with its own DB session (one async session cannot run two queries at once) so it finishes while triage and the interlock run. Measured wait: ~0.001-0.002 ms.</li>
+<li><b>A strong therapist match beats a cached LLM reply; a cached reply beats re-running the LLM.</b></li>
+<li><b>LLM failure never costs the user a reply</b> on the partial path - the therapist's original is sent.</li>
+<li><b>Voice barge-in:</b> interrupted turns still save state and audit (<code>*_interrupted</code>) and are never cached.</li>
+</ul>
+
+<h2>E2. Matching: strong / partial / none</h2>
+<pre>SELECT ... FROM kb_therapist_turns
+WHERE approved AND match_eligible AND context_embedding IS NOT NULL AND language = :lang
+ORDER BY cosine_distance(context_embedding, :query) LIMIT 5</pre>
+<ol>
+<li>Take the 5 nearest rows; score = similarity (+0.02 if <code>is_preferred</code>, a tie-breaker only).</li>
+<li>Band the <b>best</b> row by its <i>true</i> similarity: <b>strong</b> &ge; 0.85 (&ge; 0.90 when the reply came mid-conversation); <b>partial</b> &ge; 0.62; otherwise <b>none</b>.</li>
+<li>For strong/partial also gather up to <b>3 distinct replies</b> with similarity &ge; 0.62 as <code>examples</code> for the LLM.</li>
+</ol>
+<p><b>Why a mid-conversation margin:</b> a reply like "What do you miss most?" only makes sense in context; +0.05 makes verbatim reuse of such rows rarer. A proper fix is context-aware matching (Part G).</p>
+
+<h3>Real examples from spot checks (not a validated test set)</h3>
+<table>
+<tr><th style="width:52%">User message</th><th style="width:12%">Best sim.</th><th>Outcome</th></tr>
+<tr><td>"I worry about everything... can't switch it off"</td><td>0.80-0.99</td><td>Matched the GAD conversation. (Original RF-007 false alarm fixed - see Part H.)</td></tr>
+<tr><td>"moved to a new city for college... feel so alone"</td><td>0.66</td><td>Partial &rarr; <code>therapist_adapted</code>: "It sounds like you feel lonely since moving to a new place for college..."</td></tr>
+<tr><td>"quit smoking but keep relapsing"</td><td>0.64</td><td>Partial &rarr; adapted</td></tr>
+<tr><td>"laid off yesterday... feel like a failure"</td><td>0.75</td><td>Partial &rarr; adapted</td></tr>
+<tr><td>exact therapist sentence</td><td>1.00</td><td>Strong &rarr; verbatim</td></tr>
+<tr><td>"my partner and I fight about money"</td><td>0.54-0.56</td><td>None (correctly below 0.62)</td></tr>
+<tr><td>"my teenage son won't talk to me"</td><td>0.50</td><td>None. <b>This was a wrong match</b> (autism-signs conversation) that the threshold now correctly rejects.</td></tr>
+<tr><td>"I just don't really know how to put this into words"</td><td>0.39</td><td>None &rarr; therapist clarifying question</td></tr>
+</table>
+<div class="warn"><b class="t">The honest gap to acknowledge:</b> "right topic, different words" scores 0.64-0.66; "wrong topic" scores up to ~0.56. The gap is real but narrow - which is exactly why strong is set high and why calibration on therapist-labelled data is the top priority.</div>
+
+<h2>E3. The partial path: the LLM may reword, not invent</h2>
+<p>The LLM sees a small prompt: persona + language line + last &le; 6 turns + up to 3 "<i>when someone said X, the therapist replied Y</i>" examples, with the instruction: <b>"use ONLY the ideas, wording and questions already in the therapist replies... Do NOT add advice, suggestions, questions, facts, numbers or links."</b> The language instruction is repeated last (the model otherwise copies the examples' language).</p>
+<p><b>Faithfulness guard</b> (<code>check_rephrase_faithful</code>) - instant, <i>no second model call</i>:</p>
+<ul>
+<li>non-empty;</li>
+<li>no digits or URLs that the therapists did not write;</li>
+<li>length &le; 1.6&times; the combined therapist text (floor 40 chars);</li>
+<li>&ge; 60% of the reworded text's content words appear in the therapist text.</li>
+</ul>
+<p>The output is <b>buffered</b> (1-2 sentences) before the user sees anything. Fail &rarr; the therapist's original goes out. <b>Honest limits:</b> catches drift, padding, added numbers/links; does <i>not</i> prove semantic equivalence (a reword could shift meaning with the same words). For Hindi/Hinglish the word-overlap test is skipped (only empty/number/link checks). A judge-model or NLI check is the upgrade if quality demands it.</p>
+
+<h2>E4. The no-match path</h2>
+<ol>
+<li><b>Guidance for the LLM</b> in priority order: soft-zone follow-up question &rarr; tier-redirect nudge (only when the redirect gate cleared) &rarr; <b>Tier-1 self-care search</b> in <code>kb_content_chunks</code> (threshold 0.30, permissive, top chunk only) &rarr; the doctor "keep probing" text for the candidate pattern (fetched by ID, never searched).</li>
+<li><b>Clarifying question</b> if still nothing grounded: nearest question from <code>kb_clarification_phrases</code>, restricted to the 3 generic categories (<i>General Fallback Responses, General Clarification Responses, When AI Needs More Context</i>), real questions only (ends with "?", no drafting note). Limit 1 in a row (<code>CURATED_CLARIFY_LIMIT</code>), reset when a therapist reply is served; skipped for messages under 4 words ("hi").</li>
+<li><b>LLM answer</b> with the full prompt - the grounded fallback.</li>
+</ol>
+<div class="note"><b>What the output guardrail does today:</b> <code>check_grounding</code> only <i>logs</i> "substantive response with no grounding"; it does not block. Strengthening the LLM-path check (NLI / judge, run in parallel so no blocking call is added) is on the roadmap.</div>
+
+<h2>E5. The three retrieval mechanisms (never treat the system as one big RAG)</h2>
+<table>
+<tr><th style="width:24%">Mechanism</th><th style="width:34%">Used for</th><th>Why not the others</th></tr>
+<tr><td><b>Deterministic rule lookup</b></td><td>Routing rules, red-flag action</td><td>The mapping is fixed and precise; a table read is faster and more reliable than similarity.</td></tr>
+<tr><td><b>Direct ID fetch</b></td><td>"Keep probing" text for the candidate pattern; the verbatim red-flag script</td><td>Once the pattern/flag is identified there is exactly one right text - fetch it, do not search for it.</td></tr>
+<tr><td><b>Semantic search</b></td><td>Therapist replies, self-care chunks, clarifying questions, signals</td><td>"Which of many things best fits what the user just said" is exactly what vector similarity is for.</td></tr>
+</table>
+
+<h2>E6. Where the time goes (real run, 13 Oct 2026)</h2>
+<table>
+<tr><th>Message</th><th>Source</th><th>embed</th><th>triage</th><th>interlock</th><th>therapist wait</th><th>LLM</th><th>total</th></tr>
+<tr><td>exact therapist sentence</td><td>therapist_verbatim (1.00)</td><td>2,776 ms*</td><td>68</td><td>12</td><td>0</td><td>-</td><td>3.1 s*</td></tr>
+<tr><td>"moved to a new city... feel so alone"</td><td>therapist_adapted (0.66)</td><td>444</td><td>9</td><td>5</td><td>0</td><td>164</td><td><b>0.79 s</b></td></tr>
+</table>
+<p class="small">*First call after idle - an OpenAI latency spike. Takeaway: the embedding call is nearly all the time; triage and interlock are single/double-digit ms, the therapist lookup is hidden, rewording a short reply costs ~160 ms. Tiny sample, one machine; p95 under load is still owed. Audit-log mix so far (229 turns, dev testing): rag_retrieval 137, exact_cache 30, interlock 24, therapist_adapted 8, therapist_verbatim 8, therapist_clarify 8.</p>
+
+<h2>E7. Languages: Hindi, Hinglish, mixed</h2>
+<ul>
+<li><b>Why a translation layer:</b> red flags, signals and the therapist library are English-only; a Hindi crisis message scored ~0.2 against them and was <b>missed</b>. So non-English text is translated <b>in</b> (Sarvam <code>mayura:v1</code>, mode <code>modern-colloquial</code>, ~0.7 s) and the whole pipeline runs on the English text.</li>
+<li><b>Out:</b> fixed replies (therapist reply, clarifying question, red-flag script, welcome) come from <code>kb_translations</code>, pre-translated offline (a few ms). LLM-written replies are produced directly in the user's language - no extra call, streaming kept.</li>
+<li><b>Why mayura, not sarvam-translate:</b> the latter turned "I got laid off yesterday aur mujhe lag raha hai ki main failure hoon" into "I felt depressed when I lost my job yesterday" - meaning lost.</li>
+<li><b>Limits (state them):</b> translation can soften an idiom - "kabhi kabhi lagta hai sab khatam kar du apni life" was translated too weakly and not escalated, so a <b>clinician-approved Hindi/Hinglish crisis-word safety net</b> on the original text is still recommended; machine-translated crisis scripts are marked <code>reviewed=false</code> pending native-speaker/clinician review; Sarvam is rate-limited (~100 calls/min on the current key), a production-capacity question.</li>
+</ul>
+
+<h2>E8. Voice (LiveKit)</h2>
+<p>Voice uses the same <code>run_turn</code> via <code>app/realtime/livekit_llm.py</code>; STT and TTS are Sarvam (<code>livekit_stt.py</code>, <code>livekit_tts.py</code>); Deepgram was removed. The agent speaks a welcome after session start (interruptible, best-effort). <b>Not live-tested against a real LiveKit room</b> - only imports and the <code>AgentSession.say</code> signature were checked. Avatar vendor is an open decision across the client's three architecture PDFs.</p>
+<h1 id="partF">Part F - Safety and tier shifting (Tier 1 &rarr; 2 &rarr; 3)</h1>
+<p>This is the part the doctors will care about most. Learn the diagram in F1 first; everything else is detail.</p>
+
+<h2>F1. The one-picture answer</h2>
+<table>
+<tr><th style="width:13%"></th><th style="width:29%">Tier 1 - self-care</th><th style="width:29%">Tier 2 - consider a professional</th><th>Tier 3 - crisis / SOS</th></tr>
+<tr><td><b>Meaning</b></td><td>Everyday stress, low mood, anxiety; self-help is enough</td><td>A sustained pattern worth a practitioner's attention</td><td>Immediate danger: self-harm, harm to others, abuse, psychosis...</td></tr>
+<tr><td><b>What decides it</b></td><td>Running score 0-39 <i>and</i> no red flag</td><td>Running score 40-100 (the score can <b>never</b> go higher than Tier 2)</td><td><b>Only</b> the red-flag safety interlock. No score, no rule, no LLM can produce it.</td></tr>
+<tr><td><b>Speed</b></td><td>Gradual</td><td>Gradual, can ease back down</td><td><b>Instant, on the very first message if needed</b>; never waits for evidence to build</td></tr>
+<tr><td><b>What the user gets</b></td><td>Therapist replies, self-care tools, curious questions</td><td>Same warm conversation, plus the AI quietly asks the missing facts (how long / how much it affects life); <b>booking is suggested only after a stricter gate</b></td><td>The doctors' <b>verbatim script</b>; human escalation target recorded</td></tr>
+<tr><td><b>LLM involved?</b></td><td>As phraser</td><td>As phraser, guided by a nudge</td><td><b>Never</b></td></tr>
+</table>
+<div class="say"><b class="t">Say:</b> "Tier shifting is three separate mechanisms, deliberately not one. <b>Danger</b> is an instant, rule-like check against the doctors' red-flag list and it alone can produce Tier 3. <b>Concern</b> is a slow running score across the conversation that can move someone from Tier 1 to Tier 2 and back down. <b>Referral</b> - actually suggesting a professional - is a third decision with its own stricter gate, so a single dramatic sentence can raise our attention but cannot push someone toward booking."</div>
+
+<h2>F2. Mechanism 1 - Tier 3: the red-flag safety interlock</h2>
+<div class="flow">
+<div class="step">Embed message (shared vector) &rarr; nearest <b>15</b> of the 31 red-flag vectors</div><div class="arr">&#9660;</div>
+<div class="step stop"><b>Never-miss check first:</b> RF-018 (passive suicidal ideation) and RF-019 (active) are checked among the top 15 at the <b>lower 0.36</b> threshold. Match &rarr; hard escalate.</div><div class="arr">&#9660;</div>
+<div class="step">Otherwise take the nearest flag. Needs <b>&ge; 0.44</b> (<code>REDFLAG_MATCH_THRESHOLD</code>; RF-025 needs <b>0.50</b>).</div><div class="arr">&#9660;</div>
+<div class="step amber"><b>Soft zone</b> - only for an explicit allow-list (<b>RF-028, RF-007</b>): similarity 0.44-0.55 gives a gentle doctor-written follow-up instead of a crisis script. &ge; 0.55 still hard-escalates.</div><div class="arr">&#9660;</div>
+<div class="step stop"><b>Hard escalate:</b> the flag's <code>bot_script</code> is returned <b>verbatim</b> (localised if needed), no LLM. If the flag has no script (RF-028..031) &rarr; <code>requires_human_alert</code>, never an LLM answer. Audit row: <code>served_from=interlock</code>, flag id.</div>
+</div>
+<h3>Why it is built this way (expect these questions)</h3>
+<ul>
+<li><b>Why embeddings, not keywords?</b> The doctors deliberately wrote <i>disguised</i> language ("if a car hit me I'd be okay with it"). Keywords miss paraphrase.</li>
+<li><b>Why permissive thresholds?</b> A false positive costs a moment of extra caution; a false negative is a missed danger signal. Safety fails <b>upward</b>.</li>
+<li><b>Why a lower bar (0.36) for suicide flags?</b> Live tests: explicit statements ("I want to kill myself", "I want to end my life") scored only ~0.39 - <i>below</i> the general 0.44 line - and the nearest flag overall was sometimes RF-020 with RF-018/019 right behind it. Fixed by checking those flags in the top 15 at 0.36. Ordinary messages ("I had a fight with my mom") score 0.19-0.29, well below.</li>
+<li><b>Why a soft zone for RF-028 and RF-007?</b> "I want to leave my partner" (no danger) scored 0.46-0.59 against RF-028 because every example phrase says "partner". RF-007 (exaggerated startle) fired on ordinary worry language at 0.39-0.44 while its genuine phrases score 0.50-0.69 - fixed 9 Oct at the product owner's instruction; <b>a clinician should still confirm</b> that a weaker real startle disclosure getting a gentle question is acceptable.</li>
+<li><b>Hard rule enforced by a unit test:</b> a suicide/self-harm flag can never be added to the soft zone.</li>
+<li><b>Fail-safe, always upward:</b> embedding failure or interlock failure &rarr; "I want to make sure you get the right support - let me connect you with someone" (localised). Never a silent continue.</li>
+</ul>
+<div class="red"><b class="t">Gaps to volunteer, not defend:</b>
+<ul>
+<li><b>RF-028, RF-029, RF-030, RF-031</b> (suspected violence, history of violence, suspected rape, sexual molestation) have <b>no approved script</b>. Code sends them to a human-alert path - the app never improvises - but the client must write the four scripts. <i>Top-priority ask.</i></li>
+<li><b>No outbound human-alert integration yet.</b> The turn's tier, <code>interlock_triggered</code> and <code>requires_human_alert</code> are recorded in the audit log, but the streaming endpoint returns plain text only; the notification to the main backend / on-call clinician is not built and needs the client's escalation contract (who is paged, how, how fast).</li>
+<li>Hindi/Hinglish idioms can be softened by translation (Part E7); a clinician-approved crisis-word net is recommended.</li>
+<li>RF-025's own trigger phrases include "slamming my fist in the wall", which makes it fire on anger at others; it is held to 0.50 as a stop-gap - the real fix is the doctors editing that phrase.</li>
+<li>One vector per flag blends all phrases (Part C3); per-phrase vectors would likely separate better.</li>
+</ul></div>
+
+<h2>F3. Mechanism 2 - Tier 1 &rarr; Tier 2: the running score (0-100)</h2>
+<p>Stored in Redis as <code>confidence_score</code>, updated on <b>every</b> turn (cache hits included), right after triage. Three things move it; <b>nothing else does</b>:</p>
+<table>
+<tr><th style="width:30%">Event</th><th style="width:20%">Points</th><th>Rule</th></tr>
+<tr><td><b>New</b> signal seen for the first time this conversation</td><td>severity 1 &rarr; <b>8</b><br>severity 2 &rarr; <b>15</b><br>severity 3 &rarr; <b>25</b><br>unrated &rarr; <b>4</b></td><td>Severity is the doctors' own weight from the signal sheet (A1) or symptom sheet (A2). The same worry restated three ways does <b>not</b> triple-count - only signals not already in <code>observed_signal_ids</code> score.</td></tr>
+<tr><td>User confirms <b>duration</b> ("how long")</td><td><b>+10</b> once</td><td>Read by a small LLM call that must quote the supporting phrase; runs only while a flag is unconfirmed; fails closed.</td></tr>
+<tr><td>User confirms <b>impact</b> on daily life</td><td><b>+10</b> once</td><td>Same call.</td></tr>
+<tr><td>A quiet turn (no new signal, nothing new confirmed)</td><td><b>-5</b></td><td>Decay: the score eases back down; a rough patch is not permanent.</td></tr>
+<tr><td colspan="3"><b>Per-turn cap: +25 maximum</b> however many signals matched (found necessary when one message matched 9 signals and jumped the score to 100). Bracket: <b>score &ge; 40 &rarr; Tier 2, else Tier 1</b> (<code>TIER2_SCORE_MIN</code>).</td></tr>
+</table>
+
+<h3>Worked example (a real test conversation)</h3>
+<table>
+<tr><th style="width:5%">Turn</th><th style="width:55%">User said</th><th style="width:10%">Score</th><th style="width:8%">Tier</th><th>What happened</th></tr>
+<tr><td>1</td><td>"I've been feeling a bit stressed about work lately"</td><td>35</td><td>1</td><td>One mild signal pattern; no duration/impact yet</td></tr>
+<tr><td>2</td><td>"It's been going on for a few weeks now, I keep procrastinating"</td><td>60</td><td>2</td><td>Duration confirmed (+10) plus new signal(s)</td></tr>
+<tr><td>3</td><td>"It's affecting my performance at work, I missed a deadline"</td><td>95</td><td>2</td><td>Impact confirmed (+10) plus new signal(s); <b>redirect gate clears here</b></td></tr>
+<tr><td>4</td><td>"I also feel really unmotivated to do anything after work"</td><td>100</td><td>2</td><td>Capped at 100; <b>stays Tier 2</b></td></tr>
+<tr><td>5</td><td>"I've stopped hanging out with friends"</td><td>100</td><td>2</td><td></td></tr>
+<tr><td>6-8</td><td>nothing new / "the weather has been nice" / "went for a walk"</td><td>95&rarr;90&rarr;85</td><td>2</td><td>Eases down 5 per quiet turn</td></tr>
+</table>
+<div class="note"><b>Why it is shown to clients as a good thing:</b> turn 1 alone never reaches Tier 2 - a single stressed-sounding sentence is not an emergency. It took two <i>confirmed facts</i> (duration, impact) to move the score meaningfully.</div>
+
+<h3>Two real mistakes we caught - tell these; they build trust</h3>
+<ol>
+<li><b>Single-message spike.</b> First live test: one message matched 9 signals and the score hit 100 on turn 1. Fixed by the +25 per-turn cap.</li>
+<li><b>"Tier 3" from a score.</b> The first version labelled score &ge; 70 as "Tier 3". That put an ordinary five-turn work-stress conversation under the <i>same label as a suicide disclosure</i>. Removed entirely: <code>tier_from_score()</code> can only return 1 or 2; there is no code path from the score to 3. Re-tested: the same conversation reaches 100/100 and stays Tier 2, while "I want to kill myself" still triggers the interlock instantly with the score at 0.</li>
+</ol>
+
+<h2>F4. Mechanism 3 - the redirect gate (when we suggest a professional)</h2>
+<p>Reaching Tier 2 is <b>not</b> permission to push toward booking. <code>should_redirect_to_booking()</code> requires <b>all four</b>:</p>
+<ol>
+<li>score is in Tier 2 (&ge; 40);</li>
+<li>the user has actually told us <b>how long</b>;</li>
+<li>the user has actually told us it is <b>affecting daily life</b>;</li>
+<li>at least <b>3 distinct signals</b> observed (<code>REDIRECT_MIN_DISTINCT_SIGNALS</code>).</li>
+</ol>
+<table>
+<tr><th style="width:26%">State</th><th>Behaviour (<code>served_from</code>)</th></tr>
+<tr><td>Tier 2, gate <b>not</b> cleared</td><td><code>tier_gathering_evidence</code>: the LLM is told to <i>naturally</i> ask about whichever of duration/impact is missing and explicitly <b>not</b> to suggest booking. Example: "It sounds like you've been carrying this for a little while now, and that can feel really heavy..." plus a gentle question.</td></tr>
+<tr><td>Tier 2, gate <b>cleared</b></td><td><code>tier_redirect_ready</code>: "It might help to talk with a mental health professional who can support you through this in a safe, understanding space. Would you like help finding someone to speak with, or help with how to go about booking an appointment?" - a supportive suggestion, not an emergency, not an automatic handoff.</td></tr>
+</table>
+<p class="small">Both nudges apply on the LLM-written path. If a strong or partial therapist match is found on a turn, the therapist's reply is sent instead and the nudge does not run - another reason these numbers need joint calibration (see G).</p>
+
+<h2>F5. Where the doctors' routing rules and sufficiency sheet fit</h2>
+<table>
+<tr><th style="width:24%">Mechanism</th><th style="width:15%">Status</th><th>What it does today</th></tr>
+<tr><td><b>Routing rules (C11)</b> - deterministic signals &rarr; tier, priority order</td><td><span class="tag t-part">PARTLY LIVE</span></td><td>Evaluated every turn on the <i>accumulated</i> signals; the tier and rule id are <b>logged</b> (<code>triage_tier</code>, <code>matched_rule_id</code>). A result of <b>Tier 1</b> turns on the Tier-1 self-care search. A rule result of Tier 2/3 <b>does not by itself change the reply</b> - Tier 3 is owned by the interlock and Tier 2 by the score. Many rules cannot fire yet because of range shorthand (~41 of 66).</td></tr>
+<tr><td><b>Sufficiency (sheet 9)</b> - minimum / must-have signals, graceful exit</td><td><span class="tag t-part">PARTLY LIVE</span></td><td>Used for the <b>candidate pattern</b> and its doctor-written "keep probing" guidance. The minimum/must-have and graceful-exit fields are stored but <b>not yet evaluated as a pass/fail</b>; the "improving" signal for decay is the simple quiet-turn rule, not the exit trigger.</td></tr>
+<tr><td><b>Fallback &amp; Safety Net (sheet 17)</b> - stalled / contradictory / disengaged</td><td><span class="tag t-not">BUILT, NOT WIRED</span></td><td>Code and tests exist; not connected to <code>run_turn</code>. Roadmap item.</td></tr>
+<tr><td><b>Situational Routing tier wording</b></td><td><span class="tag t-part">STORED</span></td><td>Its own Tier 1/2/3 definitions per situation are stored; not used for routing until reconciled with the routing rules (client question #25).</td></tr>
+</table>
+<div class="warn"><b class="t">Be precise here.</b> If asked "do your routing rules drive Tier 2?" the accurate answer is: "The doctors' rules are evaluated and logged every turn, and Tier 1 rules switch on self-care grounding. What actually moves a user to Tier 2 today is the running score built from the doctors' severity weights; wiring the rule outcomes to override or corroborate the score is the next calibration step, and we need the clinical team to confirm how those two should combine."</div>
+
+<h2>F6. Three separate "dials" - do not confuse them</h2>
+<table>
+<tr><th style="width:18%">Dial</th><th style="width:25%">Question it answers</th><th style="width:20%">Values</th><th>Where it comes from / status</th></tr>
+<tr><td><b>Tier</b></td><td>How serious is this?</td><td>1 self-care, 2 professional, 3 crisis</td><td>Phase I sheets. <b>Implemented</b> as above.</td></tr>
+<tr><td><b>Layer</b></td><td>How deep into the conversation are we?</td><td>I opening, II exploring, III insight, IV action</td><td>New file drop. Banks are ingested (1,512 rows); <b>layer-aware questioning is not built</b>. A Layer-IV, Tier-1 chat (deep planning for a mild issue) is completely different from a Layer-I, Tier-3 line.</td></tr>
+<tr><td><b>Severity</b></td><td>(Pathway doc) how bad is it?</td><td>Mild / Moderate / Severe / Crisis</td><td>Third scale from the Pathway doc; <b>no mapping decided</b>. Ask the client: replace Tier, sit alongside, or draft? And is Tier 3 = Crisis (3 outcomes) or are they separate (4)? The client's own architecture PDFs disagree on this.</td></tr>
+</table>
+
+<h2>F7. Quick answers: "how does tier shifting happen?"</h2>
+<ul>
+<li><b>1 &rarr; 2:</b> score reaches 40 from new doctor-weighted signals plus confirmed duration/impact. Gradual.</li>
+<li><b>2 &rarr; "suggest a professional":</b> only when the redirect gate clears (score &ge; 40 + duration + impact + &ge; 3 distinct signals).</li>
+<li><b>2 &rarr; 1:</b> quiet turns subtract 5 each; the score can fall below 40.</li>
+<li><b>any &rarr; 3:</b> a red-flag match on <i>any</i> turn, including the first. Immediate, verbatim script, human escalation.</li>
+<li><b>Never:</b> 2 &rarr; 3 by accumulating points. By design.</li>
+</ul>
+<h1 id="partG">Part G - Why this approach, honest gaps, roadmap, decisions we need</h1>
+
+<h2>G1. Why this design - compared with the alternatives</h2>
+<table>
+<tr><th style="width:24%">Alternative</th><th style="width:40%">Why not as the primary path for this product</th><th>When to reconsider</th></tr>
+<tr><td><b>LLM writes everything</b> (KB stuffed into the prompt)</td><td>Cannot guarantee therapist wording; hallucination risk on clinical content; no per-reply provenance; slow and costly on every turn; breaks the stated product promise.</td><td>Never as the primary path.</td></tr>
+<tr><td><b>Classic RAG</b> (always retrieve, LLM always authors)</td><td>Better, but the LLM can still drift from or contradict the therapist text even when a perfect match exists.</td><td>It <i>is</i> our fallback (steps 13 + 15).</td></tr>
+<tr><td><b>Fine-tune a model on the conversations</b></td><td>Opaque, cannot cite which conversation produced a reply, cannot "unlearn" a bad row, can blend/leak real conversations, needs re-training to improve.</td><td>Orders of magnitude more data and a need for generative fluency.</td></tr>
+<tr><td><b>Intent classifier / decision tree</b></td><td>Needs a fixed taxonomy; therapists write free-form conversation; brittle on unseen phrasing.</td><td>Deterministic parts only - which we already do for routing rules.</td></tr>
+<tr><td><b>Keyword search</b></td><td>Misses paraphrase and indirect language - exactly what the red-flag list was designed to catch.</td><td>Never as primary.</td></tr>
+<tr><td><b>Separate vector DB (Qdrant)</b></td><td>A second system to run, secure and sync; no benefit at ~14k vectors.</td><td>Millions of vectors or vector latency becomes the bottleneck.</td></tr>
+</table>
+
+<h3>Why banded (strong / partial / none) specifically</h3>
+<p>The three failure modes are different. <b>Very close</b>: the best, safest, fastest answer is the therapist's own text - do not touch it. <b>Close but not identical</b>: the therapist's <i>meaning</i> is right but the wording needs to fit this person, which an LLM is good at <i>if constrained</i> (examples-only prompt + guard + fallback to the original). <b>Nothing close</b>: the honest answer is "I don't have an expert answer for this yet" - ask, don't guess, and only then use the LLM.</p>
+
+<h3>What the approach buys the product</h3>
+<ol>
+<li>The LLM gets a narrow job ("reword these") that small models do reliably, instead of "be a therapist".</li>
+<li>Grounding in real expert language sets tone and content better than any persona paragraph.</li>
+<li>Errors are contained: safety is independent; a bad reword falls back to the original; an LLM outage still serves the therapist reply.</li>
+<li>Every reply is explainable (<code>served_from</code> + <code>therapist_turn:&lt;id&gt;</code>) - what makes clinical review and DPDP-style audit possible.</li>
+<li>A built-in improvement loop: every "none" is a gap for the therapists to fill; every approved row helps immediately.</li>
+<li>Latency and cost fall as the library grows - more strong matches means fewer LLM calls.</li>
+</ol>
+
+<h2>G2. What is built vs not (the honest status board)</h2>
+<table>
+<tr><th style="width:42%">Component</th><th style="width:14%">Status</th><th>Detail</th></tr>
+<tr><td>Ingestion of all 6 Phase I sheets + Sept drop + drop 2</td><td><span class="tag t-built">BUILT</span></td><td>~20 parsers, idempotent, tested on the real files.</td></tr>
+<tr><td>Database design (19+ tables, migrations, HNSW)</td><td><span class="tag t-built">BUILT</span></td><td>pgvector in one Postgres.</td></tr>
+<tr><td>Safety interlock with verbatim scripts, soft zone, fail-safe</td><td><span class="tag t-built">BUILT</span></td><td>4 flags lack scripts (client data).</td></tr>
+<tr><td>Therapist-first matching (strong / partial / clarify)</td><td><span class="tag t-built">BUILT</span></td><td>Thresholds provisional.</td></tr>
+<tr><td>Rewording guard (enforcing)</td><td><span class="tag t-built">BUILT</span></td><td>Heuristic, not semantic.</td></tr>
+<tr><td>Triage (signals / symptoms / pattern)</td><td><span class="tag t-built">BUILT</span></td><td>Noisy by design; accumulates.</td></tr>
+<tr><td>Running tier score + redirect gate</td><td><span class="tag t-built">BUILT</span></td><td>All point values provisional.</td></tr>
+<tr><td>Welcome messages (text endpoint + voice)</td><td><span class="tag t-built">BUILT</span></td><td>Voice not live-tested; spoken welcome not added to memory.</td></tr>
+<tr><td>Hindi/Hinglish translation layer</td><td><span class="tag t-built">BUILT</span></td><td>Idiom-softening risk; rate limits.</td></tr>
+<tr><td>Voice agent (LiveKit + Sarvam STT/TTS)</td><td><span class="tag t-part">PARTLY</span></td><td>Not tested in a real room.</td></tr>
+<tr><td>Routing-rule range parsing</td><td><span class="tag t-part">PARTLY</span></td><td>25 of 285 signals resolved; client choice needed.</td></tr>
+<tr><td>Output guardrail on LLM-written replies</td><td><span class="tag t-part">LOG-ONLY</span></td><td>Does not block.</td></tr>
+<tr><td>Semantic cache, session summary, rate limiting</td><td><span class="tag t-not">STUBS</span></td><td>Per design docs.</td></tr>
+<tr><td>Fallback &amp; Safety Net (sheet 17) wiring</td><td><span class="tag t-not">NOT WIRED</span></td><td>Code and tests exist.</td></tr>
+<tr><td>Layer-aware questioning; emotion tagging</td><td><span class="tag t-not">NOT BUILT</span></td><td>Needs client taxonomy decisions.</td></tr>
+<tr><td>Persona / tone examples in the prompt</td><td><span class="tag t-not">NOT BUILT</span></td><td>One-line persona today; few-shot slot empty.</td></tr>
+<tr><td>Reply variety layer (avoid robotic repeats)</td><td><span class="tag t-not">NOT BUILT</span></td><td>Vary connectors only, never clinical content.</td></tr>
+<tr><td>Gap queue ("nothing matched" for therapists)</td><td><span class="tag t-not">NOT BUILT</span></td><td>Privacy decision first.</td></tr>
+<tr><td>Human-alert integration to main backend / clinician</td><td><span class="tag t-not">NOT BUILT</span></td><td>Needs the client's escalation contract.</td></tr>
+<tr><td>Therapist-labelled calibration + validation gate</td><td><span class="tag t-not">NOT STARTED</span></td><td>Needs ~150-200 labelled messages from the clinical team.</td></tr>
+</table>
+
+<h2>G3. Known weaknesses of the approach (say them before they do)</h2>
+<ul>
+<li><b>Thresholds are uncalibrated.</b> 0.85 / 0.62 / +0.05 / 0.44 / 0.36 / 40 / point values are educated starting points from spot checks. Biggest single risk. Strong is set high on purpose so verbatim is rare until calibrated.</li>
+<li><b>Single-message matching is blunt</b> for context-dependent replies; no context-aware matching yet.</li>
+<li><b>Coverage-bound.</b> A thin library means many "none" outcomes; product quality tracks library quality.</li>
+<li><b>Repetition</b> - a strong verbatim reply can feel robotic across a long chat.</li>
+<li><b><code>approved</code> &ne; clinically reviewed.</b> Rows are <i>approved for use</i> (the 9 Oct decision approved every eligible row); no per-row clinical review has been done. The AI-companion casual chats could be matched to a distressed user if thresholds were loose.</li>
+<li>The LLM path has only a log-only output check.</li>
+<li>Test sessions created during live tests remain in the dev DB (to be cleaned).</li>
+</ul>
+
+<h2>G4. Roadmap in priority order</h2>
+<table>
+<tr><th style="width:4%">#</th><th style="width:30%">Item</th><th style="width:30%">Why</th><th>Sketch</th></tr>
+<tr><td>1</td><td><b>Threshold calibration</b></td><td>Verbatim is authoritative; a wrong strong match is worse than an LLM reply.</td><td>Therapists label ~150-200 messages (include casual-companion style and Hindi/Hinglish); replay; sweep. Choose the lowest strong cut-off with &ge; 95% precision, partial at ~80% "usable as an example". Write to <code>.env</code>; re-run whenever the library grows. Also test top-1 vs top-2 margin and tier/emotion filters.</td></tr>
+<tr><td>2</td><td>Context-aware matching</td><td>Mid-conversation replies need context.</td><td>Embed [message] and [last AI reply + message] in one batched request; store a second vector per row; require both to agree for strong.</td></tr>
+<tr><td>3</td><td>Gap list</td><td>Closes the loop with therapists.</td><td>After a DPDP decision: redacted/hashed text, or only with consent.</td></tr>
+<tr><td>4</td><td>Stronger LLM-path guardrail</td><td>Currently log-only.</td><td>NLI/judge check run in parallel or async - no new blocking call.</td></tr>
+<tr><td>5</td><td>Hindi/Hinglish crisis-word safety net</td><td>Translation can soften idioms.</td><td>Clinician-approved keyword list checked on the <i>original</i> text before translation.</td></tr>
+<tr><td>6</td><td>Embedding timeout &rarr; one quick retry</td><td>A 3 s timeout fail-safes on ~1 in 15 slow turns.</td><td>Retry once within budget.</td></tr>
+<tr><td>7</td><td>Wire sheet 17 (fallback / disengagement)</td><td>Built, tested, not connected.</td><td>Evaluate on <code>ConversationState</code> each turn.</td></tr>
+<tr><td>8</td><td>Use the stored question banks</td><td>Layer/emotion data is idle.</td><td>After taxonomy merge.</td></tr>
+<tr><td>9</td><td>Reply variety layer; semantic cache; session summary; rate limiting</td><td>UX / cost.</td><td>Per design docs.</td></tr>
+<tr><td>10</td><td>Combine routing rules with the score; reconcile Situational Routing wording</td><td>Two tier sources today.</td><td>Clinician decision first.</td></tr>
+</table>
+
+<h2>G5. What we need from the client (ask these - they unblock real work)</h2>
+<table>
+<tr><th style="width:4%">#</th><th>Ask</th><th style="width:22%">Why it matters</th></tr>
+<tr><td>1</td><td><b>Write the 4 missing safety scripts</b> (RF-028 to RF-031) and confirm who gets alerted for each; define the human-escalation contract (who, how, how fast).</td><td>Launch blocker; safety.</td></tr>
+<tr><td>2</td><td><b>Therapist-labelled test set</b> (~150-200 messages: which library reply fits, or "none").</td><td>Calibration of every threshold.</td></tr>
+<tr><td>3</td><td>Confirm <b>one emotion list</b> (19, 9 or 28 items?) and map Mild/Moderate/Severe/Crisis vs Tier 1/2/3; is Tier 3 the same as Crisis?</td><td>Tagging and the escalation state machine.</td></tr>
+<tr><td>4</td><td>Rewrite the ~41 routing rules that use ranges/exclusions as explicit signal lists, or approve a smarter parser; fill Rule-025; give a real tier for the 3 "check------" sufficiency rows.</td><td>Rules that never fire today.</td></tr>
+<tr><td>5</td><td><b>Governance decision</b> on the paraphilic ("Fetishes") section (clinical + legal), e.g. always hand off to a human.</td><td>Held rows 374+ and the scenario file.</td></tr>
+<tr><td>6</td><td>Partial match: <b>reword or serve as written</b>? Clarifying question before any LLM reply?</td><td>Config switch <code>CURATED_PARTIAL_MODE</code> / <code>CURATED_CLARIFY_LIMIT</code>.</td></tr>
+<tr><td>7</td><td>Are the sample conversations a <b>script or a style guide</b>? Is a separate "Guardrail Questions" file missing?</td><td>Persona / prompt design.</td></tr>
+<tr><td>8</td><td>Complete the unfinished files (Trauma, Depression, Bipolar/Psychosis, Life Transitions #13/#17, Parenting); unlock the 3 Anam files; name the author of ~1,000 unattributed rows.</td><td>Coverage and provenance.</td></tr>
+<tr><td>9</td><td>Standardise tier labelling across authors (Ankita's "Chronic risk" vs Tier 1/2/3).</td><td>Trustworthy tier tags on rows.</td></tr>
+<tr><td>10</td><td>Written sign-off for <b>OpenAI embeddings</b> (Sarvam has none) and for sending translated text to Sarvam; clinician/native-speaker review of Hindi crisis scripts; replace the person's name in 3 fallback rows with a role.</td><td>DPDP and vendor compliance.</td></tr>
+<tr><td>11</td><td>Which Sufficiency sheet is authoritative (185 vs 195 rows)? Correct typos in verbatim scripts.</td><td>Data integrity.</td></tr>
+</table>
+<h1 id="partH">Part H - Question bank: what they may ask, and what to say</h1>
+<p>Answers are written to be spoken. "If they push" lines hold the deeper point or the honest caveat. Where a question touches something not built, say so plainly - the technical team will respect candour far more than a bluff they can disprove in one query.</p>
+<h2>H1. Knowledge base and files</h2>
+<div class="qa"><div class="q">Which client files did you use, and why those?</div><div class="a"><p>All of them that carry usable content - about 60 files across two drops. We sorted every file by one test: is it something a person might <i>say</i>, a real thing to <i>hand back</i>, or a <i>rule</i> the code checks? That gives four working groups: safety/decision rules (red flags, routing, sufficiency, fallback, clinical markers), user-understanding vocabulary (signals, symptoms, emotions, scenarios, layer banks), therapist conversations (the replies), and self-help tools and lookups.</p></div><div class="push"><b>If they push:</b> Open the four folders in this package; every file has a one-line purpose in Part B.</div></div>
+<div class="qa"><div class="q">Were any files not used?</div><div class="a"><p>Yes, on purpose: three Anam files are still password-locked; the 500-copy 'Career Conversation Sets' file is one template repeated with names swapped, so we kept the single template and extracted the real 500-row career lookup; the paraphilic-disorder content is stored but held back pending a clinical and legal decision; the three architecture PDFs and the file directory are context, not content.</p></div></div>
+<div class="qa"><div class="q">Earlier you said conversation files were 'style only'. Now you search them. Which is it?</div><div class="a"><p>It changed. The first design used them only to teach tone. Your requirement that replies come from your conversations when a similar one exists made them the <b>primary reply source</b>: each (user said &rarr; therapist replied) pair is stored, embedded on the user text, and searched on every turn.</p></div></div>
+<div class="qa"><div class="q">How do you use the Clinical Markers table?</div><div class="a"><p>It is a fixed 10-item checklist (speech, safety, functional impact, reality testing, emotional state, thought organisation, thought content, sensory experiences, behavioural changes, engagement). It is placed in the LLM prompt on full LLM turns so the model quietly notices these dimensions. It is not embedded, not searched, and the LLM cannot use it to decide safety - that is the interlock's job.</p></div></div>
+<div class="qa"><div class="q">What is the 'Pathway for AI' document used for?</div><div class="a"><p>It is the doctors' 15-step flow and 7 rules (never diagnose, validate first, one or two questions at a time, reassess risk continuously, name techniques as coping strategies not therapy, end with a collaborative next step). It shaped the turn design, but it is not ingested. Its vocabulary - the Mild/Moderate/Severe/Crisis scale and a 22-item category list - conflicts with Tier 1/2/3, so we need your decision on how they relate before we adopt it in code.</p></div></div>
+<div class="qa"><div class="q">Do you use Convo Samples to set the AI's personality?</div><div class="a"><p>Honestly, not yet in the prompt. Today the persona is a one-line default ('a warm, calm, non-clinical wellness companion'); the few-shot slot exists but is empty. The tone of replies currently comes from the therapist text itself. Putting a curated set of the sample conversations into the prompt is straightforward once you confirm whether they are a script or a style guide.</p></div></div>
+<div class="qa"><div class="q">What did the layer files give you, and where are they used?</div><div class="a"><p>Layer I to IV (opening, exploring, insight, action) with 1,512 questions and statements plus transition lines. They are ingested, embedded and searchable. Layer-aware questioning is not wired into live replies yet; we want to do it after you confirm the Layer-versus-Tier relationship and the emotion list.</p></div></div>
+<h2>H2. Ingestion</h2>
+<div class="qa"><div class="q">How does the ingestion pipeline work end to end?</div><div class="a"><p>Offline, one parser per file type. Parse along the file's own structure (rows, headings, 'User:/AI:' lines), clean and normalise, hold back unfinished or sensitive rows, embed only specific fields in batches of 64, store text and vector on the same Postgres row with an HNSW index, mark therapist rows unapproved until approved, pre-translate fixed replies, then spot-check with the real pipeline. Commands are idempotent, so re-running after a file changes is safe.</p></div></div>
+<div class="qa"><div class="q">Why one row per chunk? Why not fixed-size or semantic chunking?</div><div class="a"><p>Your files are already segmented by clinicians - a sheet row, a heading section, a dialogue turn pair is a complete idea. Fixed-size chunking cuts ideas in half, and an LLM chunker adds cost and risk for no gain. We reserve an LLM boundary-refiner for future flowing prose, which has not arrived.</p></div></div>
+<div class="qa"><div class="q">What exactly is embedded for each source?</div><div class="a"><p>Only the field that is real human phrasing: signal phrasings, symptom 'how users describe it', red-flag trigger phrases (joined, one vector per flag), pattern names, therapist <i>user</i> text, situation text for strategies, clarifying questions. Never rules, thresholds, scripts, or the clinical markers.</p></div><div class="push"><b>If they push:</b> Why user text only for therapist rows? Because the next user message describes a situation; matching on the therapist's reply text would match the wrong thing.</div></div>
+<div class="qa"><div class="q">How do you handle messy or unfinished source data?</div><div class="a"><p>Parse, normalise, and <b>hold</b> - never guess. Rows with placeholders like [technique], drafting notes, stray headings, under four words, crisis conversations and governance-held content are stored with a reason but never embedded, so no search can return them. Today 1,210 of 6,440 therapist rows are held. We also never invent content: 12 situations with no strategy stay empty.</p></div></div>
+<div class="qa"><div class="q">Is ingestion repeatable? What if we send an updated file?</div><div class="a"><p>Yes. Each pair has a content hash, so re-ingestion upserts; if a parser fix changes a reply, stale rows from the re-parsed files are pruned. Approval flags survive a re-run unless you ask to reset them. To remove one bad reply: set approved=false on that row - instant, no deploy.</p></div></div>
+<div class="qa"><div class="q">What real problems did ingestion find in our files?</div><div class="a"><p>Highlights: the red-flag Bot Script column had an em-dash in its header so a naive parser returned empty scripts for all 31 rows; the 'Career 500' file was one template repeated; sheet 17 has four sections plus an 84-row matrix, not three; PHSY typos; mixed ID formats; encoding in Windows-1252; ~100 therapist replies had scenario headings glued on; five documents are incomplete. Each was fixed or held and is documented.</p></div></div>
+<div class="qa"><div class="q">Which embedding model do you use and why not Sarvam?</div><div class="a"><p>OpenAI text-embedding-3-small at 1024 dimensions. The architecture PDFs named Sarvam, but Sarvam has no embeddings API - we checked their live model list and reference. This is a vendor substitution that needs your written sign-off before real user data is embedded, along with confirmation that the vendor is on a no-training, no-retention tier.</p></div><div class="push"><b>If they push:</b> Switching embedding models later means re-embedding everything and re-validating, so we should decide once.</div></div>
+<div class="qa"><div class="q">What happens when we add new therapist conversations?</div><div class="a"><p>Drop the .docx in the source folder, dry-run to see held-row counts (unexpected holds mean a format issue), ingest, approve, pre-translate, then run a test message through the pipeline to see the source and similarity. It helps immediately - no training and no deploy.</p></div></div>
+<div class="qa"><div class="q">How do you know ingestion is correct?</div><div class="a"><p>Parsers are unit-tested (50 tests overall), every file was inspected against its real structure first, and the dry-run reports held reasons. What we do <i>not</i> yet have is a full validation gate with a therapist-labelled test set measuring retrieval hit-rate and grounding accuracy separately. That needs your labelled messages.</p></div></div>
+<h2>H3. Signals and how the AI 'understands'</h2>
+<div class="qa"><div class="q">How do you detect signals in a user's message?</div><div class="a"><p>We embed the message once and compare it to the embedded phrasings of your 285 signals and the 'how users describe it' text of the symptoms. Matches at 0.45 similarity or above (top five each) become observed signals. No LLM is involved in recognition.</p></div></div>
+<div class="qa"><div class="q">Isn't matching by similarity unreliable for clinical signals?</div><div class="a"><p>At the single-message level, yes, and we say so: a benign message once scored higher against 'Hypomania' than a genuine message did against its own signal. That is why one match never decides anything. Signals accumulate across the conversation, only new ones add points, a per-turn cap stops spikes, and the tier needs confirmed duration and impact.</p></div></div>
+<div class="qa"><div class="q">How does the AI understand a signal once it is found?</div><div class="a"><p>The code understands it, using your data: severity 1-3, category, linked disorders, red-flag flag, linked symptoms and rules. The LLM never sees raw codes or diagnoses. It receives guidance such as 'naturally ask how long this has been going on' or your own 'when to keep probing' text for the nearest pattern.</p></div></div>
+<div class="qa"><div class="q">What do EM and PHYS codes do?</div><div class="a"><p>PHYS rows (21) have real phrasings and map to signals. EM rows (133) are category labels - 'Life transitions', 'Intimacy concerns' - and they are exactly what the Tier 1 routing rules reference (e.g. EM45 to 54). We resolved an early belief that EM codes were missing: they were in the symptom sheet all along.</p></div></div>
+<div class="qa"><div class="q">How do you read 'how long' and 'is it affecting life'?</div><div class="a"><p>A small separate LLM call asks two yes/no questions about the current message and must quote the exact words that justify each yes. It only runs while one of them is unconfirmed, and on any error it fails closed (treated as not confirmed). It reads the current message only, so something confirmed several turns ago and not repeated can be missed - a known limit.</p></div></div>
+<div class="qa"><div class="q">Can the system recognise that someone is improving?</div><div class="a"><p>Partly. The score decays by 5 on quiet turns. Your 'graceful exit' trigger per pattern - the clinical definition of improvement - is stored but not yet wired, and resolved-past-struggle language ('I used to feel that way') is not specially recognised yet.</p></div></div>
+<h2>H4. Retrieval and the reply</h2>
+<div class="qa"><div class="q">How is the reply chosen?</div><div class="a"><p>Safety first. If safe, we search the therapist conversations by meaning. Best match &ge; 0.85 (0.90 if from mid-conversation) is sent as written with no LLM. 0.62 to 0.85: the LLM rewords using up to three close therapist examples, buffered and checked; on failure the therapist original is sent. Below 0.62: a therapist clarifying question if nothing else grounds the turn, else the LLM with grounding (Tier-1 self-care, doctor probing text).</p></div></div>
+<div class="qa"><div class="q">Where does the LLM invent content, if anywhere?</div><div class="a"><p>On matched turns, nowhere by design: it may only reword the therapists' ideas, and an instant guard rejects added numbers, links, padding, or low word overlap. On unmatched turns the LLM does answer, but grounded in your self-care strategies or doctor guidance when available, and only after a therapist clarifying question has had its chance. That path has a log-only output check today; strengthening it is on the roadmap.</p></div><div class="push"><b>If they push:</b> Be exact: 'we constrain and check', not 'the LLM can never say anything new'. The rewording guard is a drift detector, not a proof of equivalence.</div></div>
+<div class="qa"><div class="q">What is the difference between strong and partial?</div><div class="a"><p>Strong means the user's message is near-identical in meaning to a situation a therapist already answered, so the therapist's reply is the best answer and we do not touch it. Partial means the topic is right but the wording differs, so the LLM adapts the therapist's meaning to this person, under the check.</p></div></div>
+<div class="qa"><div class="q">Why are the thresholds 0.85 and 0.62?</div><div class="a"><p>Spot checks showed 'right topic, different words' lands around 0.64-0.66 and 'wrong topic' at or below ~0.56, so 0.62 sits in the gap. 0.85 for strong is deliberately conservative so verbatim use is rare until calibrated. They are provisional and environment-configurable. We will calibrate with your labelled set, target at least 95% precision on strong, and re-run whenever the library grows.</p></div><div class="push"><b>If they push:</b> Do not claim they are validated. Say: 'educated starting points, calibration is the next major piece of work, and it needs your doctors.'</div></div>
+<div class="qa"><div class="q">What stops a wrong therapist reply being sent?</div><div class="a"><p>Layers: the interlock runs first; only approved and match-eligible rows are searchable; very short or incomplete rows are held; mid-conversation replies need extra similarity; a clinically-sensitive topic can be held by a flag; and a bad row can be switched off instantly. The residual risk - a confidently wrong strong match - is exactly why thresholds need calibration and why the approved flag means 'included', not 'clinically reviewed'.</p></div></div>
+<div class="qa"><div class="q">What if no conversation matches?</div><div class="a"><p>We prefer asking to guessing: a therapist-written generic clarifying question (limit one in a row, skipped for tiny messages like 'hi'). If something else grounds the turn - a self-care strategy or the doctors' probing text - the LLM answers with that. Every no-match is a real gap your therapists can fill by adding a conversation.</p></div></div>
+<div class="qa"><div class="q">How do you avoid the same reply repeating?</div><div class="a"><p>We don't yet. A reply-variety layer is planned: vary only opening/closing connectors, never clinical content. It is not built.</p></div></div>
+<div class="qa"><div class="q">How are the welcome messages chosen?</div><div class="a"><p>Random pick from your 23 approved openings; 'user' replaced with the person's name or 'there'. No LLM, no embedding, one small query - instant; there is a neutral fallback if the table is empty.</p></div></div>
+<div class="qa"><div class="q">Is anything cached? Could caching skip safety?</div><div class="a"><p>Exact-match replies are cached in Redis for 24 hours (LLM replies only). Caching can never skip safety: triage, scoring and the interlock run on every turn even on a cache hit. The semantic cache is currently a stub.</p></div></div>
+<div class="qa"><div class="q">Does the user's history affect replies?</div><div class="a"><p>Yes, within limits: the last six turns go into LLM prompts, the running score and observed signals persist for the session (six-hour inactivity TTL), and the candidate pattern sticks across turns. The long-term running summary is not built yet.</p></div></div>
+<h2>H5. Tiers and safety</h2>
+<div class="qa"><div class="q">How does the shift between Tier 1, 2 and 3 happen?</div><div class="a"><p>Three separate mechanisms. Tier 3 is only ever produced by the red-flag interlock, instantly, even on message one. Tier 1 to 2 is a 0-100 running score (Tier 2 at 40) built from doctor-weighted new signals (8 / 15 / 25 points by severity), +10 for confirmed duration, +10 for confirmed impact, -5 on quiet turns, capped at +25 per turn. Suggesting a professional is a third decision behind its own gate: Tier 2 plus duration plus impact plus at least three distinct signals.</p></div></div>
+<div class="qa"><div class="q">Can a conversation climb into Tier 3?</div><div class="a"><p>No, by design. We had that bug in the first version - a work-stress chat reached '70+ = Tier 3' - and removed it. The score function can only return 1 or 2.</p></div></div>
+<div class="qa"><div class="q">Where do the routing rules and sufficiency sheet fit?</div><div class="a"><p>Routing rules are evaluated every turn in priority order and logged; a Tier 1 result switches on self-care grounding. Tier 2/3 outcomes are not yet used to override the score because roughly 41 rules use range shorthand we cannot expand without your help, and we want your doctors to say how rule and score should combine. The sufficiency sheet supplies the nearest pattern and its 'keep probing' guidance.</p></div></div>
+<div class="qa"><div class="q">When does the AI suggest booking or a professional?</div><div class="a"><p>Only when the redirect gate clears, and then as a gentle suggestion ('would you like help finding someone?'). Before that, at Tier 2, it keeps listening and naturally asks the missing duration or impact question and is told not to mention booking.</p></div></div>
+<div class="qa"><div class="q">What does the system do for a suicidal message?</div><div class="a"><p>The interlock matches it (RF-018/019 checked in the top 15 at a lower 0.36 bar), returns the doctors' approved script word for word, records the flag and escalation target in the audit log, and never involves the LLM. On any internal failure it defaults to 'let me connect you with someone'.</p></div><div class="push"><b>If they push:</b> State the gap: the outbound alert to a human is not wired to a destination yet - we need your escalation contract.</div></div>
+<div class="qa"><div class="q">Why is the red-flag threshold so low? Won't it over-trigger?</div><div class="a"><p>Deliberately: a false positive costs a moment of caution, a false negative a missed danger. We kept it permissive and narrowed only where data proved a specific flag over-fires - RF-028 and RF-007 get a soft zone with a gentle follow-up; suicide flags never do, enforced by a unit test.</p></div></div>
+<div class="qa"><div class="q">What about RF-028 to RF-031 with no scripts?</div><div class="a"><p>Code never improvises there: a match goes to a hard human-alert path. But it is a launch blocker on your side - we need the verbatim scripts and the alert recipient for violence, history of violence, suspected rape and molestation.</p></div></div>
+<div class="qa"><div class="q">Does the interlock handle disguised or indirect language?</div><div class="a"><p>That is why we match by meaning. Your flags include disguised phrasing. Known limits: one blended vector per flag dilutes phrases, so explicit statements score lower than expected (hence the 0.36 bar for suicide flags), and indirect statements can fall short - we welcome more disguised example phrases from your clinicians per flag.</p></div></div>
+<div class="qa"><div class="q">Hindi or Hinglish crisis messages?</div><div class="a"><p>Translated to English first (about 0.7 s), then the same interlock runs, and the script returns in the user's language from a pre-translated table. Residual risk: translation can soften an idiom, so we recommend a clinician-approved Hindi/Hinglish crisis-word list checked on the original text, plus native-speaker review of the translated crisis scripts.</p></div></div>
+<div class="qa"><div class="q">What are Layers, and how do they relate to Tiers?</div><div class="a"><p>Independent dials: Tier is how serious; Layer is how deep the conversation has gone (rapport, explore, insight, action). A Layer-IV Tier-1 chat is very different from a Layer-I Tier-3 opening line. Only Tier is implemented today.</p></div></div>
+<div class="qa"><div class="q">What happens in a stalled, contradictory, or disengaged conversation?</div><div class="a"><p>Sheet 17 defines it. The evaluation code and tests exist but are not yet connected to the live turn. It is a roadmap item and also needs the person's-name-to-role fix in three rows.</p></div></div>
+<h2>H6. Technical-team questions</h2>
+<div class="qa"><div class="q">What is the architecture?</div><div class="a"><p>Flutter and Next.js clients, a NestJS backend (auth, bookings), and this separate Python FastAPI AI service. The AI service uses one PostgreSQL with pgvector for text, rules and vectors, and Redis for session state and the exact cache. Providers (LLM, STT, TTS, embeddings, translation) sit behind interfaces, so a vendor swap is a one-line factory change. The AI service is deliberately isolated so a problem elsewhere cannot touch the safety checker.</p></div></div>
+<div class="qa"><div class="q">What do you use for the LLM, speech and translation?</div><div class="a"><p>Sarvam for the LLM, STT, TTS and translation; OpenAI for embeddings; LiveKit for real-time voice. Deepgram was removed from the code. The architecture PDFs disagree on STT and avatar vendors; those remain client decisions.</p></div></div>
+<div class="qa"><div class="q">Why pgvector and not Qdrant or Pinecone?</div><div class="a"><p>One system, one transaction, no sync problem, and the same query returns the vector neighbours and their text. At roughly 14,000 searchable rows an HNSW index returns in tens of milliseconds. We would revisit at millions of vectors.</p></div></div>
+<div class="qa"><div class="q">What is the latency, and how do you protect it?</div><div class="a"><p>The target is 1.5-2.5 s from end of speech to start of response. Measured text-path totals were 0.45-0.93 s on strong and partial turns once the embedding call was warm (first call after idle spiked to ~3 s). The protections: one embedding per turn, the therapist lookup in the background, no judge-LLM, a rewording call that is small, and streaming. Embedding is nearly all of the time. Caveat: tiny sample, no p95 under load yet.</p></div></div>
+<div class="qa"><div class="q">How do you scale?</div><div class="a"><p>The turn is stateless apart from Redis and Postgres, so the AI service scales horizontally. The main constraints are external: the OpenAI embedding call, and Sarvam translation which is rate-limited to about 100 calls a minute on the current key - a capacity question for production, since it only affects non-English turns.</p></div></div>
+<div class="qa"><div class="q">How do you know why the AI said something?</div><div class="a"><p>Every turn writes an audit row: source (<code>served_from</code>), the therapist turn ids or chunk ids used, similarity, matched signals and rule, score and tier, redirect readiness, interlock flag, and per-stage timings. You can look up the exact therapist reply behind any turn. The audit never stores the user's raw text.</p></div></div>
+<div class="qa"><div class="q">What about data protection and DPDP?</div><div class="a"><p>The agreement requires Indian data residency, encryption at rest and in transit, least-privilege access and retained audit logs; we should confirm in writing exactly where each vendor call (embeddings, LLM, translation) is processed. The contract (clause 5.7) forbids using client data to train models, so every vendor must be on a no-training, no-retention tier confirmed in writing, and a vendor change needs your written consent (clause 2.8). Open items we flag ourselves: the written sign-off for OpenAI embeddings and Sarvam translation, and the privacy design for any future gap-queue that would store user text.</p></div><div class="push"><b>If they push:</b> Do not state specific hosting regions or certifications you cannot confirm; say you will confirm in writing.</div></div>
+<div class="qa"><div class="q">How do you test this?</div><div class="a"><p>50 unit tests (parsers, banding, rewording guard, language, translation, soft-zone guard), live runs through the real pipeline with a dev tool, and EXPLAIN checks on the vector query. What is missing: the therapist-labelled evaluation set and a load test.</p></div></div>
+<div class="qa"><div class="q">Is the matching using the HNSW index?</div><div class="a"><p>Yes - after we fixed a bug on 13 October. The filter was rendering as <code>approved IS true</code>, which Postgres cannot prove implies the partial index predicate, so it silently did a sequential scan. Using the bare boolean columns restored an Index Scan; the rule now is EXPLAIN after touching that query.</p></div></div>
+<div class="qa"><div class="q">What if OpenAI or Sarvam is down?</div><div class="a"><p>Embedding failure gives the fail-safe message and an audit row - we never continue silently. On the partial path, an LLM failure sends the therapist's original text. A translation failure lets the turn continue on the original text with the English-only steps skipped. A quick embedding retry is on the roadmap.</p></div></div>
+<div class="qa"><div class="q">Can we switch off the therapist-first behaviour?</div><div class="a"><p>Yes: <code>CURATED_MATCH_ENABLED=false</code> restores the pre-therapist-first behaviour exactly. All thresholds are environment variables, not code.</p></div></div>
+<h2>H7. Awkward questions - answer plainly</h2>
+<div class="qa"><div class="q">Is the system clinically validated?</div><div class="a"><p>No, and we do not claim it is. The structure is built and tested; every threshold and score value is a provisional starting point; clinical validation needs your doctors' labelled data and review. That is the proposal for the next phase.</p></div></div>
+<div class="qa"><div class="q">Is any therapist reply clinically reviewed row by row?</div><div class="a"><p>'Approved' means included, not reviewed. We approved every match-eligible row on 9 October to get the library live in dev. A clinical review or at least a sampled audit - especially of the AI-companion casual chats and any rows near sensitive topics - is advisable before launch.</p></div></div>
+<div class="qa"><div class="q">What are the biggest risks?</div><div class="a"><p>1) Uncalibrated thresholds, a wrong strong match served verbatim. 2) Four missing safety scripts and no wired human-alert destination. 3) Single-message matching is blunt for context-dependent replies. 4) Translation softening a crisis idiom. 5) Thin coverage means many no-match turns. Each has a named fix in the roadmap.</p></div></div>
+<div class="qa"><div class="q">If we gave you our conversation files, are you training a model on them?</div><div class="a"><p>No. Nothing is trained or fine-tuned. The files are stored as searchable rows; embeddings are used only to compare meaning for this service's replies. Removing a row removes its influence immediately.</p></div><div class="push"><b>If they push:</b> Point to contract clause 5.7: the data may only be used to perform the services, and vendors must be no-training.</div></div>
+<div class="qa"><div class="q">Why can't the AI just be a good LLM with a good prompt?</div><div class="a"><p>Because the product is the therapists' expertise. A prompt cannot guarantee therapist wording, cannot cite which conversation it used, cannot be corrected by editing one row, and costs a model call every turn. We use the LLM where it is good - phrasing - and constrain it everywhere else.</p></div></div>
+<div class="qa"><div class="q">What do you need from us to make it production-ready?</div><div class="a"><p>Part G5 of this guide lists them. The top three: the four safety scripts plus the human-alert contract; a labelled test set to calibrate thresholds; and decisions on the emotion list, Tier/Layer/Severity relationship and the sensitive paraphilic content.</p></div></div>
+<div class="qa"><div class="q">Is the voice experience ready?</div><div class="a"><p>The wiring exists (LiveKit agent, Sarvam STT/TTS, spoken welcome, barge-in handling) and imports are verified, but it has not been tested against a real LiveKit room. The avatar vendor is undecided across the client's own PDFs.</p></div></div>
+<div class="qa"><div class="q">Can you show a real example turn?</div><div class="a"><p>Yes: <code>backend/scripts/try_turn.py "I moved to a new city for college and feel so alone"</code> prints the source, therapist ids, similarity, timings and reply. Earlier run: partial match at 0.66, three examples, reworded reply in 0.79 s total.</p></div></div>
+<h1 id="partI">Part I - Cheat sheet and glossary</h1>
+
+<h2>I1. The turn in 12 lines</h2>
+<pre>1  load session (Redis)            7  update running score (+/- points)
+2  language check / translate      8  SAFETY INTERLOCK  -> verbatim script, STOP
+3  embed ONCE (fail -> fail-safe)  9  routing rules (log tier)
+4  start therapist lookup (bg)    10  therapist match: STRONG -> as written, STOP
+5  exact cache lookup                                    PARTIAL -> LLM reword + check
+6  triage: signals/symptoms/pattern 11-14 guidance / clarifying question
+                                  15  LLM (grounded)   16  record + audit</pre>
+
+<h2>I2. Thresholds and constants</h2>
+<table>
+<tr><th style="width:40%">Setting</th><th style="width:14%">Default</th><th>Meaning</th></tr>
+<tr><td><code>CURATED_STRONG_SIMILARITY</code></td><td>0.85</td><td>&ge; &rarr; therapist reply as written (+0.05 if mid-conversation row)</td></tr>
+<tr><td><code>CURATED_PARTIAL_SIMILARITY</code></td><td>0.62</td><td>&ge; &rarr; partial; floor for shown examples</td></tr>
+<tr><td><code>CURATED_PARTIAL_MODE</code></td><td>rephrase</td><td>rephrase = LLM rewords; verbatim = as written</td></tr>
+<tr><td><code>CURATED_MAX_EXAMPLES</code> / <code>CURATED_TOP_K</code> / <code>CURATED_CLARIFY_LIMIT</code></td><td>3 / 5 / 1</td><td>examples shown / candidates fetched / clarifying questions in a row</td></tr>
+<tr><td><code>CURATED_MATCH_ENABLED</code></td><td>true</td><td>kill switch for therapist-first</td></tr>
+<tr><td>Preferred-row bonus</td><td>+0.02</td><td>tie-break only</td></tr>
+<tr><td><code>REDFLAG_MATCH_THRESHOLD</code></td><td>0.44</td><td>general red-flag bar (RF-025: 0.50)</td></tr>
+<tr><td><code>REDFLAG_CRITICAL_THRESHOLD</code></td><td>0.36</td><td>RF-018 / RF-019 (suicide) checked in top 15</td></tr>
+<tr><td><code>REDFLAG_SOFT_ZONE_THRESHOLD</code></td><td>0.55</td><td>RF-028 / RF-007: 0.44-0.55 gentle follow-up, &ge; 0.55 hard escalate</td></tr>
+<tr><td><code>TRIAGE_SIGNAL_THRESHOLD</code> / <code>TRIAGE_TOP_K</code></td><td>0.45 / 5</td><td>signal and symptom match</td></tr>
+<tr><td><code>PATTERN_MATCH_THRESHOLD</code></td><td>0.30</td><td>candidate sufficiency pattern</td></tr>
+<tr><td><code>RETRIEVAL_CONFIDENCE_THRESHOLD</code></td><td>0.30</td><td>Tier-1 self-care search (permissive; top chunk only)</td></tr>
+<tr><td><code>TIER2_SCORE_MIN</code></td><td>40</td><td>score &ge; 40 &rarr; Tier 2 (never 3)</td></tr>
+<tr><td>Severity points</td><td>8 / 15 / 25 (unrated 4)</td><td>new signal, severity 1 / 2 / 3</td></tr>
+<tr><td>Duration / impact bonus</td><td>+10 each</td><td>once, when the user confirms</td></tr>
+<tr><td><code>TIER_SCORE_MAX_GAIN_PER_TURN</code></td><td>25</td><td>cap per turn</td></tr>
+<tr><td><code>TIER_SCORE_DECAY_PER_QUIET_TURN</code></td><td>5</td><td>decay</td></tr>
+<tr><td><code>REDIRECT_MIN_DISTINCT_SIGNALS</code></td><td>3</td><td>part of the redirect gate</td></tr>
+<tr><td>Rewording guard</td><td>&le; 1.6&times; length; &ge; 60% word overlap; no new digits/URLs</td><td><code>check_rephrase_faithful</code></td></tr>
+<tr><td>Session TTL / exact cache TTL</td><td>6 h / 24 h</td><td>Redis</td></tr>
+<tr><td>Translation</td><td>Sarvam mayura:v1, ~0.7 s</td><td>non-English turns only; ~100 calls/min limit</td></tr>
+</table>
+<p class="small">All provisional and environment-configurable (<code>backend/app/core/config.py</code>, <code>.env</code>). Changing red-flag values requires clinician sign-off.</p>
+
+<h2>I3. <code>served_from</code> values (what each means)</h2>
+<table>
+<tr><th style="width:34%">Value</th><th>Meaning</th></tr>
+<tr><td><code>interlock</code></td><td>Red-flag match; doctors' verbatim script (or human alert if no script)</td></tr>
+<tr><td><code>interlock_failure_safe_path</code></td><td>Embedding/interlock error; "let me connect you with someone"</td></tr>
+<tr><td><code>interlock_possible_concern</code></td><td>Soft-zone: LLM reply that weaves in the doctor's gentle follow-up</td></tr>
+<tr><td><code>therapist_verbatim</code></td><td>Strong match; therapist reply unchanged</td></tr>
+<tr><td><code>therapist_partial_verbatim</code></td><td>Partial match served as written (verbatim mode)</td></tr>
+<tr><td><code>therapist_adapted</code></td><td>Partial match reworded by LLM; guard passed</td></tr>
+<tr><td><code>therapist_verbatim_fallback</code></td><td>Reword failed or LLM errored; original sent</td></tr>
+<tr><td><code>therapist_clarify</code></td><td>No match; therapist clarifying question</td></tr>
+<tr><td><code>exact_cache</code></td><td>Cached earlier reply</td></tr>
+<tr><td><code>rag_retrieval</code></td><td>LLM reply grounded in self-care / probing guidance (or ungrounded)</td></tr>
+<tr><td><code>tier_gathering_evidence</code></td><td>Tier 2, gate not cleared; LLM asks missing duration/impact</td></tr>
+<tr><td><code>tier_redirect_ready</code></td><td>Tier 2, gate cleared; gentle suggestion of a professional</td></tr>
+<tr><td><code>*_interrupted</code></td><td>Voice barge-in; saved, never cached</td></tr>
+</table>
+<pre>-- how much of the output is therapist-made?
+select served_from, count(*) from turn_audit_log group by 1 order by 2 desc;
+-- which therapist reply produced a turn?  (id from retrieved_chunk_ids "therapist_turn:&lt;id&gt;")
+select conversation_id, scenario, author, source_file, user_text, reply_text from kb_therapist_turns where id = 258;
+-- held rows must never be approved (expect 0)
+select count(*) from kb_therapist_turns where approved and not match_eligible;</pre>
+
+<h2>I4. Where things live in the code</h2>
+<table>
+<tr><th style="width:36%">Concern</th><th>File</th></tr>
+<tr><td>The turn</td><td><code>app/pipeline/orchestrator.py</code></td></tr>
+<tr><td>Therapist match, clarifying question</td><td><code>app/pipeline/curated_match.py</code></td></tr>
+<tr><td>Prompts (normal and rephrase)</td><td><code>app/pipeline/prompt_builder.py</code></td></tr>
+<tr><td>Rewording guard / grounding check</td><td><code>app/pipeline/guardrail.py</code></td></tr>
+<tr><td>Safety interlock; triage; routing; fallback (unwired)</td><td><code>app/safety/interlock.py, triage.py, routing.py, fallback.py</code></td></tr>
+<tr><td>Clinical markers (prompt constant)</td><td><code>app/safety/clinical_markers.py</code></td></tr>
+<tr><td>Tier score and redirect gate</td><td><code>app/pipeline/tier_scoring.py</code></td></tr>
+<tr><td>Session state; welcome; language; translation</td><td><code>state.py, welcome.py, language_hint.py, localize.py, providers/translation.py</code></td></tr>
+<tr><td>Ingestion: CLI and parsers</td><td><code>app/ingestion/cli.py</code>, <code>app/ingestion/parsers/*</code></td></tr>
+<tr><td>Models and migrations</td><td><code>app/db/models/kb.py, kb_convo_content.py</code>; <code>alembic/versions/</code></td></tr>
+<tr><td>Voice</td><td><code>app/realtime/agent.py, livekit_llm.py, livekit_stt.py, livekit_tts.py</code></td></tr>
+<tr><td>Live test tool</td><td><code>backend/scripts/try_turn.py</code></td></tr>
+</table>
+
+<h2>I5. Glossary</h2>
+<table>
+<tr><th style="width:24%">Term</th><th>Meaning</th></tr>
+<tr><td><b>Embedding</b></td><td>A list of numbers (here 1024) capturing a sentence's meaning. Similar meaning, nearby numbers.</td></tr>
+<tr><td><b>Cosine similarity</b></td><td>Closeness of two embeddings; 1 = same. Used everywhere; "distance" = 1 - similarity.</td></tr>
+<tr><td><b>pgvector / HNSW</b></td><td>PostgreSQL vector type / the index that makes nearest-neighbour search fast.</td></tr>
+<tr><td><b>RAG</b></td><td>Retrieve relevant approved material first, then let the LLM write using it.</td></tr>
+<tr><td><b>Interlock</b></td><td>The deterministic safety layer matching red flags; returns verbatim scripts.</td></tr>
+<tr><td><b>Triage</b></td><td>The silent per-turn reading of signals, symptoms and pattern.</td></tr>
+<tr><td><b>Tier 1 / 2 / 3</b></td><td>Self-care / professional support / immediate crisis.</td></tr>
+<tr><td><b>Layer I-IV</b></td><td>Conversation depth: opening, exploring, insight, action. Not severity.</td></tr>
+<tr><td><b>Strong / partial / none</b></td><td>The three therapist-match bands.</td></tr>
+<tr><td><b>Held row</b></td><td>Stored but never searchable (<code>match_eligible=false</code>).</td></tr>
+<tr><td><b>Soft zone</b></td><td>0.44-0.55 band for RF-028 / RF-007 giving a gentle question instead of a crisis script.</td></tr>
+<tr><td><b>Redirect gate</b></td><td>The stricter test (Tier 2 + duration + impact + 3 signals) before suggesting a professional.</td></tr>
+<tr><td><b>Verbatim</b></td><td>Word for word; no paraphrase and no LLM.</td></tr>
+<tr><td><b>Fail-safe upward</b></td><td>On error, take the more cautious path, never the more permissive.</td></tr>
+<tr><td><b>SIG / PHYS / EM / RF / RULE</b></td><td>Signal, physical symptom, emotional symptom/category, red flag, routing rule IDs.</td></tr>
+<tr><td><b>Idempotent</b></td><td>Safe to run again; same result, no duplicates.</td></tr>
+</table>
+
+<div class="say"><b class="t">Last-minute reminders before you join:</b>
+<ol>
+<li>Lead with <b>therapist-first and safety-first</b>. Everything else supports those two.</li>
+<li>When asked "is it validated?" - say no, and say what validates it (their labelled data).</li>
+<li>When asked about something unbuilt, say <b>"not built yet, here is the plan and what we need"</b>.</li>
+<li>Volunteer the four missing scripts and the alert contract - it turns a weakness into an ask.</li>
+<li>Do not quote precision or accuracy figures; none have been measured on a labelled set.</li>
+</ol></div>
+</body></html>

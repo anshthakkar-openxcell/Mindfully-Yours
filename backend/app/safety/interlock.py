@@ -42,7 +42,26 @@ logger = get_logger(__name__)
 # failure mode this project will never accept, so they keep the original single-threshold hard
 # escalation unconditionally. Add a flag here only with the same kind of concrete, live-tested
 # false-positive evidence RF-028 has -- never as a blanket policy.
-SOFT_ZONE_ELIGIBLE_FLAGS = {"RF-028"}
+#
+# RF-007 ("Exaggerated startle / hyperarousal") ADDED 2026-10-09 at the product owner's instruction, with
+# live evidence (measured against the real kb_red_flags embeddings, OpenAI text-embedding-3-small): it is
+# a trauma SYMPTOM, not a danger sign, and ordinary worry/tension language sits right at the 0.44 line --
+#   "I worry about everything: my health, my job, my family, and I can't seem to switch it off"  0.44
+#   "I'm always on edge at work lately and I can't relax"                                        0.43
+#   "I've been so tense and on high alert since my promotion"                                    0.44
+#   "I feel anxious and stressed before my exams"                                                0.39
+# while RF-007's own genuine trigger phrases score 0.50-0.69 (pen dropped / heart pounding 0.69;
+# colleague touched my arm and I screamed 0.60; panic at the sound of a car 0.50). So the soft zone
+# (0.44 up to REDFLAG_SOFT_ZONE_THRESHOLD, 0.55) now gives ordinary worry a gentle follow-up instead of a
+# crisis script, while anything >= 0.55 -- every genuine example except the weakest -- still hard-escalates.
+# A clinician should still review this (a real startle disclosure scoring 0.50 now gets a gentle question,
+# not the script); it is recorded in 32_THERAPIST_FIRST_RESPONSE_APPROACH.md.
+SOFT_ZONE_ELIGIBLE_FLAGS = {"RF-028", "RF-007"}
+
+# Soft-zone flags where the concern is NOT about immediate danger, so a therapist-written reply to the
+# user's message (app.pipeline.curated_match) is the better answer than the generic gentle follow-up.
+# RF-028 (possible violence) is deliberately NOT here: it keeps its doctor-written follow-up question.
+NON_DANGER_SOFT_ZONE_FLAGS = {"RF-007"}
 
 # Suicide-ideation flags -- explicitly excluded from SOFT_ZONE_ELIGIBLE_FLAGS above; a match on these
 # always hard-escalates, never gets a softer clarifying path.

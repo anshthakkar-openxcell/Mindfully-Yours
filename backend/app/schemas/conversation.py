@@ -23,6 +23,21 @@ class TurnRequestSchema(BaseModel):
     )
 
 
+class WelcomeRequestSchema(BaseModel):
+    session_id: UUID
+    name: str | None = Field(default=None, description="First name to greet, if known; otherwise 'there'.")
+    language: str = Field(default="en")
+    reply_language: str = Field(
+        default="en", pattern="^(en|hi|hinglish)$", description="Language to greet in: English, Hindi (Devanagari) or Hinglish (Roman)."
+    )
+    consent_verified: bool = Field(..., description="Trusted from the caller, same contract as a turn.")
+
+
+class WelcomeResponseSchema(BaseModel):
+    response_text: str
+    served_from: str = "welcome"
+
+
 class TurnResponseSchema(BaseModel):
     response_text: str
     served_from: str

@@ -20,7 +20,8 @@ from app.api.deps import get_db, get_embeddings, get_llm, get_redis
 from app.core.security import verify_service_caller
 from app.pipeline.orchestrator import TurnRequest, run_turn
 from app.providers.base import EmbeddingProvider, LLMProvider
-from app.schemas.conversation import TurnRequestSchema
+from app.pipeline.welcome import pick_welcome
+from app.schemas.conversation import TurnRequestSchema, WelcomeRequestSchema, WelcomeResponseSchema
 
 router = APIRouter()
 
@@ -47,3 +48,17 @@ async def submit_turn(
 
     stream = run_turn(request, db=db, redis=redis, llm=llm, embedding_provider=embeddings)
     return StreamingResponse(stream, media_type="text/plain")
+
+
+@router.post("/conversation/welcome", dependencies=[Depends(verify_service_caller)])
+async def welcome(payload: WelcomeRequestSchema, db: AsyncSession = Depends(get_db)) -> WelcomeResponseSchema:
+    """The conversation's opening message -- one of the therapists' own welcome messages, as written
+    (see app.pipeline.welcome). Call once when a text conversation starts; voice mode greets on its
+    own (app.realtime.agent). No LLM involved, so it returns instantly."""
+    if not payload.consent_verified:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, detail="consent_verified must be true.")
+    return WelcomeResponseSchema(
+        response_text=await pick_welcome(
+            db, name=payload.name, language=payload.language, reply_style=payload.reply_language
+        )
+    )

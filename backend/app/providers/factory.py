@@ -15,7 +15,8 @@ from app.core.config import get_settings
 from app.providers.base import AvatarProvider, EmbeddingProvider, LLMProvider, STTProvider, TTSProvider
 from app.providers.embeddings.openai_embeddings import OpenAIEmbeddingProvider
 from app.providers.llm.sarvam import SarvamLLMProvider
-from app.providers.stt.deepgram import DeepgramSTTProvider
+from app.providers.stt.sarvam_stt import SarvamSTTProvider
+from app.providers.translation import SarvamTranslator
 from app.providers.tts.sarvam_tts import SarvamTTSProvider
 
 
@@ -34,8 +35,13 @@ def get_llm_provider() -> LLMProvider:
 @lru_cache
 def get_stt_provider() -> STTProvider:
     settings = get_settings()
-    if settings.stt_provider == "deepgram":
-        return DeepgramSTTProvider(api_key=settings.deepgram_api_key)
+    if settings.stt_provider == "sarvam":
+        return SarvamSTTProvider(
+            api_key=settings.sarvam_api_key,
+            api_base=settings.sarvam_api_base,
+            model=settings.sarvam_stt_model,
+            sample_rate=settings.sarvam_stt_sample_rate,
+        )
     raise ValueError(f"Unknown STT_PROVIDER: {settings.stt_provider!r}")
 
 
@@ -43,7 +49,13 @@ def get_stt_provider() -> STTProvider:
 def get_tts_provider() -> TTSProvider:
     settings = get_settings()
     if settings.tts_provider == "sarvam":
-        return SarvamTTSProvider(api_key=settings.sarvam_api_key, api_base=settings.sarvam_api_base)
+        return SarvamTTSProvider(
+            api_key=settings.sarvam_api_key,
+            api_base=settings.sarvam_api_base,
+            model=settings.sarvam_tts_model,
+            speaker=settings.sarvam_tts_speaker,
+            sample_rate=settings.sarvam_tts_sample_rate,
+        )
     raise ValueError(f"Unknown TTS_PROVIDER: {settings.tts_provider!r}")
 
 
@@ -57,6 +69,17 @@ def get_embedding_provider() -> EmbeddingProvider:
             dimensions=settings.embed_dim,
         )
     raise ValueError(f"Unknown EMBEDDING_PROVIDER: {settings.embedding_provider!r}")
+
+
+@lru_cache
+def get_translator() -> SarvamTranslator:
+    settings = get_settings()
+    return SarvamTranslator(
+        api_key=settings.sarvam_api_key,
+        api_base=settings.sarvam_api_base,
+        model=settings.sarvam_translate_model,
+        timeout=settings.translation_timeout_seconds,
+    )
 
 
 def get_avatar_provider() -> AvatarProvider | None:

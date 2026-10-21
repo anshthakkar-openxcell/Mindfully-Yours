@@ -29,6 +29,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from livekit import api as lk_api
 from pydantic import BaseModel
 
 # Lets this script import the backend's app.* modules as a LIBRARY (reusing its already-existing,
@@ -67,6 +68,37 @@ class SendMessageRequest(BaseModel):
 @app.get("/")
 async def index() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
+
+
+@app.get("/voice")
+async def voice_page() -> FileResponse:
+    return FileResponse(STATIC_DIR / "voice.html")
+
+
+@app.post("/api/voice-token")
+async def voice_token() -> dict:
+    """
+    DEV-ONLY stand-in for the NestJS backend's Room-creation/token-issuance step (out of scope for
+    the AI service itself -- see documnets/understanding/31_CONVERSATION_LAYER_IMPLEMENTATION_PLAN.md
+    §5/§6). Mints a token with the real LIVEKIT_API_KEY/SECRET from backend/.env so this test
+    harness can be used to manually try the voice pipeline end to end, same purpose as /api/send
+    for text mode. Never do this in production -- token issuance belongs server-side, behind real
+    auth, not an open endpoint like this one.
+    """
+    settings = get_settings()
+    session_id = str(uuid.uuid4())
+    await _ensure_session_exists(session_id, mode="voice")
+
+    token = (
+        lk_api.AccessToken(settings.livekit_api_key, settings.livekit_api_secret)
+        .with_identity(f"browser-{session_id[:8]}")
+        .with_name("Test User")
+        .with_grants(
+            lk_api.VideoGrants(room_join=True, room=session_id, can_publish=True, can_subscribe=True)
+        )
+        .to_jwt()
+    )
+    return {"token": token, "url": settings.livekit_url, "room_name": session_id}
 
 
 @app.post("/api/send")
@@ -309,16 +341,17 @@ async def _run_retrieval_preview(text: str) -> dict:
     }
 
 
-async def _ensure_session_exists(session_id: str) -> None:
+async def _ensure_session_exists(session_id: str, mode: str = "text") -> None:
     conn = await asyncpg.connect(DATABASE_URL)
     try:
         await conn.execute(
             """
             INSERT INTO sessions (session_id, mode, language, lifecycle_state)
-            VALUES ($1, 'text', 'en', 'live')
+            VALUES ($1, $2, 'en', 'live')
             ON CONFLICT (session_id) DO NOTHING
             """,
             uuid.UUID(session_id),
+            mode,
         )
     finally:
         await conn.close()

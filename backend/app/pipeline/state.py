@@ -17,6 +17,10 @@ STATE_KEY_PREFIX = "session"
 STATE_TTL_SECONDS = 60 * 60 * 6  # 6 hours of inactivity -- align with product's session-timeout decision
 
 
+MAX_STORED_RECENT_TURNS = 10  # bounded, not unbounded growth -- app.pipeline.prompt_builder trims
+# this further to MAX_RECENT_TURNS (6) when actually assembling a prompt; this is just storage.
+
+
 class ConversationState(BaseModel):
     observed_signal_ids: list[str] = Field(default_factory=list)
     turn_count: int = 0
@@ -25,14 +29,30 @@ class ConversationState(BaseModel):
     impact_established: bool = False
     confidence_score: float = 0.0
     last_response_lengths: list[int] = Field(default_factory=list)  # feeds fallback Section C
+    # TEMPORARY fix (2026-10-01): previously always empty (`recent_turns=[]` was hardcoded in
+    # orchestrator.py with a TODO to load it from here) -- meaning every turn was answered with no
+    # memory of anything said earlier in the conversation. This stores the last few turns' text
+    # verbatim so app.pipeline.prompt_builder.build_prompt can actually include them. It is
+    # deliberately plain verbatim text, not a summary -- the real intended design (a running
+    # summary via ConversationSession, see orchestrator.py's other TODO) is still pending on that
+    # session-ownership question; this is the quick, direct fix to restore basic context memory
+    # now rather than wait on that larger piece.
+    recent_turns: list[str] = Field(default_factory=list)
+    # How many therapist clarifying questions in a row have been asked (app.pipeline.curated_match).
+    # Reset whenever a therapist reply is served, so it only limits back-to-back clarifying.
+    clarifications_asked: int = 0
 
-    def record_turn(self, *, new_signal_ids: list[str], response_length: int) -> None:
+    def record_turn(self, *, new_signal_ids: list[str], user_text: str, response_text: str) -> None:
         for sid in new_signal_ids:
             if sid not in self.observed_signal_ids:
                 self.observed_signal_ids.append(sid)
         self.turn_count += 1
-        self.last_response_lengths.append(response_length)
+        self.last_response_lengths.append(len(response_text))
         self.last_response_lengths = self.last_response_lengths[-10:]  # bounded, not unbounded growth
+
+        if response_text:  # an interrupted turn can produce an empty response_text -- nothing to record
+            self.recent_turns.append(f"User: {user_text}\nAssistant: {response_text}")
+            self.recent_turns = self.recent_turns[-MAX_STORED_RECENT_TURNS:]
 
 
 def _key(session_id: str) -> str:

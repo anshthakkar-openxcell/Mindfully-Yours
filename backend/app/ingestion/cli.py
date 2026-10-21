@@ -343,5 +343,321 @@ async def _ingest_convo_data_async(convo_dir: Path, career_csv: Path, label: str
     )
 
 
+def _ingestion_embedding_provider():
+    """Same OpenAI provider as runtime, but with a generous timeout -- the runtime default (3s) is
+    deliberately tight for the live latency budget and too short for large offline batches."""
+    from app.core.config import get_settings
+    from app.providers.embeddings.openai_embeddings import OpenAIEmbeddingProvider
+
+    settings = get_settings()
+    return OpenAIEmbeddingProvider(
+        api_key=settings.openai_api_key,
+        model=settings.openai_embedding_model,
+        dimensions=settings.embed_dim,
+        timeout=120.0,
+    )
+
+
+@app.command(name="ingest-therapist-turns")
+def ingest_therapist_turns(
+    convo_dir: Path = typer.Option(
+        ..., help="Path to 'MYPL - Mindfully Yours Work/' inside convo data/decrypted/."
+    ),
+    embed: bool = typer.Option(True, help="Embed match-eligible rows (held rows are never embedded). Disable for a dry parse."),
+    approve_eligible: bool = typer.Option(
+        False,
+        help="Mark every match-eligible row approved=True. Off by default: a row is only served at runtime "
+        "once a therapist has signed it off -- see documnets/understanding/32_THERAPIST_FIRST_RESPONSE_APPROACH.md.",
+    ),
+    dry_run: bool = typer.Option(False, help="Parse and report only; write nothing to the database."),
+) -> None:
+    """Parse the therapists' User/AI dialogue files into (user message -> therapist reply) pairs and
+    load them into kb_therapist_turns. Idempotent: re-running updates rows in place (keyed by content
+    hash) and never resets a row's `approved` flag unless --approve-eligible is passed."""
+    configure_logging()
+    asyncio.run(_ingest_therapist_turns_async(convo_dir, embed, approve_eligible, dry_run))
+
+
+async def _ingest_therapist_turns_async(convo_dir: Path, embed: bool, approve_eligible: bool, dry_run: bool) -> None:
+    from sqlalchemy.dialects.postgresql import insert as pg_insert
+
+    from app.db.models.kb_convo_content import KBTherapistTurn
+    from app.ingestion.embedding import embed_field
+    from app.ingestion.parsers import parse_therapist_turns
+
+    rows, stats = parse_therapist_turns(convo_dir)
+    logger.info(
+        "parsed_therapist_turns",
+        pairs_found=stats["pairs_found"],
+        duplicates_dropped=stats["duplicates_dropped"],
+        match_eligible=stats["match_eligible"],
+        held=dict(stats["held"]),
+    )
+    typer.echo(
+        f"Parsed {stats['pairs_found']} pairs ({stats['duplicates_dropped']} exact duplicates dropped): "
+        f"{stats['match_eligible']} match-eligible, held: {dict(stats['held'])}"
+    )
+    if dry_run:
+        typer.echo("Dry run -- nothing written.")
+        return
+
+    if embed:
+        # Only rows that can ever be served are embedded -- held rows (crisis, governance, drafting
+        # notes, too-short) get no vector, so a nearest-neighbour search cannot return them even
+        # if a query forgot the eligibility filter.
+        eligible = [r for r in rows if r["match_eligible"]]
+        others = [r for r in rows if not r["match_eligible"]]
+        eligible = await embed_field(
+            eligible,
+            source_field="user_text",
+            target_field="context_embedding",
+            embedding_provider=_ingestion_embedding_provider(),
+        )
+        rows = eligible + [{**r, "context_embedding": None} for r in others]
+    else:
+        rows = [{**r, "context_embedding": None} for r in rows]
+
+    if approve_eligible:
+        for r in rows:
+            r["approved"] = bool(r["match_eligible"])
+
+    update_cols = [
+        "turn_index", "prior_context", "scenario", "section", "tier", "author",
+        "is_opening", "match_eligible", "hold_reason", "language",
+    ]
+    if embed:
+        update_cols.append("context_embedding")
+    if approve_eligible:
+        update_cols.append("approved")
+
+    async with AsyncSessionLocal() as db:
+        # Prune rows left behind by an earlier parser version: a row's identity is a hash of its
+        # text, so a parser fix that changes a reply's text creates a NEW row and would otherwise
+        # leave the old (possibly corrupted) one sitting in the table. Scoped to the source files
+        # parsed in this run, so a partial re-run never touches other files' rows.
+        from sqlalchemy import delete
+
+        parsed_files = {r["source_file"] for r in rows}
+        parsed_hashes = {r["content_hash"] for r in rows}
+        pruned = await db.execute(
+            delete(KBTherapistTurn).where(
+                KBTherapistTurn.source_file.in_(parsed_files), KBTherapistTurn.content_hash.not_in(parsed_hashes)
+            )
+        )
+        logger.info("therapist_turns_pruned_stale", rows=pruned.rowcount)
+        for start in range(0, len(rows), 500):
+            batch = rows[start : start + 500]
+            stmt = pg_insert(KBTherapistTurn).values(batch)
+            # `source_file` is deliberately NOT updated: a reply that appears in two files keeps the
+            # file it was first loaded from. `is_preferred` is OR-ed, so a reply that is ALSO in the
+            # client's Best Conversations becomes preferred without ever losing the flag later.
+            stmt = stmt.on_conflict_do_update(
+                index_elements=["content_hash"],
+                set_={
+                    **{c: getattr(stmt.excluded, c) for c in update_cols},
+                    "is_preferred": KBTherapistTurn.is_preferred | stmt.excluded.is_preferred,
+                },
+            )
+            await db.execute(stmt)
+        await db.commit()
+
+    logger.info("therapist_turns_loaded", rows=len(rows), embedded=embed, approved=approve_eligible)
+    typer.echo(
+        f"Loaded {len(rows)} rows into kb_therapist_turns "
+        f"(embedded={embed}, approved={'eligible rows' if approve_eligible else 'none -- pending therapist review'})."
+    )
+
+
+@app.command(name="ingest-client-drop-2")
+def ingest_client_drop_2(
+    drop_dir: Path = typer.Option(
+        ..., help="The DECRYPTED folder of the second client drop ('new uploaded documents/decrypted')."
+    ),
+    embed: bool = typer.Option(True, help="Generate embeddings (set false for a dry parse)."),
+) -> None:
+    """Load client drop #2: Best Conversations + AI Companion dialogues (-> kb_therapist_turns, approved),
+    AI WELCOME RESPONSES (-> kb_welcome_responses), Situational Routing (-> kb_situational_routing, and
+    each self-care strategy -> kb_content_chunks so Tier 1 self-care search can find it). Idempotent."""
+    configure_logging()
+    asyncio.run(_ingest_client_drop_2_async(drop_dir, embed))
+
+
+async def _ingest_client_drop_2_async(drop_dir: Path, embed: bool) -> None:
+    from sqlalchemy.dialects.postgresql import insert as pg_insert
+
+    from app.db.models.kb import KBContentChunk
+    from app.db.models.kb_convo_content import KBSituationalRouting, KBWelcomeResponse
+    from app.ingestion.embedding import embed_field
+    from app.ingestion.parsers import parse_situational_routing, parse_welcome_responses
+
+    welcome = parse_welcome_responses(drop_dir / "AI WELCOME RESPONSES.docx")
+    situations = parse_situational_routing(drop_dir / "Copy of Situational Routing.xlsx")
+    typer.echo(f"Parsed {len(welcome)} welcome messages and {len(situations)} situations.")
+
+    if embed:
+        provider = _ingestion_embedding_provider()
+        situations = await embed_field(
+            situations, source_field="situation", target_field="situation_embedding", embedding_provider=provider
+        )
+        # Self-care chunks are embedded as "situation. strategy" -- the user's message describes the
+        # SITUATION, so that is what it has to match; the strategy text alone would match poorly.
+        chunk_inputs = [
+            {**sit, "_chunk_text": f"{sit['situation']}. {sit['self_care_strategy']}"}
+            for sit in situations
+            if sit["self_care_strategy"]
+        ]
+        chunk_inputs = await embed_field(
+            chunk_inputs, source_field="_chunk_text", target_field="embedding", embedding_provider=provider
+        )
+    else:
+        chunk_inputs = [s for s in situations if s["self_care_strategy"]]
+        for c in chunk_inputs:
+            c["embedding"] = None
+
+    chunk_rows = [
+        {
+            "chunk_id": f"sit_{c['situation_id'].lower().replace('-', '_')}_selfcare",
+            "category": c["category"],
+            "pattern_name": c["situation"],
+            "tier": 1,
+            "content_type": "self_care_tool",
+            "text": c["self_care_strategy"],
+            "embedding": c["embedding"],
+            "source_document": c["source_file"],
+            "language": "en",
+            "linked_pattern_id": None,
+        }
+        for c in chunk_inputs
+    ]
+    situation_rows = [{k: v for k, v in s.items() if not k.startswith("_")} for s in situations]
+    for s_row in situation_rows:
+        s_row.setdefault("situation_embedding", None)
+
+    async with AsyncSessionLocal() as db:
+        await db.execute(pg_insert(KBWelcomeResponse).values(welcome).on_conflict_do_nothing(index_elements=["text"]))
+        stmt = pg_insert(KBSituationalRouting).values(situation_rows)
+        await db.execute(
+            stmt.on_conflict_do_update(
+                index_elements=["situation_id"],
+                set_={c: getattr(stmt.excluded, c) for c in situation_rows[0] if c != "situation_id"},
+            )
+        )
+        stmt = pg_insert(KBContentChunk).values(chunk_rows)
+        await db.execute(
+            stmt.on_conflict_do_update(
+                index_elements=["chunk_id"],
+                set_={c: getattr(stmt.excluded, c) for c in chunk_rows[0] if c != "chunk_id"},
+            )
+        )
+        await db.commit()
+    typer.echo(
+        f"Loaded {len(welcome)} welcome messages, {len(situation_rows)} situations, "
+        f"{len(chunk_rows)} self-care chunks (live for Tier 1 self-care search)."
+    )
+
+    # Therapist dialogues: same loader as drop 1, approved per the client/team decision (2026-10-09).
+    await _ingest_therapist_turns_async(drop_dir, embed, approve_eligible=True, dry_run=False)
+
+
+# The fixed English messages the pipeline itself can say (see app.pipeline.orchestrator). Translated
+# ahead of time like every other fixed reply, so even a crisis fallback is instant in Hindi.
+_FIXED_MESSAGES = [
+    "I want to make sure you get the right support -- let me connect you with someone.",
+    "I want to make sure you get the right support right now -- let me connect you with someone who can help.",
+]
+
+
+@app.command(name="translate-kb")
+def translate_kb(
+    kinds: str = typer.Option(
+        "red_flag_script,fixed_message,clarifying_question,welcome,therapist_reply",
+        help="Comma-separated, in priority order. Safety scripts first so a partial run still covers them.",
+    ),
+    styles: str = typer.Option("hi,hinglish", help="Which languages: hi (Devanagari), hinglish (Roman)."),
+    concurrency: int = typer.Option(6, help="Parallel Sarvam calls."),
+    limit: int = typer.Option(0, help="Stop after this many NEW translations (0 = no limit) -- for a trial run."),
+) -> None:
+    """Pre-translate every fixed English reply into Hindi / Hinglish (kb_translations), so a Hindi speaker
+    gets it instantly at runtime. Idempotent and resumable: anything already translated is skipped."""
+    configure_logging()
+    asyncio.run(_translate_kb_async([k.strip() for k in kinds.split(",")], [x.strip() for x in styles.split(",")], concurrency, limit))
+
+
+async def _translate_kb_async(kinds: list[str], styles: list[str], concurrency: int, limit: int) -> None:
+    import httpx
+    from sqlalchemy import select
+
+    from app.core.config import get_settings
+    from app.db.models.kb import KBFallbackScenario, KBRedFlag
+    from app.db.models.kb_convo_content import KBClarificationPhrase, KBTherapistTurn, KBTranslation, KBWelcomeResponse
+    from app.pipeline.curated_match import GENERIC_CLARIFY_CATEGORIES
+    from app.pipeline.localize import source_hash, store_translation
+    from app.providers.factory import get_translator
+
+    settings = get_settings()
+    translator = get_translator()
+
+    async def gather(kind: str) -> list[str]:
+        async with AsyncSessionLocal() as db:
+            if kind == "red_flag_script":
+                rows = (await db.execute(select(KBRedFlag.bot_script).where(KBRedFlag.bot_script.is_not(None)))).scalars().all()
+                rows += (await db.execute(select(KBFallbackScenario.bot_script).where(KBFallbackScenario.bot_script.is_not(None)))).scalars().all()
+                return list(rows)
+            if kind == "fixed_message":
+                return list(_FIXED_MESSAGES)
+            if kind == "clarifying_question":
+                stmt = select(KBClarificationPhrase.phrase).where(
+                    KBClarificationPhrase.category.in_(GENERIC_CLARIFY_CATEGORIES),
+                    KBClarificationPhrase.phrase.like("%?"),
+                    KBClarificationPhrase.has_drafting_note.is_(False),
+                )
+                return list((await db.execute(stmt)).scalars().all())
+            if kind == "welcome":
+                # Translated in their "Hi there, ..." form (the name slot filled), NOT the raw "Hi user, ..."
+                # template -- otherwise the word "user" itself would be translated.
+                from app.pipeline.welcome import fill_name
+
+                rows = (await db.execute(select(KBWelcomeResponse.text).where(KBWelcomeResponse.approved.is_(True)))).scalars().all()
+                return [fill_name(t, None) for t in rows]
+            if kind == "therapist_reply":
+                stmt = select(KBTherapistTurn.reply_text).where(KBTherapistTurn.approved.is_(True), KBTherapistTurn.match_eligible.is_(True))
+                return list((await db.execute(stmt)).scalars().all())
+        raise typer.BadParameter(f"unknown kind {kind!r}")
+
+    async def already_done(style: str) -> set[str]:
+        async with AsyncSessionLocal() as db:
+            return set((await db.execute(select(KBTranslation.source_hash).where(KBTranslation.style == style))).scalars().all())
+
+    sem = asyncio.Semaphore(concurrency)
+    stats = {"new": 0, "failed": 0}
+
+    async def one(text: str, style: str, kind: str) -> None:
+        if limit and stats["new"] >= limit:
+            return
+        async with sem:
+            for attempt in range(4):  # rate limits / blips: back off and retry
+                try:
+                    translated = await translator.from_english(text, style=style)  # type: ignore[arg-type]
+                    await store_translation(text, style, translated, kind=kind, model=settings.sarvam_translate_model)
+                    stats["new"] += 1
+                    if stats["new"] % 100 == 0:
+                        typer.echo(f"  ...{stats['new']} translated")
+                    return
+                except (httpx.HTTPError, Exception) as exc:  # noqa: BLE001
+                    await asyncio.sleep(1.5 * (attempt + 1))
+                    last = exc
+            stats["failed"] += 1
+            logger.error("translate_kb_item_failed", error=str(last), kind=kind, style=style)
+
+    for kind in kinds:
+        texts = sorted({t.strip() for t in await gather(kind) if t and t.strip()})
+        for style in styles:
+            done = await already_done(style)
+            todo = [t for t in texts if source_hash(t) not in done]
+            typer.echo(f"{kind} / {style}: {len(todo)} to translate ({len(texts) - len(todo)} already done)")
+            await asyncio.gather(*[one(t, style, kind) for t in todo])
+    typer.echo(f"Done: {stats['new']} new translations, {stats['failed']} failed.")
+
+
 if __name__ == "__main__":
     app()

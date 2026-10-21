@@ -49,7 +49,7 @@ EMBEDDINGS_URL = "https://api.openai.com/v1/embeddings"
 
 
 class OpenAIEmbeddingProvider(EmbeddingProvider):
-    def __init__(self, api_key: str, model: str, dimensions: int):
+    def __init__(self, api_key: str, model: str, dimensions: int, timeout: float = 3.0):
         self._api_key = api_key
         self._model = model  # from OPENAI_EMBEDDING_MODEL -- never hardcode a model name here
         self._dimensions = dimensions  # from EMBED_DIM -- must match every Vector(...) column
@@ -63,7 +63,9 @@ class OpenAIEmbeddingProvider(EmbeddingProvider):
         # the interlock's own "fail SAFE on timeout" exception handling ever gets a chance to run.
         # 3s is still generous next to the ~300-900ms measured live, but bounds the worst case so
         # the fail-safe path actually triggers promptly instead of hanging.
-        self._client = httpx.AsyncClient(timeout=3.0)
+        # `timeout` defaults to the runtime-safe 3.0 above; ONLY offline ingestion (a 64-text batch of long
+        # dialogue turns takes well over 3s) passes a larger value -- never raise the default.
+        self._client = httpx.AsyncClient(timeout=timeout)
 
     async def embed(self, texts: list[str]) -> list[list[float]]:
         if not self._api_key:

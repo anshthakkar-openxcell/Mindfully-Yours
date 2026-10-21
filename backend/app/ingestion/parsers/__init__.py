@@ -11,6 +11,8 @@ from app.ingestion.parsers.layer_content import (
     parse_layer_ii,
     parse_phase_ii_layer_i_and_iv,
 )
+from app.ingestion.parsers.welcome_responses import parse_welcome_responses
+from app.ingestion.parsers.situational_routing import parse_situational_routing
 from app.ingestion.parsers.red_flags import parse_red_flags
 from app.ingestion.parsers.routing_rules import parse_routing_rules
 from app.ingestion.parsers.scenario_taxonomy import parse_anxiety_situations, parse_list_of_scenarios
@@ -18,6 +20,7 @@ from app.ingestion.parsers.self_help_tools import parse_dbt_skills_workbook
 from app.ingestion.parsers.signal_legend import parse_signal_legend
 from app.ingestion.parsers.sufficiency import parse_sufficiency
 from app.ingestion.parsers.symptom_map import parse_symptom_map
+from app.ingestion.parsers.therapist_turns import parse_therapist_turns
 from app.ingestion.parsers.tier_question_banks import parse_career_question_set, parse_questions_by_scenario
 
 __all__ = [
@@ -42,4 +45,7 @@ __all__ = [
     "parse_dbt_skills_workbook",
     "parse_questions_by_scenario",
     "parse_career_question_set",
+    "parse_therapist_turns",
+    "parse_welcome_responses",
+    "parse_situational_routing",
 ]

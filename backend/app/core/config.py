@@ -40,12 +40,27 @@ class Settings(BaseSettings):
     llm_fallback_provider: str = Field(default="", alias="LLM_FALLBACK_PROVIDER")
 
     # --- STT ---
-    # NOTE: 15_OPEN_QUESTIONS_AND_BLOCKERS.md #9 -- dual Deepgram/Sarvam vs Deepgram-only unresolved.
-    stt_provider: str = Field(default="deepgram", alias="STT_PROVIDER")
-    deepgram_api_key: str = Field(default="", alias="DEEPGRAM_API_KEY")
+    # RESOLVED 2026-10-01 (direct product decision, overriding the dual Deepgram/Sarvam-vs-
+    # Deepgram-only discrepancy in documnets/understanding/15_OPEN_QUESTIONS_AND_BLOCKERS.md #9):
+    # Sarvam only, for both STT and TTS. Deepgram is not used anywhere in this system.
+    stt_provider: str = Field(default="sarvam", alias="STT_PROVIDER")
+    # saaras:v3-realtime is Sarvam's real-time streaming STT model (wss://.../speech-to-text-realtime/ws)
+    # -- confirmed against Sarvam's live API reference (docs.sarvam.ai, Oct 2026), not guessed.
+    sarvam_stt_model: str = Field(default="saaras:v3-realtime", alias="SARVAM_STT_MODEL")
+    # Caller (app.realtime.agent) must deliver audio already resampled to this rate, mono, linear16
+    # -- this adapter does not resample. 16kHz is Sarvam's documented best-supported rate.
+    sarvam_stt_sample_rate: int = Field(default=16000, alias="SARVAM_STT_SAMPLE_RATE")
 
     # --- TTS ---
     tts_provider: str = Field(default="sarvam", alias="TTS_PROVIDER")
+    # bulbul:v3 -- confirmed live (2026-10-01): a real synthesis call against bulbul:v2 (what the
+    # docs still listed as current) returned "400: Model 'bulbul:v2' has been deprecated. Please
+    # use 'bulbul:v3' instead." -- the docs lagged the real API here.
+    sarvam_tts_model: str = Field(default="bulbul:v3", alias="SARVAM_TTS_MODEL")
+    # v2 and v3 have non-overlapping speaker lists -- "shubh" confirmed live as a valid v3 speaker
+    # (a v2 speaker name on v3 fails with a 400 listing the real options).
+    sarvam_tts_speaker: str = Field(default="shubh", alias="SARVAM_TTS_SPEAKER")
+    sarvam_tts_sample_rate: int = Field(default=24000, alias="SARVAM_TTS_SAMPLE_RATE")  # v3's default rate
 
     # --- Embeddings ---
     # NOT Sarvam -- confirmed Sarvam has no embeddings product at all (checked their live model
@@ -99,6 +114,37 @@ class Settings(BaseSettings):
     # How many candidate chunks search_self_care_content() considers before the confidence
     # threshold filters them down -- a ceiling, not a guarantee (see that function's docstring).
     retrieval_top_k: int = Field(default=3, alias="RETRIEVAL_TOP_K")
+
+    # --- Translation for Hindi / Hinglish users (app.providers.translation; doc 34) ---
+    # mayura:v1 chosen after a live comparison (2026-10-09): it translated code-mixed and Romanised
+    # Hindi accurately ("mujhe marne ka mann kar raha hai..." -> "I feel like dying, ..."), while
+    # sarvam-translate:v1 mangled a mixed sentence. ~0.7 s per call (1.5 s with a script option).
+    translation_enabled: bool = Field(default=True, alias="TRANSLATION_ENABLED")
+    sarvam_translate_model: str = Field(default="mayura:v1", alias="SARVAM_TRANSLATE_MODEL")
+    translation_timeout_seconds: float = Field(default=5.0, alias="TRANSLATION_TIMEOUT_SECONDS")
+
+    # --- Therapist-first response (app.pipeline.curated_match; doc 32) ---
+    # PROVISIONAL starting points chosen from a 5-message spot check against the real table (a clear
+    # paraphrase scored 0.80, a right-topic-different-wording message 0.66, wrong matches 0.50-0.56)
+    # -- NOT calibrated. Doc 32 step 7 (therapist-labelled test set) must set these before relying on
+    # them; until then they are deliberately conservative (strong = serve as written, so it is rare).
+    curated_match_enabled: bool = Field(default=True, alias="CURATED_MATCH_ENABLED")
+    curated_strong_similarity: float = Field(default=0.85, alias="CURATED_STRONG_SIMILARITY")
+    curated_partial_similarity: float = Field(default=0.62, alias="CURATED_PARTIAL_SIMILARITY")
+    # A reply taken from the MIDDLE of a conversation only makes sense in context, so it needs this
+    # much extra similarity to count as strong.
+    curated_non_opening_margin: float = Field(default=0.05, alias="CURATED_NON_OPENING_MARGIN")
+    # What a PARTIAL match does: "rephrase" = the LLM lightly rewords the therapist's reply (buffered,
+    # checked, falls back to the verbatim reply if it drifts); "verbatim" = serve the therapist's reply
+    # as written, no LLM at all (fastest, most faithful). Client decision pending (doc 32 §5 #1).
+    curated_partial_mode: str = Field(default="rephrase", alias="CURATED_PARTIAL_MODE")
+    # How many therapist clarifying questions to ask in a row before the LLM is allowed to answer.
+    curated_clarify_limit: int = Field(default=1, alias="CURATED_CLARIFY_LIMIT")
+    curated_top_k: int = Field(default=5, alias="CURATED_TOP_K")
+    # On a PARTIAL match the LLM is shown up to this many close therapist examples (the best one plus
+    # other close ones above the partial threshold), so it gets the full idea of how the team handles
+    # this kind of situation instead of working from a single reply.
+    curated_max_examples: int = Field(default=3, alias="CURATED_MAX_EXAMPLES")
 
     # --- Triage thresholds (app.safety.triage) ---
     # PROVISIONAL, same caveat as above -- a small-sample starting point (live-tested against

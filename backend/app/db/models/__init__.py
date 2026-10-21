@@ -25,7 +25,11 @@ from app.db.models.kb_convo_content import (
     KBGuardrailRule,
     KBLayerContent,
     KBScenario,
+    KBSituationalRouting,
+    KBTherapistTurn,
     KBTierQuestionBank,
+    KBTranslation,
+    KBWelcomeResponse,
 )
 
 __all__ = [
@@ -47,5 +51,9 @@ __all__ = [
     "KBGuardrailRule",
     "KBLayerContent",
     "KBScenario",
+    "KBSituationalRouting",
+    "KBTherapistTurn",
     "KBTierQuestionBank",
+    "KBTranslation",
+    "KBWelcomeResponse",
 ]

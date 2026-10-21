@@ -1,0 +1,705 @@
+CATEGORY A — What the AI Knows | PHASE 1 — Foundation,,,,,,,,,,,,,,,,,,,,,,,,,
+"PURPOSE: Physical symptoms that are actually manifestations of mental/emotional conditions. Headaches, chest tightness, fatigue, stomach issues, muscle tension — presentations where the body expresses what the mind is carrying.",,,,,,,,,,,,,,,,,,,,,,,,,
+"HOW TO FILL: For each physical symptom: write how users describe it, what it typically maps to emotionally, how to tell the difference between a physical-only complaint and one with an emotional root, and what conversational approach helps uncover the connection. Think about clients who came to you with physical complaints that turned out to be anxiety, depression, or stress.",,,,,,,,,,,,,,,,,,,,,,,,,
+ESTIMATED TIME: 1.5-2 hours,,,,,,,,,,,,,,,,,,,,,,,,,
+Symptom ID,Physical/ Emotional Symptom,How Users Describe It,Likely Emotional/Mental Root,Maps to Signal IDs,Distinguishing Cues (physical-only vs emotional root),Conversational Approach to Uncover,Severity Weight,,,,,,,,,,,,,,,,,,
+PHYS-001,Disorganised Speech,"Sometimes when I am having a conversation, I know exactly what I want to say, but I lose the thread completely and then find it difficult to get back to my original point
+People tell me I keep jumping from conversation to conversation with no connection between the topics. I can follow the connection, but somehow it's not visible to anyone else. 
+My words come out in the wrong order sometimes. I know what I mean, but the way I'm saying it reaches the person all wrong. 
+People tell me that I am making different sentences, but they have no link. Like parts, they are right, but together, it's just a bunch of random sentences put together. 
+Yesterday, when I was talking to my friend, He asked me how work was. I told him about a colleague who has just joined. He told me he was asking if work was going well or not. I thought the connection I'm making isn't landing the way I expect it to.
+Sometimes in the middle of speaking, I stop completely. The thought has lost my mind, and I don't know what to say. 
+Sometimes I just speak super fast, like I am in a hurry, but I am not. 
+I make connections between things that feel absolutely logical and clear to me and completely incomprehensible to the people I'm trying to explain them to.
+I've started writing things down before conversations because what I speak is sometimes unreliable.  ","Schizophrenia
+Schizoaffective
+Delusional
+Brief Psychotic","SIG-044, SIG-045","Illogical reasoning
+Psychotic tendencies","How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences
+",3,,,,,,,,,,,,,,,,,,
+PHYS-002,Grossly Disorganized or Catatonic Behavior,"I was stuck on the couch for hours, sitting completely still. I was aware that time was passing by, but I could not move my body. I don't know what was happening.
+Sometimes when I start even the simplest task like making my coffee or getting ready, I just forget the steps or where I kept my things, even though I do this every day. 
+I have started behaving extremely weirdly, or so people tell me. The other day I was at a funeral, and I started laughing loudly. Sometimes I talk to myself, sitting in my bed and laugh or cry. 
+Once, I just went mute for 2 days. Not out of choice, I just couldn't get the words out of my mouth. I just sat there, mum, without being able to speak.
+That day, my mother caught me just waving my hand over and over again, not because I was anxious, just mechanically. Like I had to do it. 
+I feel my body is sometimes disconnected from what I want to do. I realise it only when some tell me what I was doing.
+I have not had a bath/brushed my teeth in 4 days. The steps required to initiate and complete those tasks had become genuinely inaccessible to me.
+My dad, the other day, found me with my arms raised. I had raised my hand to stretch, and I have no memory of how long I was that way. ","Schizophrenia
+Schizoaffective
+Delusional
+Brief Psychotic","SIG-044, SIG-045","Illogical reasoning
+Psychotic tendencies","How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences
+",3,,,,,,,,,,,,,,,,,,
+PHYS-003,Psychomotor retardation,"My body feels like it doesn't know how to move anymore, I am not lazy but feel genuine physical inability to initiate. I speak more slowly than I used to, there is a clear delay between the thought and the words. I take way too long to get get dressed, make chai, walk to the next room, its like my body is moving through some heaviness.  My family thinks I am being deliberately slow or difficult, but I just can't explain to them its not on purpose.  I sat in the same chair for three hours, just unable to move from one place to the next without. My thoughts arrive slowly, my words come out slowly, my body moves slowly. I used to be quick, in my thinking, my responses, my movement. The slowness is most visible in the mornings, getting from the bed to the bathroom can take an hour. People around me are operating at normal speed, but i feel I am going slow. It is not that I don't want to move or think or respond, my body simply will not cooperate",Major Depressive Disorder,"Sig 004, 005, 006, 007, 001, 023, 152,155, 156, 193, ",Physical part of the disorder,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attenton to be directed to",2,,,,,,,,,,,,,,,,,,
+PHYS-004,Occupational Impairment,"I am moving to XYZ for college, I am feeling extremely overwhelmed. I have moved to XYZ for college and I am feeling very lonely. This is the first time I have moved to a big city and I am unable to make friends. I moved to XYZ for a job but managing everything is becoing very difficult. I am finding it very difficult to manage my work and the house all alone after the moving here. ","Adjustment disorder
+Hypersomnolence Disorder",SIG-041-043,Tiredness,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attenton to be directed to",3,,,,,,,,,,,,,,,,,,
+PHYS-005,Conversion symptoms,"I once went blind for three hours, complete darkness. But the time I reached the hospital, my vision had reappeared. 
+I lost my voice for four days before my wedding. I was very frightened, I couldn't even make a sound. When I went to the ENT, he said there was nothing wrong.  It came back on its own. 
+My arm has gone paralysed twice, especially during stressful events. Both times, the doctor found nothing wrong.
+I have had seizures that are not really epilepsy. My doctor has also told me this, but I feel relieved and confused. The seizures are completely real and completely unexplained 
+I have lost my voice multiple times, especially during important meetings or presentations. ",Dissociative Identitiy Disorder,SIG-085 to 093,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHYS-006,Diurnal variation,"Every morning feels horrible, I wake up with a heaviness but in the evening it subsides. This happens like clockwork. I symptoms feel worse in the first half, but afternoon I can function. It feel like every week feels like it cost my all my energy
+Every time I am in the luteal phase, I have learned not to schedule anything important before noon. My family knows not to discuss anything happy before lunch, all important discussions happen in the  evening only. I have learned to predict how my pattern is going to be during this time and that helps me plan things and make things in the morning easier. 
+",Premenstrual Dysphoric Disorder,"Sig 004, 005, 006, 007, 001, 023, 152,155, 156, 193, ",Physical part of the disorder,How long has it been? Check for clear indicators of Premenstrual Dysphoric Disorder,3,,,,,,,,,,,,,,,,,,
+PHYS-007,Bloating,"I feel suddenly and painfully inflated like a balloon. My abdomen feels stretched to its absolute limit. Even my loosest clothes feel tight and restrictive. The sudden swelling makes me feel disconnected from my body. It is a heavy, sluggish pressure that makes moving uncomfortable. I feel ",Premenstrual Dysphoric Disorder,"Sig 004, 005, 006, 007, 001, 023, 152,155, 156, 193, ",Physical part of the disorder,How long has it been? Check for clear indicators of Premenstrual Dysphoric Disorder,3,,,,,,,,,,,,,,,,,,
+PHYS-008,Food craving,"This isn't a normal craving; it feels like a biological emergency. My brain demands sugar and carbs with an urgent intensity. I feel an insatiable, hollow hunger that food cannot satisfy. It feels like a chemical need rather than a lack of willpower. I cannot focus on anything else until the demand is met.",Premenstrual Dysphoric Disorder,"Sig 004, 005, 006, 007, 001, 023, 152,155, 156, 193, ",Physical part of the disorder,How long has it been? Check for clear indicators of Premenstrual Dysphoric Disorder,3,,,,,,,,,,,,,,,,,,
+PHYS-009,Breast tenderness,"My chest feels incredibly heavy, like it is filled with lead. Every movement sends a sharp, throbbing ache through me. Even the friction of a soft t-shirt feels painful. Sleeping on my stomach or hugging someone is impossible. It feels like a deep, constant bruise that won't go away.",Premenstrual Dysphoric Disorder,"Sig 004, 005, 006, 007, 001, 023, 152,155, 156, 193, ",Physical part of the disorder,How long has it been? Check for clear indicators of Premenstrual Dysphoric Disorder,3,,,,,,,,,,,,,,,,,,
+PHYS-010,Somatoform dissociation,"Once, my leg stopped working for two days. All my tests were normal, and none of the doctors knew what to do or say. I just didn't know what was happening either. 
+Sometimes my hands go numb, but not like pins and needles. I feel a complete absence. It comes and goes with no physical explanation anyone has been able to find.
+Sometimes my body just starts shaking, stiffening or going limp. Even after multiple tests, they have found nothing wrong. 
+I have been treated by multiple neurologists because the symptoms feel so real. But I don't understand why my tests are coming back normal. 
+It has taken me years to realise that what I am feeling is not physical but psychological. I met a psychiatrist recently who explained what is happening. 
+Sometimes, I feel my mind does not have control over my body. When I am really stressed, I feel my body breaks down first. ",Dissociative Identitiy Disorder,SIG-085 to 093,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHYS-011,Psychomotor agitation,"I just cannot sit still. I keep getting up, sitting down, getting up again
+I have been pacing the house for an hour, and my family keeps asking me to sit down, but I cannot sit down
+I am soo fidgety all the time. I need to keep my hands moving
+I keep checking my phone again and again to call someone, but I don't end up calling. 
+I feel like I am on the go, but i dont know where I have to go and what i have to do.
+","Major Depressive Disorder
+Acute Stress Disorder
+Bipolar I Disorder","Sig 004, 005, 006, 007, 001, 023, 152,155, 156, 193, ",Physical part of the disorder,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",1 or 2,,,,,,,,,,,,,,,,,,
+PHYS-012,Chest pain,"My heart starts racing and my chest tightens and even though the doctor has cleared me I cannot convince my body that nothing is wrong. I feel like i am having a heart attack, but every time I check the doctor says its nothing. The chest pain arrives without warning, in meetings, at the dinner table, in the middle of the night, and every time it happens I am certain something is seriously wrong. I dread the next chest pain, because it really feels like I am going to die.  My chest feels tight for hours sometimes, a constant low level constriction.The chest pain was the first thing that made me realise something was wrong",Panic Disorder,"Sig 185, 167, 175,",Physical part of the disorder,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHYS-013,Trembling,"My hands shake in situations where I need to appear calm like presentations, difficult conversations. The shaking/trembling makes me more anxious which makes the shaking worse. I tremble when I am overwhelmed. The embarrassment of being seen trembling gets me even more embarassed.My whole body shakes sometimes during anxiety episodes. I feel I physically lose control of my body. I have started avoiding situations where the trembling might show  The trembling arrives before I am even consciously aware that I am anxious.",Panic Disorder/ Social Anxiety Disorder,"Sig 168, 171, 174, 206, 207, 208, 157, 163,  and Sig 185, 167, 175,",Physical part of the disorder,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHYS-014,Hot flushes,"A wave of heat moves through my whole body without warning and I cannot hide it. My face goes red and everyone can see something is happening. The hot flushes arrive in the worst moments and managing them is echausting. I feel the heat rising and I know what is coming and the anticipation of it makes it worse. The physical experience of a hot flush is uncomfortable. I have started planning around the hot flushes, what I wear, where I sit, what situations I avoid.",Panic Disorder,"Sig 185, 167, 175,",Physical part of the disorder,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHYS-015,Dizziness,"I feel dizzy randomly and i dont know if it because I am stress or not slept well.  Whenever i am in crowded places, i feel lightheaded, I have started avoiding places with a lot of crowd. I feel dizzy when I feel anxious or before a stressful sitiuation. Sometimes I just feel dizzy and have to just sit down or hold on to, because i feel physically unsafe.
+",Panic Disorder,"Sig 185, 167, 175,",Physical part of the disorder,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHYS-016,Voice Tremor,"I voice gets shaky especially when i have to give presentations/ have to have difficult conversations. I know people can tell i am anixous when my voice starts shaking, thoough I try very hard to hide it. I avoid speaking in groups because my voice shakes and people ask me what happened, it makes me conscious. My voice breaks mid-sentence sometimes and i find it difficult to resume what I am saying.  People at work are realising I am anxious because my voice is getting shakey, I lost a promotion. 
+",Sign of anxiety,Can be seen across all signals - but as a supporting signal,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHYS-017,Motor Symptoms,"My leg stopped working the other day. I felt stuck,just could not move, as much as I tried. Every test I did came back normal and I didn’t know what was happening. Last time I had a family crisis, my hand started shaking uncontrollably, but the doctors say nothing is wrong. I woke up yesterday morning and could not walk, but my neurologist says my nervous system is okay. My arm went completely limp after a really stressful period at home and after almost 2 weeks it came back. I get this twitch or tremor every time I had to deal with a difficult situation",Sign of anxiety,Conversion Disorder,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHSY-018,Sensory Symptoms,"I couldn’t feel my left side at all for some time after a major argument that I had with my partner. I went blind for a few hours, like complete darkness, no night at all but by the time I reached the hospital I am absolutely fine. I lost my hearing once after a fight with my mom, but in a few hours my hearing was fine. ",Sign of anxiety ,Conversion Disorder,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHSY-019,Dysponea/ Shortness of breath,"I feel like I have shortness of breath, I even went to the doctors, but my tests have come back normal. I suddenly have difficulties breathing, I really don't know why it happens but it happens. I feel I am not breathing fully like its incomplete, and sometimes it becomes difficult to breath. My chest feels tight and i feel restricted in overwhelming situation. I even went to the doctor to check it and they found nothing. I start freaking out when I get breathless. ",Sign of anxiety,Conversion Disorder,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHSY-020,Speech Symptoms,"I lost my voice completely for four days before my wedding, but when the doctor checked, I was completely fine. I randomly started stuttering the other day, but when I went to a speech therapist, they said nothing was wrong. I suddenly start slurring when I speak, like I am drunk, but I dont understand whats happening and I am scared. Sometimes I feel like I cant speak above a whisper, like my voice just doesn't come out. I lost my voice completely once when my dad was yelling at me, it came back three days later, but my dad thought I was being dramatic. ",Sign of anxiety ,Conversion Disorder,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+PHSY-021,Functional Seizures and Episodes (Non-Epileptic Attack Disorder),"Sometime i have seizure like attacks, I have visited a doctor as well, but he says everything is fine. I am starting to get worries. I have noticed that I get these weird episodes when there is a conflict at home or high work pressed, my neurologist also pointed it out to me. My doctor thought it was seizures and  gave me meds, but they have never worked. Every time I get an attack, I am exhausted and confused, there is no neurological base to this and its confusing me. 
+",Sign of anxiety ,Conversion Disorder,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",2,,,,,,,,,,,,,,,,,,
+EM-001,Shame,"I hide my habits because people will judge me
+I made such a silly mistake the other day that I turned pink with shame. 
+After I binge on food alone, I feel guilty, disgusted and ashamed of what I have done
+I feel disgusted and guilty about my body after every binge episode
+Sometimes I do things I just cannot tell anyone. I am worried about what people who know me will think about me.
+If I share some of the decisions I take, i am sure half my friends will stop talking to me.
+My finances are so bad, I feel ashamed to even talk about it. I feel worthless whenever I am not doing finanacially well. ","Trait/ Personlity
+",Can be seen across all signals - but as a supporting signal,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-002,Guilt,"I shouldn't have gotten angry with my mom/ friend. They were only trying to look out for me.
+I made a small mistake and keep repeating it, even if people have forgiven me
+I feel guilty for taking a break, and I feel I need to keep being productive
+After I binge on food alone, I feel guilty, disgusted and ashamed of what I have done
+I feel disgusted and guilty with my body after every binge
+I wish I could do more to help him. I see bad 
+I made a decision that hurt someone I love and I cannot forgive myself
+I feel responsible for something that may not have been entirely my fault
+It is so easy for people to guilt me, that many of my friends do it even when they are wrong
+I have apologised, and the person has forgiven me but I cannot forgive myself
+I keep returning to the same moment and asking what I could have done differently
+I cannot accept the thought that I made a msitake, I feel so guilt for any decision that may be wrong.","Trait/ Personlity
+",Can be seen across all signals - but as a supporting signal,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-003,Anger/ Rage/ Chronic anger,"I feel angry with everyone all the time. People find ways to piss me off
+My wife will purposely keep things messy to make me angry
+I often fight with people on the road, especially if the over take me and put me in danger
+I hate people who don't follow rules. I always yell at them. My children have to pull me aside to ease the situation. They tell me its not big deal. 
+When my family doesn't follow what I tell them, it pisses me off. ","Trait/ Personlity
+",Can be seen across all signals - but as a supporting signal,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-004,Irritability,"I don't know why everything/ everyone is getting on my nerves today
+Even when my family is talking to me normally, I feel like yelling at them. I don't know why
+Someone in the office just passed a generic comment, and I got really annoyed. I had to leave the room, or else I would have got into a fight
+I was snapping at everyone today in the office and at home. Its like everyone chose this day only to piss me off",Mental Health or Situational,Can be seen across all signals - but as a supporting signal,"Stress
+Unresolved trauma
+Repressed emotions","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-005,Habit formation,"I keep jumping from one habit to another, and I don't end up sticking to either of them.
+I start new habits with complete commitment and abandon them within two weeks
+I always stick to bad habits but not good ones. I want to understand why
+I want to learn consistency. I am unable to exercise, sleep on time or eat healthily for more than a few weeks. 
+I want to make a lifestyle change and build a routine that I can actually follow. 
+My routine gets disrupted so easily, and I can't get back. How do I change it?",Motivation issue,Motivation issue,"Learned way of thinking
+Core Belief",Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM-006,Self-concept,"I don't really know who I am. I have just become whoever the situation needs me to be
+I feel like a background character in my own life.
+I couldn't tell you what I actually like, what I actually want
+I’m just not the kind of person who succeeds at things like this
+My opinion doesn't really matter anyway, so it’s better if I just keep quiet
+If I show them who I really am, they’ll leave.
+Why even bother trying? I’ll probably just mess it up like I always do
+I always apologise to people even when I know they are wrong
+This is probably a stupid question...
+I know I will goof up.. Its just too humilating",Identity/ self,Mostly a personality trait,"Learned way of thinking
+Core Belief",Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM-007,Self-Blame,"It's my fault everything is going wrong in my husband's life
+I am the one to blame for my parents' sadness
+If I were not born this way, my parents/family/ husband/ friends would have been happy
+I know I am the reason my boss is unhappy. I screwed up big time
+I am a screw up, I mess up everything
+",Identity/ self,Can be seen across all signals - but as a supporting signal,"Learned way of thinking
+Core Belief","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-008,Self-worth/ Worthlessness,"I feel good only when the number on the scale is exactly what I want it to be
+I feel I am worthy of love only when I achieve something
+Only if I am thin/ I get good marks is when I feel a sense of self. 
+Only if my parents approve of me is when I feel I am a good person
+I feel I deserve happiness only when I do something good/ look thin
+My friends will only like me if I am thin/ successful
+I feel I add no value to people's lives. 
+I don't think I bring much to the table if I am being honest
+I feel like people tolerate me more than they actually want me around","Identity/ self
+Anorexia Nervosa
+Bulimia Nervosa","Supporting signal in Eating disorders
+Personality Trait","Learned way of thinking
+Core Belief","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-009,Self-compassion,"I hold myself to a standard I would never apply to anyone else 
+When I make a mistake, I go over it for days
+I cannot just let it go the way other people seem to
+I don't deserve to rest until everything is done
+I find it very difficult to be kind to myself
+I am extremely hard on myself when I make a mistake
+I am such a terrible person for letting people down",Identity/ self,Mostly a personality trait,"Learned way of thinking
+Core Belief",Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM-010,Self criticism,"I replay every conversation I have had, looking for what I said wrong
+I am my own harshest critic
+I can never stop criticising myself, come what may
+When people compliment me, I feel I dont deserve it
+I just cannot take a compliment
+I set impossibly high standards for myself and then feel like a failure when I don't meet them 
+The voice in my head that points out everything I am doing wrong is the loudest voice I have",Identity/ self,Can be seen across all signals - but as a supporting signal,"Learned way of thinking
+Core Belief",Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM-011,Low self esteem,"I don't believe I am good enough
+Any time I achieve anything, I find reasons why it doesn't count
+I feel I am not capable
+Everyone else is more capable than I am
+I don't think I am worth it; everyone else is better than me.
+Even though I come first in class, I feel it's because the paper was easy and not that I am good
+I am worthless
+I will never be good enough
+I am inadequate",Trait Personality,Can be seen across all signals - but as a supporting signal,"Learned way of thinking
+Core Belief","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-012,Intolerence to Uncertainity,"I always need to know what's going to happen.
+When someone msgs they need to talk - I think of all possible worst-case scenarios
+When my boss calls me for a meeting without an agenda, I am thinking I have done some mistake
+As soon as a test is done, I am restless till I get the result.",Anxiety,Can be seen across all signals - but as a supporting signal,"Learned way of thinking
+Core Belief","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM-013,Emotional/stress eating,"I seek the comfort of food every time I have to deal with stress
+Food is the only thing that reliably makes me feel better in the moment
+When the pressure of expectations from family, from work, from everyone gets too much, eating is the one thing that helps
+After a difficult phone call with my mother, I can eat an amount that would normally take me two days 
+I have never learned another way to manage difficult feelings apart from eating. ","Just a general habit
+Binge Eating disorder",Binge disorder only if associated signals present,Stress/ difficulties in regulating emotions,"How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",2,,,,,,,,,,,,,,,,,,
+EM-014,Self-efficacy,"I don't trust myself to handle things effectively
+I feel things will go wrong even before I have started it
+I just cannot let go of any mistake that I make
+I find it very difficult to be kind to myself
+I would be horrified if I spoke to a friend the way I speak to myself inside my own head.",Identity/ self,Mostly a personality trait,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-015,Procrastination,"I put things off until the last minute and then do them in a panic. 
+I do everything last-minute, especially when deadlines are approaching
+I avoid starting things because I am afraid they won't be good enough.
+I have a list of things I have been meaning to do for months, and I cannot bring myself to start any of them.
+I distract myself with small things to avoid the big thing, and by the end of the day, the big thing is still there, and so is the guilt.
+I need help understanding what is underneath the procrastination. I don't think it is laziness but I don't know what it is.","Possible ADHD
+Motivation issue",Can be seen across all signals - but as a supporting signal,Motivation issue,"How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",2,,,,,,,,,,,,,,,,,,
+EM-016,"Goal conflicts
+Values-Behaviour Conflict","I want to advance in my career, and I want to be present for my family, but I cannot figure out how to do both, and I need help.
+Sometimes I am made to choose between work and family, but both are very important to me. 
+I have two things I want equally, and they are pulling in opposite directions 
+I am always  battling between my personal goals and what my family expects from me
+I set goals, and then I set another absolutely contradictory goal. In the end, I never end up doing anything. 
+I really need to start prioritising things that are important. I always end up planning too many things. 
+I tell my family they are important, but I end up working 12 hours a day. 
+I keep making choices that are against what I believe in. I need to understand why I keep doing this. 
+I feel I am a fraud; I am not living the values I set for myself. 
+I need help figuring out how to make good choices which reflect what I think. ",Motivation,Motivation issue,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-017,Decision fatigue,"Every single day, I feel I cannot make one single decision. Even something like what to eat, I just can't make up my mind. 
+By the end of the day I cannot make a single decision — even what to eat — and it is affecting my evenings and my relationships.""
+""I make so many decisions at work that by the time I get home I have nothing left — and my family is getting the depleted version of me.""
+""I need help structuring my day so that the important decisions happen when I have capacity for them.""
+""Every decision feels equally weighty to me — small ones drain me as much as large ones — and I need help changing that.""
+""I have decision fatigue and I didn't know it had a name — knowing it does makes me want to find a solution.""",Motivation,Motivation issue,Situational Stress,Cost benefit Analysis. Relaxation Exercises,1 or 2,,,,,,,,,,,,,,,,,,
+EM-018,Behaviour patterns,"I keep attracting the same type of men/women and end up with a heartbreak. I really don't understand why I am doing this.
+I keep self-sabotaging my own life by making wrong choices. I know I am making wrong decisions, but sometimes I just can't help it.  
+Every time I start something, I end up doing something exactly opposite to disrupt the plan. I have disrupted my plans so many times that I don't trust myself to stick to anything. 
+I need help identifying the patterns in my behaviour that are holding me back 
+I need to really learn how to regulate my triggers, 
+""I react the same way to the same triggers every time — I can predict my own behavior and I still cannot change it.""",Personality,Behaviour,"Learned behaviour
+Core Belief",Use Socratic questioning/CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-019,Performance Anxiety,"Even if I am ready for the presentation, every time I go up on stage, I go blank.
+I have been dreading this presentation for two weeks. I have to talk for only 10 minutes, but I am freaking out. 
+I actually do so well when I am practising by myself, but as soon as I am in front of a crowd, I fall apart. 
+My hands shake, my voice trembles, my heart races, and all of it is visible to the people watching and knowing they can see it makes it worse.
+I have started avoiding opportunities where I need to present. I am so anxious that I just can't get in front of a stage
+I over-prepare because I feel that will make me less anxious, but it does nothing to my anxiety. 
+Even when people say I performed well, I will replay the performance to every person to think about what I did wrong.
+I am anxious for days before my actual performance/ presentation/ meeting. 
+I really like to act/ dance, but the anxiety of going up on stage really makes it difficult to sign up for any plays/classes.
+I really need to learn how to deal with this anxiety before any performance. Because I know I am very capable",Anxiety,Emotion,"Learned way of thinking
+Core Belief",Use Socratic questioning/CBT,1,,,,,,,,,,,,,,,,,,
+EM-020,Emotional Intelligence,"I keep saying the wrong thing in difficult conversations, and I don't understand why
+My family says I act inappropriately during difficult times
+I tend to joke at serious moments. I feel I am lightening up the mood, but it backfires, and everyone is pissed at me
+I struggle to read what other people are feeling, and it is affecting my relationships
+I know I am not handling my own emotions well, and it is showing up in my work and my family life",Identity/self,Mostly a personality trait,"Learned way of thinking
+Core Belief",Use Socratic questioning/CBT,2,,,,,,,,,,,,,,,,,,
+EM-021,Alexithymia,"People ask how I feel, and I genuinely don't know 
+People feel that when I don't openly share my emotions, I am being difficult. I just don't seem to understand
+The only time I know something is bothering me is when my body is tensed and I cannot sleep
+My gf/wife/husband/bf asks me what I am feeling, and I always end up saying I don't know. I am just blank.
+I need help connecting what is happening in my body to what might be happening emotionally","Major Depressive Disorder
+Trauma or PTSD Eating Disorders. Substance Use or Somatic Symptoms",Can be seen across all signals - but as a supporting signal,Linked to Mental Health,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate medical attention should be directed to medical professionals
+Understand any traumas
+Highly likely user is under psychiatric care or looking for an answer to problem",,,,,,,,,,,,,,,,,,,
+EM-022,Loss,"When she/he left me, I felt I lost a part of me. I don't know how to get it back. 
+I was laid off from my job yesterday. I can't believe this has happened to me
+This break-up really changed me. I am still trying to live as if it didn't, but I am feeling such a disconnect. 
+My whole house was burnt in a fire, and I really am unable to cope with what has happened
+I am unable to accept my break-up. I really need help accepting the loss",Situational loss,"Based on some event
+Can also been seen in some mental health issues","Grief
+Can lead to depression","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",2,,,,,,,,,,,,,,,,,,
+EM-023,Grief,"I got out of a long-term relationship... I feel so empty
+I lost my mother/father, and I don't know what to feel. I feel numb
+I lost my aunt 4 years ago, and I thought I was over it. Yesterday I saw one of her old books, and it took me back to the day I lost her. 
+Sometimes when I listen to a particular song, it reminds me of my grandma. I dont know how to process the emotion
+I feel a part of me died with my relationships, I feel so hollow inside",Situational loss,Usually triggers by death,"Grief
+Can lead to depression","How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",2,,,,,,,,,,,,,,,,,,
+EM-024,Loneliness/ Belonging,"Even when I am surrounded by people, I feel completely lonely
+I have many friends, but no one I am close to
+I feel lonely in my marriage/relationship, and I don't know how to tell my husband/wife that without hurting him/her.
+I moved to a new city, and I haven't been able to build connections
+I am feeling homesick, and I am not able to make any friends in the city
+I need help figuring out why I keep ending up alone even when I am trying to connect.
+However much I try to mix with my classmates, no one keeps in touch with me
+I feel I am the only one who messages my friends. They never call me or text me. 
+Every time I contact my friends, they complain that I crib and cry about work
+I am surrounded by people by I still feel alone. I left my family  to start a new life, I gained freedome bu t get even more lonely. I feel I fit everywhere, but I belong nowhere. I feel I have still not found my people.",Existential & Spiritual,Situational difficulties,Feelings/emotions/thoughts,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-025,Boredom/ purposelessness/ Meaninglessness,"My life is going great, but nothing seems to interest me. 
+I took up new hobbies because I was so bored. I enjoyed it for a while but now I am bored again
+I have a packed day at work, but yet I feel bored all the time. I have so many questions, the answers to which I don't have. I have achieved everything I set out to achieve and I feel empty. The emptiness i feel even after achieving frightens me more than the striving ever did. I wake up and I cannot find a reason that feels sufficient for getting up, not depression or sadness but  just a profound absence of meaning. I need help finding something worth living toward, I feel right now I am just surviving, not just managing, something that makes the whole thing feel worthwhile. The meaninglessness arrived quietly, not in a crisis, just gradually and I barely noticed until it had taken over everything.",Existential & Spiritual,Situational difficulties,Feelings/emotions/thoughts,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-026,Occupational stress,"I think I have reached burnout at work
+I feel overloaded with work
+I feel my assignments are never-ending
+I am dreading going to work in the morning. It is draining the life out of me
+Even after I leave work, I feel it is following me around everywhere I go. 
+I have lost my mental peace over work; I keep thinking about it all the time. 
+My job and the deadlines are costing me my relationship
+My work environment has become so toxic that I don't know how to manage all the politics
+There is so much petty politics going on at my workplace, and I am fed up
+I feel like I am in survival mode all the time at work
+I feel like I am constantly trying to stay afloat at work and may have a break down some day",Situational,Difficulties in managing stress,Emotiona/situational,Use Socratic questioning/CBT/ stress management,1 or 2,,,,,,,,,,,,,,,,,,
+EM-027,Caregiver stress,"I am taking care of my mother/father/grandparents, and I feel I am stretched thin
+My life revolves around my (patient), and I feel guilty for even thinking about taking a break
+My whole schedule is planned around my (patient), and I have no time to socialise
+I willingly decided to take care of (patient), but I am struggling to deal with the constant demands
+I am so focused on keeping someone else going that I have completely stopped asking how I am doing
+I don't know when was the last time I took care of my own needs or went out. I feel my life is become my (patient)",Situational,Difficulties in managing stress,Emotiona/situational,Use Socratic questioning/CBT/ stress management,1 or 2,,,,,,,,,,,,,,,,,,
+EM-028,Family expectations and role overload,"I am finding it so difficult to live up to everyone's demands
+I am a wife, mother, daughter, employee, it's so much. I feel I am doing a bad job at all of it
+I feel my responsibilities just keep growing. By the time I am done with one thing, new responsibilities pile on
+I need to learn to say no without feeling guilty. I feel everyone expects too much out of me. 
+I come home exhausted from work demands, and my family starts with their demands. 
+Everyone needs something from me, and there is nothing left by the time I get to myself.
+",Situational,Difficulties in managing stress,Emotiona/situational,Use Socratic questioning/CBT/ stress management,1 or 2,,,,,,,,,,,,,,,,,,
+EM-029,Catastrophising,"All I ever do is think of the worse case scenarios.  My mind also goes to what could possibly go wrong even in the best situations. I am always thinking of ways I will fail even when I know there is no chance of failing. My mind builds scenarios which are completely impossible, but they are the worst things every. My mind thinks of all things that I have said which may be wrong and plays it on a non stop loop. I feel my reactions to situations are disproportionate. I overreact sometimes to situations, which are not  that intense",Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,Just 1,,,,,,,,,,,,,,,,,,
+EM-030,Rumination,"My mind is something in the same loop going on the same thought again and again. I am like a broken record. Thinking of the same thing over and over again. I replay every decision, ever conversatio, meetings and every small aspect of my life over and over again. Sometimes I am thinking so much of the decisions I have made that I can't focus on the present.  When I keep thinking of the same thing over and over again.I feel I am finding a solution. But it just feels like a waste of time.",Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,Just 1,,,,,,,,,,,,,,,,,,
+EM-031,Work-life Balance,"I check my work messages at 11 pm and first thing in the morning.
+My family keeps telling me I am always working, but I have so much work to finish. 
+I have missed too many important things because of work, and I need to change something before I miss something I cannot get back.
+My work has consumed all parts of my life, and I really need to build some boundaries
+I am successful at work and failing everywhere else, and I need help rebalancing before the everywhere else is gone",Situational,Difficulties in managing stress,Emotiona/situational,Use Socratic questioning/CBT/ stress management,1 or 2,,,,,,,,,,,,,,,,,,
+EM-032,Confidence,"I am unable to share my opinion with people. I feel no one will take me seriously. 
+I have an opinion, but I will wait to see what everyone else thinks before I say anything.
+I was asked to present in the meeting, and I said yes, and have been dreading it ever since 
+Whenever I am asked to go up on stage, I am convinced I am going to make a fool of myself. 
+I second-guess every decision I make, and I need someone else to confirm I am doing the right thing
+I got the job, but I am sure they will realise they made a mistake. 
+I find it very hard to speak up when I disagree 
+I would rather go along with something wrong than risk the confrontation
+I have been passed over for opportunities I was qualified for because I never put myself forward 
+I practice what I am going to say before every conversation, because I am afraid of saying the wrong thing
+I apologise constantly for my opinions, for taking up space, for existing in situations where I feel I don't fully belong
+I compare myself to everyone around me ",Identity/self,Mostly a personality trait,Emotion,Use Socratic questioning/CBT/ stress management,1,,,,,,,,,,,,,,,,,,
+EM-033,All-Or-Nothing thinking,"If I can't do something perfectly, I don't do it at all. All my decisions are either good or bad, there is no in-between. My work is a complete failure or a complete success, I am never okay with average work. One small error and my whole life is derailed. I am either completely on track or off track. ",Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-034,Personalisation,"If someone is in a bad mood, I immediately assume I did something wrong. I take responsibility for things that are not my fault or have anything to do with me. My first response to any problem in a relationship is to assume it is my fault. I end up making everything about me and dont know how to differeniate when its not.  I feel responsible for the way others feel and act",Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-035,Overgeneralisation,"Even if I thing goes wrong, I am sure everything will go wrong for me. I directly jump to the conclusions when I have a bad experience. I take one negative experience and make it a general assumption. I failed at one interview and now I believe I am a failure.  I got bad marks in finance. Therefore I am a terrible student/ I will not do well in life. My date cancelled on me, see its true no one wants to spend time with me. I forgot a line in my presentation, I never say the right thing. ",Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-036,Cognitive Rigidity,"Once I have made my up mind/opinion, it is very difficult for me think of it another way. I usually have only 1 way of thinking of things. Even if people show me another perspective, I just can't see it. I work best when I have a set routine, set plans with the same outcome and approach, if it changes I get really upset. I genuinely find it difficult to see other people's perspective. I am unable to adapt to change, even if I try to be flexible, i rever to my old ways.",Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-037,Schemas/ Core Beliefs,I keep ending up in the same situation over and over again. I genuinely believe I am not good enough.I feel everyone around me is going to abandon me. I believe the world is not a safe space and people can't be trusted. Everyone who is being nice to other people have some ullterior motive. I know my way of thinking of flawed but I can't help it. I honestly and deeply believe that I am unlovable ,Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-038,Worry,"I keep worrying about everything, even things that haven't happened and might never happened. I feel my worry will help me but I don't think its doing anything productive. I can't just relax and have a good time. Even when I am with family, I am always worrying. When I am not in control of the situation, I think of all worst possible outcomes. I really need to change this habit of worrying, it comes in the way  of my life.",Thoughts,Cognitive distortion,"Learned way of thinking
+Core Belief",Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-039,Assertiveness,I am unable to say no to people when they ask me for anything. I keep saying yes to everything and then resent it. I find it difficult to speak up for myself even when I know I am right. I want to learn to stand up for myself. I need to learn to express my needs clearly and directly. I never share what I feel  because how people will react,Interpersonal skills,Situational difficulties,"Learned behaviour
+Core Belief",Use Socratic questioning/ Role Play,1,,,,,,,,,,,,,,,,,,
+EM-040,Empathy,"When someone is emotional, I really don’t know how to comfort them. When someone is in pain, I usually don’t know what to say. Even when I try to comfort people, I end up making it worse. People tell me that I come across cold in emotional situations. I feel a lot of emotions when someone is said, but somehow I dont know how to express it. I usually give generic or practical responses, when I need to actually just be available emotionally.",Interpersonal skills,Situational difficulties,"Learned behaviour
+Core Belief",Use Socratic questioning/ Role Play,1,,,,,,,,,,,,,,,,,,
+EM-041,Conflict resolution,"In out house, ever disagreement turns into a full blow fight. My family members don't know how to have a conversation without fighting or being respectful. I either avoid conflict or go all out fighting. I prefer not to confront people because that leads to conflict. I completely shut down during a conflict. When i try to mediate conflict between family members, I make it worse. When my family members argue, we never reach a resolution.",Interpersonal skills,Situational difficulties,"Learned behaviour
+Core Belief",Use Socratic questioning/ Role Play,1,,,,,,,,,,,,,,,,,,
+EM-042,Boundary setting,"People take advantage of inability to say no. I know when I need to say no, but I am unable to do so.  I don't have boundaries and I don't know how to build them without feeling selfish or causing hurt. I have boundaries I want to set, but I am unable to do so. Every time I set a boundary, I feel so guilty that I eventually give in.",Interpersonal skills,Situational difficulties,"Learned behaviour
+Core Belief",Use Socratic questioning/ Role Play,1,,,,,,,,,,,,,,,,,,
+EM-043,Reciprocity,"I feel I give too much into relationships and I don’t know how to receive. I feel my emotional cup is running empty, yet I have to give people. I feel I always am in relationships where I am only giving. My relationships are one sided and I am building resentment toward my partner. I tend to over-give in relationships, and somehow I am unable to ask for anything in return. ",Interpersonal skills,Situational difficulties,"Learned behaviour
+Core Belief",Use Socratic questioning/ Role Play,1,,,,,,,,,,,,,,,,,,
+EM-044,Trust building,"I have been so hurt in relationships that I find it difficult to trust easily. I really want to start trusting in relationships, but I feel everyone is going to hurt me. I need help building trust with my husband/wife/partner after they cheated on me. I feel I have trust issue that I have had since chilchood, I feel its impacting me now",Interpersonal skills,Situational difficulties,"Learned behaviour
+Core Belief",Use Socratic questioning/ Role Play,1,,,,,,,,,,,,,,,,,,
+EM-045,Leaving Home,"I am moving to XYZ for college, I am feeling extremely overwhelmed. I have moved to XYZ for college and I am feeling very lonely. This is the first time I have moved to a big city and I am unable to make friends. I moved to XYZ for a job but managing everything is becoing very difficult. I am finding it very difficult to manage my work and the house all alone after the moving here. ",Life Transition,Situational difficulties,Situational Stress,Stress Management and emotional coping,1,,,,,,,,,,,,,,,,,,
+EM-046,Career Change,"I left my stable job to pursue my dreams, but now I am unsure whether it was a bad decision. I have been in the same field for 14 years but I see no growth. I feel my career has reached a dead end, I want to do something else but don’t know what. I took a career decision I always said I wanted and I feel more lost than I did before. I am starting over professionally at an age where I thought I would be established ",Life Transition,Situational difficulties,Situational Stress,Dealing with career confusion,1,,,,,,,,,,,,,,,,,,
+EM-047,Parenthood,"I love my child, but I have lost myself in the process, I really need to find myself. As a new parent, I am finding it overwhelming to deal with the baby and work.  I am not coping as well as I thought I would be as a new mother. Everything is overwhelming me and I am feeling all alone",Life Transition,Situational difficulties,Situational Stress,Rule out post partum,2,,,,,,,,,,,,,,,,,,
+EM-048,Midlife Crisis,"I have achieved everything I set out to achieve and I feel empty. I don't know what to do with all this success and achievment. After turning 40, I think something in me shifted, I started questioning everything I built and I don't know if that is wisdom or a crisis. I feel like I have reached a deadend in my life and need help figuring out what the second phase looks like. I am successful but unhappy, everyone says I have it great but i dont know why I am unhappy with my success. I feel I have not lived my life fully and I am running out of time. 
+",Life Transition,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-049,Empty Nest,"My second child also left for college and now I feel all alone. I have soo much free time on hand, initially it used to be focussed only on my kids. Both my daughters are married and the house feels so quiet and empty. I thought my kids moving out would give me some quiet, but the emptiness is unbearable. I gave everything to raising my children and now they are gone and I am left with a version of myself I don't recognise. My marriage was held together by the activity of parenting and now it is just the two of us and we don't know each other anymore. Not that my children have left home, I need help finding purposed outside my children.",Life Transition,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-050,Retirement,"I retired, but now I have all the free time and I don’t know what to do with it. My identity was completely tied to my work and without it I don't know who I am. I never had a life outside work and not that I am retired, I don’t know what to do. I need help building a life outside my professional achievement. My routine, my relationships, my sense of purpose all of it was connected to work, and now that I am retired, I really need to find something else to do. ",Life Transition,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-051,Chronic Illness adjustment/ Disability adjustment,"I have been diagnosed of XYZ, I need help accepeting the new life I will have after treatment. After my car accident, my body has changed and I am unable to go back to or adjust to this new life. I feel my life is revolving around my illness and need to find something beyond it. The people around me have moved on and I am still here trying to figure out how to live with this new life. I am unable to let go of my life before my accident/surgery/cancer, I miss it so much",Life Transition,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,2,,,,,,,,,,,,,,,,,,
+EM-052,Immigration,"I left the my life in India for a better life here, I feel I need to build everything from scratch, it is exhausting. Everyone says I have it so easy with this new life, but I miss the familiarity of my home. I feel I don’t belong enywehere, neither have I adjusted here nor have I let go of my old life, I need help figuring a balance. ",Life Transition,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-053,Bereavement,"I lost my XYZ and I don't know how to grieve without my life coming to a stand still. Everyone around me has moved on and I am still stuck here thinking of XYZ. After XYZ's death, I feel my life has changed 180, I need help navigating my emotions. I lost the person who knew me best and I feel completely lost and lonely",Life Transition,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-054,Divorce,"I initiated the divorce and now I am feeling sad about it. I need to process what I am feeling. My marriage ended on a absolutely sour note, I can't stop blaming myself. My marriage was my whole identity, and now I don’t know what I am without it. I need help rebuilding my lfei an start over after this messy divorce. I have been so exhausted with all the court an legal visits, that I have been unable to process what lif would be after we split. The social fallout of the divorce has been as hard as the divorce. I feel soo judged by my family for choosing to split from my partner.",Life Transition,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,2,,,,,,,,,,,,,,,,,,
+EM-055,Redundancy/job loss/ job stress/toxic environment/ umployment/ job insecurity,"I was fired from my job recently, and I don't know how to process this. I was put on a PIP for 6 months and then asked to leave, my manager made my life hell. I love my job but not the people, they are very petty. Everyone at work just likes to make groups and act petty. I was made redundant yesterday because there was a massive lay off. My boss has made my life an absolute hell, keeps calling at any time, messages randomly for non urgent work. I have been without a job for 4 months now and its taking a toll on my finances. I have applied to at least 100+ jobs, but I never hear from them. I need help stay positive about getting a job soon. I think I am losing my confidence. I feel my manager is unhappy with my performance even though they say I am doing well, I worry I may lose my job.  Every time i am called for a meeting, I worry they will fire me, I really need to deal with my anxiety about my job, its hampering my performance.",Financial & Occupational ,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-056,Financial Stress/Debt Burden/ Financial Infidelity,"I cannot tell anyone how bad my financial situation is right now. I know It is shameful the financial mess I am in. I am showing people I am completely okay, but my financies area mess/ falling apart right now. My family attaches a lot of self worth to financial success but I feel like a failure right now. The shame is stopping me from getting all the help I need. I have made a mess of my finances with poor planning and my family is upset with me.  I have taken so many loans, the amount is just accumulating. I have borrowed money from wrong people and now I have pepople constantly knocking at my door. My family is stressed out by how much debt we are in.  Because of all the debt and overspending, I have been hiding my finances from my partner. My partner has been hiding their financial decisions from me, I found out they have another account. I feel extremely betrayed.  I have this secret debt due to a bad financial decision I took, My family doesn't know about it. My partner has been distant from me ever since they found out about my bad financial decisions and secrets. ",Financial & Occupational ,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-057,Career Dissatisfaction,"I am one of the lucky ones to get in the top 5 companies people die for, but I am so unhappy. People tell me I am lucky to get into XYZ, but I feel the exact opposite. I feel I have chosen the wrong career and I feel stuck here for 10 years not. I don’t know what to do and I feel I will start from scratch. My work life is become mundane and like clock work I go and I come back, its been so for 15 years now, feels like a waste of time. ",Financial & Occupational ,Situational difficulties,Situational Stress,Use Socratic questioning/ CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-058,Sexual Identity,"I have always known that I am not attracted to men/women and I have never told anyone, I feel I am hiding a big part of me. I am trying to understand my own sexuality but I am not able to figure it out. I am purely
+""I got married because that is what was expected and I am realising that I may have married the wrong gender — and I don't know what to do with that.""
+""I need help finding language for who I am — I don't fit the categories I have been given and I need help finding the ones that fit.""
+""I need support from someone who understands both the psychological and the Indian cultural complexity of what I am carrying.""",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-059,Sexual Shame,"I grew up being told not to talk about sex to anyone but your husband. I was told talking about sex is dirty anf sinful. As a married person, now I am ashamed to getting intimate with my partner. When friends are sitting together and talking about their sex life, I feel very ashamed. Even when we were taught sex ed in class, it was told to us that it was morally wrong. When I have  sexual desires, I feel extremely uncomfortable and shameful. I cannot get intimate with my partner because of the shame I feel when we try to get intimate",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-060,Consent,"As a child, my uncle touched me inappropriately, that I realise now that it was wrong. I said yes to a sexual encounter, when I actually meant no, I still feel disgusted by it. I need help understanding the difference between what I agreed to and what I actually wanted. In my family, husbands had to be pleased, so we wer enever taught consent.",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-061,Sexual guilt,"I feel guilt that I have sxual desires, I was told they are wrong. I got intimate with my boyfriend who I love at lot, but now I feel guilty. Our religion teaches us that sex is not for pleasure, but I enjoy it. Now I am conflicted. I feel guilty every time I experience pleasure, feels like i dont deserve it. I am unable to truly enjoy sex in my marriage because of this guilt I have learnt about in my childhood.",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-062,Intimacy Issues,"Every time I try to get intimate, something comes in my way and stops me. I find emotional intimacy harder than physical intimacy. I can be physically present and emotionally completely absent. I had an arranged marriage and I really need to build intimacy with my partner. My partner and I don't really get intimate, we are great otherwise. ",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-063,Desire and compatibility,"I feel my partner and I want complete different things physically, but we are scared to talk about it. I need help having a conversation with my partner that we have been avoiding for years. I married somene I am not compatible sexually, and now I don't know what to do about it. I married someone I am compatible in every way but sexually.",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-064,Sexual communication,"I really find it difficult to communicate my sexual need to my partner. I am unable to communicate about this with them, I just shut down. I find it difficult to use the right words to express what I feel. Every time I try to express my needs it turns into an argument. I dont think my partner is able to understand my sexual needs. They always turn into an argument if i ever share what I want. I need help communcating my need to my partner, I have never voiced to them what I truly want. We talk about everything but sex and intimacy, I feel it will lead to arguments if we do. ",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-065,Sexual Boundaries,"I am unable to say no to may partners for any sexual connection. My boundaries or no is never respected by my partner, I don’t know how to stand up for myself. I need help identifying what my actual limits are. I say yes to things I don't want because I don't know how to refuse without it becoming a bigger problem. I need help building and holding boundaries in an intimate relationship. I know boundaries should exist and I don't know how to create them",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-066,Pornography,"I spend close to 6 hours every day watching porn. I am unable to focus on work because I watch porn too much. My time watching porn has increased significantly. The type of porn I watched over the years has changed in something more dark and disturbing, I think I need help. I use porn as a coping/ escape mechanism for stress. My partner caught me watching porn and not they are upset with me. I watch porn when I am lonely and I have started feeling lonely all the time.",Sex & Relationships,Intimacy concerns,Feelings/emotions/thoughts,Understand triggers and reason for porn usage. Understand how its impacting life,2,,,,,,,,,,,,,,,,,,
+EM-067,Existential Anxiety + Fear of Death + Acceptance of Mortality,"I lie awake sometimes and the thought that I will one day simply not exist fills me with a panic I cannot reason my way out of. Since my father died I cannot stop thinking about my own death.  I know death is inevitable  and the inability to make peace with something I cannot change is exhausting. I want to reach a place where I can hold my mortality without it terrifying me. The fear is not of pain or of dying, it is of the nothingness afterward ",Existential & Spiritual,Existential crisis,Feelings/emotions/thoughts,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-068,Spiritual Crisis + Loss of Faith,"After my XYZ died, I lost all faith I had in god. I grew up deeply religious but the trauma I have faced had led me to question my faith. I think I have lost faith in what I truly believed once upon a time and need help rebuild it. My relationship with God which was so strong has been completely shattered, I really don't know how to repair it. Faith was the only thing that gave me certainity, but now I dont know if I have that with me",Existential & Spiritual,Existential crisis,Feelings/emotions/thoughts,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-069,Hope + Despair,"I keep shifting from believing things will get better and being completely convinced they wont, I really can't find a stable place. Even though I want to be hopeful, I am unable to do so, I really need help.I have really lost hope in XYZ, I need help figuring out if i can rebuild it. I feel this constant despair that my future holds nothing, I need help challenging it and being positive.",Existential & Spiritual,Existential crisis,Feelings/emotions/thoughts,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-070,Existential Guilt + Legacy,"I am halfway through my life and I have not become the person I intended to be. I think about what I will leave behind for my family, it isnt substaintial and I feel ashamed. I need help making peace with the choices I have made.  I want my life to have meant something beyond my own comfort. I feel guilt I have not used my time wisely in my relationship, my own ife or my work.",Existential & Spiritual,Existential crisis,Feelings/emotions/thoughts,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-071,Self-Actualisation,"I have met every expectation everyone had of me and I still feel like I haven't become who I actually am. I need help figuring out what I would want if nobody was around or had expectations from me. I  have spent my whole life becoming what my family needed me to be, I need help finding what I actually want to become. I feel like there is a version of me I haven't reached yet and I don't know how to get there. I need help understanding the difference between the life I have built and the life I actually want.",Personal Growth & Wellbing,Existential crisis,Feelings/emotions/thoughts,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-072,"Wellbeing/ Self Care Deficit
+","I feel I always take care of other and neglect my own needs and wellbeing. I need to learn to put my wellbeing needs first and make a life style change. My wellbeing has been the last priority for so long that I don't know what it actually needs anymore. I want to feel genuinely well, not just functional, not just managing, actually well. I take care of everyone around me and I genuinely cannot remember the last time I did something just for myself. I know I need to look after myself better but every time I try something else takes priority and I end up at the bottom of my own list. I have been running on empty for so long that I don't even know what I need anymore. I feel guilty when I do something for myself. I neglect all my basic needs - sleep, food, rest and me time, took work around everyone else's schedule. I need help making myself a priority without feeling selfish.",Personal Growth & Wellbing,Betterment,Feelings/emotions/thoughts,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-073,Mindfulness,"I want to learn to be in the present. I am always stuck in the past or future, I want to learn to be in the now. I have tried meditation but I cannot get rid of my thoughts. My mind moves so fast that the present moment feels like something I pass through rather than something I inhabit. I need help slowing down enough to actually experience my own life. I want to be more present with my family",Personal Growth & Wellbing,Betterment,Feelings/emotions/thoughts,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-074,Gratitude,I know I have a great life but I just cannot feel it. I focus only on negative even when everything has been going well. I need help building appreciation for what I have. I just feel when I give gratitude it feel dishonest. I  want to feel more appreciation for ordinary moments,Personal Growth & Wellbing,Betterment,Feelings/emotions/thoughts,Use Socratic questioning/ CBT,1,,,,,,,,,,,,,,,,,,
+EM-075,Parenting Styles + Emotional Availability + Attunement,"As a child, I felt my parents were physically present but emotionally absent. I don't know how to be emotionally available to my children because nobody was emotionally available to me. I respond to my child's behavior but I don't think I respond to my child. I was raised strictly and I am either repeating that or overcompensating. I want to be the parent who actually sees my child, not just manages them,and I need help learning how",Parenting & Family Dynamics,Parent-child relationship,Feelings/emotions/thoughts,Use Socratic questioning/ CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-076,Secure Base + Triangulation,"I never felt safe at home growing up. My home was riddled with tension and I am always am stressed. I was always stuck in the middle of my parents conflicts and now its impacts me as an adult. I was the messenger for my parents, all I did was carry messages between them when they fought. I want to create a home that feels genuinely safe for my children. I realize I am doing to my children what was done to me ",Parenting & Family Dynamics,Parent-child relationship - Safety,Feelings/emotions/thoughts,Use Socratic questioning/ CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-077,Scapegoating + Family Roles,"I was the problem child in my family. I was the blacksheep in my family. I always got in trouble as a child. I  was the good one, the responsible one, the one who never caused trouble. I was the good one, the responsible one, the one who never caused trouble.  Every family has roles and mine were very fixed, I knew exactly what was expected of me and there was no room to be anything else. I am still playing the same role in my family at forty that I played at ten. My sibling was the golden child and I was the difficult one.",Parenting & Family Dynamics,Parent-child relationship - Family roles,Feelings/emotions/thoughts,Use Socratic questioning/ CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-078,Parentification + Loyalty Conflicts,"I was my mother's emotional support from a young age. She always dumped all her trauma on me. I raise my siblings, both emotionally practically. I didn’t have a childhood of my own. Every time I tried to have my own needs my family made me feel disloyal.I was put in the middle of my parents' relationship in a way that meant any closeness with one felt like a betrayal of the other. I grew up feeling responsible for my parents' happiness and I am still doing it at thirty-five and I need help putting it down",Parenting & Family Dynamics,Parent-child relationship,Feelings/emotions/thoughts,Use Socratic questioning/CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-079,Family Secrets + Intergenerational Patterns,"There are these hidden secrets in my family that nobody talks about. I keep repeating patterns I watched my parents live, I need to break the chain. I discovered something about my family history that reframed everything I thought I understood about why we are the way we are. The same dynamics repeat across generations in my family, and I want to stop it. I need help understanding what I inherited that isn't mine to keep carrying.",Parenting & Family Dynamics,Parent-child relationship,Feelings/emotions/thoughts,Use Socratic questioning/CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-080,Sibling Dynamics,"My sibling and I don’t even talk to each other, we call only during occasions. There is a rivalry between me and my sibling that was created by our parents and is still running thirty years later. I was closer to my sibling than anyone and something broke between us and I need help understanding whether it can be repaired. The favoritism in my family was obvious and unspoken and it has affected every relationship I have. I need help navigating a sibling relationship that has become complicated by caregiving, inheritance, and old wounds that were never addressed.",Parenting & Family Dynamics,Parent-child relationship,Feelings/emotions/thoughts,Use Socratic questioning/CBT,1 or 2,,,,,,,,,,,,,,,,,,
+EM-081,Discrimination + Stigma,I have been treated differently for the way I look and I really need help processing this anger. The stigma around my mental health diagnosis has cost me professionally and socially in ways that feel as damaging as the condition itself. I have started believing the diminished version of myself that discrimination created. I need help separating what is mine from what was put on me by a system that was never designed to see me fully. The discrimination was subtle enough that nobody around me would validate it and i feel gaslit. ,Social belonging,Situational difficulties,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-082,Intergenerational Trauma,"The trauma in my family was never spoken about but it shaped everything.  come from a community that experienced something significant and the effects of it are still present in how we live, how we parent, how we trust. I carry wounds I did not personally receive. I need help understanding how to heal something that was handed to me rather than something that happened directly to me. I need help separating what is mine from what I inherited, because I am carrying grief and fear that belong to a history larger than my own life",Social belonging,Situational difficulties,Feelings/emotions/thoughts,Use Socratic questioning,2,,,,,,,,,,,,,,,,,,
+EM-083,Social Comparison,"I measure myself against everyone around me constantlySocial media has made the comparison relentless. I need help building a sense of my own worth that doesn't depend on where I sit relative to everyone else. I compare my insides to other people's outsides and I always lose. In our community comparison is constant, achievements, marriages, children, salaries, and I have internalized it so completely that I do it to myself automatically.",Social belonging,Situational difficulties,Feelings/emotions/thoughts,Use Socratic questioning,1 or 2,,,,,,,,,,,,,,,,,,
+EM-084,Sleep Hygiene,"I know all the things I am supposed to do for better sleep and I do none of them. My phone is the last thing I look at at night and the first thing I reach for in the morning. I know my poor sleep is sabotaging my health and mental wellbing. I don't have a consistent sleep routine, I sleep at different times every night. Night is the only time I get for myself, So i end up sleeping late. I lie in bed and my mind starts running through everything I didn't finish and everything I need to do tomorrow. My sleep has been disrupted for so long that I have forgotten what actually rested feels like.",Body & Physical experience,Sleep needs,Habit,Observe for depression signals,1 or 2,,,,,,,,,,,,,,,,,,
+EM-085,Burnout,"I used to love what I do and now I feel absolutely nothing about it. I am present everywhere and nowhere, at my desk, at home, with my children, going through motions without any of it actually reaching me. I have nothing left to give and people keep asking and I keep finding something from somewhere and I don't know how much longer that is sustainable. I am exhausted in a way that a weekend cannot fix. I have tried rest and I come back just as empty as I left. I became cynical about things I used to care deeply about. My body started saying no before my mind was ready to admit it , the headaches, the exhaustion, the getting sick repeatedly. I think it gave up before I did. I need help understanding whether what I am feeling is burnout or something else. I built my entire identity around being capable and productive and now I cannot do either. I have been running at this pace for so long that slowing down feels more frightening than continuing.",Stress,Stress Issues,Stress/ difficulties in regulating emotions,Use Socratic questioning/CBT/ stress management,2,,,,,,,,,,,,,,,,,,
+EM-086,general anxiousness,"my mind keeps jumping to what will go wrong. i cannot stop worring .whenever i am worried about it 
+my mind spirals . i keep thinking about the person/ situation and come up with all possibilities. i feel on edge most of the time. my chest tightens up just thinking about it 
+
+","Stress
+Situational Anxiousness
+",Stress Issues,Stress/ difficulties in regulating emotions,Use Socratic questioning/CBT/ stress management,1 or 2,,,,,,,,,,,,,,,,,,
+EM-087,sadness,i feel gloomy. Nothing seems to be enjoyble anymore.This situation makes me lose hope. I feel hurt about this person/ situation. Sometimes i feel like things are pointless. I keep thinking about the things i have lost,Situational,Can be seen across all signals - but as a supporting signal,Feelings/emotions,Observe for depression signals,2,,,,,,,,,,,,,,,,,,
+EM-088,fear,"what if something bad happens
+this person/situation makes me feel unsafe
+i dont think i would be able to handle this
+i am terrifed to experience the worst
+i am worried about what will happen
+i freeze when i have to face that situation
+","Anxiousness 
+uncertinity
+stress",Can be seen across all signals - but as a supporting signal,Feelings/emotions,"How long have you been feeling this?
+
+Check for any obvious threats
+Immediate attention should be directed to medical professionals
+Understand any traumas
+",2,,,,,,,,,,,,,,,,,,
+EM-089,frustration,"i keep running into the same problem.
+nothing seems to work out
+i feel so stuck.
+why does this keep happenning. 
+I am losing my patience
+i feel annoyed as to why this situation has to be
+a problem all the time",Situational,Can be seen across all signals - but as a supporting signal,Feelings/emotions,Use Socratic questioning/CBT/ stress management,1,,,,,,,,,,,,,,,,,,
+EM-090,general embarassment,"people would have thought i am stupid
+why did i have to say/ do that?
+that was so silly of me
+i feel so weird i dont think i would want to face 
+them again
+i keep replaying that scenerio in my head.
+i wanted to run away from there after what i said/
+did",Identity/self,Can be seen across all signals - but as a supporting signal,Feelings/emotions,Use Socratic questioning/CBT/ stress management,1,,,,,,,,,,,,,,,,,,
+EM- 091,general stress,"there is a lot going on
+i have too much on my plate and it feels very
+overwhelming
+i feel mentally exhausted
+I dont know where to start
+my body tenses up when i see how much there is
+to do",Situational,Stress Issues,Stress/ difficulties in regulating emotions,Use Socratic questioning/CBT/ stress management,1 or 2,,,,,,,,,,,,,,,,,,
+EM- 092,Digust,I am disgusted by the choice I recently made. I look back at the decision I have taken and feel so disgusted with myself. My past decision disgust me. I feel repelled by some of the qualities I have. I shudder with disgust every time I think of the horrible situation I put myself in. ,Identity/ self,Can be seen across all signals - but as a supporting signal,Feelings/emotions,Use Socratic questioning/CBT/ stress management,1 or 2,,,,,,,,,,,,,,,,,,
+EM 093,Nervousnss,"i cannot seem to relax
+i feel on edge when faced with a specific situation
+i get butterflies in my stomach 
+i mind cannot stop thinking/ making up scenerios 
+in my head
+the situation is scary and its making me nervous
+but i can manage.
+i feel apprehensive/ tense/ shaky","Stress
+Situational Anxiousness
+",Can be seen across all signals - but as a supporting signal,Feelings/emotions,Use Socratic questioning/CBT/ stress management/ Mindfulness,1 or 2,,,,,,,,,,,,,,,,,,
+EM 094,Overthinking,"i think of all the possible options/ solutions/ 
+probabilities that can exist in this 
+i sprial alot in uncertninty 
+i cannot stop thinking sometimes","Stress
+Situational Anxiousness
+",Can be seen across all signals - but as a supporting signal,Thoughts,Use Socratic questioning/CBT/ stress management/ Mindfulness,1 or 2,,,,,,,,,,,,,,,,,,
+EM 095,general uncertinity,"i dont know what to do/ expect
+i wish i had a clearer answer
+i feel stuck 
+i keep waiting for clarity / certinity
+i feel restless/ on edge","Stress
+Situational Anxiousness
+",Can be seen across all signals - but as a supporting signal,Feelings/emotions,Use Socratic questioning/CBT/ stress management/ Mindfulness,1 or 2,,,,,,,,,,,,,,,,,,
+EM 096,sensitive,"i take things personally.
+things get to me a little more than it should
+i am told that i am too emotional.
+i feel for others emotionally to a point that it 
+affects me more than it should",Identity/ self,Can be seen across all signals - but as a supporting signal,Trait,Use Socratic questioning/CBT/ stress management/ Mindfulness,1 or 2,,,,,,,,,,,,,,,,,,
+EM 097,hurt,"that event/ incident really stayed with me
+i cant stop thinking about it
+i did not expect this from them.
+i feel low/ down
+i pulled away from the person/ situation
+i thought they cared more than that.",Situational,Situational difficulties,Feelings/emotions,Use Socratic questioning/CBT/ stress management/ Mindfulness,1 or 2,,,,,,,,,,,,,,,,,,
+EM 098,Depressed mood,"nothing feel exciting anymore
+i feel like most of the things are monotonous 
+i sometimes dont feel like myself
+i have slowly drifted from the things that i used to enjoy","Stress
+Situational Anxiousness
+",Can be seen across all signals - but as a supporting signal,Feelings/emotions,Use Socratic questioning/CBT/ stress management/ Mindfulness,1 or 2,,,,,,,,,,,,,,,,,,
+EM 099,Functional Impairment,"I know exactly what I need to do today, but I’ve been staring at my laptop for two hours and I just can't bring myself to start. I’ve been turning down plans and ignoring my friends' texts for weeks because socailsing is exhausting. I need to muster up all the energy to get out of bed and brush my teeth. I used to cook and keep my space clean, but now even if i see the mess, I just cant do it. Any small change in schedule or work derails me completely and i just shut down. My brain is so foggy that I just cant take simple decisions like what to wear or what to cook. I am physically present but emotionally never really there. I keep missing deadlines and snapping at my colleagues because I am running out of patience. I have been missing meeting because I am sleeping through my alarms and waking up in the middle of the night. ",Overall Impact,Can be seen across all signals - but as a supporting signal,Functioning,"How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",2,,,,,,,,,,,,,,,,,,
+EM 100,Social Impairment,"I have stopped accepting invitations because it feels like I am acting in front of a crowd. I know people are moving away because I am not making an effort but I dont have the capacity to do anything right now. I used to call people to check on but now its the absolute opposite, people check on me. I have started cancelling most of my plans with people and now people rarely involve me in plans. Whenever I do visit people, i feel emotionally I am not there at all. I have lost most of mt friends because I gradually stardted disappearing.  Small talk is soo exhausating, I need to put in so much effort to tell people how I am feeling or how was my day. I have started avoiding all social situations, family functions and crowded places because it takes a lot out of me to be present among people. People rarely call me these days because they know ill avoid it. 
+",Overall Impact,Can be seen across all signals - but as a supporting signal,Functioning,"How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",2,,,,,,,,,,,,,,,,,,
+EM 101,Curious,"I am not sure what I am looking for, I am just want to explore right now. Something caught my attention the other day, I was keen on finding out what it is. Sometimes I just want to explore my life without knowing where it may lead. I am curious about XYZ treatment plan, but not sure how it would go. I have these questions which I feel no one is able to answer for me. ",Identity/ Self/ Situational,Just general curiosity,Thoughts,Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM 102,Identity Transition,"I feel like I am in between , not who I was and not yet who I am becoming. Something has shifted in me, and I am still unable to understand what it means. I feel.I have changed as a person, this new me doesn't make sense and fit anymore. I feel I am changing but no one around me seems to notice. I feel I am changing and people just don't know how to deal with it.
+",Identity/ Self/ Situational,Can be seen across all signals - but as a supporting signal,Emotions/thoughts,Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM 103,Sexual Transition,"I think I might be gay and I don't know what to do with that yet. I think I like women more than men, but I am scared to speak to someone attractive. I feel I like both men and women, but I am not sure how to express what I feel. I want to be able to accept how I am feeling about men/women/both. I am realising right now that I don't think I am attracted to women/men, and i need help coming to terms with it",Sex & Relationships,Identity/self,Curisotiy about self ,Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM 104,Self acceptance,"I am so hard on myself that I can't accept even the smallest mistake that I make.  I need to always do the right thing. I don't like who I am , why can't I be any different. I want to be okay with how I am as a person. Some days I feel I am ok with who I am, someday I dont like myself at all",Identity/ self,Mostly a personality trait/ Cognitive Distortion,Curisotiy about self ,Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM 105,Self rejection,"I am my own harshest critic and I don’t know how shut that negative voice. I find it very hard to be kind to myself. I don’t' like myself. I always say harsh things to myself, when I mess up.",Identity/ self,Mostly a personality trait/ Cognitive Distortion,Curisotiy about self ,Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM 106,Mental/ cognitive preoccupations,My mind won't let something go no matter what I do. I keep going over the same thing in my head and getting nowhere. There is always something running in the background that I cannot switch off. I  get stuck in my own head a lot and it exhausts me. I  overthink everything and I know it and I cannot stop.,Thoughts,Can be seen across all signals - but as a supporting signal,Thoughts,Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM 107,Distress,"I am not okay right now. I think something is going to go wrong and I don't know how to fix it. I am stressing out right now and I dont know how to calm myself.  Things are hard right now and I needed need dealing with it. I am struggling and I am not sure what I need but I needed to reach out.
+","Stress
+Situational Anxiousness
+",Can be seen across all signals - but as a supporting signal,Situational Stress,"How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1,,,,,,,,,,,,,,,,,,
+EM 108,Confusion,"I am feel so many things and nothing at the same time. I am really confused what to feel right now. Nothing makes sense right now and I don't know where to start. I am feeling so overwhelmed right now, I can't get any clarity on my own. I am trying to figure out what is going on inside me and I keep hitting a wall. I just need help making sense of something",Thoughts Neurological,Can be seen across all signals - but as a supporting signal,Situational Stress,"How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",2,,,,,,,,,,,,,,,,,,
+EM 109,Reassurance seeking,"Is it going to be okay? I really need to know. I keep asking people if I am alright, but whatever they say doesn’t make me feel better. I just want to know that what I am going through makes sense. I just want to know that what I am feeling is going to pass. I just want to know what what I am feel is real and I am not making it up.",Identity/ self,Can sometimes be seen in people who are anxious,Situational Stress,"How long have you been feeling this? lifelong or short-term 
+
+Observe conversation around a particular situation. The key differentiator will if they have been always been so or changed over time",1 or 2,,,,,,,,,,,,,,,,,,
+EM 110,Self reflection,I want to understand myself better. I have been thinking about some patterns in my life and I want to look at them honestly. I want to figure out why I do the things I do. I need space to think something through out loud. I want to understand something about myself that I keep avoiding.,Identity/ self,Can be seen in people looking for self growth or introspection,General,Use Socratic questioning,1,,,,,,,,,,,,,,,,,,
+EM 111,Excitement,Something good is happening and I want to enjoy it without talking myself out of it. I feel genuinely excited about something for the first time in a while.  Something is positively changing and I want to follow it. I feel hopeful and I am not sure I trust it yet. I want to let myself feel good about something. ,Emotional,Positive sharing,General,Provide general encouragement,1,,,,,,,,,,,,,,,,,,
+EM 112,Interest,"Something caught my attention and I want to try it.  I am curious about something and I want to explore it. I have found something that I feel will genuinely holds my interest. I feel disinterest easily, I need help sustaining interest this time.  I am drawn to something and work on it. ",Personal Growth & Wellbing,Positive sharing,General,Provide general encouragement,1,,,,,,,,,,,,,,,,,,
+EM 113,Social inclusion,I want to feel like I belong somewhere. I want people to really get who I am and what I feel. I am tired of feeling like an outsider every time I meet my friends. My friendships feel like such hard work. I just want to find my people.,Social belonging,Identity/self/ Social issues,Situational Stress,Use Socratic questioning/ CBT,2,,,,,,,,,,,,,,,,,,
+EM 114,Recreation,"I feel I need to find something I genuinely enjoy doing. I have forgotten what I can do just for fun. I just want to forget everything and have fun. I want to restart (hobby), I used to be soo good at it. I miss just taking time out and doing (hobby). ",Personal Growth & Wellbing,Motivation issue,"Possible loss of interest, not to do with depression",Help plan engaging activities/ build confidence,1 or 2,,,,,,,,,,,,,,,,,,
+EM 115,Relaxation,"I need to find a way to actually switch off these contant thoughts. I need to learn to relax and be ok with doing nothing. I dont know when was the last time I just relaxed. I dont really just relax, I work less. I want to be okay with not working for one day. 
+",Personal Growth & Wellbing,Stress Issues,Stress/ difficulties in regulating emotions,Relaxation and mindfulness activities,1,,,,,,,,,,,,,,,,,,
+EM 116,Emotional/cognitve coping,"I need to find better ways of dealing with things when they get hard. i feel I have tried everything, but nothing seems to working any more. I feel I am very poor coping strategies, I need to find something better to do. I want to stop getting so worked up everytime something goes wrong. 
+",Personal Growth & Wellbing,Stress Issues,Stress/ difficulties in regulating emotions,Relaxation and mindfulness activities,1,,,,,,,,,,,,,,,,,,
+EM 117,Distraction,"I drown myself in work just so that I don't feel things. I have started taking on more work so that I dont have to deal with my feelings.Something I doomscroll till I fall asleep just to avoid being with my own thoughts. I just can't sit idle, I know ill spiral into something dark. Sitting still feels unbearable, but I want to learn to deal with this feeling. I know I keep busy to avoid these negative feelings.
+
+",Personal Growth & Wellbing,Stress Issues,Stress/ difficulties in regulating emotions,Relaxation and mindfulness activities,1,,,,,,,,,,,,,,,,,,
+EM 118,One-Sided Relationship,"I feel like I know this person completely and they have no idea I exist. I feel this person is meant for me and is the one.  I follow every update, every post, every interview and for them I am just a number in their follower count. I talk about him like he is someone in my life and my family looks at me strangely. I feel like I am part of their family, its consuming a lot of time and energy. when they stopped posting about their life, I was very restless and couldn't sleep. I send them birthday wishes every year knowing they will never see it. I root for their children like they are my own",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 119,Imagined Intimacy,"When she/he speaks in the videos it feels like /she/ he is talking directly to me. I feel this youtuber/ instagramer know me the be the best, but he has never met me. Watching the family vlogs makes me feel like I am part of the family. They are such a sweet couple, I wish she was my girl friend. My friends say its all scripted, but how can someone fake such happiness. I feel like we would get along so well if we met. Sometimes their content feels like it was specially made for me. ",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 120,Illusion of Friendship,"I know everything about her life, but she knows nothing about mine. I have watched all their videos and feel it would be soo much fun to be a part of their friend group. I feel I should comment and share things with them, but I remember they don't know me. It feels like they are my best friend, but its only one sided. I refer to them by their first name in conversations without thinking. My friends have started calling them my imaginary best friend ",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 121,No Reciprocity,"I invest so much into following this person and there is nothing coming back. They will never know my name but I know every little detail of their life.  The relationship is completely one way and somewhere I know that.  I celebrate their wins and mourn their losses and they will never do the same for me. The effort only flows one way and I have made peace with that, mostly.",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 122,Emotional Investment,"When something bad happens to them I am genuinely upset for days. Their good news feels like my good news.Their wins and lossess feel like my own.  I get more emotionally involved in their life than in things happening in my own. I was genuinely angry on their behalf when something unfair happened to them. Their struggles affect my mood in a way that surprises me sometimes. When they get close to someone, I really hope they start dating they, I am so invested in their relationship. ",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 123,Idealisation,"This person is just so perfect, everything about them is just amazing. I defend them in arguments like they are family even though I have never met them. When people comment something negative about them, I get so annoyed and start defending them. I cannot hear anything negative about them. I know people say a lot of negative things about them, but for me they are perfect. ",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 124,Attachment,"I feel genuinely attached to someone I have never been in the same room as.
+Missing their content feels like missing a person.
+When they took a break from posting I felt their absence in a way that surprised me. I have followed this actor since I was in school and they feel like a constant in my life. Seeing them in something new feels like catching up with someone familiar. I have opinions about their personal life that I express with a confidence in their comment section. I know this character is not really but I reall miss them when they died in the series/ series ended. I have cried over a fictional character's death more than over some real losses. I feel genuinely protective of a person who was written by someone else and played by someone else. I have been following her daily life for three years and I feel like I know her family personally. When she went through something difficult I was genuinely worried about her. I trust her recommendations more than I trust people I actually know. I watch his streams every evening and it feels like spending time with someone. He knows his regular viewers by username and when he said mine once I felt genuinely seen. The stream community feels like my only social life.",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 125,Preoccupation,"I check their page first thing in the morning before I am out of bed.  My mind drifts to them during conversations, during work, during meal, all I am thinking of is them.  A significant part of my mental space is occupied by someone who doesn't know I exist. I notice when they haven't posted and I wonder if they are okay. Their absence from my feed feels like something missing from my day.",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 126,Escapism,"Watching their content iis the only time I actually forget everything,  When my life feels difficult their world their videos is only what makes me feel better. I was going through a bad phase and they videos helped me out. I use their content to switch off from real life issues. I have fully planned what I would say to them if I ever meet them. I am so excited to share things about my life if we ever meet. 
+",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 127,Vicarious Living,"I live through their travels, their experiences, their life in a way I don't live through my own.
+Watching them do things I haven't done feels almost like doing them myself.
+Their life feels more exciting than mine. I feel the excitement of their achievements as if they are mine. Through them I experience things I haven't been able to experience myself.",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 128,Loneliness Compensation,This is the only show that helps me in my loneliness. Watching this person's videos is the only way I feel less lonely. I will like I have company whenever I speak to them. Following them and their journey helps me deal with my loneliness. ,Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 129,Social Substitute,"Even though I have real friends, this feels much more real. My friends are annoying, with this content creator, I feel much more at ease. I prefer watching their content instead of going out and socialising. I miss my sleep and even cancel plans to watch her life stream. ",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 130,Identity Through Figure,"My whole personality is knowing about them. All my likes, dislikes, thought are shaped by them. I don't know who I would have been without their influence.  People who know me know what a big fan I am. ",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 131,Grief on Loss of Figure,"When they announced they were quitting I felt a genuine loss, I cried a lot that night.  When the show ended I grieved it like losing something real and people around me didn't understand why. I have not been myself since the channel stopped posting/ show stopped. When they died I was more upset than I was about some people I actually knew. When their character died in the show, I was upset for almost a week.",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 132,Celebrity Worship and Fan Behaviour/ Obsessive Fandom,"I follow their every interview, every appearance and anything that comes in the news about them. I have watched their movies soo many times, I am their biggest fan. Once they came to my city and I missed everything to go and see them.  My family says I am crazy about them.  I travelled to another city just to see them, but i told my family I was at work. I am the proud admin of a fan community, and that has become a full time job. My family says I need to get a real job, but this gives me the most satisfaction.  I keep checking the news to see whats happening in their life. I get anxious if I don't see them post for a while. Its getting difficult to focus on my life and this celebrity. ",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+EM 133,Boundary Confusion and Reality-Fantasy Blur,"Sometimes I forget that I don't exist for them, but I have these coversations with them like I am talking to a friend. I sent them a messgae once which was very personal and got upset when they did not respond. I feel like their life is my life and everything seems to real to me.",Parasocial Relationships,Cognitive distortion/ Delusions,Unhealpful thought patterns,"How long have you been feeling this?
+Could you share an example of what sentences you made that didn't make sense?
+
+Observe for a clear indicator of illogical string of sentences",3,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
